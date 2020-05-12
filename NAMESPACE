@@ -2,8 +2,6 @@
 
 export(check_function_template)
 export(chk_function_template)
-export(run_app)
 export(vld_function_template)
 import(chk)
 import(lifecycle)
-import(shiny, except = p)

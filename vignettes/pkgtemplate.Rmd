@@ -1,8 +1,8 @@
 ---
-title: "Using pkgtemplate"
+title: "Using fwapgr"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Using pkgtemplate}
+  %\VignetteIndexEntry{Using fwapgr}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

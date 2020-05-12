@@ -1,4 +1,4 @@
 library(testthat)
-library(pkgtemplate)
+library(fwapgr)
 
-test_check("pkgtemplate")
+test_check("fwapgr")
