@@ -17,7 +17,6 @@ Imports:
     stats,
     chk,
     lifecycle,
-    shiny
 Suggests: 
     covr,
     testthat (>= 2.1.0),
