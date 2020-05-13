@@ -12,6 +12,9 @@ Imports:
     stats,
     chk,
     lifecycle,
+    httr,
+    sf,
+    glue
 Suggests: 
     covr,
     testthat (>= 2.1.0),
