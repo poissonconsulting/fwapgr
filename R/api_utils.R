@@ -20,3 +20,7 @@ fwa_api <- function(path, query) {
 
   content(resp, "text")
 }
+
+read_feature <- function(response, srid){
+  suppressWarnings(sf::st_read(response, crs = srid, quiet = TRUE))
+}

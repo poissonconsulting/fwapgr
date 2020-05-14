@@ -12,4 +12,6 @@ test_that("api utils", {
   x <- fwa_api(path, query)
   expect_identical(x, "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"geometry\":{\"type\":\"MultiLineString\",\"coordinates\":[[[-122.015467,49.168027],[-122.014029,49.165565]]]},\"properties\":{\"linear_feature_id\":701348697}}]}")
 
+  x <- read_feature(x, 4326)
+  expect_is(x, "sf")
 })
