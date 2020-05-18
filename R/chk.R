@@ -2,7 +2,7 @@ chk_response_status <- function(x){
   if(vld_response_status(x)) {
     return(invisible())
   }
-  abort_chk(p("GitHub API request failed", status_code(x)))
+  abort_chk(p("FWA API request failed", status_code(x)))
 }
 
 chk_response_json <- function(x){

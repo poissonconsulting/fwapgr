@@ -21,6 +21,24 @@ fwa_api <- function(path, query) {
   content(resp, "text")
 }
 
-read_feature <- function(response, srid){
+read_feature <- function(response, srid = NULL){
+  if(is.null(srid))
+    return(sf::st_read(response, quiet = TRUE))
   suppressWarnings(sf::st_read(response, crs = srid, quiet = TRUE))
+}
+
+lgl_to_string <- function(x){
+  if(x)
+    return("true")
+  "false"
+}
+
+columns_to_star <- function(x){
+  if(is.null(x))
+    return("*")
+  x
+}
+
+add_schema <- function(x){
+  glue("whse_basemapping.{x}")
 }
