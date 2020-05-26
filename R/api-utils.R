@@ -9,6 +9,7 @@ user <- function(){
 fwa_api <- function(path, query) {
 
   chk_string(path)
+  chk_string("a")
   chk_list(query)
   chk_named(query)
 
