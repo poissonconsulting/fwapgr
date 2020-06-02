@@ -26,31 +26,3 @@ fwa_bbox <- function(table, filter = NULL, srid = 4326, geom_column = "geom"){
   read_feature(resp, srid)
 }
 
-#' Centroid
-#'
-#' Get centroid of feature(s)
-#'
-#' @inheritParams fwa_bbox
-#' @param force_on_surface A flag indicating whether to force point on surface.
-#' @return A sf object
-#' @export
-#' @examples
-#' fwa_centroid("fwa_stream_networks_sp", filter = "gnis_name = 'Cowichan River'")
-fwa_centroid <- function(table, filter = NULL, force_on_surface = FALSE, srid = 4326, geom_column = "geom"){
-  chk_string(table)
-  chk_flag(force_on_surface)
-  chkor(chk_string(filter), chk_null(filter))
-  chk_whole_number(srid)
-  chk_string(geom_column)
-
-  table <- add_schema(table)
-  force_on_surface <- lgl_to_string(force_on_surface)
-
-  path <- glue("fwa/v1/centroid/{table}")
-  query <- list(filter = filter,
-                force_on_surface = force_on_surface,
-                geom_column = geom_column,
-                srid = srid)
-  resp <- fwa_api(path, query)
-  read_feature(resp, srid)
-}
