@@ -11,3 +11,8 @@ chk_response_json <- function(x){
   }
   abort_chk("API did not return json")
 }
+
+chk_bounds <- function(x){
+  chkor(chk_range(length(x), c(4L, 4L)), chk_null(x))
+  chkor(chk_numeric(x), chk_null(x))
+}

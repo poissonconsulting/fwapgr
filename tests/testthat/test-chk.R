@@ -10,6 +10,8 @@ test_that("chk_function template", {
   expect_invisible(chk_response_json(resp))
   expect_invisible(chk_response_status(resp))
 
-  chk::expect_chk_error(chk_response_status(bad_resp), "GitHub API request failed 404.")
-
+  chk::expect_chk_error(chk_response_status(bad_resp), "FWA API request failed 404.")
+  bounds <- c(-122.01, 49.11, -121.86, 49.16)
+  chk_bounds(bounds)
+  expect_error(chk_bounds(bounds[1:2]), class = "chk_error")
 })

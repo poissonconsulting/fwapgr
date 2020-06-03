@@ -22,10 +22,12 @@ fwa_api <- function(path, query) {
   content(resp, "text")
 }
 
-read_feature <- function(response, srid = NULL){
-  if(is.null(srid))
-    return(sf::st_read(response, quiet = TRUE))
-  suppressWarnings(sf::st_read(response, crs = srid, quiet = TRUE))
+read_feature <- function(response, epsg){
+  x <- sf::st_read(response, quiet = TRUE)
+  # api default is 4326
+  if(epsg == 4326)
+    return(x)
+  sf::st_transform(x, epsg)
 }
 
 lgl_to_string <- function(x){
@@ -34,12 +36,36 @@ lgl_to_string <- function(x){
   "false"
 }
 
-columns_to_star <- function(x){
-  if(is.null(x))
-    return("*")
+parse_bbox <- function(x){
+  x <- strsplit(x, "\\(")[[1]][2]
+  x <- strsplit(x, "\\)")[[1]][1]
+  x <- strsplit(x, " |,")[[1]]
+  x <- as.numeric(x)
+  names(x) <- c("xmin", "ymin", "xmax", "ymax")
+  class(x) <- "bbox"
   x
+}
+
+# columns_to_star <- function(x){
+#   if(is.null(x))
+#     return("*")
+#   x
+# }
+
+format_columns <- function(x){
+  if(is.null(x)) return(x)
+  paste(x, collapse = ",")
+}
+
+format_bounds <- function(x){
+  if(is.null(x)) return(x)
+  paste(x, collapse = ",")
 }
 
 add_schema <- function(x){
   glue("whse_basemapping.{x}")
+}
+
+filter_gnis <- function(x){
+  glue("gnis_name = '{x}'")
 }
