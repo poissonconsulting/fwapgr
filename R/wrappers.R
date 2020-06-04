@@ -1,14 +1,14 @@
-#' FWA feature
+#' FWA stream network
 #'
-#' Get features from table.
+#' Get stream network features from gnis_name.
 #'
 #' @inheritParams fwa_feature
 #' @param gnis_name A character string of the gnis_name.
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_gnis_stream_network('Sangan River')
-fwa_gnis_stream_network <- function(gnis_name, columns = NULL,
+#' fwa_gnis_stream_networks('Sangan River')
+fwa_gnis_stream_networks <- function(gnis_name, columns = NULL,
                         bounds = NULL, geom_column = "geom",
                         epsg = 4326){
 

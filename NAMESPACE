@@ -2,7 +2,9 @@
 
 export(fwa_bbox)
 export(fwa_feature)
-export(fwa_gnis_stream_network)
+export(fwa_gnis_stream_networks)
+export(fwa_lookup_columns)
+export(fwa_lookup_layers)
 export(fwa_watershed)
 import(chk)
 import(glue)

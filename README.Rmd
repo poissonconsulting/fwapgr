@@ -11,6 +11,9 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+library(ggplot2)
+library(sf)
+library(fwapgr)
 ```
 
 # fwapgr <img src="man/figures/logo.png" align="right" />
@@ -24,16 +27,14 @@ knitr::opts_chunk$set(
 <!-- ![CRAN downloads](https://cranlogs.r-pkg.org/badges/pkgtemplate) -->
 <!-- badges: end -->
 
-fwapgr provides a template for a new R package.
+An R package 📦 for searching & retrieving data from the [B.C. Freshwater Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater). Data are fetched from a PostgreSQL database via [this API](https://hillcrestgeo.ca/fwa/) hosted by [Hillcrest Geographics](https://hillcrestgeo.ca/main/).
 
-It includes useful internal functions.
+- `fwa_()` - Get features from a table.
+- `fwa_gnis_()` - Convenience functions to get features by gnis_name.
+- `fwa_lookup_()` - Get lookup tables.
+- `fwa_search_()` - Search lookup tables with regex.
 
 ## Installation
-
-<!-- To install the latest release from [CRAN](https://cran.r-project.org) -->
-```{r, eval=FALSE, echo=FALSE}
-install.packages("fwapgr")
-```
 
 To install the developmental version from [GitHub](https://github.com/poissonconsulting/fwapgr)
 ```{r, eval=FALSE}
@@ -42,12 +43,37 @@ remotes::install_github("poissonconsulting/fwapgr")
 ```
 
 ## Demonstration
+Get Yakoun River from 'fwa_stream_networks_sp' table, filter by gnis_name, include gnis_name and blue_line_key columns
+```{r}
+yakoun <- fwapgr::fwa_feature("fwa_stream_networks_sp", 
+                              filter = "gnis_name = 'Yakoun River'", 
+                              columns = c("gnis_name", "blue_line_key"))
 
-In order to create a new package the user should go to the fwapgr [GitHub repository](https://github.com/poissonconsulting/fwapgr) and choose 'Use this template'.
+yakoun
+```
 
-fwapgr includes files used for development of Shiny applications. To remove these from the repository, run:
-```{r, eval=FALSE}
-fwapgr:::cannibalise_shiny(getwd())
+Or use a convenience function
+```{r}
+yakoun <- fwapgr::fwa_gnis_stream_network("Yakoun River")
+```
+
+Get Yakoun River watershed 
+```{r}
+wshed <- fwapgr::fwa_watershed(360881586, downstream_route_measure = 1)
+```
+
+Get lakes within bounds of watershed
+```{r}
+bbox <- sf::st_bbox(wshed)
+lakes <- fwapgr::fwa_feature("fwa_lakes_poly", bounds = bbox)
+```
+
+Make a map!
+```{r}
+ggplot(data = yakoun) +
+  geom_sf(data = wshed, lwd = 0.15) +
+  geom_sf() +
+  geom_sf(data = lakes, fill = "steelblue", lwd = 0.1)
 ```
 
 ## Information

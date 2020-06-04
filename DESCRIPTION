@@ -14,7 +14,9 @@ Imports:
     lifecycle,
     httr,
     sf,
-    glue
+    glue,
+    jsonlite,
+    tibble
 Suggests: 
     covr,
     testthat (>= 2.1.0),
