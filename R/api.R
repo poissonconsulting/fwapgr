@@ -8,12 +8,14 @@
 #' @param bounds A vector of numbers indicating bounding box to limit output features to, e.g. `c(sw.lng, sw.lat, ne.lng, ne.lat)`.
 #' @param geom_column A character string of the name of the geometry column of the table.
 #' @param epsg An integer of the epsg to transform features to.
+#' @param schema A character string of the schema. Default 'whse_basemapping' is used for most layers.
 #' @return A sf object
 #' @export
 #' @examples
 #' fwa_feature("fwa_stream_networks_sp", filter = "gnis_name = 'Sangan River'")
 fwa_feature <- function(table, filter = NULL, columns = NULL,
-                        bounds = NULL, geom_column = "geom", epsg = 4326){
+                        bounds = NULL, geom_column = "geom",
+                        epsg = 4326, schema = "whse_basemapping"){
 
   chk_string(table)
   chk_string(geom_column)
@@ -21,8 +23,9 @@ fwa_feature <- function(table, filter = NULL, columns = NULL,
   chkor(chk_string(filter), chk_null(filter))
   chk_bounds(bounds)
   chk_whole_number(epsg)
+  chk_string(schema)
 
-  table <- add_schema(table)
+  table <- add_schema(table, schema)
   columns <- format_columns(columns)
   bounds <- format_bounds(bounds)
 
@@ -68,13 +71,15 @@ fwa_watershed <- function(blue_line_key, downstream_route_measure = 0, epsg = 43
 #' @export
 #' @examples
 #' fwa_bbox("fwa_stream_networks_sp", filter = "gnis_name = 'Cowichan River'")
-fwa_bbox <- function(table, filter = NULL, geom_column = "geom", epsg = 4326){
+fwa_bbox <- function(table, filter = NULL, geom_column = "geom",
+                     epsg = 4326, schema = "whse_basemapping"){
   chk_string(table)
   chkor(chk_string(filter), chk_null(filter))
   chk_string(geom_column)
   chk_whole_number(epsg)
+  chk_string(schema)
 
-  table <- add_schema(table)
+  table <- add_schema(table, schema)
 
   path <- glue("fwa/v1/bbox/{table}")
   query <- list(filter = filter,

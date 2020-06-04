@@ -7,16 +7,17 @@
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_gnis_stream_networks('Sangan River')
-fwa_gnis_stream_networks <- function(gnis_name, columns = NULL,
-                        bounds = NULL, geom_column = "geom",
-                        epsg = 4326){
+#' fwa_gnis_streams('Sangan River')
+fwa_gnis_streams <- function(gnis_name, columns = NULL,
+                                     bounds = NULL, geom_column = "geom",
+                                     epsg = 4326){
 
   chk_string(gnis_name)
-  table <- "fwa_stream_networks_sp"
+  table <- "fwa_named_streams"
   filter <- filter_gnis(gnis_name)
 
   fwa_feature(table = table, filter = filter, columns = columns,
               bounds = bounds, geom_column = geom_column,
               epsg = epsg)
 }
+

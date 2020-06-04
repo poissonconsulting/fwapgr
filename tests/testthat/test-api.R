@@ -40,8 +40,21 @@ test_that("api feature calls work", {
   # check null filter and lakes table
   x <- fwa_feature("fwa_lakes_poly", bounds = bounds)
 
+  # check other schema
+  x <- fwa_feature("modelled_habitat_potential", bounds = bounds,
+                   schema = "fish_passage")
+
+  expect_is(x, "sf")
+  expect_identical(nrow(x), 125L)
+
   ### fwa_bbox
   x <- fwa_bbox("fwa_lakes_poly")
+  expect_identical(length(x), 4L)
+  expect_true(all(is.numeric(x)))
+  expect_is(x, "bbox")
+
+  # different schema
+  x <- fwa_bbox("wbdhu12", schema = "usgs")
   expect_identical(length(x), 4L)
   expect_true(all(is.numeric(x)))
   expect_is(x, "bbox")

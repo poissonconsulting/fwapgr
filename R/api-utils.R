@@ -62,10 +62,14 @@ format_bounds <- function(x){
   paste(x, collapse = ",")
 }
 
-add_schema <- function(x){
-  glue("whse_basemapping.{x}")
+add_schema <- function(x, schema){
+  glue("{schema}.{x}")
 }
 
 filter_gnis <- function(x){
   glue("gnis_name = '{x}'")
+}
+
+filter_gnis1 <- function(x){
+  glue("gnis_name_1 = '{x}'")
 }

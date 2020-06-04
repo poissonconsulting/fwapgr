@@ -23,10 +23,10 @@ Data are fetched from a PostgreSQL database via [this
 API](https://hillcrestgeo.ca/fwa/) hosted by [Hillcrest
 Geographics](https://hillcrestgeo.ca/main/).
 
-  - `fwa_()` - Get features from a table.
+  - `fwa_()` - Get features from a layer.
   - `fwa_gnis_()` - Convenience functions to get features by gnis\_name.
-  - `fwa_lookup_()` - Get lookup tables.
-  - `fwa_search_()` - Search lookup tables with regex.
+  - `fwa_list_()` - Get metadata.
+  - `fwa_search_()` - Search metadata with regular expression.
 
 ## Installation
 
@@ -40,64 +40,33 @@ remotes::install_github("poissonconsulting/fwapgr")
 
 ## Demonstration
 
-Get Yakoun River from ‘fwa\_stream\_networks\_sp’ table, filter by
-gnis\_name, include gnis\_name and blue\_line\_key columns
-
 ``` r
+fwapgr::fwa_search_gnis_streams("yakoun")
+#> [1] "Yakoun River"
+
 yakoun <- fwapgr::fwa_feature("fwa_stream_networks_sp", 
                               filter = "gnis_name = 'Yakoun River'", 
-                              columns = c("gnis_name", "blue_line_key"))
-
+                              columns = c("gnis_name"))
 yakoun
-#> Simple feature collection with 129 features and 2 fields
+#> Simple feature collection with 129 features and 1 field
 #> geometry type:  MULTILINESTRING
 #> dimension:      XYZ
 #> bbox:           xmin: -132.2789 ymin: 53.34324 xmax: -132.1283 ymax: 53.65705
 #> z_range:        zmin: 1 zmax: 99
 #> CRS:            4326
 #> First 10 features:
-#>       gnis_name blue_line_key                       geometry
-#> 1  Yakoun River     360881586 MULTILINESTRING Z ((-132.26...
-#> 2  Yakoun River     360881586 MULTILINESTRING Z ((-132.19...
-#> 3  Yakoun River     360881586 MULTILINESTRING Z ((-132.14...
-#> 4  Yakoun River     360881586 MULTILINESTRING Z ((-132.26...
-#> 5  Yakoun River     360881586 MULTILINESTRING Z ((-132.27...
-#> 6  Yakoun River     360881586 MULTILINESTRING Z ((-132.20...
-#> 7  Yakoun River     360881586 MULTILINESTRING Z ((-132.26...
-#> 8  Yakoun River     360881586 MULTILINESTRING Z ((-132.27...
-#> 9  Yakoun River     360881586 MULTILINESTRING Z ((-132.14...
-#> 10 Yakoun River     360881586 MULTILINESTRING Z ((-132.27...
+#>       gnis_name                       geometry
+#> 1  Yakoun River MULTILINESTRING Z ((-132.26...
+#> 2  Yakoun River MULTILINESTRING Z ((-132.19...
+#> 3  Yakoun River MULTILINESTRING Z ((-132.14...
+#> 4  Yakoun River MULTILINESTRING Z ((-132.26...
+#> 5  Yakoun River MULTILINESTRING Z ((-132.27...
+#> 6  Yakoun River MULTILINESTRING Z ((-132.20...
+#> 7  Yakoun River MULTILINESTRING Z ((-132.26...
+#> 8  Yakoun River MULTILINESTRING Z ((-132.27...
+#> 9  Yakoun River MULTILINESTRING Z ((-132.14...
+#> 10 Yakoun River MULTILINESTRING Z ((-132.27...
 ```
-
-Or use a convenience function
-
-``` r
-yakoun <- fwapgr::fwa_gnis_stream_network("Yakoun River")
-```
-
-Get Yakoun River watershed
-
-``` r
-wshed <- fwapgr::fwa_watershed(360881586, downstream_route_measure = 1)
-```
-
-Get lakes within bounds of watershed
-
-``` r
-bbox <- sf::st_bbox(wshed)
-lakes <- fwapgr::fwa_feature("fwa_lakes_poly", bounds = bbox)
-```
-
-Make a map\!
-
-``` r
-ggplot(data = yakoun) +
-  geom_sf(data = wshed, lwd = 0.15) +
-  geom_sf() +
-  geom_sf(data = lakes, fill = "steelblue", lwd = 0.1)
-```
-
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 ## Information
 

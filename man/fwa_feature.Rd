@@ -10,7 +10,8 @@ fwa_feature(
   columns = NULL,
   bounds = NULL,
   geom_column = "geom",
-  epsg = 4326
+  epsg = 4326,
+  schema = "whse_basemapping"
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ fwa_feature(
 \item{geom_column}{A character string of the name of the geometry column of the table.}
 
 \item{epsg}{An integer of the epsg to transform features to.}
+
+\item{schema}{A character string of the schema. Default 'whse_basemapping' is used for most layers.}
 }
 \value{
 A sf object

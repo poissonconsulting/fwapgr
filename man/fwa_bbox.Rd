@@ -4,7 +4,13 @@
 \alias{fwa_bbox}
 \title{BBox}
 \usage{
-fwa_bbox(table, filter = NULL, geom_column = "geom", epsg = 4326)
+fwa_bbox(
+  table,
+  filter = NULL,
+  geom_column = "geom",
+  epsg = 4326,
+  schema = "whse_basemapping"
+)
 }
 \arguments{
 \item{table}{A character string of the table name.}
@@ -14,6 +20,8 @@ fwa_bbox(table, filter = NULL, geom_column = "geom", epsg = 4326)
 \item{geom_column}{A character string of the name of the geometry column of the table.}
 
 \item{epsg}{An integer of the epsg to transform features to.}
+
+\item{schema}{A character string of the schema. Default 'whse_basemapping' is used for most layers.}
 }
 \value{
 A sf object

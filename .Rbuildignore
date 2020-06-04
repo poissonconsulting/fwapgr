@@ -15,3 +15,4 @@
 ^scripts$
 ^\.github$
 ^.vscode$
+^data-raw$
