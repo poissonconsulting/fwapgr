@@ -28,21 +28,23 @@ knitr::opts_chunk$set(
 )
 ```
 
-Let's make a map of the Yakoun River watershed using data from `fwapgr`.
+The `fwapgr` package can be used to retrieve data from the BC Freshwater Atlas. In this article, we'll get stream, lake, watershed and modelled fish habitat data to create a map of the Yakoun River watershed in Haida Gwaii, BC. 
 
-### Check out the metadata
-We'll start by looking at the available layers
+We can get started by looking at all available layers and which columns are in a specific layer.
 ```{r}
 fwapgr::fwa_list_layers()
 ```
 
-...and which columns are in the 'fwa_stream_networks_sp' layer
 ```{r}
 fwapgr::fwa_list_columns('fwa_stream_networks_sp')
 ```
 
-### Get stream, watershed and lake data
-Let's get Yakoun river from the 'fwa_stream_networks_sp' layer. We will include the 'blue_line_key' column as it will come in handy later.
+Let's use the 'fwa_stream_networks_sp' layer to get a linestring feature of the Yakoun river. The most straighforward way to retrieve data for a named stream is to filter by 'gnis_name' column. We can use `fwa_search_gnis_streams` to find a valid gnis_name. 
+```{r}
+print(fwapgr::fwa_search_gnis_streams("yakoun"))
+```
+
+We can then use `fwa_feature` to retrieve the stream data for 'Yakoun River'. We use the `columns` argument to include any columns along with the geometry. In this case, we'll include the `blue_line_key` column.
 ```{r}
 yakoun <- fwapgr::fwa_feature("fwa_stream_networks_sp", 
                               filter = "gnis_name = 'Yakoun River'", 
@@ -51,28 +53,19 @@ yakoun <- fwapgr::fwa_feature("fwa_stream_networks_sp",
 yakoun
 ```
 
-Often we don't know the valid `gnis_name` or column names to filter by. We could have used these convenience functions instead.
-```{r}
-gnis <- fwapgr::fwa_search_gnis_streams("yakoun")
-print(gnis)
-yakoun2 <- fwapgr::fwa_gnis_streams(gnis)
-
-```
-
-Now let's get the Yakoun River watershed. It requires a `blue_line_key`, which we will get from the 'blue_line_key' column of the stream layer. 
+Next let's get the Yakoun River watershed. It requires a `blue_line_key`.
 ```{r}
 blue_line_key <- unique(yakoun$blue_line_key)
 wshed <- fwapgr::fwa_watershed(blue_line_key)
 ```
 
-... and all lakes within the bounds of the Yakoun River watershed.
+To get lake data, we will use the 'fwa_lakes_poly' layer. We can get the bounding box of the watershed data and use the `bounds` argument to only retrieve lakes within the bounds of the watershed. 
 ```{r}
 bbox <- sf::st_bbox(wshed)
 lakes <- fwapgr::fwa_feature("fwa_lakes_poly", bounds = bbox)
 ```
 
-### Get modelled fish habitat data
-Finally, let's get modelled fish habitat data within our bounds. Note, this is in a different schema (not the default 'whse_basemapping' schema). We'll re-classify the 'fish_habitat' column as 'fish habitat' or 'not fish habitat'. 
+The final data we will retrieve is modelled fish habitat within our watershed bounds. Note, this is in a different schema (not the default 'whse_basemapping' schema). We'll re-classify the 'fish_habitat' column as 'fish habitat' or 'not fish habitat'. 
 ```{r}
 habitat <- fwapgr::fwa_feature("modelled_habitat_potential", schema = 'fish_passage', columns = "fish_habitat", bounds = bbox)
 
@@ -81,9 +74,8 @@ habitat$habitat <- grepl('non fish habitat', habitat$fish_habitat, ignore.case =
   factor(levels = c('not fish habitat', 'fish habitat'))
 ```
 
-### Make a map!
-Things will look better if we clip the habitat and lake layers to the watershed.
-```{r}
+Finally, let's clip the habitat and lake layers to the watershed polygon to make the map look a little prettier.
+```{r warning=FALSE, message=FALSE}
 habitat <- sf::st_intersection(habitat, wshed)
 lakes <- sf::st_intersection(lakes, wshed)
 ```
