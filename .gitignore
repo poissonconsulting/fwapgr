@@ -4,6 +4,8 @@
 .Ruserdata
 
 .DS_Store
+docs
 README.html
 
 .vscode
+docs/
