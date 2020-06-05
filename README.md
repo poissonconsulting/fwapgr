@@ -21,10 +21,11 @@ An R package 📦 for searching & retrieving data from the [B.C. Freshwater
 Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater).
 Data are fetched from a PostgreSQL database via [this
 API](https://hillcrestgeo.ca/fwa/) hosted by [Hillcrest
-Geographics](https://hillcrestgeo.ca/main/).
+Geographics](https://hillcrestgeo.ca/main/). Data are provided as
+[simple features](https://github.com/r-spatial/sf).
 
   - `fwa_()` - Get features from a layer.
-  - `fwa_gnis_()` - Convenience functions to get features by gnis\_name.
+  - `fwa_gnis_()` - Get features by gnis\_name.
   - `fwa_list_()` - Get metadata.
   - `fwa_search_()` - Search metadata with regular expression.
 

@@ -1,0 +1,100 @@
+---
+title: "Using fwapgr"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using fwapgr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+library(ggplot2)
+library(sf)
+library(fwapgr)
+```
+
+## Let's make a map of Yakoun Lake in Haida Gwaii, BC
+
+We'll start by looking at the available layers
+```{r}
+fwapgr::fwa_list_layers()
+```
+
+...and which columns are in the 'fwa_stream_networks_sp' layer
+```{r}
+fwapgr::fwa_list_columns('fwa_stream_networks_sp')
+```
+
+
+Let's get Yakoun river from the 'fwa_stream_networks_sp' layer. We will include the 'blue_line_key' column as it will come in handy later.
+```{r}
+yakoun <- fwapgr::fwa_feature("fwa_stream_networks_sp", 
+                              filter = "gnis_name = 'Yakoun River'", 
+                              columns = c("blue_line_key"))
+
+yakoun
+```
+
+Often we don't know the valid `gnis_name` or column names to filter by. We can use these convenience functions instead.
+```{r}
+yakoun2 <- fwapgr::fwa_search_gnis_streams("yakoun") %>%
+  fwapgr::fwa_gnis_streams()
+
+```
+
+OK now let's get the Yakoun River watershed. It requires a `blue_line_key`, which we will get from the 'blue_line_key' column of the stream layer. 
+```{r}
+blue_line_key <- unique(yakoun$blue_line_key)
+wshed <- fwapgr::fwa_watershed(blue_line_key)
+```
+
+Let's get all lakes within the bounds of the Yakoun River watershed. We will use `sf` package to get the bounding box.
+```{r}
+bbox <- sf::st_bbox(wshed)
+lakes <- fwapgr::fwa_feature("fwa_lakes_poly", bounds = bbox)
+```
+
+Let's get modelled fish habitat data within our bounds. Note, this is in a different schema (not the default 'whse_basemapping' schema). We'll reclassify the 'fish_habitat' column as 'fish habitat' or 'not fish habitat'. 
+```{r}
+habitat <- fwapgr::fwa_feature("modelled_habitat_potential", schema = 'fish_passage', columns = "fish_habitat", bounds = bbox)
+
+habitat$habitat <- grepl('non fish habitat', habitat$fish_habitat, ignore.case = TRUE) %>%
+  ifelse('not fish habitat', 'fish habitat') %>%
+  factor(levels = c('not fish habitat', 'fish habitat'))
+```
+
+Finally, let's clip the habitat and lake layers to the watershed using `sf::st_intersection`
+```{r}
+habitat <- sf::st_intersection(habitat, wshed)
+lakes <- sf::st_intersection(lakes, wshed)
+
+```
+
+Make a map!
+```{r dpi=300, fig.width=7, fig.height=7}
+ggplot2::ggplot(data = yakoun) +
+  ggplot2::geom_sf(data = wshed, lwd = 0.15) +
+  ggplot2::geom_sf(data = habitat, aes(color = habitat), lwd = 0.2) +
+  ggplot2::geom_sf(lwd = 0.3) +
+  ggplot2::geom_sf(data = lakes, fill = "steelblue", lwd = 0.1) +
+  ggplot2::theme(legend.title = element_blank(),
+                 legend.position = "bottom")
+```
+
