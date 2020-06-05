@@ -21,7 +21,9 @@ Suggests:
     covr,
     testthat (>= 2.1.0),
     knitr,
-    rmarkdown
+    rmarkdown,
+    ggplot2,
+    magrittr
 Remotes: poissonconsulting/chk
 URL: https://github.com/poissonconsulting/fwapgr
 BugReports: https://github.com/poissonconsulting/fwapgr/issues

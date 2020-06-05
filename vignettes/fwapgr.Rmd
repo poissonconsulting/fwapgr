@@ -12,6 +12,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+library(magrittr)
 ```
 
 ---
@@ -25,12 +26,9 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
-library(ggplot2)
-library(sf)
-library(fwapgr)
 ```
 
-## Let's make a map of the Yakoun River watershed
+Let's make a map of the Yakoun River watershed using data from `fwapgr`.
 
 ### Check out the metadata
 We'll start by looking at the available layers
@@ -55,8 +53,9 @@ yakoun
 
 Often we don't know the valid `gnis_name` or column names to filter by. We could have used these convenience functions instead.
 ```{r}
-yakoun2 <- fwapgr::fwa_search_gnis_streams("yakoun") %>%
-  fwapgr::fwa_gnis_streams()
+gnis <- fwapgr::fwa_search_gnis_streams("yakoun")
+print(gnis)
+yakoun2 <- fwapgr::fwa_gnis_streams(gnis)
 
 ```
 
@@ -66,14 +65,14 @@ blue_line_key <- unique(yakoun$blue_line_key)
 wshed <- fwapgr::fwa_watershed(blue_line_key)
 ```
 
-Let's get all lakes within the bounds of the Yakoun River watershed. We will use `sf` package to get the bounding box.
+... and all lakes within the bounds of the Yakoun River watershed.
 ```{r}
 bbox <- sf::st_bbox(wshed)
 lakes <- fwapgr::fwa_feature("fwa_lakes_poly", bounds = bbox)
 ```
 
 ### Get modelled fish habitat data
-Finally, let's get modelled fish habitat data within our bounds. Note, this is in a different schema (not the default 'whse_basemapping' schema). We'll reclassify the 'fish_habitat' column as 'fish habitat' or 'not fish habitat'. 
+Finally, let's get modelled fish habitat data within our bounds. Note, this is in a different schema (not the default 'whse_basemapping' schema). We'll re-classify the 'fish_habitat' column as 'fish habitat' or 'not fish habitat'. 
 ```{r}
 habitat <- fwapgr::fwa_feature("modelled_habitat_potential", schema = 'fish_passage', columns = "fish_habitat", bounds = bbox)
 
@@ -83,7 +82,7 @@ habitat$habitat <- grepl('non fish habitat', habitat$fish_habitat, ignore.case =
 ```
 
 ### Make a map!
-Things will look better if we clip the habitat and lake layers to the watershed. We'll use `sf::st_intersection`.
+Things will look better if we clip the habitat and lake layers to the watershed.
 ```{r}
 habitat <- sf::st_intersection(habitat, wshed)
 lakes <- sf::st_intersection(lakes, wshed)
@@ -93,10 +92,10 @@ lakes <- sf::st_intersection(lakes, wshed)
 ```{r dpi=300, fig.width=7, fig.height=7}
 ggplot2::ggplot(data = yakoun) +
   ggplot2::geom_sf(data = wshed, lwd = 0.15) +
-  ggplot2::geom_sf(data = habitat, aes(color = habitat), lwd = 0.2) +
+  ggplot2::geom_sf(data = habitat, ggplot2::aes(color = habitat), lwd = 0.2) +
   ggplot2::geom_sf(lwd = 0.3) +
   ggplot2::geom_sf(data = lakes, fill = "steelblue", lwd = 0.1) +
-  ggplot2::theme(legend.title = element_blank(),
+  ggplot2::theme(legend.title = ggplot2::element_blank(),
                  legend.position = "bottom")
 ```
 
