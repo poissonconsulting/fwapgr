@@ -15,6 +15,8 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 status](https://www.r-pkg.org/badges/version/fwapgr)](https://cran.r-project.org/package=fwapgr)
 <!-- [![Tinyverse status](https://tinyverse.netlify.com/badge/pkgtemplate)](https://CRAN.R-project.org/package=pkgtemplate) -->
 <!-- ![CRAN downloads](https://cranlogs.r-pkg.org/badges/pkgtemplate) -->
+[![R build
+status](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions)
 <!-- badges: end -->
 
 An R package 📦 for searching & retrieving data from the [B.C. Freshwater
