@@ -30,12 +30,6 @@ read_feature <- function(response, epsg){
   sf::st_transform(x, epsg)
 }
 
-lgl_to_string <- function(x){
-  if(x)
-    return("true")
-  "false"
-}
-
 parse_bbox <- function(x){
   x <- strsplit(x, "\\(")[[1]][2]
   x <- strsplit(x, "\\)")[[1]][1]
@@ -45,12 +39,6 @@ parse_bbox <- function(x){
   class(x) <- "bbox"
   x
 }
-
-# columns_to_star <- function(x){
-#   if(is.null(x))
-#     return("*")
-#   x
-# }
 
 format_columns <- function(x){
   if(is.null(x)) return(x)
@@ -68,8 +56,4 @@ add_schema <- function(x, schema){
 
 filter_gnis <- function(x){
   glue("gnis_name = '{x}'")
-}
-
-filter_gnis1 <- function(x){
-  glue("gnis_name_1 = '{x}'")
 }
