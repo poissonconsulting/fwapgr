@@ -17,10 +17,7 @@ status](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.
 
 An R package 📦 for retrieving data from the [B.C. Freshwater
 Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater).
-Data are fetched from a PostgreSQL database via [this
-API](https://hillcrestgeo.ca/fwa/) hosted by [Hillcrest
-Geographics](https://hillcrestgeo.ca/main/). Data are provided as
-[simple features](https://github.com/r-spatial/sf).
+Data are provided as [simple features](https://github.com/r-spatial/sf).
 
   - `fwa_()` - Get features from a layer.
   - `fwa_gnis_()` - Get features by gnis\_name.
@@ -72,6 +69,24 @@ yakoun
 For more information see the [Get
 Started](https://poissonconsulting.github.io/fwapgr/articles/fwapgr.html)
 vignette.
+
+## Credit and Inspiration
+
+`fwapgr` is meant to succeed
+[fwabc](https://github.com/poissonconsulting/fwabc). `fwabc` is a
+wrapper on [bcdata](https://github.com/bcgov/bcdata), which retrieves
+data [via
+WFS](https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&outputFormat=json&SRSNAME=epsg%3A3005&CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27).
+However, this approach did not work well for large requests.
+
+`fwapgr` instead retrieves data from a PostgreSQL database hosted by
+[Hillcrest Geographics](https://hillcrestgeo.ca/main/) (see
+[fwapg](https://github.com/smnorris/fwapg)) via [this
+API](https://hillcrestgeo.ca/fwa/).
+
+Many thanks to [Simon Norris](https://github.com/smnorris/fwapg) for his
+work on [fwapg](https://github.com/smnorris/fwapg) and [the
+API](https://hillcrestgeo.ca/fwa/).
 
 ## Contribution
 
