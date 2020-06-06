@@ -19,15 +19,6 @@ library(magrittr)
 output: github_document
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
-
 The `fwapgr` package can be used to retrieve data from the BC Freshwater Atlas. In this article, we'll get stream, lake, watershed and modelled fish habitat data to create a map of the Yakoun River watershed in Haida Gwaii, BC. 
 
 We can get started by looking at all available layers and which columns are in a specific layer.
