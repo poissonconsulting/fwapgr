@@ -85,7 +85,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>An R package 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a>. Data are fetched from a PostgreSQL database via <a href="https://hillcrestgeo.ca/fwa/">this API</a> hosted by <a href="https://hillcrestgeo.ca/main/">Hillcrest Geographics</a>. Data are provided as <a href="https://github.com/r-spatial/sf">simple features</a>.</p>
+<p>An R package 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a>. Data are provided as <a href="https://github.com/r-spatial/sf">simple features</a>.</p>
 <ul>
 <li>
 <code>fwa_()</code> - Get features from a layer.</li>
@@ -136,6 +136,13 @@
 <h2 class="hasAnchor">
 <a href="#information" class="anchor"></a>Information</h2>
 <p>For more information see the <a href="https://poissonconsulting.github.io/fwapgr/articles/fwapgr.html">Get Started</a> vignette.</p>
+</div>
+<div id="credit-and-inspiration" class="section level2">
+<h2 class="hasAnchor">
+<a href="#credit-and-inspiration" class="anchor"></a>Credit and Inspiration</h2>
+<p><code>fwapgr</code> is meant to succeed <a href="https://github.com/poissonconsulting/fwabc">fwabc</a>. <code>fwabc</code> is a wrapper on <a href="https://github.com/bcgov/bcdata">bcdata</a>, which retrieves data <a href="https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&amp;version=2.0.0&amp;request=GetFeature&amp;typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&amp;outputFormat=json&amp;SRSNAME=epsg%3A3005&amp;CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27">via WFS</a>. However, this approach did not work well for large requests.</p>
+<p><code>fwapgr</code> instead retrieves data from a PostgreSQL database hosted by <a href="https://hillcrestgeo.ca/main/">Hillcrest Geographics</a> (see <a href="https://github.com/smnorris/fwapg">fwapg</a>) via <a href="https://hillcrestgeo.ca/fwa/">this API</a>.</p>
+<p>Many thanks to <a href="https://github.com/smnorris/fwapg">Simon Norris</a> for his work on <a href="https://github.com/smnorris/fwapg">fwapg</a> and <a href="https://hillcrestgeo.ca/fwa/">the API</a>.</p>
 </div>
 <div id="contribution" class="section level2">
 <h2 class="hasAnchor">
