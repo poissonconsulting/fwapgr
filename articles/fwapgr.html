@@ -90,7 +90,7 @@
 
     
     
-<p>The <code>fwapgr</code> package can be used to retrieve data from the BC Freshwater Atlas. In this article, we’ll get stream, lake, watershed and modelled fish habitat data to create a map of the Yakoun River watershed in Haida Gwaii, BC.</p>
+<p>The <code>fwapgr</code> package is used to retrieve data from the BC Freshwater Atlas. In this article, we’ll get stream, lake, watershed and modelled fish habitat data to create a map of the Yakoun River watershed in Haida Gwaii, BC.</p>
 <p>We can get started by looking at all available layers and which columns are in a specific layer.</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="kw pkg">fwapgr</span><span class="kw ns">::</span><span class="fu"><a href="../reference/fwa_list_layers.html">fwa_list_layers</a></span>()
 <span class="co">#&gt; # A tibble: 28 x 7</span>
@@ -122,10 +122,10 @@
 <span class="co">#&gt;  9 downstream_route_measure float8    </span>
 <span class="co">#&gt; 10 length_metre             float8    </span>
 <span class="co">#&gt; # … with 17 more rows</span></pre></body></html></div>
-<p>Let’s use the ‘fwa_stream_networks_sp’ layer to get a linestring feature of the Yakoun river. The most straighforward way to retrieve data for a named stream is to filter by ‘gnis_name’ column. We can use <code>fwa_search_gnis_streams</code> to find a valid gnis_name.</p>
+<p>Let’s use the ‘fwa_stream_networks_sp’ layer to get a linestring feature of the Yakoun river. We can filter by ‘gnis_name’ column and use <code>fwa_search_gnis_streams</code> to find a valid gnis_name.</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="kw pkg">fwapgr</span><span class="kw ns">::</span><span class="fu"><a href="../reference/fwa_search_gnis_streams.html">fwa_search_gnis_streams</a></span>(<span class="st">"yakoun"</span>))
 <span class="co">#&gt; [1] "Yakoun River"</span></pre></body></html></div>
-<p>We can then use <code>fwa_feature</code> to retrieve the stream data for ‘Yakoun River’. We use the <code>columns</code> argument to include any columns along with the geometry. In this case, we’ll include the <code>blue_line_key</code> column.</p>
+<p><code>fwa_feature</code> is used to retrieve data for any layer. We use the <code>columns</code> argument to get the <code>blue_line_key</code> column along with the geometry.</p>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">yakoun</span> <span class="kw">&lt;-</span> <span class="kw pkg">fwapgr</span><span class="kw ns">::</span><span class="fu"><a href="../reference/fwa_feature.html">fwa_feature</a></span>(<span class="st">"fwa_stream_networks_sp"</span>,
                               <span class="kw">filter</span> <span class="kw">=</span> <span class="st">"gnis_name = 'Yakoun River'"</span>,
                               <span class="kw">columns</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"blue_line_key"</span>))
@@ -149,19 +149,19 @@
 <span class="co">#&gt; 8      360881586 MULTILINESTRING Z ((-132.27...</span>
 <span class="co">#&gt; 9      360881586 MULTILINESTRING Z ((-132.14...</span>
 <span class="co">#&gt; 10     360881586 MULTILINESTRING Z ((-132.27...</span></pre></body></html></div>
-<p>Next let’s get the Yakoun River watershed. It requires a <code>blue_line_key</code>.</p>
+<p>Next let’s get the Yakoun River watershed with <code>fwa_watershd</code>, which requires a <code>blue_line_key</code>.</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">blue_line_key</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="no">yakoun</span>$<span class="no">blue_line_key</span>)
 <span class="no">wshed</span> <span class="kw">&lt;-</span> <span class="kw pkg">fwapgr</span><span class="kw ns">::</span><span class="fu"><a href="../reference/fwa_watershed.html">fwa_watershed</a></span>(<span class="no">blue_line_key</span>)</pre></body></html></div>
-<p>To get lake data, we will use the ‘fwa_lakes_poly’ layer. We can get the bounding box of the watershed data and use the <code>bounds</code> argument to only retrieve lakes within the bounds of the watershed.</p>
+<p>We can use the ‘fwa_lakes_poly’ layer to get lake data and use the <code>bounds</code> argument to only retrieve lakes within the bounding box of the watershed.</p>
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">bbox</span> <span class="kw">&lt;-</span> <span class="kw pkg">sf</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/sf/man/st_bbox.html">st_bbox</a></span>(<span class="no">wshed</span>)
 <span class="no">lakes</span> <span class="kw">&lt;-</span> <span class="kw pkg">fwapgr</span><span class="kw ns">::</span><span class="fu"><a href="../reference/fwa_feature.html">fwa_feature</a></span>(<span class="st">"fwa_lakes_poly"</span>, <span class="kw">bounds</span> <span class="kw">=</span> <span class="no">bbox</span>)</pre></body></html></div>
-<p>The final data we will retrieve is modelled fish habitat within our watershed bounds. Note, this is in a different schema (not the default ‘whse_basemapping’ schema). We’ll re-classify the ‘fish_habitat’ column as ‘fish habitat’ or ‘not fish habitat’.</p>
+<p>Finally, let’s get modelled fish habitat within our watershed bounds. Note, this is in a different schema (not the default ‘whse_basemapping’ schema). We’ll re-classify the ‘fish_habitat’ column as ‘fish habitat’ or ‘not fish habitat’.</p>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">habitat</span> <span class="kw">&lt;-</span> <span class="kw pkg">fwapgr</span><span class="kw ns">::</span><span class="fu"><a href="../reference/fwa_feature.html">fwa_feature</a></span>(<span class="st">"modelled_habitat_potential"</span>, <span class="kw">schema</span> <span class="kw">=</span> <span class="st">'fish_passage'</span>, <span class="kw">columns</span> <span class="kw">=</span> <span class="st">"fish_habitat"</span>, <span class="kw">bounds</span> <span class="kw">=</span> <span class="no">bbox</span>)
 
 <span class="no">habitat</span>$<span class="no">habitat</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span>(<span class="st">'non fish habitat'</span>, <span class="no">habitat</span>$<span class="no">fish_habitat</span>, <span class="kw">ignore.case</span> <span class="kw">=</span> <span class="fl">TRUE</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span>(<span class="st">'not fish habitat'</span>, <span class="st">'fish habitat'</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="kw">levels</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'not fish habitat'</span>, <span class="st">'fish habitat'</span>))</pre></body></html></div>
-<p>Finally, let’s clip the habitat and lake layers to the watershed polygon to make the map look a little prettier.</p>
+<p>To make the map look a little prettier, we can clip the habitat and lake layers to the watershed polygon.</p>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">habitat</span> <span class="kw">&lt;-</span> <span class="kw pkg">sf</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/sf/man/geos_binary_ops.html">st_intersection</a></span>(<span class="no">habitat</span>, <span class="no">wshed</span>)
 <span class="no">lakes</span> <span class="kw">&lt;-</span> <span class="kw pkg">sf</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/sf/man/geos_binary_ops.html">st_intersection</a></span>(<span class="no">lakes</span>, <span class="no">wshed</span>)</pre></body></html></div>
 <div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="kw pkg">ggplot2</span><span class="kw ns">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="no">yakoun</span>) +
