@@ -9,7 +9,8 @@ fwa_gnis_streams(
   columns = NULL,
   bounds = NULL,
   geom_column = "geom",
-  epsg = 4326
+  epsg = 4326,
+  named_streams = FALSE
 )
 }
 \arguments{
@@ -22,6 +23,9 @@ fwa_gnis_streams(
 \item{geom_column}{A character string of the name of the geometry column of the table.}
 
 \item{epsg}{An integer of the epsg to transform features to.}
+
+\item{named_streams}{A flag indicating whether to get data from the 'fwa_named_streams' layer.
+If FALSE, the 'fwa_stream_networks_sp' layer is used.}
 }
 \value{
 A sf object

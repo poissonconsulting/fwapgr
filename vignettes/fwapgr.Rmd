@@ -30,19 +30,16 @@ fwapgr::fwa_list_layers()
 fwapgr::fwa_list_columns('fwa_stream_networks_sp')
 ```
 
-Let's get a linestring feature of the Yakoun river. We can use `fwa_search_gnis_streams` to find a valid gnis_name. 
+`fwa_feature` is the workhorse function of `fwapgr`, allowing us to retrieve data from any available layer in the database and filter using a SQL WHERE statement. To get a linestring feature of the Yakoun river, we could use the 'fwa_stream_networks_sp' or 'fwa_named_streams' layers and filter by `gnis_name` column.
+
+However, for this specific case we can use the convenience function `fwa_gnis_streams` and `fwa_search_gnis_streams` to find a valid gnis_name. We use the `columns` argument to get the `blue_line_key` column along with the geometry. 
 ```{r}
 print(fwapgr::fwa_search_gnis_streams("yakoun"))
-```
-
-`fwa_gnis_streams` is a convenience function for filtering streams by `gnis_name`. It is the equivalent of `fwa_feature('fwa_stream_networks_sp', filter = 'gnis_name = {gnis_name}')`. We use the `columns` argument to get the `blue_line_key` column along with the geometry. 
-```{r}
 yakoun <- fwapgr::fwa_gnis_streams("Yakoun River", columns = "blue_line_key")
-
 yakoun
 ```
 
-Next let's get the Yakoun River watershed with `fwa_watershd`, which requires a `blue_line_key`.
+Next let's get the Yakoun River watershed with `fwa_watershed`, which requires a `blue_line_key`.
 ```{r}
 blue_line_key <- unique(yakoun$blue_line_key)
 wshed <- fwapgr::fwa_watershed(blue_line_key)
