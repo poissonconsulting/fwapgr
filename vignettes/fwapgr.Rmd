@@ -19,7 +19,7 @@ library(magrittr)
 output: github_document
 ---
 
-The `fwapgr` package is used to retrieve data from the BC Freshwater Atlas. In this article, we'll get stream, lake, watershed and modelled fish habitat data to create a map of the Yakoun River watershed in Haida Gwaii, BC. 
+The `fwapgr` package is used to retrieve data from the BC Freshwater Atlas. In this article, we'll get stream, lake, and watershed data to create a map of the Yakoun River watershed in Haida Gwaii, BC. 
 
 We can get started by looking at all available layers and which columns are in a specific layer.
 ```{r}
@@ -30,16 +30,14 @@ fwapgr::fwa_list_layers()
 fwapgr::fwa_list_columns('fwa_stream_networks_sp')
 ```
 
-Let's use the 'fwa_stream_networks_sp' layer to get a linestring feature of the Yakoun river. We can filter by 'gnis_name' column and use `fwa_search_gnis_streams` to find a valid gnis_name. 
+Let's get a linestring feature of the Yakoun river. We can use `fwa_search_gnis_streams` to find a valid gnis_name. 
 ```{r}
 print(fwapgr::fwa_search_gnis_streams("yakoun"))
 ```
 
-`fwa_feature` is used to retrieve data for any layer. We use the `columns` argument to get the `blue_line_key` column along with the geometry. 
+`fwa_gnis_streams` is a convenience function for filtering streams by `gnis_name`. It is the equivalent of `fwa_feature('fwa_stream_networks_sp', filter = 'gnis_name = {gnis_name}')`. We use the `columns` argument to get the `blue_line_key` column along with the geometry. 
 ```{r}
-yakoun <- fwapgr::fwa_feature("fwa_stream_networks_sp", 
-                              filter = "gnis_name = 'Yakoun River'", 
-                              columns = c("blue_line_key"))
+yakoun <- fwapgr::fwa_gnis_streams("Yakoun River", columns = "blue_line_key")
 
 yakoun
 ```
@@ -56,18 +54,16 @@ bbox <- sf::st_bbox(wshed)
 lakes <- fwapgr::fwa_feature("fwa_lakes_poly", bounds = bbox)
 ```
 
-Finally, let's get modelled fish habitat within our watershed bounds. Note, this is in a different schema (not the default 'whse_basemapping' schema). We'll re-classify the 'fish_habitat' column as 'fish habitat' or 'not fish habitat'. 
-```{r}
-habitat <- fwapgr::fwa_feature("modelled_habitat_potential", schema = 'fish_passage', columns = "fish_habitat", bounds = bbox)
-
-habitat$habitat <- grepl('non fish habitat', habitat$fish_habitat, ignore.case = TRUE) %>%
-  ifelse('not fish habitat', 'fish habitat') %>%
-  factor(levels = c('not fish habitat', 'fish habitat'))
+Finally, lets get all streams within the watershed bounds that have a 'stream_order' less than 3.
+```{r warning=FALSE, message=FALSE}
+streams <- fwapgr::fwa_feature("fwa_stream_networks_sp",
+                               filter = "stream_order < 3",
+                               bounds = bbox)
 ```
 
-To make the map look a little prettier, we can clip the habitat and lake layers to the watershed polygon.
+To make the map look a little prettier, we can clip the stream and lake layers to the watershed polygon.
 ```{r warning=FALSE, message=FALSE}
-habitat <- sf::st_intersection(habitat, wshed)
+streams <- sf::st_intersection(streams, wshed)
 lakes <- sf::st_intersection(lakes, wshed)
 ```
 
@@ -75,10 +71,8 @@ lakes <- sf::st_intersection(lakes, wshed)
 ```{r dpi=300, fig.width=7, fig.height=7}
 ggplot2::ggplot(data = yakoun) +
   ggplot2::geom_sf(data = wshed, lwd = 0.15) +
-  ggplot2::geom_sf(data = habitat, ggplot2::aes(color = habitat), lwd = 0.2) +
+  ggplot2::geom_sf(data = streams, lwd = 0.15, colour = 'steelblue') +
   ggplot2::geom_sf(lwd = 0.3) +
-  ggplot2::geom_sf(data = lakes, fill = "steelblue", lwd = 0.1) +
-  ggplot2::theme(legend.title = ggplot2::element_blank(),
-                 legend.position = "bottom")
+  ggplot2::geom_sf(data = lakes, fill = "steelblue", lwd = 0.1)
 ```
 

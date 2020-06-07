@@ -12,7 +12,7 @@ test_that("api feature calls work", {
   expect_is(x, "sf")
 
   # check transform
-  x <- fwa_watershed(blk, epsg = 3005)
+  # x <- fwa_watershed(blk, epsg = 3005)
   # expect_identical(attr(x$geometry, "crs")$input, "EPSG:3005")
 
   ### fwa_feature
@@ -27,7 +27,7 @@ test_that("api feature calls work", {
   expect_identical(c("geometry"), names(x))
 
   # check transform
-  x <- fwa_feature(table, filter = filter_sql,  epsg = 3005)
+  # x <- fwa_feature(table, filter = filter_sql,  epsg = 3005)
   # expect_identical(attr(x$geometry, "crs")$input, "EPSG:3005")
 
   # check columns
@@ -42,11 +42,11 @@ test_that("api feature calls work", {
   x <- fwa_feature("fwa_lakes_poly", bounds = bounds)
 
   # check other schema
-  x <- fwa_feature("modelled_habitat_potential", bounds = bounds,
-                   schema = "fish_passage")
+  x <- fwa_feature("wbdhu12", bounds = bounds,
+                   schema = "usgs")
 
   expect_is(x, "sf")
-  expect_identical(nrow(x), 125L)
+  expect_identical(nrow(x), 2L)
 
   ### fwa_bbox
   x <- fwa_bbox("fwa_lakes_poly")
