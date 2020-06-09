@@ -20,7 +20,7 @@ fwa_api <- function(path, query) {
   chk_response_json(resp)
   chk_response_status(resp)
 
-  content(resp, "text")
+  content(resp, "text", encoding = "UTF-8")
 }
 
 status_msg <- function(x){
