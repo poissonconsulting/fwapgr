@@ -3,7 +3,7 @@ chk_response_status <- function(x){
     return(invisible())
   }
   msg <- status_msg(x)
-  abort_chk(p0("API request failed with status code ", status_code(x), ": ", msg))
+  abort_chk(glue("API request failed [{status_code(x)}]: {msg}"))
 }
 
 chk_response_json <- function(x){
@@ -11,7 +11,15 @@ chk_response_json <- function(x){
     return(invisible())
   }
   msg <- status_msg(x)
-  abort_chk(p("API did not return JSON:", msg))
+  abort_chk(glue("API did not return JSON: {msg}"))
+}
+
+chk_response_gateway <- function(x){
+  if (vld_response_gateway(x)){
+    return(invisible())
+  }
+  msg <- "Bad Gateway"
+  abort_chk(glue("API request failed [{status_code(x)}]: {msg}"))
 }
 
 chk_bounds <- function(x){

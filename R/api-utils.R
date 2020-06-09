@@ -16,6 +16,7 @@ fwa_api <- function(path, query) {
   url <- modify_url(api_url(), path = path)
   resp <- GET(url, user(), query = query)
 
+  chk_response_gateway(resp)
   chk_response_json(resp)
   chk_response_status(resp)
 
