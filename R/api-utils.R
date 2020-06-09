@@ -22,6 +22,11 @@ fwa_api <- function(path, query) {
   content(resp, "text")
 }
 
+status_msg <- function(x){
+  x <- content(x, "text")
+  jsonlite::fromJSON(x)$message
+}
+
 read_feature <- function(response, epsg){
   x <- sf::st_read(response, quiet = TRUE)
   # api default is 4326
