@@ -1,3 +1,4 @@
+with_mock_api({
 test_that("vld_function_template", {
   path <- "fwa/v1/list_layers"
   url <- modify_url(api_url(), path = path)
@@ -6,4 +7,5 @@ test_that("vld_function_template", {
   expect_true(vld_response_json(resp))
   expect_true(vld_response_status(resp))
   expect_true(vld_response_gateway(resp))
+})
 })

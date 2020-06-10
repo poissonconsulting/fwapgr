@@ -1,0 +1,272 @@
+[
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "hydrosheds",
+        "f_table_name": "hybas_lev12_v1c",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_streams_20k_50k",
+        "f_geometry_column": "geom",
+        "coord_dimension": 4,
+        "srid": 0,
+        "type": "GEOMETRY"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_fish",
+        "f_table_name": "fiss_fish_obsrvtn_pnt_distinct",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "POINT"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "usgs",
+        "f_table_name": "wbdhu12",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_waterbodies_20k_50k",
+        "f_geometry_column": "geom",
+        "coord_dimension": 4,
+        "srid": 0,
+        "type": "GEOMETRY"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_stream_networks_sp",
+        "f_geometry_column": "geom",
+        "coord_dimension": 4,
+        "srid": 3005,
+        "type": "LINESTRING"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_watershed_groups_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_watersheds_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_fish",
+        "f_table_name": "fiss_fish_obsrvtn_pnt_sp",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "POINT"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_waterbody_type_codes",
+        "f_geometry_column": "geom",
+        "coord_dimension": 4,
+        "srid": 0,
+        "type": "GEOMETRY"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_watershed_type_codes",
+        "f_geometry_column": "geom",
+        "coord_dimension": 4,
+        "srid": 0,
+        "type": "GEOMETRY"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_rivers_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_assessment_watersheds_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_linear_boundaries_sp",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTILINESTRING"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_edge_type_codes",
+        "f_geometry_column": "geom",
+        "coord_dimension": 4,
+        "srid": 0,
+        "type": "GEOMETRY"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_bays_and_channels_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_manmade_waterbodies_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_wetlands_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_named_streams",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTILINESTRING"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_named_watersheds_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_glaciers_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_obstructions_sp",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOINT"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_coastlines_sp",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTILINESTRING"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_islands_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_lakes_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_watershed_groups_subdivided",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "POLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_approx_borders",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "LINESTRING"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "dra_dgtl_road_atlas_mpar_sp",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "LINESTRING"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_fish",
+        "f_table_name": "fiss_fish_obsrvtn_unmatched",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "POINT"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_fish",
+        "f_table_name": "fiss_fish_obsrvtn_events_vw",
+        "f_geometry_column": "geom",
+        "coord_dimension": 4,
+        "srid": 3005,
+        "type": "POINT"
+    }
+]

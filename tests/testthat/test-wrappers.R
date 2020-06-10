@@ -1,3 +1,4 @@
+with_mock_api({
 test_that("wrapper functions work", {
   ## fwa_stream_network
   gnis <- "Yakoun River"
@@ -10,5 +11,5 @@ test_that("wrapper functions work", {
   expect_is(x, "sf")
   expect_identical(nrow(x), 1L)
   expect_true(all(x$gnis_name == gnis))
-
+})
 })

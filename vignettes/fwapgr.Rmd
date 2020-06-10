@@ -17,7 +17,10 @@ library(magrittr)
 
 ```{r, include=FALSE}
 library(httptest)
-start_vignette("f")
+set_requester(function (request) {
+    gsub_request(request, "https://www.hillcrestgeo.ca/fwa/v1/", "api/")
+})
+start_vignette("fwapgr")
 ```
 ---
 output: github_document
