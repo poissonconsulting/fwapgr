@@ -23,7 +23,8 @@ Suggests:
     knitr,
     rmarkdown,
     ggplot2,
-    magrittr
+    magrittr,
+    httptest
 Remotes: poissonconsulting/chk
 URL: https://github.com/poissonconsulting/fwapgr
 BugReports: https://github.com/poissonconsulting/fwapgr/issues
