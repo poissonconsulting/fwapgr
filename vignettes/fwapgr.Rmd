@@ -15,6 +15,10 @@ knitr::opts_chunk$set(
 library(magrittr)
 ```
 
+```{r, include=FALSE}
+library(httptest)
+start_vignette("fwapgr")
+```
 ---
 output: github_document
 ---
@@ -30,9 +34,13 @@ fwapgr::fwa_list_layers()
 fwapgr::fwa_list_columns('fwa_stream_networks_sp')
 ```
 
-`fwa_feature` is the workhorse function of `fwapgr`, allowing us to retrieve data from any available layer in the database and filter using a SQL WHERE statement. To get a linestring feature of the Yakoun river, we could use the 'fwa_stream_networks_sp' or 'fwa_named_streams' layers and filter by `gnis_name` column.
+`fwa_feature` is the workhorse function of `fwapgr`, allowing us to retrieve data from any available layer in the database and filter using a SQL WHERE statement. To get a linestring feature of the Yakoun river, we could use the 'fwa_stream_networks_sp' or 'fwa_named_streams' layers and filter by `gnis_name` column. 
 
-However, for this specific case we can use the convenience function `fwa_gnis_streams` and `fwa_search_gnis_streams` to find a valid gnis_name. We use the `columns` argument to get the `blue_line_key` column along with the geometry. 
+```{r, results='hide'}
+fwapgr::fwa_feature("fwa_stream_networks_sp", filter = "gnis_name = 'Yakoun River'", columns = "blue_line_key")
+```
+
+However, for this specific case we can use the convenience function `fwa_gnis_streams`. We can ensure that we have a valid 'gnis_name' using `fwa_search_gnis_streams` and we use the `columns` argument to get the `blue_line_key` column along with the geometry. 
 ```{r}
 print(fwapgr::fwa_search_gnis_streams("yakoun"))
 yakoun <- fwapgr::fwa_gnis_streams("Yakoun River", columns = "blue_line_key")
@@ -72,4 +80,6 @@ ggplot2::ggplot(data = yakoun) +
   ggplot2::geom_sf(lwd = 0.3) +
   ggplot2::geom_sf(data = lakes, fill = "steelblue", lwd = 0.1)
 ```
-
+```{r, include=FALSE}
+end_vignette()
+```
