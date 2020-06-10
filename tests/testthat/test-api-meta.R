@@ -26,7 +26,8 @@ with_mock_api({
     x <- fwa_search_gnis_streams()
     expect_true(is.character(x))
     x <- fwa_search_gnis_streams("sangan")
-    expect_length(x, 4L)
+    # check unique
+    expect_length(x, 1L)
     expect_true(all(x == "Sangan River"))
     x <- fwa_search_gnis_streams("sangan", ignore_case = FALSE)
     expect_length(x, 0L)

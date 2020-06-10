@@ -66,7 +66,7 @@ fwa_list_gnis_streams <- function(gnis_name = NULL, ignore_case = TRUE){
 #' @examples
 #' fwa_search_gnis_streams("sangan")
 fwa_search_gnis_streams <- function(gnis_name = NULL, ignore_case = TRUE){
-  x <- as.character(gnis_stream$gnis_name)
+  x <- unique(as.character(gnis_stream$gnis_name))
   if(is.null(gnis_name))
     return(x)
 
