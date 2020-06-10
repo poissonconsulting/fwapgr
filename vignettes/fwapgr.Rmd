@@ -43,7 +43,7 @@ fwapgr::fwa_list_columns('fwa_stream_networks_sp')
 fwapgr::fwa_feature("fwa_stream_networks_sp", filter = "gnis_name = 'Yakoun River'", columns = "blue_line_key")
 ```
 
-However, for this specific case we can use the convenience function `fwa_gnis_streams`. We can ensure that we have a valid 'gnis_name' using `fwa_search_gnis_streams` and we use the `columns` argument to get the `blue_line_key` column along with the geometry. 
+However, for this specific case we can use the convenience function `fwa_gnis_streams` and ensure that we have a valid 'gnis_name' by using `fwa_search_gnis_streams`. We use the `columns` argument to get the `blue_line_key` column along with the geometry. 
 ```{r}
 print(fwapgr::fwa_search_gnis_streams("yakoun"))
 yakoun <- fwapgr::fwa_gnis_streams("Yakoun River", columns = "blue_line_key")
