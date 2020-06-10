@@ -136,7 +136,8 @@
   <span class='kw'>columns</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>bounds</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>geom_column</span> <span class='kw'>=</span> <span class='st'>"geom"</span>,
-  <span class='kw'>epsg</span> <span class='kw'>=</span> <span class='fl'>4326</span>
+  <span class='kw'>epsg</span> <span class='kw'>=</span> <span class='fl'>4326</span>,
+  <span class='kw'>named_streams</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -162,6 +163,11 @@
       <th>epsg</th>
       <td><p>An integer of the epsg to transform features to.</p></td>
     </tr>
+    <tr>
+      <th>named_streams</th>
+      <td><p>A flag indicating whether to get data from the 'fwa_named_streams' layer.
+If FALSE, the 'fwa_stream_networks_sp' layer is used.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -169,16 +175,24 @@
     <p>A sf object</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>fwa_gnis_streams</span>(<span class='st'>'Sangan River'</span>)</div><div class='output co'>#&gt; Simple feature collection with 4 features and 0 fields
-#&gt; geometry type:  MULTILINESTRING
-#&gt; dimension:      XY
-#&gt; bbox:           xmin: -131.9972 ymin: 53.94994 xmax: -131.9169 ymax: 54.03317
+    <pre class="examples"><div class='input'><span class='fu'>fwa_gnis_streams</span>(<span class='st'>'Sangan River'</span>)</div><div class='output co'>#&gt; Simple feature collection with 21 features and 0 fields
+#&gt; geometry type:  LINESTRING
+#&gt; dimension:      XYZ
+#&gt; bbox:           xmin: -131.9972 ymin: 53.94994 xmax: -131.9168 ymax: 54.0332
+#&gt; z_range:        zmin: 1 zmax: 67
 #&gt; CRS:            4326
-#&gt;                         geometry
-#&gt; 1 MULTILINESTRING ((-131.9919...
-#&gt; 2 MULTILINESTRING ((-131.9458...
-#&gt; 3 MULTILINESTRING ((-131.9308...
-#&gt; 4 MULTILINESTRING ((-131.9196...</div></pre>
+#&gt; First 10 features:
+#&gt;                          geometry
+#&gt; 1  LINESTRING Z (-131.9266 53....
+#&gt; 2  LINESTRING Z (-131.9191 53....
+#&gt; 3  LINESTRING Z (-131.9272 53....
+#&gt; 4  LINESTRING Z (-131.9185 53....
+#&gt; 5  LINESTRING Z (-131.9631 54....
+#&gt; 6  LINESTRING Z (-131.9195 54....
+#&gt; 7  LINESTRING Z (-131.9435 53....
+#&gt; 8  LINESTRING Z (-131.9185 54....
+#&gt; 9  LINESTRING Z (-131.9919 54....
+#&gt; 10 LINESTRING Z (-131.9212 54....</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
