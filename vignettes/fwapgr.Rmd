@@ -17,7 +17,7 @@ library(magrittr)
 
 ```{r, include=FALSE}
 library(httptest)
-start_vignette("fwapgr")
+start_vignette("f")
 ```
 ---
 output: github_document

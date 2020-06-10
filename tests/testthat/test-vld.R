@@ -5,4 +5,5 @@ test_that("vld_function_template", {
 
   expect_true(vld_response_json(resp))
   expect_true(vld_response_status(resp))
+  expect_true(vld_response_gateway(resp))
 })

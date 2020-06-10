@@ -32,19 +32,27 @@ test_that("api feature calls work", {
 
   # check columns
   x <- fwa_feature(table, filter = filter_sql, columns = columns)
+  expect_is(x, "sf")
   expect_identical(c(columns, "geometry"), names(x))
 
-  # check bounds (bounds are from chiliwack so should return nothing)
-  x <- fwa_feature(table, filter = filter_sql, bounds = bounds)
-  expect_identical(nrow(x), 0L)
+  # check filter and bounds
+  # this will return error because no features within bounds
+  expect_error(fwa_feature(table, filter = filter_sql, bounds = bounds))
 
-  # check null filter and lakes table
+  # returns features within bounds
+  filter_sql <- "gnis_name_1 = 'Sardis Pond'"
+  x <- fwa_feature("fwa_lakes_poly", filter = filter_sql, bounds = bounds)
+  expect_is(x, "sf")
+  expect_identical(nrow(x), 1L)
+
+  # check null filter and bounds lakes table
   x <- fwa_feature("fwa_lakes_poly", bounds = bounds)
+  expect_is(x, "sf")
+  expect_identical(nrow(x), 7L)
 
   # check other schema
   x <- fwa_feature("wbdhu12", bounds = bounds,
                    schema = "usgs")
-
   expect_is(x, "sf")
   expect_identical(nrow(x), 2L)
 
