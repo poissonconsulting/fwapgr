@@ -25,7 +25,7 @@ library(fwapgr)
 [![R build status](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions)
 <!-- badges: end -->
 
-An R package 📦 for retrieving data from the [B.C. Freshwater Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater). Data are provided as [simple features](https://github.com/r-spatial/sf).  
+An R package 📦 for retrieving data from the [B.C. Freshwater Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater) using [fwapg](https://github.com/smnorris/fwapg). Data are provided as [simple features](https://github.com/r-spatial/sf).  
 
 - `fwa_()` - Get features from a layer.
 - `fwa_gnis_()` - Get features by gnis_name.
