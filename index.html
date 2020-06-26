@@ -85,7 +85,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>An R package 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a>. Data are provided as <a href="https://github.com/r-spatial/sf">simple features</a>.</p>
+<p>An R package 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a> using <a href="https://github.com/smnorris/fwapg">fwapg</a>. Data are provided as <a href="https://github.com/r-spatial/sf">simple features</a>.</p>
 <ul>
 <li>
 <code>fwa_()</code> - Get features from a layer.</li>
@@ -100,37 +100,41 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install the developmental version from <a href="https://github.com/poissonconsulting/fwapgr">GitHub</a></p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># install.packages("remotes")</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"poissonconsulting/fwapgr"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="co"># install.packages("remotes")</span>
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"poissonconsulting/fwapgr"</span>)
+</pre></div>
 </div>
 <div id="demonstration" class="section level2">
 <h2 class="hasAnchor">
 <a href="#demonstration" class="anchor"></a>Demonstration</h2>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="kw pkg">fwapgr</span><span class="kw ns">::</span><span class="fu"><a href="reference/fwa_search_gnis_streams.html">fwa_search_gnis_streams</a></span>(<span class="st">"yakoun"</span>)
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="kw">fwapgr</span>::<span class="fu"><a href="reference/fwa_search_gnis_streams.html">fwa_search_gnis_streams</a></span>(<span class="st">"yakoun"</span>)
 <span class="co">#&gt; [1] "Yakoun River"</span>
 
-<span class="no">yakoun</span> <span class="kw">&lt;-</span> <span class="kw pkg">fwapgr</span><span class="kw ns">::</span><span class="fu"><a href="reference/fwa_feature.html">fwa_feature</a></span>(<span class="st">"fwa_stream_networks_sp"</span>,
-                              <span class="kw">filter</span> <span class="kw">=</span> <span class="st">"gnis_name = 'Yakoun River'"</span>,
-                              <span class="kw">columns</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"gnis_name"</span>))
-<span class="no">yakoun</span>
+<span class="kw">yakoun</span> <span class="op">&lt;-</span> <span class="kw">fwapgr</span>::<span class="fu"><a href="reference/fwa_feature.html">fwa_feature</a></span>(<span class="st">"fwa_stream_networks_sp"</span>, 
+                              filter = <span class="st">"gnis_name = 'Yakoun River'"</span>, 
+                              columns = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"gnis_name"</span>))
+<span class="kw">yakoun</span>
 <span class="co">#&gt; Simple feature collection with 129 features and 1 field</span>
-<span class="co">#&gt; geometry type:  MULTILINESTRING</span>
+<span class="co">#&gt; geometry type:  LINESTRING</span>
 <span class="co">#&gt; dimension:      XYZ</span>
 <span class="co">#&gt; bbox:           xmin: -132.2789 ymin: 53.34324 xmax: -132.1283 ymax: 53.65705</span>
 <span class="co">#&gt; z_range:        zmin: 1 zmax: 99</span>
 <span class="co">#&gt; CRS:            4326</span>
 <span class="co">#&gt; First 10 features:</span>
 <span class="co">#&gt;       gnis_name                       geometry</span>
-<span class="co">#&gt; 1  Yakoun River MULTILINESTRING Z ((-132.26...</span>
-<span class="co">#&gt; 2  Yakoun River MULTILINESTRING Z ((-132.19...</span>
-<span class="co">#&gt; 3  Yakoun River MULTILINESTRING Z ((-132.14...</span>
-<span class="co">#&gt; 4  Yakoun River MULTILINESTRING Z ((-132.26...</span>
-<span class="co">#&gt; 5  Yakoun River MULTILINESTRING Z ((-132.27...</span>
-<span class="co">#&gt; 6  Yakoun River MULTILINESTRING Z ((-132.20...</span>
-<span class="co">#&gt; 7  Yakoun River MULTILINESTRING Z ((-132.26...</span>
-<span class="co">#&gt; 8  Yakoun River MULTILINESTRING Z ((-132.27...</span>
-<span class="co">#&gt; 9  Yakoun River MULTILINESTRING Z ((-132.14...</span>
-<span class="co">#&gt; 10 Yakoun River MULTILINESTRING Z ((-132.27...</span></pre></div>
+<span class="co">#&gt; 1  Yakoun River LINESTRING Z (-132.2658 53....</span>
+<span class="co">#&gt; 2  Yakoun River LINESTRING Z (-132.14 53.51...</span>
+<span class="co">#&gt; 3  Yakoun River LINESTRING Z (-132.2742 53....</span>
+<span class="co">#&gt; 4  Yakoun River LINESTRING Z (-132.1965 53....</span>
+<span class="co">#&gt; 5  Yakoun River LINESTRING Z (-132.2088 53....</span>
+<span class="co">#&gt; 6  Yakoun River LINESTRING Z (-132.253 53.4...</span>
+<span class="co">#&gt; 7  Yakoun River LINESTRING Z (-132.204 53.6...</span>
+<span class="co">#&gt; 8  Yakoun River LINESTRING Z (-132.2483 53....</span>
+<span class="co">#&gt; 9  Yakoun River LINESTRING Z (-132.2727 53....</span>
+<span class="co">#&gt; 10 Yakoun River LINESTRING Z (-132.2687 53....</span>
+</pre></div>
 </div>
 <div id="information" class="section level2">
 <h2 class="hasAnchor">
