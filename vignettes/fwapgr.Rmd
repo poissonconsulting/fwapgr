@@ -65,7 +65,7 @@ lakes <- fwapgr::fwa_feature("fwa_lakes_poly", bounds = bbox)
 Finally, lets get all streams within the watershed bounds that have a 'stream_order' less than 3.
 ```{r warning=FALSE, message=FALSE}
 streams <- fwapgr::fwa_feature("fwa_stream_networks_sp",
-                               filter = "stream_order < 3",
+                               filter = "stream_order > 1",
                                bounds = bbox)
 ```
 
