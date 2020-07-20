@@ -12,6 +12,7 @@ name: R-CMD-check
 
 jobs:
   R-CMD-check:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
     runs-on: ${{ matrix.config.os }}
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
@@ -20,10 +21,11 @@ jobs:
       fail-fast: false
       matrix:
         config:
+          - {os: macOS-latest,   r: 'devel'}
+          - {os: macOS-latest,   r: 'release'}
+          - {os: macOS-latest,   r: 'oldrel'}
           - {os: windows-latest, r: 'release'}
-          - {os: macOS-latest, r: 'release'}
-          - {os: macOS-latest, r: 'devel'}
-          - {os: ubuntu-16.04, r: 'release', rspm: "https://packagemanager.rstudio.com/cran/__linux__/xenial/latest"}
+          - {os: ubuntu-16.04,   r: 'release', rspm: "https://packagemanager.rstudio.com/cran/__linux__/xenial/latest"}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -38,25 +40,6 @@ jobs:
           r-version: ${{ matrix.config.r }}
 
       - uses: r-lib/actions/setup-pandoc@master
-
-      - name: Brew and macOS config
-        if: runner.os == 'macOS'
-        run: |
-          brew install pkg-config
-          brew install udunits
-          brew install gdal
-          cat <<EOT >> .Renviron
-          PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/
-          PROJ_LIB=/usr/local/opt/proj/share/proj/
-          # for installing XML package from source
-          XML_CONFIG=/usr/local/opt/libxml2/bin/xml2-config
-          EOT
-          cat <<EOT >> .Rprofile
-          config_args <- c("sf" = "--with-proj-lib=/usr/local/lib/", "rgdal" = "--with-proj-lib=/usr/local/lib/ --with-proj-include=/usr/local/include/")
-          r <- getOption("repos")
-          r["CRAN"] <- "https://cran.rstudio.com"
-          options(configure.args = config_args, repos = r)
-          EOT
 
       - name: Query dependencies
         run: |
@@ -82,15 +65,6 @@ jobs:
           sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
           sudo -s eval "$sysreqs"
 
-          # install spatial dependencies
-            sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
-            sudo apt update
-            sudo apt install \
-              libudunits2-dev \
-              libgdal-dev \
-              libgeos-dev \
-              libproj-dev
-
       - name: Install dependencies
         run: |
           remotes::install_deps(dependencies = TRUE)
@@ -112,9 +86,9 @@ jobs:
 
       - name: action-slack
         if: failure()
-        uses: 8398a7/action-slack@v3.0.0
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        uses: 8398a7/action-slack@v3.0.0
         with:
           status: ${{ job.status }}
           author_name: "github action: R-CMD-check"
