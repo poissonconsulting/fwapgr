@@ -22,7 +22,7 @@ chk_response_gateway <- function(x){
   abort_chk(glue("API request failed [{status_code(x)}]: {msg}"))
 }
 
-chk_bounds <- function(x){
+chk_bbox <- function(x){
   chkor(chk_range(length(x), c(4L, 4L)), chk_null(x))
   chkor(chk_numeric(x), chk_null(x))
 }
