@@ -13,14 +13,15 @@ fwa_bbox(
 )
 }
 \arguments{
-\item{filter}{A named vector or list of the filter(s) to apply, where the list
-names correspond to column names and the list values correspond to the desired
-value, e.g. \code{list(gnis_name = "Sangan River")}.}
+\item{table}{A character string of the table name.}
 
-\item{epsg}{A positive whole number of the epsg to transform features to.}
+\item{filter}{A character string of the SQL WHERE statement to filter features by.}
 
-\item{schema}{A character string of the schema to prepend to collection_id.
-Possible values include 'whse_basemapping', 'usgs', 'hydrosheds' and NULL. If NULL, nothing is prepended.}
+\item{geom_column}{A character string of the name of the geometry column of the table.}
+
+\item{epsg}{An integer of the epsg to transform features to.}
+
+\item{schema}{A character string of the schema. Default 'whse_basemapping' is used for most layers.}
 }
 \value{
 A sf object

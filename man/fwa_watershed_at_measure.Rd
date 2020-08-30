@@ -15,7 +15,7 @@ fwa_watershed_at_measure(
 
 \item{downstream_route_measure}{An integer of the downstream route measure.}
 
-\item{epsg}{A positive whole number of the epsg to transform features to.}
+\item{epsg}{An integer of the epsg to transform features to.}
 }
 \value{
 A sf object

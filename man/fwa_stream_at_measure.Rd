@@ -11,7 +11,7 @@ fwa_stream_at_measure(blue_line_key, downstream_route_measure = 0, epsg = 4326)
 
 \item{downstream_route_measure}{An integer of the downstream route measure.}
 
-\item{epsg}{A positive whole number of the epsg to transform features to.}
+\item{epsg}{An integer of the epsg to transform features to.}
 }
 \value{
 A sf object
