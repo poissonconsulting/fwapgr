@@ -25,9 +25,9 @@ library(fwapgr)
 [![R build status](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions)
 <!-- badges: end -->
 
-An R 📦 for retrieving data from the [B.C. Freshwater Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater) (FWA). `fwapgr` is an R client for [fwapg](https://github.com/smnorris/fwapg), a PostgreSQL database and [web API](https://hillcrestgeo.ca/fwapg/). Data are provided as [simple features](https://github.com/r-spatial/sf).  
+An R 📦 for retrieving data from the [B.C. Freshwater Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater). `fwapgr` is an R client for [fwapg](https://github.com/smnorris/fwapg), a PostgreSQL database and [web API](https://hillcrestgeo.ca/fwapg/). Data are provided as [simple features](https://github.com/r-spatial/sf).  
 
-Get and filter features from collections:  
+Get and filter data from collections:  
 
 * `fwa_collection()`  
 * `fwa_stream_gnis()`  
@@ -60,7 +60,7 @@ remotes::install_github("poissonconsulting/fwapgr")
 fwapgr::fwa_search_gnis_streams("yakoun")
 
 yakoun <- fwapgr::fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Yakoun River'))
-yakoun[c("blue_line_key", "gnis_name", "length_metre", "upstream_area_ha", "stream_order")]
+yakoun[c("blue_line_key", "gnis_name", "length_metre")]
 ```
 
 ## Information

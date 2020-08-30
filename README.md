@@ -16,13 +16,12 @@ status](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.
 <!-- badges: end -->
 
 An R 📦 for retrieving data from the [B.C. Freshwater
-Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater)
-(FWA). `fwapgr` is an R client for
-[fwapg](https://github.com/smnorris/fwapg), a PostgreSQL database and
-[web API](https://hillcrestgeo.ca/fwapg/). Data are provided as [simple
-features](https://github.com/r-spatial/sf).
+Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater).
+`fwapgr` is an R client for [fwapg](https://github.com/smnorris/fwapg),
+a PostgreSQL database and [web API](https://hillcrestgeo.ca/fwapg/).
+Data are provided as [simple features](https://github.com/r-spatial/sf).
 
-Get and filter features from collections:
+Get and filter data from collections:
 
   - `fwa_collection()`  
   - `fwa_stream_gnis()`
@@ -58,36 +57,25 @@ fwapgr::fwa_search_gnis_streams("yakoun")
 #> [1] "Yakoun River"
 
 yakoun <- fwapgr::fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Yakoun River'))
-yakoun[c("blue_line_key", "gnis_name", "length_metre", "upstream_area_ha", "stream_order")]
-#> Simple feature collection with 129 features and 5 fields
+yakoun[c("blue_line_key", "gnis_name", "length_metre")]
+#> Simple feature collection with 129 features and 3 fields
 #> geometry type:  LINESTRING
 #> dimension:      XYZ
 #> bbox:           xmin: -132.2789 ymin: 53.34324 xmax: -132.1283 ymax: 53.65705
 #> z_range:        zmin: 1 zmax: 99
 #> geographic CRS: WGS 84
 #> First 10 features:
-#>    blue_line_key    gnis_name length_metre upstream_area_ha stream_order
-#> 1      360881586 Yakoun River    623.84399         45520.92            5
-#> 2      360881586 Yakoun River    529.95682         45100.58            5
-#> 3      360881586 Yakoun River    203.93703         43844.42            5
-#> 4      360881586 Yakoun River    192.11758         14846.80            5
-#> 5      360881586 Yakoun River    723.10276         22175.55            5
-#> 6      360881586 Yakoun River   1807.56714         54390.74            5
-#> 7      360881586 Yakoun River    499.69498         54390.74            5
-#> 8      360881586 Yakoun River     34.30732         54390.74            5
-#> 9      360881586 Yakoun River    231.06090         48079.44            5
-#> 10     360881586 Yakoun River   1618.76222         54390.74            5
-#>                          geometry
-#> 1  LINESTRING Z (-132.1796 53....
-#> 2  LINESTRING Z (-132.1547 53....
-#> 3  LINESTRING Z (-132.1363 53....
-#> 4  LINESTRING Z (-132.275 53.3...
-#> 5  LINESTRING Z (-132.2647 53....
-#> 6  LINESTRING Z (-132.206 53.6...
-#> 7  LINESTRING Z (-132.204 53.6...
-#> 8  LINESTRING Z (-132.2088 53....
-#> 9  LINESTRING Z (-132.2122 53....
-#> 10 LINESTRING Z (-132.2093 53....
+#>    blue_line_key    gnis_name length_metre                       geometry
+#> 1      360881586 Yakoun River    623.84399 LINESTRING Z (-132.1796 53....
+#> 2      360881586 Yakoun River    529.95682 LINESTRING Z (-132.1547 53....
+#> 3      360881586 Yakoun River    203.93703 LINESTRING Z (-132.1363 53....
+#> 4      360881586 Yakoun River    192.11758 LINESTRING Z (-132.275 53.3...
+#> 5      360881586 Yakoun River    723.10276 LINESTRING Z (-132.2647 53....
+#> 6      360881586 Yakoun River   1807.56714 LINESTRING Z (-132.206 53.6...
+#> 7      360881586 Yakoun River    499.69498 LINESTRING Z (-132.204 53.6...
+#> 8      360881586 Yakoun River     34.30732 LINESTRING Z (-132.2088 53....
+#> 9      360881586 Yakoun River    231.06090 LINESTRING Z (-132.2122 53....
+#> 10     360881586 Yakoun River   1618.76222 LINESTRING Z (-132.2093 53....
 ```
 
 ## Information
