@@ -42,11 +42,11 @@ fwa_list_columns <- function(table, schema = "whse_basemapping"){
   tibble::as_tibble(df)
 }
 
-#' FWA feature
+#' FWA collection
 #'
-#' Get features from table.
+#' Get and filter collection from database.
 #'
-#' @param collection_id A character string of the table name.
+#' @param table A character string of the table name.
 #' @param filter A named vector or list of the filter(s) to apply, where the list
 #' names correspond to column names and the list values correspond to the desired
 #' value, e.g. `list(gnis_name = "Sangan River")`.
@@ -61,8 +61,8 @@ fwa_list_columns <- function(table, schema = "whse_basemapping"){
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_feature("fwa_stream_networks_sp", filter = "gnis_name = 'Sangan River'")
-fwa_feature <- function(collection_id,
+#' fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Sangan River'))
+fwa_collection <- function(table,
                         filter = NULL,
                         bbox = NULL,
                         columns = NULL,
@@ -71,7 +71,7 @@ fwa_feature <- function(collection_id,
                         offset = 0,
                         schema = "whse_basemapping"){
 
-  chk_string(collection_id)
+  chk_string(table)
   chkor(chk_is(filter, "vector"), chk_is(filter, "list"), chk_null(filter))
   chkor(chk_named(filter), chk_null(filter))
   chkor(chk_character(columns), chk_null(columns))
@@ -82,11 +82,11 @@ fwa_feature <- function(collection_id,
   chkor(chk_subset(schema, c("whse_basemapping", "usgs", "hydrosheds")),
         chk_null(schema))
 
-  collection_id <- add_schema(collection_id, schema)
+  table <- add_schema(table, schema)
   columns <- format_columns(columns)
   bbox <- format_bounds(bbox)
 
-  path <- glue("fwapg/collections/{collection_id}/items.json")
+  path <- glue("fwapg/collections/{table}/items.json")
   query <- c(filter,
              list(bbox = bbox,
                   properties = columns,
