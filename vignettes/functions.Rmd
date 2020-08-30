@@ -2,7 +2,7 @@
 title: "Using fwapgr spatial operations"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Using fwapgr}
+  %\VignetteIndexEntry{Using fwapgr spatial operations}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
