@@ -11,7 +11,7 @@
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_nearest_stream(356308001)
+#' fwa_nearest_stream(x = -132.26, y = 53.36, srid = 4326)
 fwa_nearest_stream <- function(x, y, srid,
                                tolerance = 5000,
                                num_features = 1,
