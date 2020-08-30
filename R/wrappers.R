@@ -2,26 +2,30 @@
 #'
 #' Get stream network features from gnis_name.
 #'
-#' @inheritParams fwa_feature
+#' @inheritParams fwa_collection
 #' @param gnis_name A character string of the gnis_name.
 #' @param named_streams A flag indicating whether to get data from the 'fwa_named_streams' layer.
 #'  If FALSE, the 'fwa_stream_networks_sp' layer is used.
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_gnis_streams('Sangan River')
-fwa_gnis_streams <- function(gnis_name, columns = NULL,
-                                     bounds = NULL, geom_column = "geom",
-                                     epsg = 4326, named_streams = FALSE){
+#' fwa_stream_gnis('Sangan River')
+fwa_stream_gnis <- function(gnis_name,
+                             columns = NULL,
+                             bbox = NULL,
+                             epsg = 4326,
+                             named_streams = FALSE){
 
   chk_string(gnis_name)
   table <- "fwa_stream_networks_sp"
   if(named_streams)
     table <- "fwa_named_streams"
-  filter <- filter_gnis(gnis_name)
+  filter <- list(gnis_name = gnis_name)
 
-  fwa_feature(table = table, filter = filter, columns = columns,
-              bounds = bounds, geom_column = geom_column,
-              epsg = epsg)
+  fwa_collection(table = table,
+                 columns = columns,
+                 filter = filter,
+                 bbox = bbox,
+                 epsg = epsg)
 }
 

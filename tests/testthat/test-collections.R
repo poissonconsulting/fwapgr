@@ -12,6 +12,10 @@ test_that("API collections works", {
   expect_true(all(x$gnis_name == "Chilliwack Creek"))
   expect_is(x, "sf")
 
+  # test wrapper
+  y <- fwa_stream_gnis("Chilliwack Creek")
+  expect_identical(x, y)
+
   # check columns
   x <- fwa_collection(table, filter = filter, columns = columns)
   expect_is(x, "sf")
@@ -42,5 +46,6 @@ test_that("API collections works", {
   # check bbox outside feature
   filter <- list(gnis_name = "Sangan River")
   expect_error(fwa_collection(table, filter = filter, bbox = bbox), class = "chk_error")
+
 
 })
