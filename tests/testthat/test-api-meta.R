@@ -10,7 +10,7 @@ with_mock_api({
     ## list columns
     x <- fwa_list_columns("fwa_stream_networks_sp")
     expect_is(x, "tbl")
-    expect_identical(names(x), c("field_name", "field_type"))
+    expect_identical(names(x), c("name", "type", "description"))
 
     ## list named streams
     x <- fwa_list_gnis_streams()

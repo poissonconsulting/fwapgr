@@ -19,7 +19,7 @@ fwa_nearest_stream <- function(x, y, srid,
   chk_number(x)
   chk_number(y)
   chk_number(tolerance)
-  chk_whole_number(limit)
+  chk_whole_number(num_features)
   chk_whole_number(srid)
   chk_whole_number(epsg)
 

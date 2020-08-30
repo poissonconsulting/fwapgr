@@ -19,15 +19,6 @@
     },
     {
         "f_table_catalog": "postgis",
-        "f_table_schema": "whse_fish",
-        "f_table_name": "fiss_fish_obsrvtn_pnt_distinct",
-        "f_geometry_column": "geom",
-        "coord_dimension": 2,
-        "srid": 3005,
-        "type": "POINT"
-    },
-    {
-        "f_table_catalog": "postgis",
         "f_table_schema": "usgs",
         "f_table_name": "wbdhu12",
         "f_geometry_column": "geom",
@@ -47,11 +38,20 @@
     {
         "f_table_catalog": "postgis",
         "f_table_schema": "whse_basemapping",
-        "f_table_name": "fwa_stream_networks_sp",
+        "f_table_name": "fwa_watersheds_poly",
         "f_geometry_column": "geom",
-        "coord_dimension": 4,
+        "coord_dimension": 2,
         "srid": 3005,
-        "type": "LINESTRING"
+        "type": "MULTIPOLYGON"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_basins_poly",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 0,
+        "type": "GEOMETRY"
     },
     {
         "f_table_catalog": "postgis",
@@ -61,24 +61,6 @@
         "coord_dimension": 2,
         "srid": 3005,
         "type": "MULTIPOLYGON"
-    },
-    {
-        "f_table_catalog": "postgis",
-        "f_table_schema": "whse_basemapping",
-        "f_table_name": "fwa_watersheds_poly",
-        "f_geometry_column": "geom",
-        "coord_dimension": 2,
-        "srid": 3005,
-        "type": "MULTIPOLYGON"
-    },
-    {
-        "f_table_catalog": "postgis",
-        "f_table_schema": "whse_fish",
-        "f_table_name": "fiss_fish_obsrvtn_pnt_sp",
-        "f_geometry_column": "geom",
-        "coord_dimension": 2,
-        "srid": 3005,
-        "type": "POINT"
     },
     {
         "f_table_catalog": "postgis",
@@ -244,12 +226,21 @@
     },
     {
         "f_table_catalog": "postgis",
-        "f_table_schema": "whse_basemapping",
-        "f_table_name": "dra_dgtl_road_atlas_mpar_sp",
+        "f_table_schema": "whse_fish",
+        "f_table_name": "fiss_fish_obsrvtn_pnt_distinct",
         "f_geometry_column": "geom",
         "coord_dimension": 2,
         "srid": 3005,
-        "type": "LINESTRING"
+        "type": "POINT"
+    },
+    {
+        "f_table_catalog": "postgis",
+        "f_table_schema": "whse_fish",
+        "f_table_name": "fiss_fish_obsrvtn_pnt_sp",
+        "f_geometry_column": "geom",
+        "coord_dimension": 2,
+        "srid": 3005,
+        "type": "POINT"
     },
     {
         "f_table_catalog": "postgis",
@@ -262,11 +253,11 @@
     },
     {
         "f_table_catalog": "postgis",
-        "f_table_schema": "whse_fish",
-        "f_table_name": "fiss_fish_obsrvtn_events_vw",
+        "f_table_schema": "whse_basemapping",
+        "f_table_name": "fwa_stream_networks_sp",
         "f_geometry_column": "geom",
         "coord_dimension": 4,
         "srid": 3005,
-        "type": "POINT"
+        "type": "LINESTRING"
     }
 ]

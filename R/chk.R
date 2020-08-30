@@ -26,3 +26,9 @@ chk_bbox <- function(x){
   chkor(chk_range(length(x), c(4L, 4L)), chk_null(x))
   chkor(chk_numeric(x), chk_null(x))
 }
+
+# for backwards compatibility
+chk_bounds <- function(x){
+  chkor(chk_range(length(x), c(4L, 4L)), chk_null(x))
+  chkor(chk_numeric(x), chk_null(x))
+}
