@@ -26,5 +26,5 @@ A sf object
 Provided a point (x, y, srid), return stream(s) nearest to the point within specified tolerance.
 }
 \examples{
-fwa_nearest_stream(356308001)
+fwa_nearest_stream(x = -132.26, y = 53.36, srid = 4326)
 }
