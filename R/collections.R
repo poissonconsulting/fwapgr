@@ -1,11 +1,11 @@
-#' FWA list collections
+#' FWA list tables
 #'
-#' List available collections.
+#' List available tables in data collections.
 #'
 #' @return A tibble
 #' @export
 #' @examples
-#' fwa_list_collections()
+#' fwa_list_tables()
 fwa_list_tables <- function(){
 
   path <- glue("fwapg/collections")
