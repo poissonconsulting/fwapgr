@@ -1,11 +1,11 @@
 structure(list(url = "https://hillcrestgeo.ca/fwapg/collections/whse_basemapping.fwa_stream_networks_sp/items.json?gnis_name=Sangan%20River&bbox=-122.01%2C49.11%2C-121.86%2C49.16&limit=10000&offset=0", 
     status_code = 404L, headers = structure(list(server = "nginx/1.10.3 (Ubuntu)", 
-        date = "Sun, 30 Aug 2020 06:33:26 GMT", `content-type` = "text/plain; charset=utf-8", 
+        date = "Sun, 30 Aug 2020 22:04:10 GMT", `content-type` = "text/plain; charset=utf-8", 
         `content-length` = "67", connection = "keep-alive", `content-encoding` = "deflate", 
         vary = "Accept-Encoding", `x-content-type-options` = "nosniff"), class = c("insensitive", 
     "list")), all_headers = list(list(status = 404L, version = "HTTP/1.1", 
         headers = structure(list(server = "nginx/1.10.3 (Ubuntu)", 
-            date = "Sun, 30 Aug 2020 06:33:26 GMT", `content-type` = "text/plain; charset=utf-8", 
+            date = "Sun, 30 Aug 2020 22:04:10 GMT", `content-type` = "text/plain; charset=utf-8", 
             `content-length` = "67", connection = "keep-alive", 
             `content-encoding` = "deflate", vary = "Accept-Encoding", 
             `x-content-type-options` = "nosniff"), class = c("insensitive", 
@@ -14,7 +14,7 @@ structure(list(url = "https://hillcrestgeo.ca/fwapg/collections/whse_basemapping
         expiration = structure(numeric(0), class = c("POSIXct", 
         "POSIXt")), name = logical(0), value = logical(0)), row.names = integer(0), class = "data.frame"), 
     content = charToRaw("Collection not found: whse_basemapping.fwa_stream_networks_sp\n"), 
-    date = structure(1598769206, class = c("POSIXct", "POSIXt"
-    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 3.3e-05, 
-    connect = 3.5e-05, pretransfer = 0.000104, starttransfer = 0.24491, 
-    total = 0.244969)), class = "response")
+    date = structure(1598825050, class = c("POSIXct", "POSIXt"
+    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 3.1e-05, 
+    connect = 3.2e-05, pretransfer = 8.4e-05, starttransfer = 0.190051, 
+    total = 0.190097)), class = "response")

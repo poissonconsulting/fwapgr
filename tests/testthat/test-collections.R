@@ -14,6 +14,7 @@ with_mock_api({
     expect_is(x, "sf")
 
     # test wrapper
+    x <- fwa_collection("fwa_named_streams", filter = filter)
     y <- fwa_stream_gnis("Chilliwack Creek")
     expect_identical(x, y)
 
