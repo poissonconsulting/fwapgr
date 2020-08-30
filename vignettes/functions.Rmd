@@ -1,0 +1,70 @@
+---
+title: "Using fwapgr spatial operations"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using fwapgr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(magrittr)
+```
+
+```{r, include=FALSE}
+library(httptest)
+set_requester(function (request) {
+    gsub_request(request, "https://www.hillcrestgeo.ca/fwapg/", "api/")
+})
+start_vignette("functions")
+```
+---
+output: github_document
+---
+
+In addition to getting and filtering Freshwater Atlas data, `fwapgr` has a few functions that perform useful spatial operations. 
+
+* `fwa_nearest_stream()`
+* `fwa_watershed_at_measure()`
+* `fwa_stream_at_measure()`
+* `fwa_watershed_at_hex()`
+
+In this article, we'll explore a couple of these. 
+
+Let's start with a completely unrealistic scenario. You are out picking chanterelle mushrooms on the backroads of Queen Charlotte, Haida Gwaii, and suddenly find yourself lost and thirsty. Luckily, you have a computer and decent enough cell service for an internet connection. Let's find the two nearest rivers to your location (coordinates are 53.36/-132.26).
+```{r}
+# my coordinates
+coords <- c(x = -132.26, y = 53.36)
+nearest <- fwapgr::fwa_nearest_stream(x = coords["x"], y = coords["y"], 
+                                      srid = 4326, num_features = 2)
+nearest[c("distance_to_stream", "gnis_name")]
+```
+The nearest stream is around 500m away, but it is unnamed so it might not be very big. The Yakoun River is only around 700m away though!
+
+```{r}
+yakoun <- fwapgr::fwa_stream_gnis(nearest$gnis_name[2])
+```
+
+
+The `fwa_watershed_at_measure` function allows us to get a watershed polygon at a distance upstream of the mouth of a stream. Stream is provided as a `blue_line_key` and distance is provided in meters as `downstream_route_measure`. Let's compare the watersheds 1km and 20km upstream of Yakoun River.
+
+```{r}
+blk <- yakoun$blue_line_key
+wshed_1000 <- fwapgr::fwa_watershed_at_measure(blk, downstream_route_measure = 1000)
+wshed_20000 <- fwapgr::fwa_watershed_at_measure(blk, downstream_route_measure = 20000)
+wshed_1000
+```
+
+```{r dpi=300, fig.width=7, fig.height=7}
+ggplot2::ggplot(data = yakoun) +
+  ggplot2::geom_sf(data = wshed_1000, lwd = 0.15, fill = "steelblue") +
+  ggplot2::geom_sf(data = wshed_20000, lwd = 0.15, fill = 'red', alpha = 0.5) +
+  ggplot2::geom_sf(lwd = 0.3) 
+```
+```{r, include=FALSE}
+end_vignette()
+```

@@ -1,0 +1,172 @@
+{
+    "id": "whse_basemapping.fwa_stream_networks_sp",
+    "title": "whse_basemapping.fwa_stream_networks_sp",
+    "description": "Data for table whse_basemapping.fwa_stream_networks_sp",
+    "extent": {
+        "crs": "EPSG:3005",
+        "bbox": [
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    "geometrytype": "LineStringZM",
+    "properties": [
+        {
+            "name": "linear_feature_id",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "watershed_group_id",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "edge_type",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "blue_line_key",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "watershed_key",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "fwa_watershed_code",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "name": "local_watershed_code",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "name": "watershed_group_code",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "name": "downstream_route_measure",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "length_metre",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "feature_source",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "name": "gnis_id",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "gnis_name",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "name": "left_right_tributary",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "name": "stream_order",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "stream_magnitude",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "waterbody_key",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "blue_line_key_50k",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "watershed_code_50k",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "name": "watershed_key_50k",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "watershed_group_code_50k",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "name": "gradient",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "feature_code",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "name": "wscode_ltree",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "name": "localcode_ltree",
+            "type": "string",
+            "description": ""
+        },
+        {
+            "name": "upstream_route_measure",
+            "type": "number",
+            "description": ""
+        },
+        {
+            "name": "upstream_area_ha",
+            "type": "number",
+            "description": ""
+        }
+    ],
+    "links": [
+        {
+            "href": "https://www.hillcrestgeo.ca/fwapg/collections/whse_basemapping.fwa_stream_networks_sp.json",
+            "rel": "self",
+            "type": "application/json",
+            "title": "This document as JSON"
+        },
+        {
+            "href": "https://www.hillcrestgeo.ca/fwapg/collections/whse_basemapping.fwa_stream_networks_sp.html",
+            "rel": "alternate",
+            "type": "text/html",
+            "title": "This document as HTML"
+        },
+        {
+            "href": "https://www.hillcrestgeo.ca/fwapg/collections/whse_basemapping.fwa_stream_networks_sp/items.json",
+            "rel": "items",
+            "type": "application/geo+json",
+            "title": "Features as GeoJSON"
+        }
+    ]
+}

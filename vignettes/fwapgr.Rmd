@@ -18,7 +18,7 @@ library(magrittr)
 ```{r, include=FALSE}
 library(httptest)
 set_requester(function (request) {
-    gsub_request(request, "https://www.hillcrestgeo.ca/fwa/v1/", "api/")
+    gsub_request(request, "https://www.hillcrestgeo.ca/fwapg/", "api/")
 })
 start_vignette("fwapgr")
 ```
@@ -26,47 +26,47 @@ start_vignette("fwapgr")
 output: github_document
 ---
 
-The `fwapgr` package is used to retrieve data from the BC Freshwater Atlas. In this article, we'll get stream, lake, and watershed data to create a map of the Yakoun River watershed in Haida Gwaii, BC. 
+`fwapgr` is an R client for the [BC Freshwater Atlas PostgreSQL](https://github.com/smnorris/fwapg) database [web API](https://www.hillcrestgeo.ca/fwapg/index.html). It gets and filters data from the BC Freshwater Atlas into R!  
 
-We can get started by looking at all available layers and which columns are in a specific layer.
+In this article, we will create a basic map of the Yakoun River watershed in Haida Gwaii, BC, primarily using `fwapgr`'s workhorse function: `fwa_collection`. We can get started by looking at all available tables and which columns are in a specific table.
 ```{r}
-fwapgr::fwa_list_layers()
+fwapgr::fwa_list_tables()
 ```
 
 ```{r}
 fwapgr::fwa_list_columns('fwa_stream_networks_sp')
 ```
 
-`fwa_feature` is the workhorse function of `fwapgr`, allowing us to retrieve data from any available layer in the database and filter using a SQL WHERE statement. To get a linestring feature of the Yakoun river, we could use the 'fwa_stream_networks_sp' or 'fwa_named_streams' layers and filter by `gnis_name` column. 
+`fwa_collection` allows us to retrieve data from any available table in the database and filter for desired values on any column. To get a linestring feature of the Yakoun river, we could use the 'fwa_stream_networks_sp' or 'fwa_named_streams' table and filter by `gnis_name` column. 
 
 ```{r, results='hide'}
-fwapgr::fwa_feature("fwa_stream_networks_sp", filter = "gnis_name = 'Yakoun River'", columns = "blue_line_key")
+fwapgr::fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = "Yakoun River"))
 ```
 
-However, for this specific case we can use the convenience function `fwa_gnis_streams` and ensure that we have a valid 'gnis_name' by using `fwa_search_gnis_streams`. We use the `columns` argument to get the `blue_line_key` column along with the geometry. 
+There are a few convenience functions available for occasions when you are looking for a gnis_name. We can search for a valid 'gnis_name' using `fwa_search_gnis_streams` and pipe that into `fwa_stream_gnis`, which is just a wrapper on `fwa_collection(table = "fwa_stream_networks_sp", filter = list(gnis_name = ??))`.
 ```{r}
-print(fwapgr::fwa_search_gnis_streams("yakoun"))
-yakoun <- fwapgr::fwa_gnis_streams("Yakoun River", columns = "blue_line_key")
-yakoun
+yakoun <- fwapgr::fwa_search_gnis_streams("yakoun") %>%
+  print() %>%
+  fwapgr::fwa_stream_gnis()
+  
+yakoun[1:2]
 ```
 
-Next let's get the Yakoun River watershed with `fwa_watershed`, which requires a `blue_line_key`.
+Let's also get the Yakoun River watershed using the "fwa_named_watersheds_poly" table.
 ```{r}
-blue_line_key <- unique(yakoun$blue_line_key)
-wshed <- fwapgr::fwa_watershed(blue_line_key)
+wshed <- fwapgr::fwa_collection(table = "fwa_named_watersheds_poly", filter = list(gnis_name = "Yakoun River"))
 ```
 
-We can use the 'fwa_lakes_poly' layer to get lake data and use the `bounds` argument to only retrieve lakes within the bounding box of the watershed. 
+Next, let's get all the lakes that are within the Yakoun river watershed. We can use the `bbox` argument for this and the 'fwa_lakes_poly' table. 
 ```{r}
 bbox <- sf::st_bbox(wshed)
-lakes <- fwapgr::fwa_feature("fwa_lakes_poly", bounds = bbox)
+lakes <- fwapgr::fwa_collection("fwa_lakes_poly", bbox = bbox)
 ```
 
-Finally, lets get all streams within the watershed bounds that have a 'stream_order' less than 3.
+Finally, lets get all streams within the watershed bounds with stream_order greater than 1. order streams.
 ```{r warning=FALSE, message=FALSE}
-streams <- fwapgr::fwa_feature("fwa_stream_networks_sp",
-                               filter = "stream_order > 1",
-                               bounds = bbox)
+streams <- fwapgr::fwa_collection("fwa_stream_networks_sp", bbox = bbox)
+streams <- streams[streams$stream_order > 2,]
 ```
 
 To make the map look a little prettier, we can clip the stream and lake layers to the watershed polygon.
