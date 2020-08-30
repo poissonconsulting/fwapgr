@@ -4,13 +4,7 @@
 \alias{fwa_stream_gnis}
 \title{FWA stream network}
 \usage{
-fwa_stream_gnis(
-  gnis_name,
-  columns = NULL,
-  bbox = NULL,
-  epsg = 4326,
-  named_streams = FALSE
-)
+fwa_stream_gnis(gnis_name, columns = NULL, bbox = NULL, epsg = 4326)
 }
 \arguments{
 \item{gnis_name}{A character string of the gnis_name.}
@@ -21,9 +15,6 @@ fwa_stream_gnis(
 features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
-
-\item{named_streams}{A flag indicating whether to get data from the 'fwa_named_streams' layer.
-If FALSE, the 'fwa_stream_networks_sp' layer is used.}
 }
 \value{
 A sf object
