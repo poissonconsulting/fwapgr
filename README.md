@@ -15,15 +15,31 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 status](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions)
 <!-- badges: end -->
 
-An R package 📦 for retrieving data from the [B.C. Freshwater
+An R 📦 for retrieving data from the [B.C. Freshwater
 Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater)
-using [fwapg](https://github.com/smnorris/fwapg). Data are provided as
-[simple features](https://github.com/r-spatial/sf).
+(FWA). `fwapgr` is an R client for
+[fwapg](https://github.com/smnorris/fwapg), a PostgreSQL database and
+[web API](https://hillcrestgeo.ca/fwapg/). Data are provided as [simple
+features](https://github.com/r-spatial/sf).
 
-  - `fwa_()` - Get features from a layer.
-  - `fwa_gnis_()` - Get features by gnis\_name.
-  - `fwa_list_()` - Get metadata.
-  - `fwa_search_()` - Search metadata with regular expression.
+Get and filter features from collections:
+
+  - `fwa_collection()`  
+  - `fwa_stream_gnis()`
+
+List and search metadata:
+
+  - `fwa_list_tables()`  
+  - `fwa_list_columns()`  
+  - `fwa_list_gnis_streams()`  
+  - `fwa_search_gnis_streams()`
+
+Perform spatial operations:
+
+  - `fwa_nearest_stream()`  
+  - `fwa_watershed_at_measure()`  
+  - `fwa_stream_at_measure()`  
+  - `fwa_watershed_hex()`
 
 ## Installation
 
@@ -41,28 +57,37 @@ remotes::install_github("poissonconsulting/fwapgr")
 fwapgr::fwa_search_gnis_streams("yakoun")
 #> [1] "Yakoun River"
 
-yakoun <- fwapgr::fwa_feature("fwa_stream_networks_sp", 
-                              filter = "gnis_name = 'Yakoun River'", 
-                              columns = c("gnis_name"))
-yakoun
-#> Simple feature collection with 129 features and 1 field
+yakoun <- fwapgr::fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Yakoun River'))
+yakoun[c("blue_line_key", "gnis_name", "length_metre", "upstream_area_ha", "stream_order")]
+#> Simple feature collection with 129 features and 5 fields
 #> geometry type:  LINESTRING
 #> dimension:      XYZ
 #> bbox:           xmin: -132.2789 ymin: 53.34324 xmax: -132.1283 ymax: 53.65705
 #> z_range:        zmin: 1 zmax: 99
-#> CRS:            4326
+#> geographic CRS: WGS 84
 #> First 10 features:
-#>       gnis_name                       geometry
-#> 1  Yakoun River LINESTRING Z (-132.2658 53....
-#> 2  Yakoun River LINESTRING Z (-132.14 53.51...
-#> 3  Yakoun River LINESTRING Z (-132.2742 53....
-#> 4  Yakoun River LINESTRING Z (-132.1965 53....
-#> 5  Yakoun River LINESTRING Z (-132.2088 53....
-#> 6  Yakoun River LINESTRING Z (-132.253 53.4...
-#> 7  Yakoun River LINESTRING Z (-132.204 53.6...
-#> 8  Yakoun River LINESTRING Z (-132.2483 53....
-#> 9  Yakoun River LINESTRING Z (-132.2727 53....
-#> 10 Yakoun River LINESTRING Z (-132.2687 53....
+#>    blue_line_key    gnis_name length_metre upstream_area_ha stream_order
+#> 1      360881586 Yakoun River    623.84399         45520.92            5
+#> 2      360881586 Yakoun River    529.95682         45100.58            5
+#> 3      360881586 Yakoun River    203.93703         43844.42            5
+#> 4      360881586 Yakoun River    192.11758         14846.80            5
+#> 5      360881586 Yakoun River    723.10276         22175.55            5
+#> 6      360881586 Yakoun River   1807.56714         54390.74            5
+#> 7      360881586 Yakoun River    499.69498         54390.74            5
+#> 8      360881586 Yakoun River     34.30732         54390.74            5
+#> 9      360881586 Yakoun River    231.06090         48079.44            5
+#> 10     360881586 Yakoun River   1618.76222         54390.74            5
+#>                          geometry
+#> 1  LINESTRING Z (-132.1796 53....
+#> 2  LINESTRING Z (-132.1547 53....
+#> 3  LINESTRING Z (-132.1363 53....
+#> 4  LINESTRING Z (-132.275 53.3...
+#> 5  LINESTRING Z (-132.2647 53....
+#> 6  LINESTRING Z (-132.206 53.6...
+#> 7  LINESTRING Z (-132.204 53.6...
+#> 8  LINESTRING Z (-132.2088 53....
+#> 9  LINESTRING Z (-132.2122 53....
+#> 10 LINESTRING Z (-132.2093 53....
 ```
 
 ## Information
@@ -74,20 +99,17 @@ vignette.
 ## Credit and Inspiration
 
 `fwapgr` is meant to succeed
-[fwabc](https://github.com/poissonconsulting/fwabc). `fwabc` is a
-wrapper on [bcdata](https://github.com/bcgov/bcdata), which retrieves
+[fwabc](https://github.com/poissonconsulting/fwabc). `fwabc` retrieved
 data [via
-WFS](https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&outputFormat=json&SRSNAME=epsg%3A3005&CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27).
-However, this approach did not work well for large requests.
-
-`fwapgr` instead retrieves data from a PostgreSQL database hosted by
-[Hillcrest Geographics](https://hillcrestgeo.ca/main/) (see
-[fwapg](https://github.com/smnorris/fwapg)) via [this
-API](https://hillcrestgeo.ca/fwa/).
+WFS](https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&outputFormat=json&SRSNAME=epsg%3A3005&CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27)
+with the [bcdata](https://github.com/bcgov/bcdata) 📦. Instead, `fwapgr`
+leverages the power of PostgreSQL and PostGIS via a database and [web
+API](https://hillcrestgeo.ca/fwapg/) hosted and created by [Hillcrest
+Geographics](https://hillcrestgeo.ca/main/).
 
 Many thanks to [Simon Norris](https://github.com/smnorris/fwapg) for his
 work on [fwapg](https://github.com/smnorris/fwapg) and [the
-API](https://hillcrestgeo.ca/fwa/).
+API](https://hillcrestgeo.ca/fwapg/).
 
 ## Contribution
 

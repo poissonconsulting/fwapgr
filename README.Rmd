@@ -25,12 +25,27 @@ library(fwapgr)
 [![R build status](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions)
 <!-- badges: end -->
 
-An R package 📦 for retrieving data from the [B.C. Freshwater Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater) using [fwapg](https://github.com/smnorris/fwapg). Data are provided as [simple features](https://github.com/r-spatial/sf).  
+An R 📦 for retrieving data from the [B.C. Freshwater Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater) (FWA). `fwapgr` is an R client for [fwapg](https://github.com/smnorris/fwapg), a PostgreSQL database and [web API](https://hillcrestgeo.ca/fwapg/). Data are provided as [simple features](https://github.com/r-spatial/sf).  
 
-- `fwa_()` - Get features from a layer.
-- `fwa_gnis_()` - Get features by gnis_name.
-- `fwa_list_()` - Get metadata.
-- `fwa_search_()` - Search metadata with regular expression.
+Get and filter features from collections:  
+
+* `fwa_collection()`  
+* `fwa_stream_gnis()`  
+
+List and search metadata:  
+
+* `fwa_list_tables()`  
+* `fwa_list_columns()`  
+* `fwa_list_gnis_streams()`  
+* `fwa_search_gnis_streams()`  
+
+Perform spatial operations:  
+
+* `fwa_nearest_stream()`  
+* `fwa_watershed_at_measure()`  
+* `fwa_stream_at_measure()`  
+* `fwa_watershed_hex()`  
+
 
 ## Installation
 
@@ -44,10 +59,8 @@ remotes::install_github("poissonconsulting/fwapgr")
 ```{r}
 fwapgr::fwa_search_gnis_streams("yakoun")
 
-yakoun <- fwapgr::fwa_feature("fwa_stream_networks_sp", 
-                              filter = "gnis_name = 'Yakoun River'", 
-                              columns = c("gnis_name"))
-yakoun
+yakoun <- fwapgr::fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Yakoun River'))
+yakoun[c("blue_line_key", "gnis_name", "length_metre", "upstream_area_ha", "stream_order")]
 ```
 
 ## Information
@@ -55,11 +68,9 @@ yakoun
 For more information see the [Get Started](https://poissonconsulting.github.io/fwapgr/articles/fwapgr.html) vignette.
 
 ## Credit and Inspiration
-`fwapgr` is meant to succeed [fwabc](https://github.com/poissonconsulting/fwabc). `fwabc` is a wrapper on [bcdata](https://github.com/bcgov/bcdata), which retrieves data [via WFS](https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&outputFormat=json&SRSNAME=epsg%3A3005&CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27). However, this approach did not work well for large requests. 
+`fwapgr` is meant to succeed [fwabc](https://github.com/poissonconsulting/fwabc). `fwabc` retrieved data [via WFS](https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&outputFormat=json&SRSNAME=epsg%3A3005&CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27) with the [bcdata](https://github.com/bcgov/bcdata) 📦. Instead, `fwapgr` leverages the power of PostgreSQL and PostGIS via a database and [web API](https://hillcrestgeo.ca/fwapg/) hosted and created by [Hillcrest Geographics](https://hillcrestgeo.ca/main/).
 
-`fwapgr` instead retrieves data from a PostgreSQL database hosted by [Hillcrest Geographics](https://hillcrestgeo.ca/main/) (see [fwapg](https://github.com/smnorris/fwapg)) via [this API](https://hillcrestgeo.ca/fwa/).
-
-Many thanks to [Simon Norris](https://github.com/smnorris/fwapg) for his work on [fwapg](https://github.com/smnorris/fwapg) and [the API](https://hillcrestgeo.ca/fwa/).
+Many thanks to [Simon Norris](https://github.com/smnorris/fwapg) for his work on [fwapg](https://github.com/smnorris/fwapg) and [the API](https://hillcrestgeo.ca/fwapg/).
 
 ## Contribution
 
