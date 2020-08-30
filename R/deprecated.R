@@ -8,7 +8,7 @@
 #' fwa_list_layers()
 fwa_list_layers <- function(){
 
-  deprecate_soft("0.0.1",
+  deprecate_soft("0.1.0",
                  what = "fwa_list_layers()",
                  with = "fwa_list_tables()",
                  details = "The API used is no longer maintained and may be removed at some point.",
@@ -42,7 +42,7 @@ fwa_feature <- function(table, filter = NULL, columns = NULL,
                         bounds = NULL, geom_column = "geom",
                         epsg = 4326, schema = "whse_basemapping"){
 
-  deprecate_soft("0.0.1",
+  deprecate_soft("0.1.0",
                  what = "fwa_feature()",
                  with = "fwa_collection()",
                  details = "The API used is no longer maintained and may be removed at some point.",
@@ -83,7 +83,7 @@ fwa_feature <- function(table, filter = NULL, columns = NULL,
 #' @examples
 #' fwa_watershed(356308001)
 fwa_watershed <- function(blue_line_key, downstream_route_measure = 0, epsg = 4326){
-  deprecate_soft("0.0.1",
+  deprecate_soft("0.1.0",
                  what = "fwa_watershed()",
                  with = "fwa_watershed_at_measure()",
                  details = "The API used is no longer maintained and may be removed at some point.",
@@ -117,7 +117,7 @@ fwa_gnis_streams <- function(gnis_name,
                              epsg = 4326,
                              named_streams = FALSE){
 
-  deprecate_soft("0.0.1",
+  deprecate_soft("0.1.0",
                  what = "fwa_gnis_streams()",
                  with = "fwa_stream_gnis()",
                  details = "The API used is no longer maintained and may be removed at some point.",
