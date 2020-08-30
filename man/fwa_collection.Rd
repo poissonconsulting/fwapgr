@@ -25,7 +25,7 @@ value, e.g. \code{list(gnis_name = "Sangan River")}.}
 \item{bbox}{A vector of numbers indicating bounding box to limit output
 features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 
-\item{columns}{A vector of strings of the column names to include.}
+\item{columns}{A vector of strings of the column names to include. If NULL (default), all columns are retained.}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 

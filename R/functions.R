@@ -38,7 +38,7 @@ fwa_nearest_stream <- function(x, y, srid,
 #' Provided a location as blue_line_key and downstream_route_measure,
 #' return the entire watershed boundary upstream of the location.
 #'
-#' @inheritParams fwa_feature
+#' @inheritParams fwa_collection
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param downstream_route_measure An integer of the downstream route measure.
 #' @return A sf object
@@ -61,7 +61,7 @@ fwa_watershed_at_measure <- function(blue_line_key, downstream_route_measure = 0
 #'
 #' Provided a location as blue_line_key and downstream_route_measure, return stream segments upstream, within the same first order watershed.
 #'
-#' @inheritParams fwa_feature
+#' @inheritParams fwa_collection
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param downstream_route_measure An integer of the downstream route measure.
 #' @return A sf object
@@ -84,7 +84,7 @@ fwa_stream_at_measure <- function(blue_line_key, downstream_route_measure = 0, e
 #'
 #' Provided a location as blue_line_key and downstream_route_measure, return a 25m hexagon grid covering first order watershed in which location lies.
 #'
-#' @inheritParams fwa_feature
+#' @inheritParams fwa_collection
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param downstream_route_measure An integer of the downstream route measure.
 #' @return A sf object

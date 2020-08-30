@@ -26,7 +26,7 @@ fwa_list_tables <- function(){
 #' List columns in a table.
 #'
 #' @return A tibble
-#' @inheritParams fwa_feature
+#' @inheritParams fwa_collection
 #' @export
 #' @examples
 #' fwa_list_columns("fwa_stream_networks_sp")

@@ -9,7 +9,8 @@ fwa_list_columns(table, schema = "whse_basemapping")
 \arguments{
 \item{table}{A character string of the table name.}
 
-\item{schema}{A character string of the schema. Default 'whse_basemapping' is used for most layers.}
+\item{schema}{A character string of the schema to prepend to collection_id.
+Possible values include 'whse_basemapping', 'usgs', 'hydrosheds' and NULL. If NULL, nothing is prepended.}
 }
 \value{
 A tibble
