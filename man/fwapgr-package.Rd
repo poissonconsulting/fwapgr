@@ -4,11 +4,11 @@
 \name{fwapgr-package}
 \alias{fwapgr}
 \alias{fwapgr-package}
-\title{fwapgr: R Client for BC Freshwater Atlas PostgreSQL (fwapg) Web API.}
+\title{fwapgr: R Client for BC Freshwater Atlas PostgreSQL Database and Web API (fwapg)}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-R client for BC Freshwater Atlas PostgreSQL (fwapg) web API.
+R client for fwapg, a PostgreSQL database and web API to retrieve, filter, and perform spatial operations on BC Freshwater Atlas data.
 }
 \seealso{
 Useful links:

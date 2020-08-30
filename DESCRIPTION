@@ -1,11 +1,11 @@
 Package: fwapgr
-Title: R Client for BC Freshwater Atlas PostgreSQL (fwapg) Web API.
+Title: R Client for BC Freshwater Atlas PostgreSQL Database and Web API (fwapg)
 Version: 0.0.1
 Authors@R: c(
     person("Sebastian", "Dalgarno", , "seb@poissonconsulting.ca", c("aut", "cre"), comment = c(ORCID = "0000-0002-3658-4517")),
     person("Poisson Consulting", role = c("cph", "fnd"))
     )
-Description: R client for BC Freshwater Atlas PostgreSQL (fwapg) web API.
+Description: R client for fwapg, a PostgreSQL database and web API to retrieve, filter, and perform spatial operations on BC Freshwater Atlas data.
 License: MIT + file LICENSE
 Depends: R (>= 3.4)
 Imports:
