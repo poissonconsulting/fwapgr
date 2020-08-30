@@ -2,7 +2,7 @@
 % Please edit documentation in R/collections.R
 \name{fwa_collection}
 \alias{fwa_collection}
-\title{FWA feature}
+\title{FWA collection}
 \usage{
 fwa_collection(
   table,
@@ -40,7 +40,7 @@ Possible values include 'whse_basemapping', 'usgs', 'hydrosheds' and NULL. If NU
 A sf object
 }
 \description{
-Get features from table.
+Get and filter collection from database.
 }
 \examples{
 fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Sangan River'))

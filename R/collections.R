@@ -52,7 +52,7 @@ fwa_list_columns <- function(table, schema = "whse_basemapping"){
 #' value, e.g. `list(gnis_name = "Sangan River")`.
 #' @param bbox A vector of numbers indicating bounding box to limit output
 #' features to, e.g. `c(minLon, minLat, maxLon, maxLat)`.
-#' @param columns A vector of strings of the column names to include.
+#' @param columns A vector of strings of the column names to include. If NULL (default), all columns are retained.
 #' @param epsg A positive whole number of the epsg to transform features to.
 #' @param limit A positive whole number indicating the maximum number of features to return.
 #' @param offset A positive whole number indicating the offset of start of returned results.
