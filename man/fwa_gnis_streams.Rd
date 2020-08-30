@@ -18,11 +18,7 @@ fwa_gnis_streams(
 
 \item{columns}{A vector of strings of the column names to include.}
 
-\item{bounds}{A vector of numbers indicating bounding box to limit output features to, e.g. \code{c(sw.lng, sw.lat, ne.lng, ne.lat)}.}
-
-\item{geom_column}{A character string of the name of the geometry column of the table.}
-
-\item{epsg}{An integer of the epsg to transform features to.}
+\item{epsg}{A positive whole number of the epsg to transform features to.}
 
 \item{named_streams}{A flag indicating whether to get data from the 'fwa_named_streams' layer.
 If FALSE, the 'fwa_stream_networks_sp' layer is used.}
