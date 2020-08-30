@@ -2,7 +2,7 @@
 % Please edit documentation in R/collections.R
 \name{fwa_list_tables}
 \alias{fwa_list_tables}
-\title{FWA list collections}
+\title{FWA list tables}
 \usage{
 fwa_list_tables()
 }
@@ -10,8 +10,8 @@ fwa_list_tables()
 A tibble
 }
 \description{
-List available collections.
+List available tables in data collections.
 }
 \examples{
-fwa_list_collections()
+fwa_list_tables()
 }
