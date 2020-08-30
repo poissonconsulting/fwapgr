@@ -1,11 +1,11 @@
 Package: fwapgr
-Title: FWA PostgreSQL database API wrappers
-Version: 0.0.0.9000
+Title: R Client for BC Freshwater Atlas PostgreSQL (fwapg) Web API.
+Version: 0.0.1
 Authors@R: c(
     person("Sebastian", "Dalgarno", , "seb@poissonconsulting.ca", c("aut", "cre"), comment = c(ORCID = "0000-0002-3658-4517")),
     person("Poisson Consulting", role = c("cph", "fnd"))
     )
-Description: FWA PostgreSQL database API wrappers.
+Description: R client for BC Freshwater Atlas PostgreSQL (fwapg) web API.
 License: MIT + file LICENSE
 Depends: R (>= 3.4)
 Imports:
@@ -25,7 +25,6 @@ Suggests:
     ggplot2,
     magrittr,
     httptest
-Remotes: poissonconsulting/chk
 URL: https://github.com/poissonconsulting/fwapgr
 BugReports: https://github.com/poissonconsulting/fwapgr/issues
 Encoding: UTF-8
