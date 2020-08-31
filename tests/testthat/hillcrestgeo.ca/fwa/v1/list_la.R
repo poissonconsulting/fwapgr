@@ -1,11 +1,11 @@
 structure(list(url = "https://hillcrestgeo.ca/fwa/v1/list_la", 
     status_code = 404L, headers = structure(list(server = "nginx/1.10.3 (Ubuntu)", 
-        date = "Wed, 10 Jun 2020 01:26:04 GMT", `content-type` = "application/json; charset=utf-8", 
+        date = "Mon, 31 Aug 2020 19:23:03 GMT", `content-type` = "application/json; charset=utf-8", 
         `content-length` = "60", connection = "keep-alive", `cache-control` = "private, max-age=3600", 
         `access-control-allow-origin` = "*"), class = c("insensitive", 
     "list")), all_headers = list(list(status = 404L, version = "HTTP/1.1", 
         headers = structure(list(server = "nginx/1.10.3 (Ubuntu)", 
-            date = "Wed, 10 Jun 2020 01:26:04 GMT", `content-type` = "application/json; charset=utf-8", 
+            date = "Mon, 31 Aug 2020 19:23:03 GMT", `content-type` = "application/json; charset=utf-8", 
             `content-length` = "60", connection = "keep-alive", 
             `cache-control` = "private, max-age=3600", `access-control-allow-origin` = "*"), class = c("insensitive", 
         "list")))), cookies = structure(list(domain = logical(0), 
@@ -13,7 +13,7 @@ structure(list(url = "https://hillcrestgeo.ca/fwa/v1/list_la",
         expiration = structure(numeric(0), class = c("POSIXct", 
         "POSIXt")), name = logical(0), value = logical(0)), row.names = integer(0), class = "data.frame"), 
     content = charToRaw("{\"statusCode\":404,\"error\":\"Not Found\",\"message\":\"Not Found\"}"), 
-    date = structure(1591752364, class = c("POSIXct", "POSIXt"
-    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 2.4e-05, 
-    connect = 2.6e-05, pretransfer = 7.6e-05, starttransfer = 0.227918, 
-    total = 0.227961)), class = "response")
+    date = structure(1598901783, class = c("POSIXct", "POSIXt"
+    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 2.8e-05, 
+    connect = 3e-05, pretransfer = 9.2e-05, starttransfer = 0.247948, 
+    total = 0.24797)), class = "response")

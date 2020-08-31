@@ -1,12 +1,12 @@
 structure(list(url = "https://hillcrestgeo.ca/fwapg/collections/usgs.wbdhu12/items.json?bbox=-122.01%2C49.11%2C-121.86%2C49.16&limit=10000&offset=0", 
     status_code = 200L, headers = structure(list(server = "nginx/1.10.3 (Ubuntu)", 
-        date = "Sun, 30 Aug 2020 22:04:10 GMT", `content-type` = "application/geo+json", 
+        date = "Mon, 31 Aug 2020 19:18:15 GMT", `content-type` = "application/geo+json", 
         `transfer-encoding` = "chunked", connection = "keep-alive", 
         `content-encoding` = "deflate", vary = "Accept-Encoding", 
         `x-frame-options` = "DENY", `x-content-type-options` = "nosniff"), class = c("insensitive", 
     "list")), all_headers = list(list(status = 200L, version = "HTTP/1.1", 
         headers = structure(list(server = "nginx/1.10.3 (Ubuntu)", 
-            date = "Sun, 30 Aug 2020 22:04:10 GMT", `content-type` = "application/geo+json", 
+            date = "Mon, 31 Aug 2020 19:18:15 GMT", `content-type` = "application/geo+json", 
             `transfer-encoding` = "chunked", connection = "keep-alive", 
             `content-encoding` = "deflate", vary = "Accept-Encoding", 
             `x-frame-options` = "DENY", `x-content-type-options` = "nosniff"), class = c("insensitive", 
@@ -6163,7 +6163,7 @@ structure(list(url = "https://hillcrestgeo.ca/fwapg/collections/usgs.wbdhu12/ite
     0x72, 0x6e, 0x65, 0x64, 0x22, 0x3a, 0x32, 0x2c, 0x22, 0x74, 
     0x69, 0x6d, 0x65, 0x53, 0x74, 0x61, 0x6d, 0x70, 0x22, 0x3a, 
     0x22, 0x32, 0x30, 0x32, 0x30, 0x2d, 0x30, 0x38, 0x2d, 0x33, 
-    0x30, 0x54, 0x31, 0x35, 0x3a, 0x30, 0x34, 0x3a, 0x31, 0x30, 
+    0x31, 0x54, 0x31, 0x32, 0x3a, 0x31, 0x38, 0x3a, 0x31, 0x35, 
     0x2d, 0x30, 0x37, 0x3a, 0x30, 0x30, 0x22, 0x2c, 0x22, 0x6c, 
     0x69, 0x6e, 0x6b, 0x73, 0x22, 0x3a, 0x5b, 0x7b, 0x22, 0x68, 
     0x72, 0x65, 0x66, 0x22, 0x3a, 0x22, 0x68, 0x74, 0x74, 0x70, 
@@ -6196,7 +6196,7 @@ structure(list(url = "https://hillcrestgeo.ca/fwapg/collections/usgs.wbdhu12/ite
     0x6c, 0x65, 0x22, 0x3a, 0x22, 0x54, 0x68, 0x69, 0x73, 0x20, 
     0x64, 0x6f, 0x63, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x61, 
     0x73, 0x20, 0x48, 0x54, 0x4d, 0x4c, 0x22, 0x7d, 0x5d, 0x7d
-    )), date = structure(1598825050, class = c("POSIXct", "POSIXt"
-    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 2.8e-05, 
-    connect = 2.9e-05, pretransfer = 0.000105, starttransfer = 0.519251, 
-    total = 0.519684)), class = "response")
+    )), date = structure(1598901495, class = c("POSIXct", "POSIXt"
+    ), tzone = "GMT"), times = c(redirect = 0, namelookup = 2.7e-05, 
+    connect = 2.8e-05, pretransfer = 8.4e-05, starttransfer = 0.574472, 
+    total = 0.5749)), class = "response")

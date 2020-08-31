@@ -2,10 +2,9 @@ with_mock_api({
   test_that("api meta functions work", {
 
     ## list layers
-    x <- fwa_list_layers()
+    x <- fwa_list_tables()
     expect_is(x, "tbl")
-    expect_identical(names(x), c("f_table_catalog", "f_table_schema", "f_table_name",
-                                 "f_geometry_column", "coord_dimension", "srid", "type"))
+    expect_identical(names(x), c("table", "schema", "collection_id", "extent"))
 
     ## list columns
     x <- fwa_list_columns("fwa_stream_networks_sp")

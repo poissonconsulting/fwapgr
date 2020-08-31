@@ -1,6 +1,6 @@
 with_mock_api({
 test_that("vld_function_template", {
-  path <- "fwa/v1/list_layers"
+  path <- "fwapg/collections"
   url <- modify_url(api_url(), path = path)
   resp <- GET(url)
 

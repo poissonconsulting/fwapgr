@@ -8,11 +8,10 @@
 #' fwa_list_layers()
 fwa_list_layers <- function(){
 
-  deprecate_soft("0.1.0",
+  deprecate_stop("0.1.0",
                  what = "fwa_list_layers()",
                  with = "fwa_list_tables()",
-                 details = "The API used is no longer maintained and may be removed at some point.",
-                 id = "fwa_list_layers")
+                 details = "The API at 'hillcrestgeo.ca/fwa' is no longer active and has been replaced with 'hillcrestgeo.ca/fwapg'.")
 
   path <- glue("fwa/v1/list_layers")
   query <- list(a = NULL)
@@ -42,11 +41,10 @@ fwa_feature <- function(table, filter = NULL, columns = NULL,
                         bounds = NULL, geom_column = "geom",
                         epsg = 4326, schema = "whse_basemapping"){
 
-  deprecate_soft("0.1.0",
+  deprecate_stop("0.1.0",
                  what = "fwa_feature()",
                  with = "fwa_collection()",
-                 details = "The API used is no longer maintained and may be removed at some point.",
-                 id = "fwa_feature")
+                 details = "The API at 'hillcrestgeo.ca/fwa' is no longer active and has been replaced with 'hillcrestgeo.ca/fwapg'.")
 
   chk_string(table)
   chk_string(geom_column)
@@ -83,11 +81,11 @@ fwa_feature <- function(table, filter = NULL, columns = NULL,
 #' @examples
 #' fwa_watershed(356308001)
 fwa_watershed <- function(blue_line_key, downstream_route_measure = 0, epsg = 4326){
-  deprecate_soft("0.1.0",
+  deprecate_stop("0.1.0",
                  what = "fwa_watershed()",
                  with = "fwa_watershed_at_measure()",
-                 details = "The API used is no longer maintained and may be removed at some point.",
-                 id = "fwa_watershed")
+                 details = "The API at 'hillcrestgeo.ca/fwa' is no longer active and has been replaced with 'hillcrestgeo.ca/fwapg'.")
+
   chk_whole_number(blue_line_key)
   chk_whole_number(downstream_route_measure)
   chk_whole_number(epsg)
@@ -117,11 +115,10 @@ fwa_gnis_streams <- function(gnis_name,
                              epsg = 4326,
                              named_streams = FALSE){
 
-  deprecate_soft("0.1.0",
+  deprecate_stop("0.1.0",
                  what = "fwa_gnis_streams()",
                  with = "fwa_stream_gnis()",
-                 details = "The API used is no longer maintained and may be removed at some point.",
-                 id = "fwa_gnis_streams")
+                 details = "The API at 'hillcrestgeo.ca/fwa' is no longer active and has been replaced with 'hillcrestgeo.ca/fwapg'.")
 
 
   chk_string(gnis_name)
@@ -134,5 +131,37 @@ fwa_gnis_streams <- function(gnis_name,
               bounds = bounds, geom_column = geom_column,
               epsg = epsg)
 }
+
+#' BBox
+#'
+#' Get bounding box of feature(s)
+#'
+#' @inheritParams fwa_feature
+#' @return A sf object
+#' @export
+#' @examples
+#' fwa_bbox("fwa_stream_networks_sp", filter = "gnis_name = 'Cowichan River'")
+fwa_bbox <- function(table, filter = NULL, geom_column = "geom",
+                     epsg = 4326, schema = "whse_basemapping"){
+
+  deprecate_stop("0.1.0",
+                 what = "fwa_bbox()",
+                 details = "The API at 'hillcrestgeo.ca/fwa' is no longer active and has been replaced with 'hillcrestgeo.ca/fwapg'.")
+
+  chk_string(table)
+  chkor(chk_string(filter), chk_null(filter))
+  chk_string(geom_column)
+  chk_whole_number(epsg)
+  chk_string(schema)
+
+  table <- add_schema(table, schema)
+
+  path <- glue("fwa/v1/bbox/{table}")
+  query <- list(filter = filter,
+                geom_column = geom_column)
+  resp <- fwa_api(path, query)
+  parse_bbox(resp)
+}
+
 
 
