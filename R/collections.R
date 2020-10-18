@@ -79,8 +79,7 @@ fwa_collection <- function(table,
   chk_whole_number(epsg)
   chk_whole_number(limit)
   chk_whole_number(offset)
-  chkor(chk_subset(schema, c("whse_basemapping", "usgs", "hydrosheds")),
-        chk_null(schema))
+  chk_null_or(schema, chk_subset, c("whse_basemapping", "usgs", "hydrosheds", "whse_fish"))
 
   table <- add_schema(table, schema)
   columns <- format_columns(columns)
