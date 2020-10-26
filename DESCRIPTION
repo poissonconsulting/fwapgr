@@ -7,7 +7,7 @@ Authors@R: c(
     )
 Description: R client for fwapg, a PostgreSQL database and web API to retrieve, filter, and perform spatial operations on BC Freshwater Atlas data.
 License: MIT + file LICENSE
-Depends: R (>= 3.4)
+Depends: R (>= 3.6)
 Imports:
     stats,
     chk,
