@@ -17,7 +17,7 @@ fwa_watershed(blue_line_key, downstream_route_measure = 0, epsg = 4326)
 A sf object
 }
 \description{
-Get watershed upstream of a location on a stream.
+Get watershed upstream of a location on a stream. \lifecycle{defunct}
 }
 \examples{
 \dontrun{

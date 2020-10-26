@@ -27,7 +27,7 @@ fwa_bbox(
 A sf object
 }
 \description{
-Get bounding box of feature(s)
+Get bounding box of feature(s). \lifecycle{defunct}
 }
 \examples{
 \dontrun{

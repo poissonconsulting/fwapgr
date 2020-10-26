@@ -1,6 +1,6 @@
 #' FWA list layers
 #'
-#' List available layers.
+#' List available layers. \lifecycle{defunct}
 #'
 #' @return A tibble
 #' @export
@@ -26,7 +26,7 @@ fwa_list_layers <- function(){
 
 #' FWA feature
 #'
-#' Get features from table.
+#' Get features from table. \lifecycle{defunct}
 #'
 #' @param table A character string of the table name.
 #' @param filter A character string of the SQL WHERE statement to filter features by.
@@ -75,7 +75,7 @@ fwa_feature <- function(table, filter = NULL, columns = NULL,
 
 #' FWA watershed
 #'
-#' Get watershed upstream of a location on a stream.
+#' Get watershed upstream of a location on a stream. \lifecycle{defunct}
 #'
 #' @inheritParams fwa_feature
 #' @param blue_line_key An integer of the stream blue line key.
@@ -104,7 +104,7 @@ fwa_watershed <- function(blue_line_key, downstream_route_measure = 0, epsg = 43
 
 #' FWA stream network
 #'
-#' Get stream network features from gnis_name.
+#' Get stream network features from gnis_name. \lifecycle{defunct}
 #'
 #' @inheritParams fwa_feature
 #' @param gnis_name A character string of the gnis_name.
@@ -142,7 +142,7 @@ fwa_gnis_streams <- function(gnis_name,
 
 #' BBox
 #'
-#' Get bounding box of feature(s)
+#' Get bounding box of feature(s). \lifecycle{defunct}
 #'
 #' @inheritParams fwa_feature
 #' @return A sf object

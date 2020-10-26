@@ -10,7 +10,7 @@ fwa_list_layers()
 A tibble
 }
 \description{
-List available layers.
+List available layers. \lifecycle{defunct}
 }
 \examples{
 \dontrun{

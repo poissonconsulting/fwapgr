@@ -31,7 +31,7 @@ If FALSE, the 'fwa_stream_networks_sp' layer is used.}
 A sf object
 }
 \description{
-Get stream network features from gnis_name.
+Get stream network features from gnis_name. \lifecycle{defunct}
 }
 \examples{
 \dontrun{

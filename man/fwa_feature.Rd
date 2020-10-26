@@ -33,7 +33,7 @@ fwa_feature(
 A sf object
 }
 \description{
-Get features from table.
+Get features from table. \lifecycle{defunct}
 }
 \examples{
 \dontrun{
