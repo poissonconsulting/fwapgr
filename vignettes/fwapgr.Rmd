@@ -43,15 +43,6 @@ fwapgr::fwa_list_columns('fwa_stream_networks_sp')
 fwapgr::fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = "Yakoun River"))
 ```
 
-There are a few convenience functions available for occasions when you are looking for a gnis_name. We can search for a valid 'gnis_name' using `fwa_search_gnis_streams` and pipe that into `fwa_stream_gnis`, which is just a wrapper on `fwa_collection(table = "fwa_stream_networks_sp", filter = list(gnis_name = ??))`.
-```{r}
-yakoun <- fwapgr::fwa_search_gnis_streams("yakoun") %>%
-  print() %>%
-  fwapgr::fwa_stream_gnis()
-  
-yakoun[1:2]
-```
-
 Let's also get the Yakoun River watershed using the "fwa_named_watersheds_poly" table.
 ```{r}
 wshed <- fwapgr::fwa_collection(table = "fwa_named_watersheds_poly", filter = list(gnis_name = "Yakoun River"))
@@ -73,16 +64,4 @@ To make the map look a little prettier, we can clip the stream and lake layers t
 ```{r warning=FALSE, message=FALSE}
 streams <- sf::st_intersection(streams, wshed)
 lakes <- sf::st_intersection(lakes, wshed)
-```
-
-
-```{r dpi=300, fig.width=7, fig.height=7}
-ggplot2::ggplot(data = yakoun) +
-  ggplot2::geom_sf(data = wshed, lwd = 0.15) +
-  ggplot2::geom_sf(data = streams, lwd = 0.15, colour = 'steelblue') +
-  ggplot2::geom_sf(lwd = 0.3) +
-  ggplot2::geom_sf(data = lakes, fill = "steelblue", lwd = 0.1)
-```
-```{r, include=FALSE}
-end_vignette()
 ```

@@ -30,14 +30,11 @@ An R 📦 for retrieving data from the [B.C. Freshwater Atlas](https://www2.gov.
 Get and filter data from collections:  
 
 * `fwa_collection()`  
-* `fwa_stream_gnis()`  
 
 List and search metadata:  
 
 * `fwa_list_tables()`  
 * `fwa_list_columns()`  
-* `fwa_list_gnis_streams()`  
-* `fwa_search_gnis_streams()`  
 
 Perform spatial operations:  
 
@@ -45,7 +42,6 @@ Perform spatial operations:
 * `fwa_watershed_at_measure()`  
 * `fwa_stream_at_measure()`  
 * `fwa_watershed_hex()`  
-
 
 ## Installation
 
@@ -57,8 +53,6 @@ remotes::install_github("poissonconsulting/fwapgr")
 
 ## Demonstration
 ```{r}
-fwapgr::fwa_search_gnis_streams("yakoun")
-
 yakoun <- fwapgr::fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Yakoun River'))
 yakoun[c("blue_line_key", "gnis_name", "length_metre")]
 ```

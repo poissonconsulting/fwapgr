@@ -23,15 +23,12 @@ Data are provided as [simple features](https://github.com/r-spatial/sf).
 
 Get and filter data from collections:
 
-  - `fwa_collection()`  
-  - `fwa_stream_gnis()`
+  - `fwa_collection()`
 
 List and search metadata:
 
   - `fwa_list_tables()`  
-  - `fwa_list_columns()`  
-  - `fwa_list_gnis_streams()`  
-  - `fwa_search_gnis_streams()`
+  - `fwa_list_columns()`
 
 Perform spatial operations:
 
@@ -53,9 +50,6 @@ remotes::install_github("poissonconsulting/fwapgr")
 ## Demonstration
 
 ``` r
-fwapgr::fwa_search_gnis_streams("yakoun")
-#> [1] "Yakoun River"
-
 yakoun <- fwapgr::fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Yakoun River'))
 yakoun[c("blue_line_key", "gnis_name", "length_metre")]
 #> Simple feature collection with 129 features and 3 fields
