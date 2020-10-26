@@ -34,5 +34,7 @@ A sf object
 Get stream network features from gnis_name.
 }
 \examples{
+\dontrun{
 fwa_gnis_streams('Sangan River')
+}
 }

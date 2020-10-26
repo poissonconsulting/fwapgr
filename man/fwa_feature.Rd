@@ -36,5 +36,7 @@ A sf object
 Get features from table.
 }
 \examples{
+\dontrun{
 fwa_feature("fwa_stream_networks_sp", filter = "gnis_name = 'Sangan River'")
+}
 }

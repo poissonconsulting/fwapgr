@@ -5,7 +5,9 @@
 #' @return A tibble
 #' @export
 #' @examples
+#' \dontrun{
 #' fwa_list_layers()
+#' }
 fwa_list_layers <- function(){
 
   deprecate_stop("0.1.0",
@@ -36,7 +38,9 @@ fwa_list_layers <- function(){
 #' @return A sf object
 #' @export
 #' @examples
+#' \dontrun{
 #' fwa_feature("fwa_stream_networks_sp", filter = "gnis_name = 'Sangan River'")
+#' }
 fwa_feature <- function(table, filter = NULL, columns = NULL,
                         bounds = NULL, geom_column = "geom",
                         epsg = 4326, schema = "whse_basemapping"){
@@ -79,7 +83,9 @@ fwa_feature <- function(table, filter = NULL, columns = NULL,
 #' @return A sf object
 #' @export
 #' @examples
+#' \dontrun{
 #' fwa_watershed(356308001)
+#' }
 fwa_watershed <- function(blue_line_key, downstream_route_measure = 0, epsg = 4326){
   deprecate_stop("0.1.0",
                  what = "fwa_watershed()",
@@ -107,7 +113,9 @@ fwa_watershed <- function(blue_line_key, downstream_route_measure = 0, epsg = 43
 #' @return A sf object
 #' @export
 #' @examples
+#' \dontrun{
 #' fwa_gnis_streams('Sangan River')
+#' }
 fwa_gnis_streams <- function(gnis_name,
                              columns = NULL,
                              bounds = NULL,
@@ -140,7 +148,9 @@ fwa_gnis_streams <- function(gnis_name,
 #' @return A sf object
 #' @export
 #' @examples
+#' \dontrun{
 #' fwa_bbox("fwa_stream_networks_sp", filter = "gnis_name = 'Cowichan River'")
+#' }
 fwa_bbox <- function(table, filter = NULL, geom_column = "geom",
                      epsg = 4326, schema = "whse_basemapping"){
 
@@ -162,6 +172,3 @@ fwa_bbox <- function(table, filter = NULL, geom_column = "geom",
   resp <- fwa_api(path, query)
   parse_bbox(resp)
 }
-
-
-
