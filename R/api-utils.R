@@ -27,7 +27,7 @@ status_msg <- function(x){
 }
 
 read_feature <- function(response, epsg){
-  x <- sf::st_read(response, quiet = TRUE)
+  x <- sf::st_read(response, quiet = TRUE, stringsAsFactors = FALSE)
   # api default is 4326
   if(epsg == 4326)
     return(x)
