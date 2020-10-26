@@ -15,7 +15,7 @@ fwa_list_layers <- function(){
                  with = "fwa_list_tables()",
                  details = "The API at 'hillcrestgeo.ca/fwa' is no longer active and has been replaced with 'hillcrestgeo.ca/fwapg'.")
 
-  path <- glue("fwa/v1/list_layers")
+  path <- "fwa/v1/list_layers"
   query <- list(a = NULL)
 
   resp <- fwa_api(path, query)

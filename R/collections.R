@@ -8,7 +8,7 @@
 #' fwa_list_tables()
 fwa_list_tables <- function(){
 
-  path <- glue("fwapg/collections")
+  path <- "fwapg/collections"
   query <- list(a = NULL)
 
   resp <- fwa_api(path, query)

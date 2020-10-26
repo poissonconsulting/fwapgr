@@ -23,7 +23,7 @@ fwa_nearest_stream <- function(x, y, srid,
   chk_whole_number(srid)
   chk_whole_number(epsg)
 
-  path <- glue("fwapg/functions/fwa_neareststream/items.json")
+  path <- "fwapg/functions/fwa_neareststream/items.json"
   query <- list(x = x,
                 y = y,
                 srid = srid,
@@ -50,7 +50,7 @@ fwa_watershed_at_measure <- function(blue_line_key, downstream_route_measure = 0
   chk_number(downstream_route_measure)
   chk_whole_number(epsg)
 
-  path <- glue("fwapg/functions/fwa_watershedatmeasure/items.json")
+  path <- "fwapg/functions/fwa_watershedatmeasure/items.json"
   query <- list(blue_line_key = blue_line_key,
                 downstream_route_measure = downstream_route_measure)
   resp <- fwa_api(path, query)
@@ -73,7 +73,7 @@ fwa_stream_at_measure <- function(blue_line_key, downstream_route_measure = 0, e
   chk_number(downstream_route_measure)
   chk_whole_number(epsg)
 
-  path <- glue("fwapg/functions/fwa_watershedstream/items.json")
+  path <- "fwapg/functions/fwa_watershedstream/items.json"
   query <- list(blue_line_key = blue_line_key,
                 downstream_route_measure = downstream_route_measure)
   resp <- fwa_api(path, query)
@@ -96,7 +96,7 @@ fwa_watershed_hex <- function(blue_line_key, downstream_route_measure = 0, epsg 
   chk_number(downstream_route_measure)
   chk_whole_number(epsg)
 
-  path <- glue("fwapg/functions/fwa_watershedhex/items.json")
+  path <- "fwapg/functions/fwa_watershedhex/items.json"
   query <- list(blue_line_key = blue_line_key,
                 downstream_route_measure = downstream_route_measure)
   resp <- fwa_api(path, query)
