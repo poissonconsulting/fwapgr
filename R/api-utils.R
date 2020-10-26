@@ -34,16 +34,6 @@ read_feature <- function(response, epsg){
   sf::st_transform(x, epsg)
 }
 
-parse_bbox <- function(x){
-  x <- strsplit(x, "\\(")[[1]][2]
-  x <- strsplit(x, "\\)")[[1]][1]
-  x <- strsplit(x, " |,")[[1]]
-  x <- as.numeric(x)
-  names(x) <- c("xmin", "ymin", "xmax", "ymax")
-  class(x) <- "bbox"
-  x
-}
-
 format_columns <- function(x){
   if(is.null(x)) return(x)
   paste(x, collapse = ",")
@@ -56,8 +46,4 @@ format_bounds <- function(x){
 
 add_schema <- function(x, schema){
   glue("{schema}.{x}")
-}
-
-filter_gnis <- function(x){
-  glue("gnis_name = '{x}'")
 }
