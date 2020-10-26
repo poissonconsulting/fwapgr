@@ -219,6 +219,40 @@
             ]
         },
         {
+            "id": "whse_basemapping.fwa_bc_boundary",
+            "title": "whse_basemapping.fwa_bc_boundary",
+            "description": "Data for table whse_basemapping.fwa_bc_boundary",
+            "extent": {
+                "crs": "EPSG:3005",
+                "bbox": [
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            },
+            "links": [
+                {
+                    "href": "https://www.hillcrestgeo.ca/fwapg/collections/whse_basemapping.fwa_bc_boundary.json",
+                    "rel": "self",
+                    "type": "application/json",
+                    "title": "Metadata as JSON"
+                },
+                {
+                    "href": "https://www.hillcrestgeo.ca/fwapg/collections/whse_basemapping.fwa_bc_boundary.html",
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "title": "Metadata as HTML"
+                },
+                {
+                    "href": "https://www.hillcrestgeo.ca/fwapg/collections/whse_basemapping.fwa_bc_boundary/items.json",
+                    "rel": "items",
+                    "type": "application/geo+json",
+                    "title": "Features as GeoJSON"
+                }
+            ]
+        },
+        {
             "id": "whse_basemapping.fwa_coastlines_sp",
             "title": "whse_basemapping.fwa_coastlines_sp",
             "description": "Data for table whse_basemapping.fwa_coastlines_sp",
@@ -586,6 +620,40 @@
                 },
                 {
                     "href": "https://www.hillcrestgeo.ca/fwapg/collections/whse_basemapping.fwa_stream_networks_sp/items.json",
+                    "rel": "items",
+                    "type": "application/geo+json",
+                    "title": "Features as GeoJSON"
+                }
+            ]
+        },
+        {
+            "id": "whse_basemapping.fwa_stream_networks_sp_deleteme",
+            "title": "whse_basemapping.fwa_stream_networks_sp_deleteme",
+            "description": "Data for table whse_basemapping.fwa_stream_networks_sp_deleteme",
+            "extent": {
+                "crs": "EPSG:3005",
+                "bbox": [
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            },
+            "links": [
+                {
+                    "href": "https://www.hillcrestgeo.ca/fwapg/collections/whse_basemapping.fwa_stream_networks_sp_deleteme.json",
+                    "rel": "self",
+                    "type": "application/json",
+                    "title": "Metadata as JSON"
+                },
+                {
+                    "href": "https://www.hillcrestgeo.ca/fwapg/collections/whse_basemapping.fwa_stream_networks_sp_deleteme.html",
+                    "rel": "alternate",
+                    "type": "text/html",
+                    "title": "Metadata as HTML"
+                },
+                {
+                    "href": "https://www.hillcrestgeo.ca/fwapg/collections/whse_basemapping.fwa_stream_networks_sp_deleteme/items.json",
                     "rel": "items",
                     "type": "application/geo+json",
                     "title": "Features as GeoJSON"

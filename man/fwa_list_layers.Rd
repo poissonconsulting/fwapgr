@@ -13,5 +13,7 @@ A tibble
 List available layers.
 }
 \examples{
+\dontrun{
 fwa_list_layers()
+}
 }

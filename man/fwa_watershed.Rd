@@ -20,5 +20,7 @@ A sf object
 Get watershed upstream of a location on a stream.
 }
 \examples{
+\dontrun{
 fwa_watershed(356308001)
+}
 }
