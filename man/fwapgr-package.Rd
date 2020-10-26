@@ -4,11 +4,12 @@
 \name{fwapgr-package}
 \alias{fwapgr}
 \alias{fwapgr-package}
-\title{fwapgr: R Client for BC Freshwater Atlas PostgreSQL Database and Web API (fwapg)}
+\title{fwapgr: Client for BC Freshwater Atlas Web API}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-R client for fwapg, a PostgreSQL database and web API to retrieve, filter, and perform spatial operations on BC Freshwater Atlas data.
+Client for fwapg, a PostgreSQL database and web API
+    for BC Freshwater Atlas data.
 }
 \seealso{
 Useful links:
@@ -23,6 +24,7 @@ Useful links:
 
 Other contributors:
 \itemize{
+  \item Joe Thorley \email{joe@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-7683-4592}{ORCID}) [contributor]
   \item Poisson Consulting [copyright holder, funder]
 }
 
