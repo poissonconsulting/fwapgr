@@ -2,17 +2,18 @@
 % Please edit documentation in R/gnis.R
 \name{fwa_list_gnis_streams}
 \alias{fwa_list_gnis_streams}
-\title{FWA list named streams}
+\title{FWA List Named streams}
 \usage{
-fwa_list_gnis_streams(gnis_name = NULL, ignore_case = TRUE)
+fwa_list_gnis_streams(gnis_name = ".*", ignore_case = TRUE)
 }
 \arguments{
-\item{gnis_name}{A regular expression to filter table by gnis_name. If Null (default), returns all rows.}
+\item{gnis_name}{A regular expression to filter table by gnis_name.
+By default returns all values.}
 
 \item{ignore_case}{A flag indicating whether to ignore case in regular expression.}
 }
 \value{
-A tibble
+A tibble of the named streams, including stream order and watershed group code.
 }
 \description{
 List information on named streams including gnis_name.

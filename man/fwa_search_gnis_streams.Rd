@@ -2,20 +2,21 @@
 % Please edit documentation in R/gnis.R
 \name{fwa_search_gnis_streams}
 \alias{fwa_search_gnis_streams}
-\title{FWA search named streams}
+\title{FWA Search Named streams}
 \usage{
-fwa_search_gnis_streams(gnis_name = NULL, ignore_case = TRUE)
+fwa_search_gnis_streams(gnis_name = ".*", ignore_case = TRUE)
 }
 \arguments{
-\item{gnis_name}{A regular expression to match gnis_name. If Null (default), returns all values.}
+\item{gnis_name}{A regular expression to match gnis_name.
+By default returns all values.}
 
 \item{ignore_case}{A flag indicating whether to ignore case in regular expression.}
 }
 \value{
-A tibble
+A character vector of the stream names.
 }
 \description{
-Match valid stream gnis_name with regular expression.
+Get stream gnis_names that match with regular expression.
 }
 \examples{
 fwa_search_gnis_streams("sangan")
