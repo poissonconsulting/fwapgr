@@ -1,6 +1,6 @@
 Package: fwapgr
 Title: R Client for BC Freshwater Atlas PostgreSQL Database and Web API (fwapg)
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: c(
     person("Sebastian", "Dalgarno", , "seb@poissonconsulting.ca", c("aut", "cre"), comment = c(ORCID = "0000-0002-3658-4517")),
     person("Poisson Consulting", role = c("cph", "fnd"))
