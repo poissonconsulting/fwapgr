@@ -1,3 +1,9 @@
+# fwapgr 0.1.0.9000
+
+- Don't run deprecate examples.
+- Allow fwa_collection() to accept 'whse_fish' schema.
+
+
 # fwapgr 0.0.0.9000
 
 * Added a `NEWS.md` file to track changes to the package.
