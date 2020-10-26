@@ -23,6 +23,10 @@ chk_response_gateway <- function(x){
 }
 
 chk_bbox <- function(x){
-  chkor(chk_range(length(x), c(4L, 4L)), chk_null(x))
-  chkor(chk_numeric(x), chk_null(x))
+  if(vld_bbox(x)) {
+    return(invisible())
+  }
+  chk_numeric(x)
+  chk_identical(length(x), 4L)
+  chk_not_any_na(x)
 }
