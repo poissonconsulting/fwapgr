@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FWA list named streams — fwa_list_gnis_streams • fwapgr</title>
+<title>FWA watershed at downstream route measure — fwa_watershed_at_measure • fwapgr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,9 @@
 
 
 
-<meta property="og:title" content="FWA list named streams — fwa_list_gnis_streams" />
-<meta property="og:description" content="List information on named streams including gnis_name." />
+<meta property="og:title" content="FWA watershed at downstream route measure — fwa_watershed_at_measure" />
+<meta property="og:description" content="Provided a location as blue_line_key and downstream_route_measure,
+return the entire watershed boundary upstream of the location." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -128,50 +129,54 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>FWA list named streams</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/gnis.R'><code>R/gnis.R</code></a></small>
-    <div class="hidden name"><code>fwa_list_gnis_streams.Rd</code></div>
+    <h1>FWA watershed at downstream route measure</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/functions.R'><code>R/functions.R</code></a></small>
+    <div class="hidden name"><code>fwa_watershed_at_measure.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>List information on named streams including gnis_name.</p>
+    <p>Provided a location as blue_line_key and downstream_route_measure,
+return the entire watershed boundary upstream of the location.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>fwa_list_gnis_streams</span><span class='op'>(</span>gnis_name <span class='op'>=</span> <span class='cn'>NULL</span>, ignore_case <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>fwa_watershed_at_measure</span><span class='op'>(</span>
+  <span class='va'>blue_line_key</span>,
+  downstream_route_measure <span class='op'>=</span> <span class='fl'>0</span>,
+  epsg <span class='op'>=</span> <span class='fl'>4326</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>gnis_name</th>
-      <td><p>A regular expression to filter table by gnis_name. If Null (default), returns all rows.</p></td>
+      <th>blue_line_key</th>
+      <td><p>An integer of the stream blue line key.</p></td>
     </tr>
     <tr>
-      <th>ignore_case</th>
-      <td><p>A flag indicating whether to ignore case in regular expression.</p></td>
+      <th>downstream_route_measure</th>
+      <td><p>An integer of the downstream route measure.</p></td>
+    </tr>
+    <tr>
+      <th>epsg</th>
+      <td><p>A positive whole number of the epsg to transform features to.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble</p>
+    <p>A sf object</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>fwa_list_gnis_streams</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 28,557 x 4</span><span>
-#&gt;    fwa_stream_networks_label_… gnis_name        stream_order watershed_group_co…
-#&gt;                          </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>              
-#&gt; </span><span style='color: #555555;'> 1</span><span>                           1 111 Mile Creek   4            SAJR               
-#&gt; </span><span style='color: #555555;'> 2</span><span>                           2 111 Mile Creek   5            SAJR               
-#&gt; </span><span style='color: #555555;'> 3</span><span>                           3 117 Mile Creek   2            SAJR               
-#&gt; </span><span style='color: #555555;'> 4</span><span>                           4 117 Mile Creek   3            SAJR               
-#&gt; </span><span style='color: #555555;'> 5</span><span>                           5 150 Yard Creek   1            SANJ               
-#&gt; </span><span style='color: #555555;'> 6</span><span>                           6 3 Mile Creek     2            QUES               
-#&gt; </span><span style='color: #555555;'> 7</span><span>                           7 3 Mile Creek     3            LOMI               
-#&gt; </span><span style='color: #555555;'> 8</span><span>                           8 3 Mile Creek     3            QUES               
-#&gt; </span><span style='color: #555555;'> 9</span><span>                           9 3 Mile Creek     4            LOMI               
-#&gt; </span><span style='color: #555555;'>10</span><span>                          10 Aaltanhash River 3            KHTZ               
-#&gt; </span><span style='color: #555555;'># … with 28,547 more rows</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>fwa_watershed_at_measure</span><span class='op'>(</span><span class='fl'>356308001</span>, downstream_route_measure <span class='op'>=</span> <span class='fl'>10000</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; Simple feature collection with 1 feature and 4 fields
+#&gt; geometry type:  POLYGON
+#&gt; dimension:      XY
+#&gt; bbox:           xmin: -121.9625 ymin: 49.09301 xmax: -121.8528 ymax: 49.14291
+#&gt; geographic CRS: WGS 84
+#&gt;   area_ha   localcode_ltree refine_method wscode_ltree
+#&gt; 1 2364.24 100.070889.490268           DEM   100.070889
+#&gt;                         geometry
+#&gt; 1 POLYGON ((-121.9625 49.1038...</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
