@@ -52,8 +52,8 @@ fwa_feature <- function(table, filter = NULL, columns = NULL,
 
   chk_string(table)
   chk_string(geom_column)
-  chkor(chk_character(columns), chk_null(columns))
-  chkor(chk_string(filter), chk_null(filter))
+  chk_null_or(columns, chk_character)
+  chk_null_or(filter, chk_string)
   chk_bounds(bounds)
   chk_whole_number(epsg)
   chk_string(schema)
@@ -159,7 +159,7 @@ fwa_bbox <- function(table, filter = NULL, geom_column = "geom",
                  details = "The API at 'hillcrestgeo.ca/fwa' is no longer active and has been replaced with 'hillcrestgeo.ca/fwapg'.")
 
   chk_string(table)
-  chkor(chk_string(filter), chk_null(filter))
+  chk_null_or(filter, chk_string)
   chk_string(geom_column)
   chk_whole_number(epsg)
   chk_string(schema)

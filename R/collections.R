@@ -73,9 +73,9 @@ fwa_collection <- function(table,
 
   chk_string(table)
   chkor(chk_is(filter, "vector"), chk_is(filter, "list"), chk_null(filter))
-  chkor(chk_named(filter), chk_null(filter))
-  chkor(chk_character(columns), chk_null(columns))
-  chkor(chk_bbox(bbox), chk_null(bbox))
+  chk_null_or(filter, chk_named)
+  chk_null_or(columns, chk_character)
+  chk_bbox(bbox)
   chk_whole_number(epsg)
   chk_whole_number(limit)
   chk_whole_number(offset)
