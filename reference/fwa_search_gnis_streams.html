@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FWA search named streams — fwa_search_gnis_streams • fwapgr</title>
+<title>FWA Search Named streams — fwa_search_gnis_streams • fwapgr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="FWA search named streams — fwa_search_gnis_streams" />
-<meta property="og:description" content="Match valid stream gnis_name with regular expression." />
+<meta property="og:title" content="FWA Search Named streams — fwa_search_gnis_streams" />
+<meta property="og:description" content="Get stream gnis_names that match with regular expression." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -128,23 +128,24 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>FWA search named streams</h1>
+    <h1>FWA Search Named streams</h1>
     <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/gnis.R'><code>R/gnis.R</code></a></small>
     <div class="hidden name"><code>fwa_search_gnis_streams.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Match valid stream gnis_name with regular expression.</p>
+    <p>Get stream gnis_names that match with regular expression.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>fwa_search_gnis_streams</span><span class='op'>(</span>gnis_name <span class='op'>=</span> <span class='cn'>NULL</span>, ignore_case <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>fwa_search_gnis_streams</span><span class='op'>(</span>gnis_name <span class='op'>=</span> <span class='st'>".*"</span>, ignore_case <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>gnis_name</th>
-      <td><p>A regular expression to match gnis_name. If Null (default), returns all values.</p></td>
+      <td><p>A regular expression to match gnis_name.
+By default returns all values.</p></td>
     </tr>
     <tr>
       <th>ignore_case</th>
@@ -154,7 +155,7 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble</p>
+    <p>A character vector of the stream names.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>fwa_search_gnis_streams</span><span class='op'>(</span><span class='st'>"sangan"</span><span class='op'>)</span>
