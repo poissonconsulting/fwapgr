@@ -94,23 +94,14 @@
 <p>An R 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a>. <code>fwapgr</code> is an R client for <a href="https://github.com/smnorris/fwapg">fwapg</a>, a PostgreSQL database and <a href="https://hillcrestgeo.ca/fwapg/">web API</a>. Data are provided as <a href="https://github.com/r-spatial/sf">simple features</a>.</p>
 <p>Get and filter data from collections:</p>
 <ul>
-<li>
-<code><a href="reference/fwa_collection.html">fwa_collection()</a></code><br>
-</li>
-<li><code><a href="reference/fwa_stream_gnis.html">fwa_stream_gnis()</a></code></li>
+<li><code><a href="reference/fwa_collection.html">fwa_collection()</a></code></li>
 </ul>
 <p>List and search metadata:</p>
 <ul>
 <li>
 <code><a href="reference/fwa_list_tables.html">fwa_list_tables()</a></code><br>
 </li>
-<li>
-<code><a href="reference/fwa_list_columns.html">fwa_list_columns()</a></code><br>
-</li>
-<li>
-<code><a href="reference/fwa_list_gnis_streams.html">fwa_list_gnis_streams()</a></code><br>
-</li>
-<li><code><a href="reference/fwa_search_gnis_streams.html">fwa_search_gnis_streams()</a></code></li>
+<li><code><a href="reference/fwa_list_columns.html">fwa_list_columns()</a></code></li>
 </ul>
 <p>Perform spatial operations:</p>
 <ul>
@@ -137,9 +128,6 @@
 <h2 class="hasAnchor">
 <a href="#demonstration" class="anchor"></a>Demonstration</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_search_gnis_streams.html">fwa_search_gnis_streams</a></span><span class="op">(</span><span class="st">"yakoun"</span><span class="op">)</span>
-<span class="co">#&gt; [1] "Yakoun River"</span>
-
 <span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">'Yakoun River'</span><span class="op">)</span><span class="op">)</span>
 <span class="va">yakoun</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"blue_line_key"</span>, <span class="st">"gnis_name"</span>, <span class="st">"length_metre"</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; Simple feature collection with 129 features and 3 fields</span>

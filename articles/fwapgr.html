@@ -134,43 +134,21 @@
 <p><code>fwa_collection</code> allows us to retrieve data from any available table in the database and filter for desired values on any column. To get a linestring feature of the Yakoun river, we could use the ‘fwa_stream_networks_sp’ or ‘fwa_named_streams’ table and filter by <code>gnis_name</code> column.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Yakoun River"</span><span class="op">)</span><span class="op">)</span></pre></div>
-<p>There are a few convenience functions available for occasions when you are looking for a gnis_name. We can search for a valid ‘gnis_name’ using <code>fwa_search_gnis_streams</code> and pipe that into <code>fwa_stream_gnis</code>, which is just a wrapper on <code>fwa_collection(table = "fwa_stream_networks_sp", filter = list(gnis_name = ??))</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_search_gnis_streams.html">fwa_search_gnis_streams</a></span><span class="op">(</span><span class="st">"yakoun"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_stream_gnis.html">fwa_stream_gnis</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; [1] "Yakoun River"</span>
-  
-<span class="va">yakoun</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span>
-<span class="co">#&gt; Simple feature collection with 1 feature and 2 fields</span>
-<span class="co">#&gt; geometry type:  MULTILINESTRING</span>
-<span class="co">#&gt; dimension:      XY</span>
-<span class="co">#&gt; bbox:           xmin: -132.2789 ymin: 53.34324 xmax: -132.1283 ymax: 53.65705</span>
-<span class="co">#&gt; geographic CRS: WGS 84</span>
-<span class="co">#&gt;      id blue_line_key                       geometry</span>
-<span class="co">#&gt; 1 11672     360881586 MULTILINESTRING ((-132.2383...</span></pre></div>
 <p>Let’s also get the Yakoun River watershed using the “fwa_named_watersheds_poly” table.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
+<div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span>table <span class="op">=</span> <span class="st">"fwa_named_watersheds_poly"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Yakoun River"</span><span class="op">)</span><span class="op">)</span></pre></div>
 <p>Next, let’s get all the lakes that are within the Yakoun river watershed. We can use the <code>bbox</code> argument for this and the ‘fwa_lakes_poly’ table.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
+<div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="va">bbox</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_bbox.html">st_bbox</a></span><span class="op">(</span><span class="va">wshed</span><span class="op">)</span>
 <span class="va">lakes</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"fwa_lakes_poly"</span>, bbox <span class="op">=</span> <span class="va">bbox</span><span class="op">)</span></pre></div>
 <p>Finally, lets get all streams within the watershed bounds with stream_order greater than 1. order streams.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
+<div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="va">streams</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"fwa_stream_networks_sp"</span>, bbox <span class="op">=</span> <span class="va">bbox</span><span class="op">)</span>
 <span class="va">streams</span> <span class="op">&lt;-</span> <span class="va">streams</span><span class="op">[</span><span class="va">streams</span><span class="op">$</span><span class="va">stream_order</span> <span class="op">&gt;</span> <span class="fl">2</span>,<span class="op">]</span></pre></div>
 <p>To make the map look a little prettier, we can clip the stream and lake layers to the watershed polygon.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit">
+<div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="va">streams</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_binary_ops.html">st_intersection</a></span><span class="op">(</span><span class="va">streams</span>, <span class="va">wshed</span><span class="op">)</span>
 <span class="va">lakes</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_binary_ops.html">st_intersection</a></span><span class="op">(</span><span class="va">lakes</span>, <span class="va">wshed</span><span class="op">)</span></pre></div>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">yakoun</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed</span>, lwd <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">streams</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, colour <span class="op">=</span> <span class="st">'steelblue'</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">lakes</span>, fill <span class="op">=</span> <span class="st">"steelblue"</span>, lwd <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></pre></div>
-<p><img src="fwapgr_files/figure-html/unnamed-chunk-11-1.png" width="2100"></p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
