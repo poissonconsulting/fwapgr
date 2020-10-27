@@ -141,6 +141,11 @@
   <span class='va'>blue_line_key</span>,
   interval_length <span class='op'>=</span> <span class='fl'>1000</span>,
   start <span class='op'>=</span> <span class='fl'>0</span>,
+  limit <span class='op'>=</span> <span class='fl'>10000</span>,
+  offset <span class='op'>=</span> <span class='fl'>0</span>,
+  bbox <span class='op'>=</span> <span class='cn'>NULL</span>,
+  properties <span class='op'>=</span> <span class='cn'>NULL</span>,
+  transform <span class='op'>=</span> <span class='cn'>NULL</span>,
   epsg <span class='op'>=</span> <span class='fl'>4326</span>
 <span class='op'>)</span></pre>
 
@@ -158,6 +163,27 @@
     <tr>
       <th>start</th>
       <td><p>An integer of the distance in meters upstream from the river mouth to start from.</p></td>
+    </tr>
+    <tr>
+      <th>limit</th>
+      <td><p>A positive whole number indicating the maximum number of features to return.</p></td>
+    </tr>
+    <tr>
+      <th>offset</th>
+      <td><p>A positive whole number indicating the offset of start of returned results.</p></td>
+    </tr>
+    <tr>
+      <th>bbox</th>
+      <td><p>A vector of numbers indicating bounding box to limit output
+features to, e.g. <code><a href='https://rdrr.io/r/base/c.html'>c(minLon, minLat, maxLon, maxLat)</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>properties</th>
+      <td><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></td>
+    </tr>
+    <tr>
+      <th>transform</th>
+      <td><p>A character string of the geometry transformation function pipeline to apply.</p></td>
     </tr>
     <tr>
       <th>epsg</th>

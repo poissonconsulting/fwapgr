@@ -100,23 +100,23 @@
 <p><code>fwapgr</code> is an R client for the <a href="https://github.com/smnorris/fwapg">BC Freshwater Atlas PostgreSQL</a> database <a href="https://www.hillcrestgeo.ca/fwapg/index.html">web API</a>. It gets and filters data from the BC Freshwater Atlas into R!</p>
 <p>In this article, we will create a basic map of the Yakoun River watershed in Haida Gwaii, BC, primarily using <code>fwapgr</code>’s workhorse function: <code>fwa_collection</code>. We can get started by looking at all available tables and which columns are in a specific table.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_list_tables.html">fwa_list_tables</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_meta_collections.html">fwa_meta_collections</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 41 x 4</span>
-<span class="co">#&gt;    table             schema      collection_id                 extent$crs $bbox </span>
-<span class="co">#&gt;    &lt;chr&gt;             &lt;chr&gt;       &lt;chr&gt;                         &lt;chr&gt;      &lt;list&gt;</span>
-<span class="co">#&gt;  1 hybas_lev12_v1c   hydrosheds  hydrosheds.hybas_lev12_v1c    EPSG:3005  &lt;int …</span>
-<span class="co">#&gt;  2 wbdhu12           usgs        usgs.wbdhu12                  EPSG:3005  &lt;int …</span>
-<span class="co">#&gt;  3 fwa_approx_borde… whse_basem… whse_basemapping.fwa_approx_… EPSG:3005  &lt;int …</span>
-<span class="co">#&gt;  4 fwa_assessment_w… whse_basem… whse_basemapping.fwa_assessm… EPSG:3005  &lt;int …</span>
-<span class="co">#&gt;  5 fwa_basins_poly   whse_basem… whse_basemapping.fwa_basins_… EPSG:3005  &lt;int …</span>
-<span class="co">#&gt;  6 fwa_bays_and_cha… whse_basem… whse_basemapping.fwa_bays_an… EPSG:3005  &lt;int …</span>
-<span class="co">#&gt;  7 fwa_bc_boundary   whse_basem… whse_basemapping.fwa_bc_boun… EPSG:3005  &lt;int …</span>
-<span class="co">#&gt;  8 fwa_coastlines_sp whse_basem… whse_basemapping.fwa_coastli… EPSG:3005  &lt;int …</span>
-<span class="co">#&gt;  9 fwa_glaciers_poly whse_basem… whse_basemapping.fwa_glacier… EPSG:3005  &lt;int …</span>
-<span class="co">#&gt; 10 fwa_islands_poly  whse_basem… whse_basemapping.fwa_islands… EPSG:3005  &lt;int …</span>
+<span class="co">#&gt;    collection_id           description                extent$crs $bbox  links   </span>
+<span class="co">#&gt;    &lt;chr&gt;                   &lt;chr&gt;                      &lt;chr&gt;      &lt;list&gt; &lt;list&gt;  </span>
+<span class="co">#&gt;  1 hydrosheds.hybas_lev12… Data for table hydrosheds… EPSG:3005  &lt;int … &lt;df[,4]…</span>
+<span class="co">#&gt;  2 usgs.wbdhu12            Data for table usgs.wbdhu… EPSG:3005  &lt;int … &lt;df[,4]…</span>
+<span class="co">#&gt;  3 whse_basemapping.fwa_a… Data for table whse_basem… EPSG:3005  &lt;int … &lt;df[,4]…</span>
+<span class="co">#&gt;  4 whse_basemapping.fwa_a… Data for table whse_basem… EPSG:3005  &lt;int … &lt;df[,4]…</span>
+<span class="co">#&gt;  5 whse_basemapping.fwa_b… Data for table whse_basem… EPSG:3005  &lt;int … &lt;df[,4]…</span>
+<span class="co">#&gt;  6 whse_basemapping.fwa_b… Data for table whse_basem… EPSG:3005  &lt;int … &lt;df[,4]…</span>
+<span class="co">#&gt;  7 whse_basemapping.fwa_b… Data for table whse_basem… EPSG:3005  &lt;int … &lt;df[,4]…</span>
+<span class="co">#&gt;  8 whse_basemapping.fwa_c… Data for table whse_basem… EPSG:3005  &lt;int … &lt;df[,4]…</span>
+<span class="co">#&gt;  9 whse_basemapping.fwa_g… Data for table whse_basem… EPSG:3005  &lt;int … &lt;df[,4]…</span>
+<span class="co">#&gt; 10 whse_basemapping.fwa_i… Data for table whse_basem… EPSG:3005  &lt;int … &lt;df[,4]…</span>
 <span class="co">#&gt; # … with 31 more rows</span></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_list_columns.html">fwa_list_columns</a></span><span class="op">(</span><span class="st">'fwa_stream_networks_sp'</span><span class="op">)</span>
+<span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_meta_properties.html">fwa_meta_properties</a></span><span class="op">(</span><span class="st">'whse_basemapping.fwa_stream_networks_sp'</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 27 x 3</span>
 <span class="co">#&gt;    name                     type   description</span>
 <span class="co">#&gt;    &lt;chr&gt;                    &lt;chr&gt;  &lt;chr&gt;      </span>
@@ -133,17 +133,17 @@
 <span class="co">#&gt; # … with 17 more rows</span></pre></div>
 <p><code>fwa_collection</code> allows us to retrieve data from any available table in the database and filter for desired values on any column. To get a linestring feature of the Yakoun river, we could use the ‘fwa_stream_networks_sp’ or ‘fwa_named_streams’ table and filter by <code>gnis_name</code> column.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Yakoun River"</span><span class="op">)</span><span class="op">)</span></pre></div>
+<span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Yakoun River"</span><span class="op">)</span><span class="op">)</span></pre></div>
 <p>Let’s also get the Yakoun River watershed using the “fwa_named_watersheds_poly” table.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span>table <span class="op">=</span> <span class="st">"fwa_named_watersheds_poly"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Yakoun River"</span><span class="op">)</span><span class="op">)</span></pre></div>
+<span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_named_watersheds_poly"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Yakoun River"</span><span class="op">)</span><span class="op">)</span></pre></div>
 <p>Next, let’s get all the lakes that are within the Yakoun river watershed. We can use the <code>bbox</code> argument for this and the ‘fwa_lakes_poly’ table.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="va">bbox</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_bbox.html">st_bbox</a></span><span class="op">(</span><span class="va">wshed</span><span class="op">)</span>
-<span class="va">lakes</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"fwa_lakes_poly"</span>, bbox <span class="op">=</span> <span class="va">bbox</span><span class="op">)</span></pre></div>
+<span class="va">lakes</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_lakes_poly"</span>, bbox <span class="op">=</span> <span class="va">bbox</span><span class="op">)</span></pre></div>
 <p>Finally, lets get all streams within the watershed bounds with stream_order greater than 1. order streams.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="va">streams</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"fwa_stream_networks_sp"</span>, bbox <span class="op">=</span> <span class="va">bbox</span><span class="op">)</span>
+<span class="va">streams</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>, bbox <span class="op">=</span> <span class="va">bbox</span><span class="op">)</span>
 <span class="va">streams</span> <span class="op">&lt;-</span> <span class="va">streams</span><span class="op">[</span><span class="va">streams</span><span class="op">$</span><span class="va">stream_order</span> <span class="op">&gt;</span> <span class="fl">2</span>,<span class="op">]</span></pre></div>
 <p>To make the map look a little prettier, we can clip the stream and lake layers to the watershed polygon.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit">
