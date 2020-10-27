@@ -2,10 +2,10 @@
 
 export(fwa_collection)
 export(fwa_index_point)
-export(fwa_list_columns)
-export(fwa_list_tables)
 export(fwa_locate_along)
 export(fwa_locate_along_interval)
+export(fwa_meta_collections)
+export(fwa_meta_properties)
 export(fwa_stream_at_measure)
 export(fwa_watershed_at_measure)
 export(fwa_watershed_hex)
