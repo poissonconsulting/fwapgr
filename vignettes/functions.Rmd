@@ -17,13 +17,6 @@ library(fwapgr)
 library(ggplot2)
 ```
 
-```{r, include=FALSE}
-library(httptest)
-set_requester(function (request) {
-    gsub_request(request, "https://www.hillcrestgeo.ca/fwapg/", "api/")
-})
-start_vignette("functions")
-```
 ---
 output: github_document
 ---
@@ -66,6 +59,4 @@ ggplot2::ggplot() +
   ggplot2::geom_sf(data = wshed, lwd = 0.15, fill = "steelblue") +
   ggplot2::geom_sf(data = wshed_2km, lwd = 0.15, fill = 'red', alpha = 0.5)
 ```
-```{r, include=FALSE}
-end_vignette()
-```
+
