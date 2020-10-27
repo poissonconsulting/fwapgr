@@ -1,6 +1,6 @@
-#' FWA nearest stream
+#' FWA index point
 #'
-#' Provided a point (x, y, srid), return stream(s) nearest to the point within specified tolerance.
+#' Provided a point (x, y, srid), return the point along a stream(s) nearest to the point provided within specified tolerance.
 #'
 #' @param x A number of the x coordinate.
 #' @param y A number of the y coordinate.
@@ -11,11 +11,11 @@
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_nearest_stream(x = -132.26, y = 53.36, srid = 4326)
-fwa_nearest_stream <- function(x, y, srid,
-                               tolerance = 5000,
-                               num_features = 1,
-                               epsg = srid){
+#' fwa_index_point(x = -132.26, y = 53.36, srid = 4326)
+fwa_index_point <- function(x, y, srid,
+                            tolerance = 5000,
+                            num_features = 1,
+                            epsg = srid){
   chk_number(x)
   chk_number(y)
   chk_number(tolerance)

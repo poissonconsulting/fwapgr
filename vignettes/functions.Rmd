@@ -33,7 +33,7 @@ In this article, we'll explore a couple of these.
 Let's start with a completely unrealistic scenario. You are out picking chanterelle mushrooms on the back-roads of Queen Charlotte, Haida Gwaii, and suddenly find yourself lost and thirsty. Luckily, you have a computer and decent enough cell service for an internet connection. Let's find the two nearest rivers to your location (coordinates are 53.36/-132.26).
 ```{r}
 coords <- c(x = -132.26, y = 53.36)
-nearest <- fwapgr::fwa_nearest_stream(x = coords["x"], y = coords["y"], 
+nearest <- fwapgr::fwa_index_point(x = coords["x"], y = coords["y"], 
                                       srid = 4326, num_features = 2)
 nearest[c("distance_to_stream", "gnis_name", "blue_line_key")]
 ```
