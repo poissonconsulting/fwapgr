@@ -99,7 +99,7 @@
     
 <p>In addition to getting and filtering Freshwater Atlas data, <code>fwapgr</code> has a few functions that perform useful spatial operations.</p>
 <ul>
-<li><code><a href="../reference/fwa_nearest_stream.html">fwa_nearest_stream()</a></code></li>
+<li><code>fwa_nearest_stream()</code></li>
 <li><code><a href="../reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure()</a></code></li>
 <li><code><a href="../reference/fwa_stream_at_measure.html">fwa_stream_at_measure()</a></code></li>
 <li><code>fwa_watershed_at_hex()</code></li>
@@ -108,7 +108,7 @@
 <p>Let’s start with a completely unrealistic scenario. You are out picking chanterelle mushrooms on the back-roads of Queen Charlotte, Haida Gwaii, and suddenly find yourself lost and thirsty. Luckily, you have a computer and decent enough cell service for an internet connection. Let’s find the two nearest rivers to your location (coordinates are 53.36/-132.26).</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="va">coords</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">132.26</span>, y <span class="op">=</span> <span class="fl">53.36</span><span class="op">)</span>
-<span class="va">nearest</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_nearest_stream.html">fwa_nearest_stream</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">coords</span><span class="op">[</span><span class="st">"x"</span><span class="op">]</span>, y <span class="op">=</span> <span class="va">coords</span><span class="op">[</span><span class="st">"y"</span><span class="op">]</span>, 
+<span class="va">nearest</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="../reference/fwa_index_point.html">fwa_index_point</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">coords</span><span class="op">[</span><span class="st">"x"</span><span class="op">]</span>, y <span class="op">=</span> <span class="va">coords</span><span class="op">[</span><span class="st">"y"</span><span class="op">]</span>, 
                                       srid <span class="op">=</span> <span class="fl">4326</span>, num_features <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>
 <span class="va">nearest</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"distance_to_stream"</span>, <span class="st">"gnis_name"</span>, <span class="st">"blue_line_key"</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; Simple feature collection with 2 features and 3 fields</span>
