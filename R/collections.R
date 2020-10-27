@@ -14,6 +14,7 @@
 #' @param transform A character string of the geometry transformation function pipeline to apply.
 #' @param epsg A positive whole number of the epsg to transform features to.
 #' @return A sf object
+#' @seealso \url{https://www.hillcrestgeo.ca/fwapg/collections.html} for API documentation.
 #' @export
 #' @examples
 #' \dontrun{

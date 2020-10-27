@@ -46,3 +46,6 @@ Get and filter collection from database.
 fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_name = 'Sangan River'))
 }
 }
+\seealso{
+\url{https://www.hillcrestgeo.ca/fwapg/collections.html} for API documentation.
+}

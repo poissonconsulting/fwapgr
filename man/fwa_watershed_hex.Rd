@@ -42,3 +42,6 @@ Provided a location as blue_line_key and downstream_route_measure, return a 25m 
 \examples{
 \dontrun{fwa_watershed_hex(356308001, downstream_route_measure = 10000)}
 }
+\seealso{
+\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html}{fwa_watershedhex API documentation}
+}

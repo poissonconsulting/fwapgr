@@ -39,3 +39,6 @@ A sf object
 \description{
 General function API call
 }
+\seealso{
+\href{https://www.hillcrestgeo.ca/fwapg/functions.html}{API documentation}
+}

@@ -42,3 +42,6 @@ Provided a location as blue_line_key and downstream_route_measure, return stream
 \examples{
 \dontrun{fwa_stream_at_measure(356308001, downstream_route_measure = 10000)}
 }
+\seealso{
+\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html}{fwa_watershedstream API documentation}
+}

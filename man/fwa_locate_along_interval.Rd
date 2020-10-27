@@ -45,3 +45,6 @@ Provided a blue_line_key and starting downstream distance, return a set of point
 \examples{
 \dontrun{fwa_locate_along_interval(356308001, interval_length = 10, start = 0)}
 }
+\seealso{
+\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{fwa_locatealonginterval API documentation}
+}

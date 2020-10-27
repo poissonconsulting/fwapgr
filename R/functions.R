@@ -6,6 +6,8 @@
 #' @param function_id A character string of the function id
 #' @param parameters A named list of the parameters and values for a specific function.
 #' @return A sf object
+#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions.html}{API documentation}
+
 fwa_function <- function(function_id,
                             parameters,
                             limit = 10000,
@@ -48,6 +50,7 @@ fwa_function <- function(function_id,
 #' @param tolerance A number of the tolerance.
 #' @param num_features An integer of the maximum number of features to return.
 #' @return A sf object
+#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html}{fwa_indexpoint API documentation}
 #' @export
 #' @examples
 #' \dontrun{fwa_index_point(x = -132.26, y = 53.36, srid = 4326)}
@@ -72,7 +75,7 @@ fwa_index_point <- function(x, y, srid,
                      tolerance = tolerance,
                      num_features = num_features)
 
-  fwa_function("fwa_neareststream",
+  fwa_function("fwa_indexpoint",
                parameters = parameters,
                limit = limit,
                offset = offset,
@@ -91,6 +94,7 @@ fwa_index_point <- function(x, y, srid,
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param downstream_route_measure An integer of the downstream route measure.
 #' @return A sf object
+#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html}{fwa_watershedatmeasure API documentation}
 #' @export
 #' @examples
 #' \dontrun{fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)}
@@ -126,6 +130,7 @@ fwa_watershed_at_measure <- function(blue_line_key,
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param downstream_route_measure An integer of the downstream route measure.
 #' @return A sf object
+#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html}{fwa_watershedstream API documentation}
 #' @export
 #' @examples
 #' \dontrun{fwa_stream_at_measure(356308001, downstream_route_measure = 10000)}
@@ -161,6 +166,7 @@ fwa_stream_at_measure <- function(blue_line_key,
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param downstream_route_measure An integer of the downstream route measure.
 #' @return A sf object
+#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html}{fwa_watershedhex API documentation}
 #' @export
 #' @examples
 #' \dontrun{fwa_watershed_hex(356308001, downstream_route_measure = 10000)}
@@ -196,6 +202,7 @@ fwa_watershed_hex <- function(blue_line_key,
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param downstream_route_measure An integer of the downstream route measure.
 #' @return A sf object
+#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html}{fwa_locatealong API documentation}
 #' @export
 #' @examples
 #' \dontrun{fwa_locate_along(356308001, downstream_route_measure = 10000)}
@@ -232,6 +239,7 @@ fwa_locate_along <- function(blue_line_key,
 #' @param interval_length An integer of the interval distance in meters.
 #' @param start An integer of the distance in meters upstream from the river mouth to start from.
 #' @return A sf object
+#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{fwa_locatealonginterval API documentation}
 #' @export
 #' @examples
 #' \dontrun{fwa_locate_along_interval(356308001, interval_length = 10, start = 0)}

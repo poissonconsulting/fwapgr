@@ -42,3 +42,6 @@ Provided a location as blue_line_key and downstream_route_measure, return a poin
 \examples{
 \dontrun{fwa_locate_along(356308001, downstream_route_measure = 10000)}
 }
+\seealso{
+\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html}{fwa_locatealong API documentation}
+}
