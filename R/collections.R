@@ -5,7 +5,7 @@
 #' @return A tibble
 #' @export
 #' @examples
-#' fwa_list_tables()
+#' \dontrun{fwa_list_tables()}
 fwa_list_tables <- function(){
 
   path <- "fwapg/collections"
@@ -29,7 +29,7 @@ fwa_list_tables <- function(){
 #' @inheritParams fwa_collection
 #' @export
 #' @examples
-#' fwa_list_columns("fwa_stream_networks_sp")
+#' \dontrun{fwa_list_columns("fwa_stream_networks_sp")}
 fwa_list_columns <- function(table, schema = "whse_basemapping"){
 
   collection <- add_schema(table, schema)
@@ -61,7 +61,7 @@ fwa_list_columns <- function(table, schema = "whse_basemapping"){
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Sangan River'))
+#' \dontrun{fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Sangan River'))}
 fwa_collection <- function(table,
                         filter = NULL,
                         bbox = NULL,

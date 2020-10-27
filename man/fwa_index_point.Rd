@@ -26,5 +26,5 @@ A sf object
 Provided a point (x, y, srid), return the point along a stream(s) nearest to the point provided within specified tolerance.
 }
 \examples{
-fwa_index_point(x = -132.26, y = 53.36, srid = 4326)
+\dontrun{fwa_index_point(x = -132.26, y = 53.36, srid = 4326)}
 }

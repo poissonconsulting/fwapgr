@@ -20,5 +20,5 @@ A sf object
 Provided a location as blue_line_key and downstream_route_measure, return stream segments upstream, within the same first order watershed.
 }
 \examples{
-fwa_stream_at_measure(356308001, downstream_route_measure = 10000)
+\dontrun{fwa_stream_at_measure(356308001, downstream_route_measure = 10000)}
 }

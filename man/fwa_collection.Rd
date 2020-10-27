@@ -43,5 +43,5 @@ A sf object
 Get and filter collection from database.
 }
 \examples{
-fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Sangan River'))
+\dontrun{fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Sangan River'))}
 }

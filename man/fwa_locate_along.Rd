@@ -20,5 +20,5 @@ A sf object
 Provided a location as blue_line_key and downstream_route_measure, return a point.
 }
 \examples{
-fwa_locate_along(356308001, downstream_route_measure = 10000)
+\dontrun{fwa_locate_along(356308001, downstream_route_measure = 10000)}
 }

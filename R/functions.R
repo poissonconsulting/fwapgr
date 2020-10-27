@@ -11,7 +11,7 @@
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_index_point(x = -132.26, y = 53.36, srid = 4326)
+#' \dontrun{fwa_index_point(x = -132.26, y = 53.36, srid = 4326)}
 fwa_index_point <- function(x, y, srid,
                             tolerance = 5000,
                             num_features = 1,
@@ -44,7 +44,7 @@ fwa_index_point <- function(x, y, srid,
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)
+#' \dontrun{fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)}
 fwa_watershed_at_measure <- function(blue_line_key, downstream_route_measure = 0, epsg = 4326){
   chk_whole_number(blue_line_key)
   chk_number(downstream_route_measure)
@@ -67,7 +67,7 @@ fwa_watershed_at_measure <- function(blue_line_key, downstream_route_measure = 0
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_stream_at_measure(356308001, downstream_route_measure = 10000)
+#' \dontrun{fwa_stream_at_measure(356308001, downstream_route_measure = 10000)}
 fwa_stream_at_measure <- function(blue_line_key, downstream_route_measure = 0, epsg = 4326){
   chk_whole_number(blue_line_key)
   chk_number(downstream_route_measure)
@@ -90,7 +90,7 @@ fwa_stream_at_measure <- function(blue_line_key, downstream_route_measure = 0, e
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_watershed_hex(356308001, downstream_route_measure = 10000)
+#' \dontrun{fwa_watershed_hex(356308001, downstream_route_measure = 10000)}
 fwa_watershed_hex <- function(blue_line_key, downstream_route_measure = 0, epsg = 4326){
   chk_whole_number(blue_line_key)
   chk_number(downstream_route_measure)
@@ -113,7 +113,7 @@ fwa_watershed_hex <- function(blue_line_key, downstream_route_measure = 0, epsg 
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_locate_along(356308001, downstream_route_measure = 10000)
+#' \dontrun{fwa_locate_along(356308001, downstream_route_measure = 10000)}
 fwa_locate_along <- function(blue_line_key, downstream_route_measure = 0, epsg = 4326){
   chk_whole_number(blue_line_key)
   chk_number(downstream_route_measure)
@@ -137,7 +137,7 @@ fwa_locate_along <- function(blue_line_key, downstream_route_measure = 0, epsg =
 #' @return A sf object
 #' @export
 #' @examples
-#' fwa_locate_along_interval(356308001, interval_length = 10, start = 0)
+#' \dontrun{fwa_locate_along_interval(356308001, interval_length = 10, start = 0)}
 fwa_locate_along_interval <- function(blue_line_key, interval_length = 1000,
                                       start = 0, epsg = 4326){
   chk_whole_number(blue_line_key)

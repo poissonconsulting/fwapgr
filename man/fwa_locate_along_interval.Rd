@@ -27,5 +27,5 @@ A sf object
 Provided a blue_line_key and starting downstream distance, return a set of points along an interval.
 }
 \examples{
-fwa_locate_along_interval(356308001, interval_length = 10, start = 0)
+\dontrun{fwa_locate_along_interval(356308001, interval_length = 10, start = 0)}
 }

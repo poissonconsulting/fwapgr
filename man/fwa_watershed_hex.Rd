@@ -20,5 +20,5 @@ A sf object
 Provided a location as blue_line_key and downstream_route_measure, return a 25m hexagon grid covering first order watershed in which location lies.
 }
 \examples{
-fwa_watershed_hex(356308001, downstream_route_measure = 10000)
+\dontrun{fwa_watershed_hex(356308001, downstream_route_measure = 10000)}
 }

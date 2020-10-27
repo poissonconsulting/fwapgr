@@ -19,5 +19,5 @@ A tibble
 List columns in a table.
 }
 \examples{
-fwa_list_columns("fwa_stream_networks_sp")
+\dontrun{fwa_list_columns("fwa_stream_networks_sp")}
 }

@@ -13,5 +13,5 @@ A tibble
 List available tables in data collections.
 }
 \examples{
-fwa_list_tables()
+\dontrun{fwa_list_tables()}
 }
