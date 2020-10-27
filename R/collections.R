@@ -2,51 +2,52 @@
 #'
 #' Get and filter collection from database.
 #'
-#' @param table A character string of the table name.
+#' @param collection_id A character string of the collection id.
 #' @param filter A named vector or list of the filter(s) to apply, where the list
 #' names correspond to column names and the list values correspond to the desired
 #' value, e.g. `list(gnis_name = "Sangan River")`.
-#' @param bbox A vector of numbers indicating bounding box to limit output
-#' features to, e.g. `c(minLon, minLat, maxLon, maxLat)`.
-#' @param columns A vector of strings of the column names to include. If NULL (default), all columns are retained.
-#' @param epsg A positive whole number of the epsg to transform features to.
 #' @param limit A positive whole number indicating the maximum number of features to return.
 #' @param offset A positive whole number indicating the offset of start of returned results.
-#' @param schema A character string of the schema to prepend to collection_id.
-#' Possible values include 'whse_basemapping', 'usgs', 'hydrosheds' and NULL. If NULL, nothing is prepended.
+#' @param bbox A vector of numbers indicating bounding box to limit output
+#' features to, e.g. `c(minLon, minLat, maxLon, maxLat)`.
+#' @param properties A vector of strings of the column names to include. If NULL (default), all columns are retained.
+#' @param transform A character string of the geometry transformation function pipeline to apply.
+#' @param epsg A positive whole number of the epsg to transform features to.
 #' @return A sf object
 #' @export
 #' @examples
-#' \dontrun{fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Sangan River'))}
-fwa_collection <- function(table,
+#' \dontrun{
+#' fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_name = 'Sangan River'))
+#' }
+fwa_collection <- function(collection_id,
                         filter = NULL,
-                        bbox = NULL,
-                        columns = NULL,
-                        epsg = 4326,
                         limit = 10000,
                         offset = 0,
-                        schema = "whse_basemapping"){
+                        bbox = NULL,
+                        properties = NULL,
+                        transform = NULL,
+                        epsg = 4326){
 
-  chk_string(table)
+  chk_string(collection_id)
   chkor(chk_is(filter, "vector"), chk_is(filter, "list"), chk_null(filter))
   chk_null_or(filter, chk_named)
-  chk_null_or(columns, chk_character)
-  chk_bbox(bbox)
-  chk_whole_number(epsg)
   chk_whole_number(limit)
   chk_whole_number(offset)
-  chk_null_or(schema, chk_subset, c("whse_basemapping", "usgs", "hydrosheds", "whse_fish"))
+  chk_bbox(bbox)
+  chk_null_or(properties, chk_character)
+  chk_null_or(transform, chk_string)
+  chk_whole_number(epsg)
 
-  table <- add_schema(table, schema)
-  columns <- format_columns(columns)
+  properties  <- format_properties(properties)
   bbox <- format_bounds(bbox)
 
-  path <- glue("fwapg/collections/{table}/items.json")
+  path <- glue("fwapg/collections/{collection_id}/items.json")
   query <- c(filter,
-             list(bbox = bbox,
-                  properties = columns,
-                  limit = limit,
-                  offset = offset))
+             list(limit = limit,
+                  offset = offset,
+                  bbox = bbox,
+                  properties = properties,
+                  transform = transform))
 
   resp <- fwa_api(path, query)
 

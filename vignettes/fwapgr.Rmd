@@ -23,33 +23,33 @@ output: github_document
 
 In this article, we will create a basic map of the Yakoun River watershed in Haida Gwaii, BC, primarily using `fwapgr`'s workhorse function: `fwa_collection`. We can get started by looking at all available tables and which columns are in a specific table.
 ```{r}
-fwapgr::fwa_list_tables()
+fwapgr::fwa_meta_collections()
 ```
 
 ```{r}
-fwapgr::fwa_list_columns('fwa_stream_networks_sp')
+fwapgr::fwa_meta_properties('whse_basemapping.fwa_stream_networks_sp')
 ```
 
 `fwa_collection` allows us to retrieve data from any available table in the database and filter for desired values on any column. To get a linestring feature of the Yakoun river, we could use the 'fwa_stream_networks_sp' or 'fwa_named_streams' table and filter by `gnis_name` column. 
 
 ```{r, results='hide'}
-fwapgr::fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = "Yakoun River"))
+fwapgr::fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_name = "Yakoun River"))
 ```
 
 Let's also get the Yakoun River watershed using the "fwa_named_watersheds_poly" table.
 ```{r}
-wshed <- fwapgr::fwa_collection(table = "fwa_named_watersheds_poly", filter = list(gnis_name = "Yakoun River"))
+wshed <- fwapgr::fwa_collection("whse_basemapping.fwa_named_watersheds_poly", filter = list(gnis_name = "Yakoun River"))
 ```
 
 Next, let's get all the lakes that are within the Yakoun river watershed. We can use the `bbox` argument for this and the 'fwa_lakes_poly' table. 
 ```{r}
 bbox <- sf::st_bbox(wshed)
-lakes <- fwapgr::fwa_collection("fwa_lakes_poly", bbox = bbox)
+lakes <- fwapgr::fwa_collection("whse_basemapping.fwa_lakes_poly", bbox = bbox)
 ```
 
 Finally, lets get all streams within the watershed bounds with stream_order greater than 1. order streams.
 ```{r warning=FALSE, message=FALSE}
-streams <- fwapgr::fwa_collection("fwa_stream_networks_sp", bbox = bbox)
+streams <- fwapgr::fwa_collection("whse_basemapping.fwa_stream_networks_sp", bbox = bbox)
 streams <- streams[streams$stream_order > 2,]
 ```
 

@@ -7,6 +7,11 @@
 fwa_watershed_at_measure(
   blue_line_key,
   downstream_route_measure = 0,
+  limit = 10000,
+  offset = 0,
+  bbox = NULL,
+  properties = NULL,
+  transform = NULL,
   epsg = 4326
 )
 }
@@ -14,6 +19,17 @@ fwa_watershed_at_measure(
 \item{blue_line_key}{An integer of the stream blue line key.}
 
 \item{downstream_route_measure}{An integer of the downstream route measure.}
+
+\item{limit}{A positive whole number indicating the maximum number of features to return.}
+
+\item{offset}{A positive whole number indicating the offset of start of returned results.}
+
+\item{bbox}{A vector of numbers indicating bounding box to limit output
+features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
+
+\item{properties}{A vector of strings of the column names to include. If NULL (default), all columns are retained.}
+
+\item{transform}{A character string of the geometry transformation function pipeline to apply.}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 }

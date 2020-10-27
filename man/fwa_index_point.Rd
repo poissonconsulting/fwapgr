@@ -4,7 +4,19 @@
 \alias{fwa_index_point}
 \title{FWA index point}
 \usage{
-fwa_index_point(x, y, srid, tolerance = 5000, num_features = 1, epsg = srid)
+fwa_index_point(
+  x,
+  y,
+  srid,
+  tolerance = 5000,
+  num_features = 1,
+  limit = 10000,
+  offset = 0,
+  bbox = NULL,
+  properties = NULL,
+  transform = NULL,
+  epsg = srid
+)
 }
 \arguments{
 \item{x}{A number of the x coordinate.}
@@ -17,7 +29,18 @@ fwa_index_point(x, y, srid, tolerance = 5000, num_features = 1, epsg = srid)
 
 \item{num_features}{An integer of the maximum number of features to return.}
 
-\item{epsg}{An integer of the epsg to transform results to.}
+\item{limit}{A positive whole number indicating the maximum number of features to return.}
+
+\item{offset}{A positive whole number indicating the offset of start of returned results.}
+
+\item{bbox}{A vector of numbers indicating bounding box to limit output
+features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
+
+\item{properties}{A vector of strings of the column names to include. If NULL (default), all columns are retained.}
+
+\item{transform}{A character string of the geometry transformation function pipeline to apply.}
+
+\item{epsg}{A positive whole number of the epsg to transform features to.}
 }
 \value{
 A sf object

@@ -34,7 +34,7 @@ read_feature <- function(response, epsg){
   sf::st_transform(x, epsg)
 }
 
-format_columns <- function(x){
+format_properties <- function(x){
   if(is.null(x)) return(x)
   paste(x, collapse = ",")
 }
@@ -42,8 +42,4 @@ format_columns <- function(x){
 format_bounds <- function(x){
   if(is.null(x)) return(x)
   paste(x, collapse = ",")
-}
-
-add_schema <- function(x, schema){
-  glue("{schema}.{x}")
 }
