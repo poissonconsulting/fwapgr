@@ -37,4 +37,16 @@ test_that("API functions work", {
   df <- fwa_watershed_hex(blk, downstream_route_measure = drm2)
   expect_is(df, "sf")
   expect_is(df$geometry, "sfc_MULTIPOLYGON")
+  
+    ### locate along
+    df <- fwa_locate_along(blk, downstream_route_measure = drm2)
+    expect_is(df, "sf")
+    expect_is(df$geometry, "sfc_POINT")
+    expect_identical(nrow(df), 1L)
+
+    ### locate along interval
+    df <- fwa_locate_along_interval(blk, interval = 100, start = 10000)
+    expect_is(df, "sf")
+    expect_is(df$geometry, "sfc_POINT")
+    expect_identical(nrow(df), 93L)
 })

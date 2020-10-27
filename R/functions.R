@@ -103,4 +103,56 @@ fwa_watershed_hex <- function(blue_line_key, downstream_route_measure = 0, epsg 
   read_feature(resp, epsg)
 }
 
+#' FWA locate along
+#'
+#' Provided a location as blue_line_key and downstream_route_measure, return a point.
+#'
+#' @inheritParams fwa_collection
+#' @param blue_line_key An integer of the stream blue line key.
+#' @param downstream_route_measure An integer of the downstream route measure.
+#' @return A sf object
+#' @export
+#' @examples
+#' fwa_locate_along(356308001, downstream_route_measure = 10000)
+fwa_locate_along <- function(blue_line_key, downstream_route_measure = 0, epsg = 4326){
+  chk_whole_number(blue_line_key)
+  chk_number(downstream_route_measure)
+  chk_whole_number(epsg)
+
+  path <- glue("fwapg/functions/fwa_locatealong/items.json")
+  query <- list(blue_line_key = blue_line_key,
+                downstream_route_measure = downstream_route_measure)
+  resp <- fwa_api(path, query)
+  read_feature(resp, epsg)
+}
+
+#' FWA locate along interval
+#'
+#' Provided a blue_line_key and starting downstream distance, return a set of points along an interval.
+#'
+#' @inheritParams fwa_collection
+#' @param blue_line_key An integer of the stream blue line key.
+#' @param interval_length An integer of the interval distance in meters.
+#' @param start An integer of the distance in meters upstream from the river mouth to start from.
+#' @param limit An integer of the limit of rows to return.
+#' @return A sf object
+#' @export
+#' @examples
+#' fwa_locate_along_interval(356308001, interval_length = 10, start = 0)
+fwa_locate_along_interval <- function(blue_line_key, interval_length = 1000,
+                                      start = 0, epsg = 4326){
+  chk_whole_number(blue_line_key)
+  chk_whole_number(interval_length)
+  chk_whole_number(start)
+  chk_whole_number(epsg)
+
+  path <- glue("fwapg/functions/fwa_locatealonginterval/items.json")
+  query <- list(blue_line_key = blue_line_key,
+                start = start,
+                interval_length = interval_length)
+  resp <- fwa_api(path, query)
+  read_feature(resp, epsg)
+}
+
+
 
