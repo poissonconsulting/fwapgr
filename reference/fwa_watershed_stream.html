@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • fwapgr</title>
+<title>FWA watershed stream — fwa_watershed_stream • fwapgr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="FWA watershed stream — fwa_watershed_stream" />
+<meta property="og:description" content="Provided a location as blue_line_key and downstream_route_measure, return stream segments upstream, within the same first order watershed." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -125,96 +126,77 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>FWA watershed stream</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/functions.R'><code>R/functions.R</code></a></small>
+    <div class="hidden name"><code>fwa_watershed_stream.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Provided a location as blue_line_key and downstream_route_measure, return stream segments upstream, within the same first order watershed.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>fwa_watershed_stream</span><span class='op'>(</span>
+  <span class='va'>blue_line_key</span>,
+  downstream_route_measure <span class='op'>=</span> <span class='fl'>0</span>,
+  limit <span class='op'>=</span> <span class='fl'>10000</span>,
+  offset <span class='op'>=</span> <span class='fl'>0</span>,
+  bbox <span class='op'>=</span> <span class='cn'>NULL</span>,
+  properties <span class='op'>=</span> <span class='cn'>NULL</span>,
+  transform <span class='op'>=</span> <span class='cn'>NULL</span>,
+  epsg <span class='op'>=</span> <span class='fl'>4326</span>
+<span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="fwa_collection.html">fwa_collection()</a></code> </p>
-        </td>
-        <td><p>FWA collection</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fwa_function.html">fwa_function()</a></code> </p>
-        </td>
-        <td><p>FWA function</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fwa_index_point.html">fwa_index_point()</a></code> </p>
-        </td>
-        <td><p>FWA index point</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fwa_locate_along.html">fwa_locate_along()</a></code> </p>
-        </td>
-        <td><p>FWA locate along</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fwa_locate_along_interval.html">fwa_locate_along_interval()</a></code> </p>
-        </td>
-        <td><p>FWA locate along interval</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fwa_meta_collections.html">fwa_meta_collections()</a></code> </p>
-        </td>
-        <td><p>FWA collections metadata</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fwa_meta_properties.html">fwa_meta_properties()</a></code> </p>
-        </td>
-        <td><p>FWA property metadata</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fwa_watershed_at_measure.html">fwa_watershed_at_measure()</a></code> </p>
-        </td>
-        <td><p>FWA watershed at downstream route measure</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fwa_watershed_hex.html">fwa_watershed_hex()</a></code> </p>
-        </td>
-        <td><p>FWA watershed hex</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fwa_watershed_stream.html">fwa_watershed_stream()</a></code> </p>
-        </td>
-        <td><p>FWA watershed stream</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>blue_line_key</th>
+      <td><p>An integer of the stream blue line key.</p></td>
+    </tr>
+    <tr>
+      <th>downstream_route_measure</th>
+      <td><p>An integer of the downstream route measure.</p></td>
+    </tr>
+    <tr>
+      <th>limit</th>
+      <td><p>A positive whole number indicating the maximum number of features to return.</p></td>
+    </tr>
+    <tr>
+      <th>offset</th>
+      <td><p>A positive whole number indicating the offset of start of returned results.</p></td>
+    </tr>
+    <tr>
+      <th>bbox</th>
+      <td><p>A vector of numbers indicating bounding box to limit output
+features to, e.g. <code><a href='https://rdrr.io/r/base/c.html'>c(minLon, minLat, maxLon, maxLat)</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>properties</th>
+      <td><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></td>
+    </tr>
+    <tr>
+      <th>transform</th>
+      <td><p>A character string of the geometry transformation function pipeline to apply.</p></td>
+    </tr>
+    <tr>
+      <th>epsg</th>
+      <td><p>A positive whole number of the epsg to transform features to.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A sf object</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html'>fwa_watershedstream API documentation</a></p></div>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='fu'>fwa_watershed_stream</span><span class='op'>(</span><span class='fl'>356308001</span>, downstream_route_measure <span class='op'>=</span> <span class='fl'>10000</span><span class='op'>)</span>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
