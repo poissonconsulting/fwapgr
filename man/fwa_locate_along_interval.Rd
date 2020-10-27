@@ -19,8 +19,6 @@ fwa_locate_along_interval(
 \item{start}{An integer of the distance in meters upstream from the river mouth to start from.}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
-
-\item{limit}{An integer of the limit of rows to return.}
 }
 \value{
 A sf object

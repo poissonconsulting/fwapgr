@@ -134,7 +134,6 @@ fwa_locate_along <- function(blue_line_key, downstream_route_measure = 0, epsg =
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param interval_length An integer of the interval distance in meters.
 #' @param start An integer of the distance in meters upstream from the river mouth to start from.
-#' @param limit An integer of the limit of rows to return.
 #' @return A sf object
 #' @export
 #' @examples
