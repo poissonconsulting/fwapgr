@@ -24,13 +24,13 @@ test_that("API functions work", {
   df2 <- fwa_watershed_at_measure(blk, downstream_route_measure = drm2)
   expect_true(df$area_ha > df2$area_ha)
 
-  ### stream at measure
-  df <- fwa_stream_at_measure(blk, downstream_route_measure = drm)
+  ### watershed_stream
+  df <- fwa_watershed_stream(blk, downstream_route_measure = drm)
   expect_is(df, "sf")
   expect_is(df$geometry, "sfc_MULTILINESTRING")
   expect_identical(nrow(df), 1L)
 
-  df2 <- fwa_stream_at_measure(blk, downstream_route_measure = drm2)
+  df2 <- fwa_watershed_stream(blk, downstream_route_measure = drm2)
   expect_true(df$linear_feature_id != df2$linear_feature_id)
 
   ### watershed hex

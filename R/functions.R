@@ -122,7 +122,7 @@ fwa_watershed_at_measure <- function(blue_line_key,
                epsg = epsg)
 }
 
-#' FWA stream at downstream route measure
+#' FWA watershed stream
 #'
 #' Provided a location as blue_line_key and downstream_route_measure, return stream segments upstream, within the same first order watershed.
 #'
@@ -133,8 +133,8 @@ fwa_watershed_at_measure <- function(blue_line_key,
 #' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html}{fwa_watershedstream API documentation}
 #' @export
 #' @examples
-#' \dontrun{fwa_stream_at_measure(356308001, downstream_route_measure = 10000)}
-fwa_stream_at_measure <- function(blue_line_key,
+#' \dontrun{fwa_watershed_stream(356308001, downstream_route_measure = 10000)}
+fwa_watershed_stream<- function(blue_line_key,
                                   downstream_route_measure = 0,
                                   limit = 10000,
                                   offset = 0,
