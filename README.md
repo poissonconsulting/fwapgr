@@ -25,13 +25,10 @@ please see [fwatlasbc](https://github.com/poissonconsulting/fwatlasbc)
 API](https://www.hillcrestgeo.ca/fwapg/index.html) used to get data from
 the [B.C. Freshwater
 Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater).
-Data are retrieved from a [PostgreSQL
-database](https://github.com/smnorris/fwapg) and returned as [simple
-features](https://github.com/r-spatial/sf). Functions and arguments
-exactly match those available in [the
-API](https://www.hillcrestgeo.ca/fwapg/index.html).
+Data are returned as [simple features](https://github.com/r-spatial/sf).
+Functions and arguments exactly match those available in the API.
 
-Get and filter data from
+Query features from
 [collections](https://www.hillcrestgeo.ca/fwapg/collections.html):
 
   - `fwa_collection()`
@@ -41,7 +38,7 @@ Get metadata:
   - `fwa_meta_collections()`  
   - `fwa_meta_properties()`
 
-Perform spatial
+Execute spatial
 [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):
 
   - `fwa_index_point()`  
@@ -115,7 +112,8 @@ WFS](https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&version=2.0.0&request=Ge
 with the [bcdata](https://github.com/bcgov/bcdata) 📦.
 
 Many thanks to [Simon Norris](https://github.com/smnorris/fwapg) for his
-work on [fwapg](https://github.com/smnorris/fwapg) and [the
+work on [fwapg](https://github.com/smnorris/fwapg) PostgreSQL database
+and [the pg-featureserv web
 API](https://www.hillcrestgeo.ca/fwapg/index.html).
 
 ## Contribution
