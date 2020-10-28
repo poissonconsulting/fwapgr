@@ -92,30 +92,33 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>An R 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a>. <code>fwapgr</code> is an R client for <a href="https://github.com/smnorris/fwapg">fwapg</a>, a PostgreSQL database and <a href="https://hillcrestgeo.ca/fwapg/">web API</a>. Data are provided as <a href="https://github.com/r-spatial/sf">simple features</a>.</p>
-<p>Get and filter data from collections:</p>
+<p>If you are looking for a user-friendly R 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a> please see <a href="https://github.com/poissonconsulting/fwatlasbc">fwatlasbc</a> 😄. It is built on <code>fwapgr</code>.</p>
+<p><code>fwapgr</code> is an R client for the <a href="https://www.hillcrestgeo.ca/fwapg/index.html">fwapg pg-featureserv web API</a> used to get data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a>. Data are retrieved from a <a href="https://github.com/smnorris/fwapg">PostgreSQL database</a> and returned as <a href="https://github.com/r-spatial/sf">simple features</a>. Functions and arguments exactly match those available in <a href="https://www.hillcrestgeo.ca/fwapg/index.html">the API</a>.</p>
+<p>Get and filter data from <a href="https://www.hillcrestgeo.ca/fwapg/collections.html">collections</a>:</p>
 <ul>
 <li><code><a href="reference/fwa_collection.html">fwa_collection()</a></code></li>
 </ul>
-<p>List and search metadata:</p>
+<p>Get metadata:</p>
 <ul>
 <li>
-<code>fwa_list_tables()</code><br>
+<code><a href="reference/fwa_meta_collections.html">fwa_meta_collections()</a></code><br>
 </li>
-<li><code>fwa_list_columns()</code></li>
+<li><code><a href="reference/fwa_meta_properties.html">fwa_meta_properties()</a></code></li>
 </ul>
-<p>Perform spatial operations:</p>
+<p>Perform spatial <a href="https://www.hillcrestgeo.ca/fwapg/functions.html">functions</a>:</p>
 <ul>
 <li>
-<code>fwa_nearest_stream()</code><br>
+<code><a href="reference/fwa_index_point.html">fwa_index_point()</a></code><br>
 </li>
+<li><code><a href="reference/fwa_locate_along.html">fwa_locate_along()</a></code></li>
+<li><code><a href="reference/fwa_locate_along_interval.html">fwa_locate_along_interval()</a></code></li>
 <li>
 <code><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure()</a></code><br>
 </li>
 <li>
-<code>fwa_stream_at_measure()</code><br>
+<code><a href="reference/fwa_watershed_hex.html">fwa_watershed_hex()</a></code><br>
 </li>
-<li><code><a href="reference/fwa_watershed_hex.html">fwa_watershed_hex()</a></code></li>
+<li><code><a href="reference/fwa_watershed_stream.html">fwa_watershed_stream()</a></code></li>
 </ul>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -128,8 +131,9 @@
 <div id="demonstration" class="section level2">
 <h2 class="hasAnchor">
 <a href="#demonstration" class="anchor"></a>Demonstration</h2>
+<p>Get Yakoun River stream from ‘whse_basemapping.fwa_stream_networks_sp’ collection:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">'Yakoun River'</span><span class="op">)</span><span class="op">)</span>
+<span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">'Yakoun River'</span><span class="op">)</span><span class="op">)</span>
 <span class="va">yakoun</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"blue_line_key"</span>, <span class="st">"gnis_name"</span>, <span class="st">"length_metre"</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; Simple feature collection with 129 features and 3 fields</span>
 <span class="co">#&gt; geometry type:  LINESTRING</span>
@@ -149,17 +153,20 @@
 <span class="co">#&gt; 8      360881586 Yakoun River     34.30732 LINESTRING Z (-132.2088 53....</span>
 <span class="co">#&gt; 9      360881586 Yakoun River   1618.76222 LINESTRING Z (-132.2093 53....</span>
 <span class="co">#&gt; 10     360881586 Yakoun River   2816.01293 LINESTRING Z (-132.2076 53....</span></pre></div>
-</div>
-<div id="information" class="section level2">
-<h2 class="hasAnchor">
-<a href="#information" class="anchor"></a>Information</h2>
-<p>For more information see the <a href="https://poissonconsulting.github.io/fwapgr/articles/fwapgr.html">Get Started</a> vignette.</p>
+<p>Get Yakoun River watershed starting 10km upstream:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">yakoun</span>, lwd <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, fill <span class="op">=</span> <span class="st">'steelblue'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-5-1.png" width="100%"></p>
 </div>
 <div id="credit-and-inspiration" class="section level2">
 <h2 class="hasAnchor">
 <a href="#credit-and-inspiration" class="anchor"></a>Credit and Inspiration</h2>
-<p><code>fwapgr</code> is meant to succeed <a href="https://github.com/poissonconsulting/fwabc">fwabc</a>. <code>fwabc</code> retrieved data <a href="https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&amp;version=2.0.0&amp;request=GetFeature&amp;typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&amp;outputFormat=json&amp;SRSNAME=epsg%3A3005&amp;CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27">via WFS</a> with the <a href="https://github.com/bcgov/bcdata">bcdata</a> 📦. Instead, <code>fwapgr</code> leverages the power of PostgreSQL and PostGIS via a database and <a href="https://hillcrestgeo.ca/fwapg/">web API</a> hosted and created by <a href="https://hillcrestgeo.ca/main/">Hillcrest Geographics</a>.</p>
-<p>Many thanks to <a href="https://github.com/smnorris/fwapg">Simon Norris</a> for his work on <a href="https://github.com/smnorris/fwapg">fwapg</a> and <a href="https://hillcrestgeo.ca/fwapg/">the API</a>.</p>
+<p><code>fwapgr</code> is built on the <a href="https://www.hillcrestgeo.ca/fwapg/index.html">fwapg pg-featureserv web API</a> hosted and created by <a href="https://github.com/smnorris/fwapg">Simon Norris</a> at <a href="https://hillcrestgeo.ca/main/">Hillcrest Geographics</a>. It is meant to succeed the <a href="https://github.com/poissonconsulting/fwabc"><code>fwabc</code></a> 📦 which retrieved data <a href="https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&amp;version=2.0.0&amp;request=GetFeature&amp;typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&amp;outputFormat=json&amp;SRSNAME=epsg%3A3005&amp;CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27">via WFS</a> with the <a href="https://github.com/bcgov/bcdata">bcdata</a> 📦.</p>
+<p>Many thanks to <a href="https://github.com/smnorris/fwapg">Simon Norris</a> for his work on <a href="https://github.com/smnorris/fwapg">fwapg</a> and <a href="https://www.hillcrestgeo.ca/fwapg/index.html">the API</a>.</p>
 </div>
 <div id="contribution" class="section level2">
 <h2 class="hasAnchor">
