@@ -15,27 +15,41 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 status](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions)
 <!-- badges: end -->
 
-An R 📦 for retrieving data from the [B.C. Freshwater
-Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater).
-`fwapgr` is an R client for [fwapg](https://github.com/smnorris/fwapg),
-a PostgreSQL database and [web API](https://hillcrestgeo.ca/fwapg/).
-Data are provided as [simple features](https://github.com/r-spatial/sf).
+If you are looking for a user-friendly R 📦 for retrieving data from the
+[B.C. Freshwater
+Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater)
+please see [fwatlasbc](https://github.com/poissonconsulting/fwatlasbc)
+😄. It is built on `fwapgr`.
 
-Get and filter data from collections:
+`fwapgr` is an R client for the [fwapg pg-featureserv web
+API](https://www.hillcrestgeo.ca/fwapg/index.html) used to get data from
+the [B.C. Freshwater
+Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater).
+Data are retrieved from a [PostgreSQL
+database](https://github.com/smnorris/fwapg) and returned as [simple
+features](https://github.com/r-spatial/sf). Functions and arguments
+exactly match those available in [the
+API](https://www.hillcrestgeo.ca/fwapg/index.html).
+
+Get and filter data from
+[collections](https://www.hillcrestgeo.ca/fwapg/collections.html):
 
   - `fwa_collection()`
 
-List and search metadata:
+Get metadata:
 
-  - `fwa_list_tables()`  
-  - `fwa_list_columns()`
+  - `fwa_meta_collections()`  
+  - `fwa_meta_properties()`
 
-Perform spatial operations:
+Perform spatial
+[functions](https://www.hillcrestgeo.ca/fwapg/functions.html):
 
-  - `fwa_nearest_stream()`  
+  - `fwa_index_point()`  
+  - `fwa_locate_along()`
+  - `fwa_locate_along_interval()`
   - `fwa_watershed_at_measure()`  
-  - `fwa_stream_at_measure()`  
-  - `fwa_watershed_hex()`
+  - `fwa_watershed_hex()`  
+  - `fwa_watershed_stream()`
 
 ## Installation
 
@@ -49,8 +63,11 @@ remotes::install_github("poissonconsulting/fwapgr")
 
 ## Demonstration
 
+Get Yakoun River stream from
+‘whse\_basemapping.fwa\_stream\_networks\_sp’ collection:
+
 ``` r
-yakoun <- fwapgr::fwa_collection("fwa_stream_networks_sp", filter = list(gnis_name = 'Yakoun River'))
+yakoun <- fwapgr::fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_name = 'Yakoun River'))
 yakoun[c("blue_line_key", "gnis_name", "length_metre")]
 #> Simple feature collection with 129 features and 3 fields
 #> geometry type:  LINESTRING
@@ -72,26 +89,34 @@ yakoun[c("blue_line_key", "gnis_name", "length_metre")]
 #> 10     360881586 Yakoun River   2816.01293 LINESTRING Z (-132.2076 53....
 ```
 
-## Information
+Get Yakoun River watershed starting 10km upstream:
 
-For more information see the [Get
-Started](https://poissonconsulting.github.io/fwapgr/articles/fwapgr.html)
-vignette.
+``` r
+wshed <- fwapgr::fwa_watershed_at_measure(unique(yakoun$blue_line_key), downstream_route_measure = 10000)
+```
+
+``` r
+ggplot2::ggplot() +
+  ggplot2::geom_sf(data = yakoun, lwd = 0.15) +
+  ggplot2::geom_sf(data = wshed, lwd = 0.15, fill = 'steelblue', alpha = 0.5)
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ## Credit and Inspiration
 
-`fwapgr` is meant to succeed
-[fwabc](https://github.com/poissonconsulting/fwabc). `fwabc` retrieved
+`fwapgr` is built on the [fwapg pg-featureserv web
+API](https://www.hillcrestgeo.ca/fwapg/index.html) hosted and created by
+[Simon Norris](https://github.com/smnorris/fwapg) at [Hillcrest
+Geographics](https://hillcrestgeo.ca/main/). It is meant to succeed the
+[`fwabc`](https://github.com/poissonconsulting/fwabc) 📦 which retrieved
 data [via
 WFS](https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&outputFormat=json&SRSNAME=epsg%3A3005&CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27)
-with the [bcdata](https://github.com/bcgov/bcdata) 📦. Instead, `fwapgr`
-leverages the power of PostgreSQL and PostGIS via a database and [web
-API](https://hillcrestgeo.ca/fwapg/) hosted and created by [Hillcrest
-Geographics](https://hillcrestgeo.ca/main/).
+with the [bcdata](https://github.com/bcgov/bcdata) 📦.
 
 Many thanks to [Simon Norris](https://github.com/smnorris/fwapg) for his
 work on [fwapg](https://github.com/smnorris/fwapg) and [the
-API](https://hillcrestgeo.ca/fwapg/).
+API](https://www.hillcrestgeo.ca/fwapg/index.html).
 
 ## Contribution
 
