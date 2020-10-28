@@ -78,8 +78,8 @@
 <!-- badges: start -->
 
 <p>If you are looking for a user-friendly R 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a> please see <a href="https://github.com/poissonconsulting/fwatlasbc">fwatlasbc</a> 😄. It is built on <code>fwapgr</code>.</p>
-<p><code>fwapgr</code> is an R client for the <a href="https://www.hillcrestgeo.ca/fwapg/index.html">fwapg pg-featureserv web API</a> used to get data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a>. Data are retrieved from a <a href="https://github.com/smnorris/fwapg">PostgreSQL database</a> and returned as <a href="https://github.com/r-spatial/sf">simple features</a>. Functions and arguments exactly match those available in <a href="https://www.hillcrestgeo.ca/fwapg/index.html">the API</a>.</p>
-<p>Get and filter data from <a href="https://www.hillcrestgeo.ca/fwapg/collections.html">collections</a>:</p>
+<p><code>fwapgr</code> is an R client for the <a href="https://www.hillcrestgeo.ca/fwapg/index.html">fwapg pg-featureserv web API</a> used to get data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a>. Data are returned as <a href="https://github.com/r-spatial/sf">simple features</a>. Functions and arguments exactly match those available in the API.</p>
+<p>Query features from <a href="https://www.hillcrestgeo.ca/fwapg/collections.html">collections</a>:</p>
 <ul>
 <li><code><a href="reference/fwa_collection.html">fwa_collection()</a></code></li>
 </ul>
@@ -90,7 +90,7 @@
 </li>
 <li><code><a href="reference/fwa_meta_properties.html">fwa_meta_properties()</a></code></li>
 </ul>
-<p>Perform spatial <a href="https://www.hillcrestgeo.ca/fwapg/functions.html">functions</a>:</p>
+<p>Execute spatial <a href="https://www.hillcrestgeo.ca/fwapg/functions.html">functions</a>:</p>
 <ul>
 <li>
 <code><a href="reference/fwa_index_point.html">fwa_index_point()</a></code><br>
@@ -151,7 +151,7 @@
 <h2 class="hasAnchor">
 <a href="#credit-and-inspiration" class="anchor"></a>Credit and Inspiration</h2>
 <p><code>fwapgr</code> is built on the <a href="https://www.hillcrestgeo.ca/fwapg/index.html">fwapg pg-featureserv web API</a> hosted and created by <a href="https://github.com/smnorris/fwapg">Simon Norris</a> at <a href="https://hillcrestgeo.ca/main/">Hillcrest Geographics</a>. It is meant to succeed the <a href="https://github.com/poissonconsulting/fwabc"><code>fwabc</code></a> 📦 which retrieved data <a href="https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&amp;version=2.0.0&amp;request=GetFeature&amp;typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&amp;outputFormat=json&amp;SRSNAME=epsg%3A3005&amp;CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27">via WFS</a> with the <a href="https://github.com/bcgov/bcdata">bcdata</a> 📦.</p>
-<p>Many thanks to <a href="https://github.com/smnorris/fwapg">Simon Norris</a> for his work on <a href="https://github.com/smnorris/fwapg">fwapg</a> and <a href="https://www.hillcrestgeo.ca/fwapg/index.html">the API</a>.</p>
+<p>Many thanks to <a href="https://github.com/smnorris/fwapg">Simon Norris</a> for his work on <a href="https://github.com/smnorris/fwapg">fwapg</a> PostgreSQL database and <a href="https://www.hillcrestgeo.ca/fwapg/index.html">the pg-featureserv web API</a>.</p>
 </div>
 <div id="contribution" class="section level2">
 <h2 class="hasAnchor">
