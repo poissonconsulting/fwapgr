@@ -44,4 +44,12 @@ Provided a location as blue_line_key and downstream_route_measure, return stream
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html}{fwa_watershedstream API documentation}
+
+Other functions: 
+\code{\link{fwa_index_point}()},
+\code{\link{fwa_locate_along_interval}()},
+\code{\link{fwa_locate_along}()},
+\code{\link{fwa_watershed_at_measure}()},
+\code{\link{fwa_watershed_hex}()}
 }
+\concept{functions}
