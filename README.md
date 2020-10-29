@@ -92,13 +92,22 @@ Get Yakoun River watershed starting 10km upstream:
 wshed <- fwapgr::fwa_watershed_at_measure(unique(yakoun$blue_line_key), downstream_route_measure = 10000)
 ```
 
+Use `transform` argument to simplify polygons. See valid transformation
+functions
+[here](https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29)
+
 ``` r
-ggplot2::ggplot() +
-  ggplot2::geom_sf(data = yakoun, lwd = 0.15) +
-  ggplot2::geom_sf(data = wshed, lwd = 0.15, fill = 'steelblue', alpha = 0.5)
+wshed_simple <- fwapgr::fwa_watershed_at_measure(unique(yakoun$blue_line_key), downstream_route_measure = 10000, transform = c("ST_Simplify", 2000))
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+``` r
+ggplot2::ggplot() +
+    ggplot2::geom_sf(data = wshed_simple, lwd = 0.15, fill = 'red', alpha = 0.1) +
+    ggplot2::geom_sf(data = wshed, lwd = 0.15, fill = 'steelblue', alpha = 0.5) +
+  ggplot2::geom_sf(data = yakoun, lwd = 0.15) 
+```
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 ## Credit and Inspiration
 

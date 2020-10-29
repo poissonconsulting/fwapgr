@@ -11,7 +11,7 @@
 #' @param bbox A vector of numbers indicating bounding box to limit output
 #' features to, e.g. `c(minLon, minLat, maxLon, maxLat)`.
 #' @param properties A vector of strings of the column names to include. If NULL (default), all columns are retained.
-#' @param transform A character string of the geometry transformation function pipeline to apply.
+#' @param transform A vector of strings of the geometry transform function followed by parameter values (e.g. c("ST_Simplify", 100))
 #' @param epsg A positive whole number of the epsg to transform features to.
 #' @return A sf object
 #' @seealso \url{https://www.hillcrestgeo.ca/fwapg/collections.html} for API documentation.
@@ -36,11 +36,12 @@ fwa_collection <- function(collection_id,
   chk_whole_number(offset)
   chk_bbox(bbox)
   chk_null_or(properties, chk_character)
-  chk_null_or(transform, chk_string)
+  chk_transform(transform)
   chk_whole_number(epsg)
 
-  properties  <- format_properties(properties)
-  bbox <- format_bounds(bbox)
+  properties  <- format_parameter(properties)
+  bbox <- format_parameter(bbox)
+  transform <- format_parameter(transform)
 
   path <- glue("fwapg/collections/{collection_id}/items.json")
   query <- c(filter,

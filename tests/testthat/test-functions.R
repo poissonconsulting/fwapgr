@@ -15,14 +15,16 @@ test_that("API functions work", {
   blk <- 356308001
   drm <- 0
   drm2 <- 10000
+  properties <- c("area_ha")
 
-  df <- fwa_watershed_at_measure(blk, downstream_route_measure = drm)
+  df <- fwa_watershed_at_measure(blk, downstream_route_measure = drm2, properties = properties)
   expect_is(df, "sf")
   expect_is(df$geometry, "sfc_POLYGON")
   expect_identical(nrow(df), 1L)
-
-  df2 <- fwa_watershed_at_measure(blk, downstream_route_measure = drm2)
-  expect_true(df$area_ha > df2$area_ha)
+  expect_identical(names(df), c(properties, "geometry"))
+  #
+  # df2 <- fwa_watershed_at_measure(blk, downstream_route_measure = drm2)
+  # expect_true(df$area_ha > df2$area_ha)
 
   ### watershed_stream
   df <- fwa_watershed_stream(blk, downstream_route_measure = drm)
@@ -49,4 +51,12 @@ test_that("API functions work", {
   expect_is(df, "sf")
   expect_is(df$geometry, "sfc_POINT")
   expect_identical(nrow(df), 93L)
+
+  ### check transform
+  # test multiple args
+  x <- fwa_watershed_stream(blk, downstream_route_measure = drm2, transform = c("ST_Simplify", 1000))
+  expect_is(x, "sf")
+  expect_identical(nrow(x), 1L)
+  # expect a triangle
+  expect_identical(length(unlist(x$geometry)), 4L)
 })

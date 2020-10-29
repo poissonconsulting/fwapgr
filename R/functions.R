@@ -24,8 +24,12 @@ fwa_function <- function(function_id,
   chk_whole_number(offset)
   chk_bbox(bbox)
   chk_null_or(properties, chk_character)
-  chk_null_or(transform, chk_string)
+  chk_transform(transform)
   chk_whole_number(epsg)
+
+  properties  <- format_parameter(properties)
+  bbox <- format_parameter(bbox)
+  transform <- format_parameter(transform)
 
   path <- glue("fwapg/functions/{function_id}/items.json")
   query <- c(parameters, list(
