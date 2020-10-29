@@ -3,6 +3,7 @@
 #' Provide collection metadata.
 #'
 #' @return A tibble
+#' @family metadata
 #' @export
 #' @examples
 #' \dontrun{fwa_meta_collections()}
@@ -24,6 +25,7 @@ fwa_meta_collections <- function(){
 #' Provide column names of collection.
 #'
 #' @return A tibble
+#' @family metadata
 #' @inheritParams fwa_collection
 #' @export
 #' @examples

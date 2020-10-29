@@ -14,7 +14,7 @@
 #' @param transform A vector of strings of the geometry transform function followed by parameter values (e.g. c("ST_Simplify", 100))
 #' @param epsg A positive whole number of the epsg to transform features to.
 #' @return A sf object
-#' @seealso \url{https://www.hillcrestgeo.ca/fwapg/collections.html} for API documentation.
+#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/collections.html}{collections API documentation}.
 #' @export
 #' @examples
 #' \dontrun{

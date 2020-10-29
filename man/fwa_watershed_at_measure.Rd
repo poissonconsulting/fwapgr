@@ -45,4 +45,12 @@ return the entire watershed boundary upstream of the location.
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html}{fwa_watershedatmeasure API documentation}
+
+Other functions: 
+\code{\link{fwa_index_point}()},
+\code{\link{fwa_locate_along_interval}()},
+\code{\link{fwa_locate_along}()},
+\code{\link{fwa_watershed_hex}()},
+\code{\link{fwa_watershed_stream}()}
 }
+\concept{functions}

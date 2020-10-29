@@ -15,3 +15,8 @@ Provide collection metadata.
 \examples{
 \dontrun{fwa_meta_collections()}
 }
+\seealso{
+Other metadata: 
+\code{\link{fwa_meta_properties}()}
+}
+\concept{metadata}

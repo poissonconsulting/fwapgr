@@ -47,4 +47,12 @@ Provided a blue_line_key and starting downstream distance, return a set of point
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{fwa_locatealonginterval API documentation}
+
+Other functions: 
+\code{\link{fwa_index_point}()},
+\code{\link{fwa_locate_along}()},
+\code{\link{fwa_watershed_at_measure}()},
+\code{\link{fwa_watershed_hex}()},
+\code{\link{fwa_watershed_stream}()}
 }
+\concept{functions}

@@ -47,5 +47,5 @@ fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_nam
 }
 }
 \seealso{
-\url{https://www.hillcrestgeo.ca/fwapg/collections.html} for API documentation.
+\href{https://www.hillcrestgeo.ca/fwapg/collections.html}{collections API documentation}.
 }
