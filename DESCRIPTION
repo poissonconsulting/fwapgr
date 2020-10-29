@@ -31,11 +31,14 @@ Imports:
     tibble
 Suggests: 
     covr,
+    emo,
     ggplot2,
     knitr,
     magrittr,
     rmarkdown,
     testthat
+Remotes:
+    hadley/emo
 VignetteBuilder: 
     knitr
 RdMacros: 
