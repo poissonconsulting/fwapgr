@@ -50,6 +50,7 @@ fwa_function <- function(function_id,
 #' @param tolerance A number of the tolerance.
 #' @param num_features An integer of the maximum number of features to return.
 #' @return A sf object
+#' @family functions
 #' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html}{fwa_indexpoint API documentation}
 #' @export
 #' @examples
@@ -94,6 +95,7 @@ fwa_index_point <- function(x, y, srid,
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param downstream_route_measure An integer of the downstream route measure.
 #' @return A sf object
+#' @family functions
 #' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html}{fwa_watershedatmeasure API documentation}
 #' @export
 #' @examples
@@ -130,6 +132,7 @@ fwa_watershed_at_measure <- function(blue_line_key,
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param downstream_route_measure An integer of the downstream route measure.
 #' @return A sf object
+#' @family functions
 #' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html}{fwa_watershedstream API documentation}
 #' @export
 #' @examples
@@ -166,6 +169,7 @@ fwa_watershed_stream<- function(blue_line_key,
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param downstream_route_measure An integer of the downstream route measure.
 #' @return A sf object
+#' @family functions
 #' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html}{fwa_watershedhex API documentation}
 #' @export
 #' @examples
@@ -202,6 +206,7 @@ fwa_watershed_hex <- function(blue_line_key,
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param downstream_route_measure An integer of the downstream route measure.
 #' @return A sf object
+#' @family functions
 #' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html}{fwa_locatealong API documentation}
 #' @export
 #' @examples
@@ -239,6 +244,7 @@ fwa_locate_along <- function(blue_line_key,
 #' @param interval_length An integer of the interval distance in meters.
 #' @param start An integer of the distance in meters upstream from the river mouth to start from.
 #' @return A sf object
+#' @family functions
 #' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{fwa_locatealonginterval API documentation}
 #' @export
 #' @examples

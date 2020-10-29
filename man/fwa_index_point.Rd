@@ -53,4 +53,12 @@ Provided a point (x, y, srid), return the point along a stream(s) nearest to the
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html}{fwa_indexpoint API documentation}
+
+Other functions: 
+\code{\link{fwa_locate_along_interval}()},
+\code{\link{fwa_locate_along}()},
+\code{\link{fwa_watershed_at_measure}()},
+\code{\link{fwa_watershed_hex}()},
+\code{\link{fwa_watershed_stream}()}
 }
+\concept{functions}
