@@ -8,7 +8,7 @@ fwa_locate_along_interval(
   blue_line_key,
   interval_length = 1000,
   start = 0,
-  limit = 10000,
+  limit = 100,
   offset = 0,
   bbox = NULL,
   properties = NULL,

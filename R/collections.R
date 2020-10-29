@@ -22,7 +22,7 @@
 #' }
 fwa_collection <- function(collection_id,
                         filter = NULL,
-                        limit = 10000,
+                        limit = 100,
                         offset = 0,
                         bbox = NULL,
                         properties = NULL,

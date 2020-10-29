@@ -7,7 +7,7 @@
 fwa_collection(
   collection_id,
   filter = NULL,
-  limit = 10000,
+  limit = 100,
   offset = 0,
   bbox = NULL,
   properties = NULL,

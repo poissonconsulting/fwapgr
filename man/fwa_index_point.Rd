@@ -10,7 +10,7 @@ fwa_index_point(
   srid,
   tolerance = 5000,
   num_features = 1,
-  limit = 10000,
+  limit = 100,
   offset = 0,
   bbox = NULL,
   properties = NULL,

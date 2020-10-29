@@ -7,7 +7,7 @@
 fwa_function(
   function_id,
   parameters,
-  limit = 10000,
+  limit = 100,
   offset = 0,
   bbox = NULL,
   properties = NULL,
