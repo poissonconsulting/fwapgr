@@ -109,16 +109,16 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install the developmental version from <a href="https://github.com/poissonconsulting/fwapgr">GitHub</a></p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"poissonconsulting/fwapgr"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"poissonconsulting/fwapgr"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="demonstration" class="section level2">
 <h2 class="hasAnchor">
 <a href="#demonstration" class="anchor"></a>Demonstration</h2>
 <p>Get Yakoun River stream from ‘whse_basemapping.fwa_stream_networks_sp’ collection:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">'Yakoun River'</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">'Yakoun River'</span><span class="op">)</span><span class="op">)</span>
 <span class="va">yakoun</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"blue_line_key"</span>, <span class="st">"gnis_name"</span>, <span class="st">"length_metre"</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; Simple feature collection with 129 features and 3 fields</span>
 <span class="co">#&gt; geometry type:  LINESTRING</span>
@@ -137,18 +137,18 @@
 <span class="co">#&gt; 7      360881586 Yakoun River    499.69498 LINESTRING Z (-132.204 53.6...</span>
 <span class="co">#&gt; 8      360881586 Yakoun River     34.30732 LINESTRING Z (-132.2088 53....</span>
 <span class="co">#&gt; 9      360881586 Yakoun River   1618.76222 LINESTRING Z (-132.2093 53....</span>
-<span class="co">#&gt; 10     360881586 Yakoun River   2816.01293 LINESTRING Z (-132.2076 53....</span></pre></div>
+<span class="co">#&gt; 10     360881586 Yakoun River   2816.01293 LINESTRING Z (-132.2076 53....</span></code></pre></div>
 <p>Get Yakoun River watershed starting 10km upstream:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></code></pre></div>
 <p>Use <code>transform</code> argument to simplify polygons. See valid transformation functions <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29">here</a></p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="va">wshed_simple</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span>, transform <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ST_Simplify"</span>, <span class="fl">2000</span><span class="op">)</span><span class="op">)</span></pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">wshed_simple</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span>, transform <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ST_Simplify"</span>, <span class="fl">2000</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed_simple</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, fill <span class="op">=</span> <span class="st">'red'</span>, alpha <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, fill <span class="op">=</span> <span class="st">'steelblue'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">yakoun</span>, lwd <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span> </pre></div>
+  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">yakoun</span>, lwd <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span> </code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-6-1.png" width="100%"></p>
 </div>
 <div id="credit-and-inspiration" class="section level2">
