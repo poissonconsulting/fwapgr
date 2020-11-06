@@ -23,11 +23,11 @@ fwa_index_point(
 
 \item{y}{A number of the y coordinate.}
 
-\item{srid}{An integer of the srid of the coordinate (e.g. epsg).}
+\item{srid}{An positive whole number of the srid of the coordinate (e.g. epsg).}
 
 \item{tolerance}{A number of the tolerance.}
 
-\item{num_features}{An integer of the maximum number of features to return.}
+\item{num_features}{A positive whole number of the maximum number of features to return.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
 

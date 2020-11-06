@@ -16,9 +16,9 @@ fwa_watershed_hex(
 )
 }
 \arguments{
-\item{blue_line_key}{An integer of the stream blue line key.}
+\item{blue_line_key}{A positive whole number of the stream blue line key.}
 
-\item{downstream_route_measure}{An integer of the downstream route measure.}
+\item{downstream_route_measure}{A positive whole number of the downstream route measure.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
 

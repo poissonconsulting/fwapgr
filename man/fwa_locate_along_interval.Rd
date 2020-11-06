@@ -17,11 +17,11 @@ fwa_locate_along_interval(
 )
 }
 \arguments{
-\item{blue_line_key}{An integer of the stream blue line key.}
+\item{blue_line_key}{A positive whole number of the stream blue line key.}
 
-\item{interval_length}{An integer of the interval distance in meters.}
+\item{interval_length}{A positive whole number of the interval length in meters between returned points.}
 
-\item{start}{An integer of the distance in meters upstream from the river mouth to start from.}
+\item{start}{A positive whole number of the distance in meters upstream from the river mouth to start from.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
 
