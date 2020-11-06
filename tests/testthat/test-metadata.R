@@ -22,7 +22,6 @@ test_that("fwa_meta_collections", {
       "whse_basemapping.fwa_obstructions_sp",
       "whse_basemapping.fwa_rivers_poly",
       "whse_basemapping.fwa_stream_networks_sp",
-      "whse_basemapping.fwa_stream_networks_sp_deleteme",
       "whse_basemapping.fwa_watershed_groups_poly",
       "whse_basemapping.fwa_watershed_groups_subdivided",
       "whse_basemapping.fwa_watersheds_poly",
@@ -46,9 +45,6 @@ test_that("fwa_meta_collections", {
       "whse_fish.pscis_points_all",
       "whse_fish.pscis_remediation_svw")
     %in% x$collection_id))
-
-
-
 })
 
 test_that("fwa_meta_properties", {
