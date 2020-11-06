@@ -18,7 +18,7 @@ fwa_watershed_stream(
 \arguments{
 \item{blue_line_key}{A positive whole number of the stream blue line key.}
 
-\item{downstream_route_measure}{A positive whole number of the downstream route measure.}
+\item{downstream_route_measure}{A positive number of the downstream route measure.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
 

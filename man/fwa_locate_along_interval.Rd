@@ -21,7 +21,7 @@ fwa_locate_along_interval(
 
 \item{interval_length}{A positive whole number of the interval length in meters between returned points.}
 
-\item{start}{A positive whole number of the distance in meters upstream from the river mouth to start from.}
+\item{start}{A positive number of the distance in meters upstream from the river mouth to start from.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
 

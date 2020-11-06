@@ -99,7 +99,7 @@ fwa_index_point <- function(x, y, srid,
 #'
 #' @inheritParams fwa_collection
 #' @param blue_line_key A positive whole number of the stream blue line key.
-#' @param downstream_route_measure A positive whole number of the downstream route measure.
+#' @param downstream_route_measure A positive number of the downstream route measure.
 #' @return A sf object
 #' @family functions
 #' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html}{fwa_watershedatmeasure API documentation}
@@ -116,7 +116,7 @@ fwa_watershed_at_measure <- function(blue_line_key,
                                      epsg = 4326){
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
-  chk_whole_number(downstream_route_measure)
+  chk_number(downstream_route_measure)
   chk_gte(downstream_route_measure)
 
   parameters <- list(blue_line_key = blue_line_key,
@@ -153,7 +153,7 @@ fwa_watershed_stream <- function(blue_line_key,
                                   epsg = 4326){
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
-  chk_whole_number(downstream_route_measure)
+  chk_number(downstream_route_measure)
   chk_gte(downstream_route_measure)
 
   parameters <- list(blue_line_key = blue_line_key,
@@ -190,7 +190,7 @@ fwa_watershed_hex <- function(blue_line_key,
                               epsg = 4326){
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
-  chk_whole_number(downstream_route_measure)
+  chk_number(downstream_route_measure)
   chk_gte(downstream_route_measure)
 
   parameters <- list(blue_line_key = blue_line_key,
@@ -227,7 +227,7 @@ fwa_locate_along <- function(blue_line_key,
                              epsg = 4326){
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
-  chk_whole_number(downstream_route_measure)
+  chk_number(downstream_route_measure)
   chk_gte(downstream_route_measure)
 
   parameters <- list(blue_line_key = blue_line_key,
@@ -248,7 +248,7 @@ fwa_locate_along <- function(blue_line_key,
 #' Provided a blue_line_key and starting downstream distance, return a set of points along an interval.
 #'
 #' @inheritParams fwa_watershed_at_measure
-#' @param start A positive whole number of the distance in meters upstream from the river mouth to start from.
+#' @param start A positive number of the distance in meters upstream from the river mouth to start from.
 #' @param interval_length A positive whole number of the interval length in meters between returned points.
 #' @return A sf object
 #' @family functions
@@ -269,7 +269,7 @@ fwa_locate_along_interval <- function(blue_line_key,
   chk_gt(blue_line_key)
   chk_whole_number(interval_length)
   chk_gt(interval_length)
-  chk_whole_number(start)
+  chk_number(start)
   chk_gte(start)
 
   parameters <- list(blue_line_key = blue_line_key,
