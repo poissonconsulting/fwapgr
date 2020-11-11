@@ -20,7 +20,7 @@ fwa_function <- function(function_id,
   chk_string(function_id)
   chk_list(parameters)
   chk_named(parameters)
-  chk_null_or(limit, chk_whole_number)
+  chk_whole_number(limit)
   chk_whole_number(offset)
   chk_bbox(bbox)
   chk_null_or(properties, chk_character)

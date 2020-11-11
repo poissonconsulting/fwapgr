@@ -32,7 +32,7 @@ fwa_collection <- function(collection_id,
   chk_string(collection_id)
   chkor(chk_is(filter, "vector"), chk_is(filter, "list"), chk_null(filter))
   chk_null_or(filter, chk_named)
-  chk_null_or(limit, chk_whole_number)
+  chk_whole_number(limit)
   chk_gt(limit)
   chk_whole_number(offset)
   chk_gte(offset)

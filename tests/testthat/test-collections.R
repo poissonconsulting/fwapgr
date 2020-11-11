@@ -7,7 +7,7 @@ test_that("fwa_collection", {
   filter <- list(gnis_name = "Chilliwack Creek")
 
   # default vals
-  y <- fwa_collection(collectionid, filter = filter, limit = NULL)
+  y <- fwa_collection(collectionid, filter = filter)
   expect_true(all(y$gnis_name == "Chilliwack Creek"))
   expect_is(y, "sf")
 
