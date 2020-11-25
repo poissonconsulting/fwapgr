@@ -7,7 +7,7 @@
 fwa_watershed_stream(
   blue_line_key,
   downstream_route_measure = 0,
-  limit = 10000,
+  limit = 100,
   offset = 0,
   bbox = NULL,
   properties = NULL,
@@ -16,9 +16,9 @@ fwa_watershed_stream(
 )
 }
 \arguments{
-\item{blue_line_key}{An integer of the stream blue line key.}
+\item{blue_line_key}{A positive whole number of the stream blue line key.}
 
-\item{downstream_route_measure}{An integer of the downstream route measure.}
+\item{downstream_route_measure}{A positive number of the downstream route measure.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
 
@@ -29,7 +29,7 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 
 \item{properties}{A vector of strings of the column names to include. If NULL (default), all columns are retained.}
 
-\item{transform}{A character string of the geometry transformation function pipeline to apply.}
+\item{transform}{A vector of strings of the geometry transform function followed by parameter values (e.g. c("ST_Simplify", 100))}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 }

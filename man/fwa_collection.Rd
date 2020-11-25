@@ -7,7 +7,7 @@
 fwa_collection(
   collection_id,
   filter = NULL,
-  limit = 10000,
+  limit = 100,
   offset = 0,
   bbox = NULL,
   properties = NULL,
@@ -31,7 +31,7 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 
 \item{properties}{A vector of strings of the column names to include. If NULL (default), all columns are retained.}
 
-\item{transform}{A character string of the geometry transformation function pipeline to apply.}
+\item{transform}{A vector of strings of the geometry transform function followed by parameter values (e.g. c("ST_Simplify", 100))}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 }
@@ -47,5 +47,5 @@ fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_nam
 }
 }
 \seealso{
-\url{https://www.hillcrestgeo.ca/fwapg/collections.html} for API documentation.
+\href{https://www.hillcrestgeo.ca/fwapg/collections.html}{collections API documentation}.
 }

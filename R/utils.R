@@ -34,12 +34,8 @@ read_feature <- function(response, epsg){
   sf::st_transform(x, epsg)
 }
 
-format_properties <- function(x){
+format_parameter <- function(x){
   if(is.null(x)) return(x)
   paste(x, collapse = ",")
 }
 
-format_bounds <- function(x){
-  if(is.null(x)) return(x)
-  paste(x, collapse = ",")
-}

@@ -9,7 +9,7 @@ fwa_locate_along_interval(
   interval_length = 1000,
   start_measure = 0,
   end_measure = NULL,
-  limit = 10000,
+  limit = 100,
   offset = 0,
   bbox = NULL,
   properties = NULL,
@@ -35,7 +35,7 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 
 \item{properties}{A vector of strings of the column names to include. If NULL (default), all columns are retained.}
 
-\item{transform}{A character string of the geometry transformation function pipeline to apply.}
+\item{transform}{A vector of strings of the geometry transform function followed by parameter values (e.g. c("ST_Simplify", 100))}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 }
@@ -46,7 +46,7 @@ A sf object
 Provided a blue_line_key and starting downstream distance, return a set of points along an interval.
 }
 \examples{
-\dontrun{fwa_locate_along_interval(356308001, interval_length = 10, start = 0)}
+\dontrun{fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)}
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{fwa_locatealonginterval API documentation}

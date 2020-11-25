@@ -45,9 +45,6 @@ test_that("fwa_meta_collections", {
       "whse_fish.pscis_points_all",
       "whse_fish.pscis_remediation_svw")
     %in% x$collection_id))
-
-
-
 })
 
 test_that("fwa_meta_properties", {

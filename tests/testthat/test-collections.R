@@ -7,9 +7,9 @@ test_that("fwa_collection", {
   filter <- list(gnis_name = "Chilliwack Creek")
 
   # default vals
-  x <- fwa_collection(collectionid, filter = filter)
-  expect_true(all(x$gnis_name == "Chilliwack Creek"))
-  expect_is(x, "sf")
+  y <- fwa_collection(collectionid, filter = filter)
+  expect_true(all(y$gnis_name == "Chilliwack Creek"))
+  expect_is(y, "sf")
 
   # test wrapper
   x <- fwa_collection("whse_basemapping.fwa_named_streams", filter = filter)
@@ -38,6 +38,14 @@ test_that("fwa_collection", {
 
   # check bbox outside feature
   filter <- list(gnis_name = "Sangan River")
-  expect_error(fwa_collection(table, filter = filter, bbox = bbox), class = "chk_error")
+  expect_error(fwa_collection(collectionid, filter = filter, bbox = bbox), class = "chk_error")
+
+  ### check transform
+  # test multiple args
+  filter <- list(gnis_name = "Chilliwack Creek")
+  z <- fwa_collection(collectionid, filter = filter, transform = c("ST_Simplify", 1000))
+  expect_is(z, "sf")
+  # expect a triangle
+  expect_true(length(unlist(z$geometry)) < length(unlist(y$geometry)))
 
 })

@@ -10,7 +10,7 @@ fwa_index_point(
   srid,
   tolerance = 5000,
   num_features = 1,
-  limit = 10000,
+  limit = 100,
   offset = 0,
   bbox = NULL,
   properties = NULL,
@@ -23,11 +23,11 @@ fwa_index_point(
 
 \item{y}{A number of the y coordinate.}
 
-\item{srid}{An integer of the srid of the coordinate (e.g. epsg).}
+\item{srid}{An positive whole number of the srid of the coordinate (e.g. epsg).}
 
 \item{tolerance}{A number of the tolerance.}
 
-\item{num_features}{An integer of the maximum number of features to return.}
+\item{num_features}{A positive whole number of the maximum number of features to return.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
 
@@ -38,7 +38,7 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 
 \item{properties}{A vector of strings of the column names to include. If NULL (default), all columns are retained.}
 
-\item{transform}{A character string of the geometry transformation function pipeline to apply.}
+\item{transform}{A vector of strings of the geometry transform function followed by parameter values (e.g. c("ST_Simplify", 100))}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 }
