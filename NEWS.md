@@ -1,3 +1,8 @@
+# fwapgr 0.1.0.9002
+
+- Internal changes only.
+
+
 # fwapgr 0.1.0.9001
 
 - Add `end_measure = NULL` argument to `fwa_locate_along_interval()` and rename start to start_measure.
