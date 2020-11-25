@@ -7,7 +7,8 @@
 fwa_locate_along_interval(
   blue_line_key,
   interval_length = 1000,
-  start = 0,
+  start_measure = 0,
+  end_measure = NULL,
   limit = 10000,
   offset = 0,
   bbox = NULL,
@@ -21,7 +22,9 @@ fwa_locate_along_interval(
 
 \item{interval_length}{An integer of the interval distance in meters.}
 
-\item{start}{An integer of the distance in meters upstream from the river mouth to start from.}
+\item{start_measure}{An integer of the distance in meters upstream from the river mouth to start from.}
+
+\item{end_measure}{An integer of the distance in meters upstream from the river mouth to end at.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
 

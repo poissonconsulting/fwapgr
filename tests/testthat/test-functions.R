@@ -45,7 +45,7 @@ test_that("API functions work", {
   expect_identical(nrow(df), 1L)
 
   ### locate along interval
-  df <- fwa_locate_along_interval(blk, interval = 100, start = 10000)
+  df <- fwa_locate_along_interval(blk, interval = 100, start_measure = 10000)
   expect_is(df, "sf")
   expect_is(df$geometry, "sfc_POINT")
   expect_identical(nrow(df), 93L)

@@ -242,7 +242,8 @@ fwa_locate_along <- function(blue_line_key,
 #' @inheritParams fwa_collection
 #' @param blue_line_key An integer of the stream blue line key.
 #' @param interval_length An integer of the interval distance in meters.
-#' @param start An integer of the distance in meters upstream from the river mouth to start from.
+#' @param start_measure An integer of the distance in meters upstream from the river mouth to start from.
+#' @param end_measure An integer of the distance in meters upstream from the river mouth to end at.
 #' @return A sf object
 #' @family functions
 #' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{fwa_locatealonginterval API documentation}
@@ -251,7 +252,8 @@ fwa_locate_along <- function(blue_line_key,
 #' \dontrun{fwa_locate_along_interval(356308001, interval_length = 10, start = 0)}
 fwa_locate_along_interval <- function(blue_line_key,
                                       interval_length = 1000,
-                                      start = 0,
+                                      start_measure = 0,
+                                      end_measure = NULL,
                                       limit = 10000,
                                       offset = 0,
                                       bbox = NULL,
@@ -260,11 +262,13 @@ fwa_locate_along_interval <- function(blue_line_key,
                                       epsg = 4326){
   chk_whole_number(blue_line_key)
   chk_whole_number(interval_length)
-  chk_whole_number(start)
+  chk_whole_number(start_measure)
+  chk_null_or(end_measure, chk_whole_number)
 
   parameters <- list(blue_line_key = blue_line_key,
-                     start = start,
-                     interval_length = interval_length)
+                     start_measure = start_measure,
+                     interval_length = interval_length,
+                     end_measure = end_measure)
 
   fwa_function("fwa_locatealonginterval",
                parameters = parameters,
