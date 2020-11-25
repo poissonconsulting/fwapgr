@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9001</span>
       </span>
     </div>
 
@@ -116,6 +116,23 @@
       <small>Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="fwapgr-0109001" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.0.9001">
+<a href="#fwapgr-0109001" class="anchor"></a>fwapgr 0.1.0.9001</h1>
+<ul>
+<li>Add <code>end_measure = NULL</code> argument to <code><a href="../reference/fwa_locate_along_interval.html">fwa_locate_along_interval()</a></code> and rename start to start_measure.</li>
+<li>replace fwa_stream_at_measure with fwa_watershed_stream to be consistent with API function names</li>
+<li>add transform argument to fwa_collection</li>
+<li>rename column argument to properties</li>
+<li>add limit, offset, bbox, properties, and transform arguments to API function wrappers</li>
+<li>replaced fwa_list_tables with fwa_meta_collections and no longer separates table and schema from collection_id</li>
+<li>replace fwa_list_columns with fwa_meta_properties and accepts collection_id not table and schema</li>
+<li>fwa_nearest_stream removed from API. Replaced with fwa_index_point.</li>
+<li>Moved wrapper functionality to freshwateratlasbc.</li>
+<li>fwa_search_gnis_streams() and fwa_list_gnis_streams() now take gnis_name = ".*" instead of NULL as default argument</li>
+<li>test back to R 3.6</li>
+</ul>
+</div>
     <div id="fwapgr-0109000" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.0.9000">
 <a href="#fwapgr-0109000" class="anchor"></a>fwapgr 0.1.0.9000</h1>
