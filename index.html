@@ -55,7 +55,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/poissonconsulting/fwapgr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -120,11 +120,11 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">'Yakoun River'</span><span class="op">)</span><span class="op">)</span>
 <span class="va">yakoun</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"blue_line_key"</span>, <span class="st">"gnis_name"</span>, <span class="st">"length_metre"</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt; Simple feature collection with 129 features and 3 fields</span>
+<span class="co">#&gt; Simple feature collection with 100 features and 3 fields</span>
 <span class="co">#&gt; geometry type:  LINESTRING</span>
 <span class="co">#&gt; dimension:      XYZ</span>
-<span class="co">#&gt; bbox:           xmin: -132.2789 ymin: 53.34324 xmax: -132.1283 ymax: 53.65705</span>
-<span class="co">#&gt; z_range:        zmin: 1 zmax: 99</span>
+<span class="co">#&gt; bbox:           xmin: -132.2789 ymin: 53.38176 xmax: -132.1283 ymax: 53.65705</span>
+<span class="co">#&gt; z_range:        zmin: 1 zmax: 92</span>
 <span class="co">#&gt; geographic CRS: WGS 84</span>
 <span class="co">#&gt; First 10 features:</span>
 <span class="co">#&gt;    blue_line_key    gnis_name length_metre                       geometry</span>
@@ -206,7 +206,7 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
 <li><a href="https://github.com/poissonconsulting/fwapgr/actions"><img src="https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://codecov.io/gh/poissonconsulting/fwapgr?branch=master"><img src="https://codecov.io/gh/poissonconsulting/fwapgr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
