@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R build
 status](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions)
 [![Codecov test
@@ -31,22 +31,22 @@ Functions and arguments exactly match those available in the API.
 Query features from
 [collections](https://www.hillcrestgeo.ca/fwapg/collections.html):
 
-  - `fwa_collection()`
+-   `fwa_collection()`
 
 Get metadata:
 
-  - `fwa_meta_collections()`  
-  - `fwa_meta_properties()`
+-   `fwa_meta_collections()`  
+-   `fwa_meta_properties()`
 
 Execute spatial
 [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):
 
-  - `fwa_index_point()`  
-  - `fwa_locate_along()`
-  - `fwa_locate_along_interval()`
-  - `fwa_watershed_at_measure()`  
-  - `fwa_watershed_hex()`  
-  - `fwa_watershed_stream()`
+-   `fwa_index_point()`  
+-   `fwa_locate_along()`
+-   `fwa_locate_along_interval()`
+-   `fwa_watershed_at_measure()`  
+-   `fwa_watershed_hex()`  
+-   `fwa_watershed_stream()`
 
 ## Installation
 
@@ -66,11 +66,11 @@ Get Yakoun River stream from
 ``` r
 yakoun <- fwapgr::fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_name = 'Yakoun River'))
 yakoun[c("blue_line_key", "gnis_name", "length_metre")]
-#> Simple feature collection with 129 features and 3 fields
+#> Simple feature collection with 100 features and 3 fields
 #> geometry type:  LINESTRING
 #> dimension:      XYZ
-#> bbox:           xmin: -132.2789 ymin: 53.34324 xmax: -132.1283 ymax: 53.65705
-#> z_range:        zmin: 1 zmax: 99
+#> bbox:           xmin: -132.2789 ymin: 53.38176 xmax: -132.1283 ymax: 53.65705
+#> z_range:        zmin: 1 zmax: 92
 #> geographic CRS: WGS 84
 #> First 10 features:
 #>    blue_line_key    gnis_name length_metre                       geometry
