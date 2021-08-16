@@ -27,6 +27,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -73,13 +75,13 @@
   <div class="contents col-md-9">
 <div id="fwapgr-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#fwapgr-" class="anchor"></a>fwapgr <img src="reference/figures/logo.png" align="right">
+<a href="#fwapgr-" class="anchor" aria-hidden="true"></a>fwapgr <img src="reference/figures/logo.png" align="right">
 </h1></div>
 <!-- badges: start -->
 
-<p>If you are looking for a user-friendly R 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a> please see <a href="https://github.com/poissonconsulting/fwatlasbc">fwatlasbc</a> 😄. It is built on <code>fwapgr</code>.</p>
-<p><code>fwapgr</code> is an R client for the <a href="https://www.hillcrestgeo.ca/fwapg/index.html">fwapg pg-featureserv web API</a> used to get data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater">B.C. Freshwater Atlas</a>. Data are returned as <a href="https://github.com/r-spatial/sf">simple features</a>. Functions and arguments exactly match those available in the API.</p>
-<p>Query features from <a href="https://www.hillcrestgeo.ca/fwapg/collections.html">collections</a>:</p>
+<p>If you are looking for a user-friendly R 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater" class="external-link">B.C. Freshwater Atlas</a> please see <a href="https://github.com/poissonconsulting/fwatlasbc" class="external-link">fwatlasbc</a> 😄. It is built on <code>fwapgr</code>.</p>
+<p><code>fwapgr</code> is an R client for the <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg pg-featureserv web API</a> used to get data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater" class="external-link">B.C. Freshwater Atlas</a>. Data are returned as <a href="https://github.com/r-spatial/sf" class="external-link">simple features</a>. Functions and arguments exactly match those available in the API.</p>
+<p>Query features from <a href="https://www.hillcrestgeo.ca/fwapg/collections.html" class="external-link">collections</a>:</p>
 <ul>
 <li><code><a href="reference/fwa_collection.html">fwa_collection()</a></code></li>
 </ul>
@@ -90,7 +92,7 @@
 </li>
 <li><code><a href="reference/fwa_meta_properties.html">fwa_meta_properties()</a></code></li>
 </ul>
-<p>Execute spatial <a href="https://www.hillcrestgeo.ca/fwapg/functions.html">functions</a>:</p>
+<p>Execute spatial <a href="https://www.hillcrestgeo.ca/fwapg/functions.html" class="external-link">functions</a>:</p>
 <ul>
 <li>
 <code><a href="reference/fwa_index_point.html">fwa_index_point()</a></code><br>
@@ -107,19 +109,19 @@
 </ul>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>To install the developmental version from <a href="https://github.com/poissonconsulting/fwapgr">GitHub</a></p>
+<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
+<p>To install the developmental version from <a href="https://github.com/poissonconsulting/fwapgr" class="external-link">GitHub</a></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"poissonconsulting/fwapgr"</span><span class="op">)</span></code></pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"poissonconsulting/fwapgr"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="demonstration" class="section level2">
 <h2 class="hasAnchor">
-<a href="#demonstration" class="anchor"></a>Demonstration</h2>
+<a href="#demonstration" class="anchor" aria-hidden="true"></a>Demonstration</h2>
 <p>Get Yakoun River stream from ‘whse_basemapping.fwa_stream_networks_sp’ collection:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">'Yakoun River'</span><span class="op">)</span><span class="op">)</span>
-<span class="va">yakoun</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"blue_line_key"</span>, <span class="st">"gnis_name"</span>, <span class="st">"length_metre"</span><span class="op">)</span><span class="op">]</span>
+<code class="sourceCode R"><span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">'Yakoun River'</span><span class="op">)</span><span class="op">)</span>
+<span class="va">yakoun</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue_line_key"</span>, <span class="st">"gnis_name"</span>, <span class="st">"length_metre"</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; Simple feature collection with 100 features and 3 fields</span>
 <span class="co">#&gt; geometry type:  LINESTRING</span>
 <span class="co">#&gt; dimension:      XYZ</span>
@@ -140,40 +142,40 @@
 <span class="co">#&gt; 10     360881586 Yakoun River   2816.01293 LINESTRING Z (-132.2076 53....</span></code></pre></div>
 <p>Get Yakoun River watershed starting 10km upstream:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></code></pre></div>
-<p>Use <code>transform</code> argument to simplify polygons. See valid transformation functions <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29">here</a></p>
+<code class="sourceCode R"><span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></code></pre></div>
+<p>Use <code>transform</code> argument to simplify polygons. See valid transformation functions <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29" class="external-link">here</a></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">wshed_simple</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span>, transform <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ST_Simplify"</span>, <span class="fl">2000</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">wshed_simple</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span>, transform <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ST_Simplify"</span>, <span class="fl">2000</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed_simple</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, fill <span class="op">=</span> <span class="st">'red'</span>, alpha <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, fill <span class="op">=</span> <span class="st">'steelblue'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">yakoun</span>, lwd <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span> </code></pre></div>
+<code class="sourceCode R"><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed_simple</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, fill <span class="op">=</span> <span class="st">'red'</span>, alpha <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, fill <span class="op">=</span> <span class="st">'steelblue'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">yakoun</span>, lwd <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span> </code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-6-1.png" width="100%"></p>
 </div>
 <div id="credit-and-inspiration" class="section level2">
 <h2 class="hasAnchor">
-<a href="#credit-and-inspiration" class="anchor"></a>Credit and Inspiration</h2>
-<p><code>fwapgr</code> is built on the <a href="https://www.hillcrestgeo.ca/fwapg/index.html">fwapg pg-featureserv web API</a> hosted and created by <a href="https://github.com/smnorris/fwapg">Simon Norris</a> at <a href="https://hillcrestgeo.ca/main/">Hillcrest Geographics</a>. It is meant to succeed the <a href="https://github.com/poissonconsulting/fwabc"><code>fwabc</code></a> 📦 which retrieved data <a href="https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&amp;version=2.0.0&amp;request=GetFeature&amp;typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&amp;outputFormat=json&amp;SRSNAME=epsg%3A3005&amp;CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27">via WFS</a> with the <a href="https://github.com/bcgov/bcdata">bcdata</a> 📦.</p>
-<p>Many thanks to <a href="https://github.com/smnorris/fwapg">Simon Norris</a> for his work on <a href="https://github.com/smnorris/fwapg">fwapg</a> PostgreSQL database and <a href="https://www.hillcrestgeo.ca/fwapg/index.html">the pg-featureserv web API</a>.</p>
+<a href="#credit-and-inspiration" class="anchor" aria-hidden="true"></a>Credit and Inspiration</h2>
+<p><code>fwapgr</code> is built on the <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg pg-featureserv web API</a> hosted and created by <a href="https://github.com/smnorris/fwapg" class="external-link">Simon Norris</a> at <a href="https://hillcrestgeo.ca/main/" class="external-link">Hillcrest Geographics</a>. It is meant to succeed the <a href="https://github.com/poissonconsulting/fwabc" class="external-link"><code>fwabc</code></a> 📦 which retrieved data <a href="https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&amp;version=2.0.0&amp;request=GetFeature&amp;typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&amp;outputFormat=json&amp;SRSNAME=epsg%3A3005&amp;CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27" class="external-link">via WFS</a> with the <a href="https://github.com/bcgov/bcdata" class="external-link">bcdata</a> 📦.</p>
+<p>Many thanks to <a href="https://github.com/smnorris/fwapg" class="external-link">Simon Norris</a> for his work on <a href="https://github.com/smnorris/fwapg" class="external-link">fwapg</a> PostgreSQL database and <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">the pg-featureserv web API</a>.</p>
 </div>
 <div id="contribution" class="section level2">
 <h2 class="hasAnchor">
-<a href="#contribution" class="anchor"></a>Contribution</h2>
-<p>Please report any <a href="https://github.com/poissonconsulting/fwapgr/issues">issues</a>.</p>
-<p><a href="https://github.com/poissonconsulting/fwapgr/pulls">Pull requests</a> are always welcome.</p>
+<a href="#contribution" class="anchor" aria-hidden="true"></a>Contribution</h2>
+<p>Please report any <a href="https://github.com/poissonconsulting/fwapgr/issues" class="external-link">issues</a>.</p>
+<p><a href="https://github.com/poissonconsulting/fwapgr/pulls" class="external-link">Pull requests</a> are always welcome.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the fwapgr project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<a href="#code-of-conduct" class="anchor" aria-hidden="true"></a>Code of Conduct</h2>
+<p>Please note that the fwapgr project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li>Browse source code at <br><a href="https://github.com/poissonconsulting/fwapgr/">https://​github.com/​poissonconsulting/​fwapgr/​</a>
 </li>
@@ -181,47 +183,53 @@
 </li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
 <li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Sebastian Dalgarno <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-3658-4517" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Poisson Consulting <br><small class="roles"> Copyright holder, funder </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html">More on authors...</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
-<li><a href="https://github.com/poissonconsulting/fwapgr/actions"><img src="https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://codecov.io/gh/poissonconsulting/fwapgr?branch=master"><img src="https://codecov.io/gh/poissonconsulting/fwapgr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
-<li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://github.com/poissonconsulting/fwapgr/actions" class="external-link"><img src="https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://codecov.io/gh/poissonconsulting/fwapgr?branch=master" class="external-link"><img src="https://codecov.io/gh/poissonconsulting/fwapgr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://opensource.org/licenses/MIT" class="external-link"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Sebastian Dalgarno, Poisson Consulting.</p>
+  <p></p>
+<p>Developed by Sebastian Dalgarno, Poisson Consulting.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -229,6 +237,8 @@
 
   
 
+
+  
 
   </body>
 </html>
