@@ -38,7 +38,9 @@ test_that("fwa_collection", {
 
   # check bbox outside feature
   filter <- list(gnis_name = "Sangan River")
-  expect_error(fwa_collection(collectionid, filter = filter, bbox = bbox), class = "chk_error")
+  x <- fwa_collection(collectionid, filter = filter, bbox = bbox)
+  expect_is(x, "sf")
+  expect_identical(nrow(x), 0L)
 
   ### check transform
   # test multiple args
