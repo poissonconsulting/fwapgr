@@ -3,8 +3,7 @@ test_that("fwa_meta_collections", {
   expect_is(x, "tbl")
   expect_identical(names(x), c("collection_id", "description", "extent", "links"))
 
-  expect_true(all(
-    c("hydrosheds.hybas_lev12_v1c",
+  collections <- c("hydrosheds.hybas_lev12_v1c",
       "usgs.wbdhu12",
       "whse_basemapping.fwa_approx_borders",
       "whse_basemapping.fwa_assessment_watersheds_poly",
@@ -33,6 +32,7 @@ test_that("fwa_meta_collections", {
       "whse_basemapping.trim_cultural_lines",
       "whse_basemapping.trim_cultural_points",
       "whse_basemapping.trim_ebm_ocean",
+      "whse_basemapping.trim_ebm_airfields",
       "whse_fish.fiss_fish_obsrvtn_events_sp",
       "whse_fish.fiss_fish_obsrvtn_pnt_distinct",
       "whse_fish.fiss_fish_obsrvtn_pnt_sp",
@@ -44,7 +44,9 @@ test_that("fwa_meta_collections", {
       "whse_fish.pscis_habitat_confirmation_svw",
       "whse_fish.pscis_points_all",
       "whse_fish.pscis_remediation_svw")
-    %in% x$collection_id))
+
+  expect_length(setdiff(collections, x$collection_id), 0L)
+  expect_length(setdiff(x$collection_id, collections), 0L)
 })
 
 test_that("fwa_meta_properties", {
