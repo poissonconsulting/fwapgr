@@ -10,9 +10,8 @@ test_that("fwa_collection", {
   y <- fwa_collection(collectionid, filter = filter)
   expect_true(all(y$gnis_name == "Chilliwack Creek"))
   expect_is(y, "sf")
-
-  # test wrapper
-  x <- fwa_collection("whse_basemapping.fwa_named_streams", filter = filter)
+  # including coordinates
+  expect_identical(colnames(sf::st_coordinates(y)), c("X", "Y", "Z", "L1"))
 
   # check columns
   x <- fwa_collection(collectionid, filter = filter, properties = properties)
