@@ -40,12 +40,10 @@ test_that("fwa_meta_collections", {
       "whse_fish.fiss_obstacles_pnt_sp",
       "whse_fish.pscis_assessment_svw",
       "whse_fish.pscis_design_proposal_svw",
-      "whse_fish.pscis_events_barrier",
       "whse_fish.pscis_habitat_confirmation_svw",
-      "whse_fish.pscis_points_all",
       "whse_fish.pscis_remediation_svw")
 
-  expect_length(setequal(collections, x$collection_id), 0L)
+  expect_setequal(collections, x$collection_id)
 })
 
 test_that("fwa_meta_properties", {
