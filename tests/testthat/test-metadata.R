@@ -45,8 +45,7 @@ test_that("fwa_meta_collections", {
       "whse_fish.pscis_points_all",
       "whse_fish.pscis_remediation_svw")
 
-  expect_length(setdiff(collections, x$collection_id), 0L)
-  expect_length(setdiff(x$collection_id, collections), 0L)
+  expect_length(setequal(collections, x$collection_id), 0L)
 })
 
 test_that("fwa_meta_properties", {
