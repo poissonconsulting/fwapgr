@@ -18,7 +18,6 @@ fwa_api <- function(path, query) {
   resp <- GET(url, user(), query = query)
 
   chk_response_gateway(resp)
-  chk_response_json(resp)
   chk_response_status(resp)
 
   content(resp, "text", encoding = "UTF-8")
@@ -26,6 +25,7 @@ fwa_api <- function(path, query) {
 
 read_feature <- function(response, epsg) {
   x <- sf::st_read(response, quiet = TRUE, stringsAsFactors = FALSE)
+  class(x) <- c("sf", "tbl", "tbl_df", "data.frame")
   if (epsg == 4326) {
     return(x)
   }

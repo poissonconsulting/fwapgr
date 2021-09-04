@@ -2,10 +2,6 @@ vld_response_status <- function(x) {
   !http_error(x)
 }
 
-vld_response_json <- function(x) {
-  vld_match(http_type(x), "application/(geo\\+){0,1}json")
-}
-
 vld_response_gateway <- function(x) {
   !(http_error(x) && status_code(x) == 502)
 }
