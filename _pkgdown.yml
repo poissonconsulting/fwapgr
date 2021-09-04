@@ -1,15 +1,19 @@
 destination: docs
 
 reference:
-- title: Collections
-  desc: Query features from collections.
-  contents:
-  - '`fwa_collection`'
 - title: Metadata
-  desc: Get meta data about collections and collection properties.
+  desc: Get information about a collection or a collection's properties.
   contents:
   - '`fwa_meta_collections`'
   - '`fwa_meta_properties`'
+- title: Collection
+  desc: Query a collection.
+  contents:
+  - '`fwa_collection`'
+- title: Function
+  desc: General API function call.
+  contents:
+  - '`fwa_function`'
 - title: Spatial Functions
   desc: Execute spatial functions.
   contents:

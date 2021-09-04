@@ -7,7 +7,6 @@
 #' @param parameters A named list of the parameters and values for a specific function.
 #' @return A sf object
 #' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions.html}{API documentation}
-
 fwa_function <- function(function_id,
                             parameters,
                             limit = 100,
