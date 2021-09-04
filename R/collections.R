@@ -30,8 +30,7 @@ fwa_collection <- function(collection_id,
                         epsg = 4326){
 
   chk_string(collection_id)
-  chk_null_or(filter, vld = vld_vector)
-  if(!is.null(filter)) chk_named(filter)
+  chk_null_or(filter, vld = vld_filter)
   chk_whole_number(limit)
   chk_gt(limit)
   chk_whole_number(offset)

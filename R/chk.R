@@ -41,3 +41,12 @@ chk_transform <- function(x, x_name = NULL){
   chk_not_any_na(x, x_name = x_name)
   chk_subset(x[1], valid_transform_functions(), x_name = x_name)
 }
+
+chk_filter <- function(x, x_name = NULL){
+  if(vld_filter(x)) {
+    return(invisible(x))
+  }
+  if (is.null(x_name)) x_name <- deparse_backtick_chk((substitute(x)))
+  chk_vector(x, x_name = x_name)
+  chk_named(x, x_name = x_name)
+}
