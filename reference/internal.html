@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Parameter Descriptions — internal" />
-<meta property="og:description" content="Descriptions of the parameters." />
+<meta property="og:description" content="Descriptions of the parameters and return value for typical FWA functions." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -127,7 +127,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Descriptions of the parameters.</p>
+    <p>Descriptions of the parameters and return value for typical FWA functions.</p>
     </div>
 
 
@@ -135,35 +135,25 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>collection_id</th>
-      <td><p>A character string of the collection id.</p></td>
-    </tr>
-    <tr>
-      <th>filter</th>
-      <td><p>A named vector or list of the filter(s) to apply, where the list
-names correspond to column names and the list values correspond to the desired
-value, e.g. <code>list(gnis_name = "Sangan River")</code>.</p></td>
-    </tr>
-    <tr>
-      <th>limit</th>
-      <td><p>A positive whole number indicating the maximum number of features to return.</p></td>
-    </tr>
-    <tr>
-      <th>offset</th>
-      <td><p>A positive whole number indicating the offset of start of returned results.</p></td>
-    </tr>
-    <tr>
       <th>bbox</th>
       <td><p>A vector of four numbers indicating bounding box to limit output
 features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     </tr>
     <tr>
-      <th>properties</th>
-      <td><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></td>
+      <th>blue_line_key</th>
+      <td><p>A positive whole number of the stream blue line key.</p></td>
     </tr>
     <tr>
-      <th>transform</th>
-      <td><p>A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
+      <th>collection_id</th>
+      <td><p>A character string of the collection id.</p></td>
+    </tr>
+    <tr>
+      <th>downstream_route_measure</th>
+      <td><p>A positive number of the river metre.</p></td>
+    </tr>
+    <tr>
+      <th>end_measure</th>
+      <td><p>An integer of the distance in meters upstream from the river mouth to end at.</p></td>
     </tr>
     <tr>
       <th>epsg</th>
@@ -174,8 +164,46 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
       <td><p>A character string of the function id.</p></td>
     </tr>
     <tr>
+      <th>filter</th>
+      <td><p>A named vector or list of the filter(s) to apply, where the list
+names correspond to column names and the list values correspond to the desired
+value, e.g. <code>list(gnis_name = "Sangan River")</code>.</p></td>
+    </tr>
+    <tr>
+      <th>interval_length</th>
+      <td><p>An integer of the interval distance in meters.</p></td>
+    </tr>
+    <tr>
+      <th>limit</th>
+      <td><p>A positive whole number indicating the maximum number of features to return.</p></td>
+    </tr>
+    <tr>
+      <th>offset</th>
+      <td><p>A positive whole number indicating the offset of start of returned results.</p></td>
+    </tr>
+    <tr>
       <th>parameters</th>
       <td><p>A named list of the parameters and values for a specific function.</p></td>
+    </tr>
+    <tr>
+      <th>properties</th>
+      <td><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></td>
+    </tr>
+    <tr>
+      <th>srid</th>
+      <td><p>A positive whole number of the epsg of the coordinates.</p></td>
+    </tr>
+    <tr>
+      <th>start_measure</th>
+      <td><p>An integer of the distance in meters upstream from the river mouth to start from.</p></td>
+    </tr>
+    <tr>
+      <th>tolerance</th>
+      <td><p>A number of the tolerance in m.</p></td>
+    </tr>
+    <tr>
+      <th>transform</th>
+      <td><p>A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
     </tr>
     <tr>
       <th>x</th>
@@ -184,34 +212,6 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     <tr>
       <th>y</th>
       <td><p>A number of the y coordinate.</p></td>
-    </tr>
-    <tr>
-      <th>srid</th>
-      <td><p>A positive whole number of the epsg of the coordinates.</p></td>
-    </tr>
-    <tr>
-      <th>tolerance</th>
-      <td><p>A number of the tolerance in m.</p></td>
-    </tr>
-    <tr>
-      <th>blue_line_key</th>
-      <td><p>A positive whole number of the stream blue line key.</p></td>
-    </tr>
-    <tr>
-      <th>downstream_route_measure</th>
-      <td><p>A positive number of the river metre.</p></td>
-    </tr>
-    <tr>
-      <th>interval_length</th>
-      <td><p>An integer of the interval distance in meters.</p></td>
-    </tr>
-    <tr>
-      <th>start_measure</th>
-      <td><p>An integer of the distance in meters upstream from the river mouth to start from.</p></td>
-    </tr>
-    <tr>
-      <th>end_measure</th>
-      <td><p>An integer of the distance in meters upstream from the river mouth to end at.</p></td>
     </tr>
     </table>
 
