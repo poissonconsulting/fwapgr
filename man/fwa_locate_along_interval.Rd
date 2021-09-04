@@ -9,7 +9,7 @@ fwa_locate_along_interval(
   interval_length = 100,
   start_measure = 0,
   end_measure = NULL,
-  limit = 1000,
+  limit = 100,
   offset = 0,
   bbox = NULL,
   properties = NULL,

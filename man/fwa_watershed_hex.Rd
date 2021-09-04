@@ -7,7 +7,7 @@
 fwa_watershed_hex(
   blue_line_key,
   downstream_route_measure = 0,
-  limit = 10000,
+  limit = 100,
   offset = 0,
   bbox = NULL,
   properties = NULL,

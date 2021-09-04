@@ -20,6 +20,7 @@ fwa_collection <- function(collection_id,
   chk_null_or(filter, vld = vld_filter)
   chk_whole_number(limit)
   chk_gt(limit)
+  chk_lte(limit, 10000L)
   chk_whole_number(offset)
   chk_gte(offset)
   chk_lt(offset, 100000L)
