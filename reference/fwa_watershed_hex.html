@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Freshwater Atlas watershed hex — fwa_watershed_hex • fwapgr</title>
+<title>Freshwater Atlas Watershed Hex — fwa_watershed_hex • fwapgr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Freshwater Atlas watershed hex — fwa_watershed_hex" />
-<meta property="og:description" content="Provided a location as blue_line_key and downstream_route_measure, return a 25m hexagon grid covering first order watershed in which location lies." />
+<meta property="og:title" content="Freshwater Atlas Watershed Hex — fwa_watershed_hex" />
+<meta property="og:description" content="Gets a 25m hexagon grid covering the fundamental watershed in which the river metre lies." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -121,19 +121,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Freshwater Atlas watershed hex</h1>
+    <h1>Freshwater Atlas Watershed Hex</h1>
     <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/spatial-functions.R'><code>R/spatial-functions.R</code></a></small>
     <div class="hidden name"><code>fwa_watershed_hex.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Provided a location as blue_line_key and downstream_route_measure, return a 25m hexagon grid covering first order watershed in which location lies.</p>
+    <p>Gets a 25m hexagon grid covering the fundamental watershed in which the river metre lies.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>fwa_watershed_hex</span><span class='op'>(</span>
   <span class='va'>blue_line_key</span>,
   downstream_route_measure <span class='op'>=</span> <span class='fl'>0</span>,
-  limit <span class='op'>=</span> <span class='fl'>100</span>,
+  limit <span class='op'>=</span> <span class='fl'>10000</span>,
   offset <span class='op'>=</span> <span class='fl'>0</span>,
   bbox <span class='op'>=</span> <span class='cn'>NULL</span>,
   properties <span class='op'>=</span> <span class='cn'>NULL</span>,

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Freshwater Atlas watershed stream — fwa_watershed_stream • fwapgr</title>
+<title>Freshwater Atlas Watershed Stream — fwa_watershed_stream • fwapgr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Freshwater Atlas watershed stream — fwa_watershed_stream" />
-<meta property="og:description" content="Provided a location as blue_line_key and downstream_route_measure, return stream segments upstream, within the same first order watershed." />
+<meta property="og:title" content="Freshwater Atlas Watershed Stream — fwa_watershed_stream" />
+<meta property="og:description" content="Gets the upstream stream segment within the fundamental watershed." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -121,20 +121,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Freshwater Atlas watershed stream</h1>
+    <h1>Freshwater Atlas Watershed Stream</h1>
     <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/spatial-functions.R'><code>R/spatial-functions.R</code></a></small>
     <div class="hidden name"><code>fwa_watershed_stream.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Provided a location as blue_line_key and downstream_route_measure, return stream segments upstream, within the same first order watershed.</p>
+    <p>Gets the upstream stream segment within the fundamental watershed.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>fwa_watershed_stream</span><span class='op'>(</span>
   <span class='va'>blue_line_key</span>,
   downstream_route_measure <span class='op'>=</span> <span class='fl'>0</span>,
-  limit <span class='op'>=</span> <span class='fl'>100</span>,
-  offset <span class='op'>=</span> <span class='fl'>0</span>,
   bbox <span class='op'>=</span> <span class='cn'>NULL</span>,
   properties <span class='op'>=</span> <span class='cn'>NULL</span>,
   transform <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -151,14 +149,6 @@
     <tr>
       <th>downstream_route_measure</th>
       <td><p>A positive number of the river metre.</p></td>
-    </tr>
-    <tr>
-      <th>limit</th>
-      <td><p>A positive whole number indicating the maximum number of features to return.</p></td>
-    </tr>
-    <tr>
-      <th>offset</th>
-      <td><p>A positive whole number indicating the offset of start of returned results.</p></td>
     </tr>
     <tr>
       <th>bbox</th>
@@ -182,6 +172,10 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>An sf object.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This is useful for adding stream network that was not included in the
+watershed at measure.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html'>API documentation</a></p>
@@ -193,9 +187,14 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 <code><a href='fwa_watershed_hex.html'>fwa_watershed_hex</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
-<span class='r-in'><span class='fu'>fwa_watershed_stream</span><span class='op'>(</span><span class='fl'>356308001</span>, downstream_route_measure <span class='op'>=</span> <span class='fl'>10000</span><span class='op'>)</span></span>
-<span class='r-in'><span class='op'>}</span></span>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>fwa_watershed_stream</span><span class='op'>(</span><span class='fl'>356308001</span>, downstream_route_measure <span class='op'>=</span> <span class='fl'>10000</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Simple feature collection with 1 feature and 1 field</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Geometry type: MULTILINESTRING</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Dimension:     XY</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -121.9504 ymin: 49.1401 xmax: -121.9413 ymax: 49.15144</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   linear_feature_id                       geometry</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1         700730811 MULTILINESTRING ((-121.9504...</span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
