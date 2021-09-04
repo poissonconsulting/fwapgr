@@ -88,7 +88,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9004</span>
       </span>
     </div>
 
@@ -181,7 +181,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     </tr>
     <tr>
       <th>transform</th>
-      <td><p>A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
+      <td><p>A character vector with the name of the <a href='https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29'>valid transform</a> function followed by the parameter values (e.g. c("ST_Simplify", 100)). See crunchy data froThe permitted values are described at</p></td>
     </tr>
     <tr>
       <th>epsg</th>
@@ -196,6 +196,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 
     <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html'>API documentation</a></p>
 <p>Other functions: 
+<code><a href='fwa_hydroshed.html'>fwa_hydroshed</a>()</code>,
 <code><a href='fwa_index_point.html'>fwa_index_point</a>()</code>,
 <code><a href='fwa_locate_along.html'>fwa_locate_along</a>()</code>,
 <code><a href='fwa_watershed_at_measure.html'>fwa_watershed_at_measure</a>()</code>,
@@ -210,18 +211,20 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -122.0155 ymin: 49.16486 xmax: -122.0047 ymax: 49.16804</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> z_range:       zmin: 9.626 zmax: 10.131</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Geodetic CRS:  WGS 84</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> First 10 features:</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>    downstream_route_measure index                       geometry</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                         0     0 POINT Z (-122.0155 49.16804...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                        10     1 POINT Z (-122.0154 49.16795...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                        20     2 POINT Z (-122.0154 49.16787...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                        30     3 POINT Z (-122.0153 49.16778...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 5                        40     4 POINT Z (-122.0153 49.1677 ...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 6                        50     5 POINT Z (-122.0152 49.16762...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 7                        60     6 POINT Z (-122.0152 49.16753...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 8                        70     7 POINT Z (-122.0151 49.16745...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 9                        80     8 POINT Z (-122.0151 49.16736...</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 10                       90     9 POINT Z (-122.015 49.16728 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A data frame: 100 × 3</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    downstream_route_measure index                        geometry</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>                     <span style='color: #949494; font-style: italic;'>&lt;POINT [°]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span>                        0     0    Z (-122.0155 49.16804 9.626)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span>                       10     1 Z (-122.0154 49.16795 9.643175)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span>                       20     2 Z (-122.0154 49.16787 9.660349)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span>                       30     3 Z (-122.0153 49.16778 9.677524)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span>                       40     4  Z (-122.0153 49.1677 9.694698)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span>                       50     5 Z (-122.0152 49.16762 9.711873)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span>                       60     6 Z (-122.0152 49.16753 9.729048)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span>                       70     7 Z (-122.0151 49.16745 9.746222)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span>                       80     8 Z (-122.0151 49.16736 9.763397)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span>                       90     9  Z (-122.015 49.16728 9.780571)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 90 more rows</span></span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

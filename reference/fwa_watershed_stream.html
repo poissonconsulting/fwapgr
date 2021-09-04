@@ -88,7 +88,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9004</span>
       </span>
     </div>
 
@@ -161,7 +161,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     </tr>
     <tr>
       <th>transform</th>
-      <td><p>A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
+      <td><p>A character vector with the name of the <a href='https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29'>valid transform</a> function followed by the parameter values (e.g. c("ST_Simplify", 100)). See crunchy data froThe permitted values are described at</p></td>
     </tr>
     <tr>
       <th>epsg</th>
@@ -180,6 +180,7 @@ watershed at measure.</p>
 
     <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html'>API documentation</a></p>
 <p>Other functions: 
+<code><a href='fwa_hydroshed.html'>fwa_hydroshed</a>()</code>,
 <code><a href='fwa_index_point.html'>fwa_index_point</a>()</code>,
 <code><a href='fwa_locate_along_interval.html'>fwa_locate_along_interval</a>()</code>,
 <code><a href='fwa_locate_along.html'>fwa_locate_along</a>()</code>,
@@ -193,8 +194,10 @@ watershed at measure.</p>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Dimension:     XY</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -121.9504 ymin: 49.1401 xmax: -121.9413 ymax: 49.15144</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Geodetic CRS:  WGS 84</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>   linear_feature_id                       geometry</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 1         700730811 MULTILINESTRING ((-121.9504...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A data frame: 1 × 2</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   linear_feature_id                                                     geometry</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>               <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>                                        <span style='color: #949494; font-style: italic;'>&lt;MULTILINESTRING [°]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span>         700<span style='text-decoration: underline;'>730</span>811 ((-121.9504 49.15144, -121.9501 49.15144, -121.9498 49.1513…</span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

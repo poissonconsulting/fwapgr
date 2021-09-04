@@ -88,7 +88,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9004</span>
       </span>
     </div>
 
@@ -161,7 +161,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     </tr>
     <tr>
       <th>transform</th>
-      <td><p>A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
+      <td><p>A character vector with the name of the <a href='https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29'>valid transform</a> function followed by the parameter values (e.g. c("ST_Simplify", 100)). See crunchy data froThe permitted values are described at</p></td>
     </tr>
     <tr>
       <th>epsg</th>
@@ -195,6 +195,7 @@ property).</p></li>
 
     <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html'>API documentation</a></p>
 <p>Other functions: 
+<code><a href='fwa_hydroshed.html'>fwa_hydroshed</a>()</code>,
 <code><a href='fwa_index_point.html'>fwa_index_point</a>()</code>,
 <code><a href='fwa_locate_along_interval.html'>fwa_locate_along_interval</a>()</code>,
 <code><a href='fwa_locate_along.html'>fwa_locate_along</a>()</code>,
@@ -208,10 +209,10 @@ property).</p></li>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Dimension:     XY</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -121.9625 ymin: 49.09301 xmax: -121.8528 ymax: 49.14291</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Geodetic CRS:  WGS 84</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>   area_ha   localcode_ltree refine_method wscode_ltree</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 2364.24 100.070889.490268           DEM   100.070889</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>                         geometry</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 POLYGON ((-121.9625 49.1038...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A data frame: 1 × 5</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   area_ha localcode_ltree   refine_method wscode_ltree                  geometry</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                    <span style='color: #949494; font-style: italic;'>&lt;POLYGON [°]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span>   <span style='text-decoration: underline;'>2</span>364. 100.070889.490268 DEM           100.070889   ((-121.9625 49.10385, -1…</span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

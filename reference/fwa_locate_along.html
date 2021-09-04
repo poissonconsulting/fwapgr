@@ -89,7 +89,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9004</span>
       </span>
     </div>
 
@@ -163,7 +163,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     </tr>
     <tr>
       <th>transform</th>
-      <td><p>A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
+      <td><p>A character vector with the name of the <a href='https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29'>valid transform</a> function followed by the parameter values (e.g. c("ST_Simplify", 100)). See crunchy data froThe permitted values are described at</p></td>
     </tr>
     <tr>
       <th>epsg</th>
@@ -178,6 +178,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 
     <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html'>API documentation</a></p>
 <p>Other functions: 
+<code><a href='fwa_hydroshed.html'>fwa_hydroshed</a>()</code>,
 <code><a href='fwa_index_point.html'>fwa_index_point</a>()</code>,
 <code><a href='fwa_locate_along_interval.html'>fwa_locate_along_interval</a>()</code>,
 <code><a href='fwa_watershed_at_measure.html'>fwa_watershed_at_measure</a>()</code>,
@@ -192,8 +193,10 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -121.9504 ymin: 49.15144 xmax: -121.9504 ymax: 49.15144</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> z_range:       zmin: 10.5 zmax: 10.5</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Geodetic CRS:  WGS 84</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>                         geometry</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 POINT Z (-121.9504 49.15144...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A data frame: 1 × 1</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                      geometry</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>*</span>                 <span style='color: #949494; font-style: italic;'>&lt;POINT [°]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span> Z (-121.9504 49.15144 10.5)</span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

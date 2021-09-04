@@ -88,7 +88,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9004</span>
       </span>
     </div>
 
@@ -176,7 +176,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     </tr>
     <tr>
       <th>transform</th>
-      <td><p>A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
+      <td><p>A character vector with the name of the <a href='https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29'>valid transform</a> function followed by the parameter values (e.g. c("ST_Simplify", 100)). See crunchy data froThe permitted values are described at</p></td>
     </tr>
     <tr>
       <th>epsg</th>
@@ -195,6 +195,7 @@ set <code>limit = 2</code>.</p>
 
     <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html'>API documentation</a></p>
 <p>Other functions: 
+<code><a href='fwa_hydroshed.html'>fwa_hydroshed</a>()</code>,
 <code><a href='fwa_locate_along_interval.html'>fwa_locate_along_interval</a>()</code>,
 <code><a href='fwa_locate_along.html'>fwa_locate_along</a>()</code>,
 <code><a href='fwa_watershed_at_measure.html'>fwa_watershed_at_measure</a>()</code>,
@@ -208,12 +209,12 @@ set <code>limit = 2</code>.</p>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Dimension:     XY</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -132.2547 ymin: 53.35672 xmax: -132.2547 ymax: 53.35672</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A data frame: 1 × 9</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   bc_ind blue_line_key distance_to_stream downstream_route_measure gnis_name</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 1   TRUE     360824839           508.4116                  1118.34      &lt;NA&gt;</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>   linear_feature_id          localcode_ltree             wscode_ltree</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 1          59124979 940.906664.866879.264858 940.906664.866879.264858</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>                     geometry</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 POINT (-132.2547 53.35672)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>              <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>                    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span> TRUE       360<span style='text-decoration: underline;'>824</span>839               508.                    <span style='text-decoration: underline;'>1</span>118. <span style='color: #BB0000;'>NA</span>       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 4 more variables: linear_feature_id &lt;int&gt;, localcode_ltree &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   wscode_ltree &lt;chr&gt;, geometry &lt;POINT [°]&gt;</span></span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

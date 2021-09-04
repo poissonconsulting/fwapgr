@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FWA Property Metadata — fwa_meta_properties • fwapgr</title>
+<title>Freshwater Atlas Valid Transform Functions — fwa_valid_transforms • fwapgr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="FWA Property Metadata — fwa_meta_properties" />
-<meta property="og:description" content="Get information about the column names of a collection." />
+<meta property="og:title" content="Freshwater Atlas Valid Transform Functions — fwa_valid_transforms" />
+<meta property="og:description" content="Returns a character vector of the valid transform functions." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -121,50 +121,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>FWA Property Metadata</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/meta-properties.R'><code>R/meta-properties.R</code></a></small>
-    <div class="hidden name"><code>fwa_meta_properties.Rd</code></div>
+    <h1>Freshwater Atlas Valid Transform Functions</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/valid-transforms.R'><code>R/valid-transforms.R</code></a></small>
+    <div class="hidden name"><code>fwa_valid_transforms.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get information about the column names of a collection.</p>
+    <p>Returns a character vector of the valid transform functions.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>fwa_meta_properties</span><span class='op'>(</span><span class='va'>collection_id</span><span class='op'>)</span></code></pre></div>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>fwa_valid_transforms</span><span class='op'>(</span><span class='op'>)</span></code></pre></div>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>collection_id</th>
-      <td><p>A character string of the collection id.</p></td>
-    </tr>
-    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <p>A character vector of the valid transform functions.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <div class='dont-index'><p>Other metadata: 
-<code><a href='fwa_meta_collections.html'>fwa_meta_collections</a>()</code></p></div>
+    <p>The valid transform functions are listed at <a href='https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29'>https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29</a>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>fwa_meta_properties</span><span class='op'>(</span><span class='st'>"whse_basemapping.fwa_stream_networks_sp"</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 27 × 3</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>    name                     type   description</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> linear_feature_id        number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> watershed_group_id       number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> edge_type                number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> blue_line_key            number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> watershed_key            number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> fwa_watershed_code       string <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> local_watershed_code     string <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> watershed_group_code     string <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> downstream_route_measure number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> length_metre             number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 17 more rows</span></span>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>fwa_valid_transforms</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [1] "ST_Boundary"              "ST_Buffer"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [3] "ST_Centroid"              "ST_ChaikinSmoothing"     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [5] "ST_ConvexHull"            "ST_Envelope"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [7] "ST_GeneratePoints"        "ST_LineSubstring"        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [9] "ST_MinimumBoundingCircle" "ST_OffsetCurve"          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [11] "ST_PointOnSurface"        "ST_Simplify"             </span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

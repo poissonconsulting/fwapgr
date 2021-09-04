@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FWA Property Metadata — fwa_meta_properties • fwapgr</title>
+<title>Freshwater Atlas Hydroshed — fwa_hydroshed • fwapgr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="FWA Property Metadata — fwa_meta_properties" />
-<meta property="og:description" content="Get information about the column names of a collection." />
+<meta property="og:title" content="Freshwater Atlas Hydroshed — fwa_hydroshed" />
+<meta property="og:description" content="Gets the hydroshed polygon for any point." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -121,50 +121,84 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>FWA Property Metadata</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/meta-properties.R'><code>R/meta-properties.R</code></a></small>
-    <div class="hidden name"><code>fwa_meta_properties.Rd</code></div>
+    <h1>Freshwater Atlas Hydroshed</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/hydroshed.R'><code>R/hydroshed.R</code></a></small>
+    <div class="hidden name"><code>fwa_hydroshed.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get information about the column names of a collection.</p>
+    <p>Gets the hydroshed polygon for any point.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>fwa_meta_properties</span><span class='op'>(</span><span class='va'>collection_id</span><span class='op'>)</span></code></pre></div>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>fwa_hydroshed</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>y</span>,
+  srid <span class='op'>=</span> <span class='fl'>4326</span>,
+  bbox <span class='op'>=</span> <span class='cn'>NULL</span>,
+  properties <span class='op'>=</span> <span class='cn'>NULL</span>,
+  transform <span class='op'>=</span> <span class='cn'>NULL</span>,
+  epsg <span class='op'>=</span> <span class='fl'>4326</span>
+<span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>collection_id</th>
-      <td><p>A character string of the collection id.</p></td>
+      <th>x</th>
+      <td><p>A number of the x coordinate.</p></td>
+    </tr>
+    <tr>
+      <th>y</th>
+      <td><p>A number of the y coordinate.</p></td>
+    </tr>
+    <tr>
+      <th>srid</th>
+      <td><p>A positive whole number of the epsg of the coordinates.</p></td>
+    </tr>
+    <tr>
+      <th>bbox</th>
+      <td><p>A vector of four numbers indicating bounding box to limit output
+features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
+    </tr>
+    <tr>
+      <th>properties</th>
+      <td><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></td>
+    </tr>
+    <tr>
+      <th>transform</th>
+      <td><p>A character vector with the name of the <a href='https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29'>valid transform</a> function followed by the parameter values (e.g. c("ST_Simplify", 100)). See crunchy data froThe permitted values are described at</p></td>
+    </tr>
+    <tr>
+      <th>epsg</th>
+      <td><p>A positive whole number of the epsg to transform features to.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble.</p>
+    <p>An sf object.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other metadata: 
-<code><a href='fwa_meta_collections.html'>fwa_meta_collections</a>()</code></p></div>
+    <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/hydroshed.html'>API documentation</a></p>
+<p>Other functions: 
+<code><a href='fwa_index_point.html'>fwa_index_point</a>()</code>,
+<code><a href='fwa_locate_along_interval.html'>fwa_locate_along_interval</a>()</code>,
+<code><a href='fwa_locate_along.html'>fwa_locate_along</a>()</code>,
+<code><a href='fwa_watershed_at_measure.html'>fwa_watershed_at_measure</a>()</code>,
+<code><a href='fwa_watershed_hex.html'>fwa_watershed_hex</a>()</code>,
+<code><a href='fwa_watershed_stream.html'>fwa_watershed_stream</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>fwa_meta_properties</span><span class='op'>(</span><span class='st'>"whse_basemapping.fwa_stream_networks_sp"</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 27 × 3</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>    name                     type   description</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> linear_feature_id        number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> watershed_group_id       number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> edge_type                number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> blue_line_key            number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> watershed_key            number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> fwa_watershed_code       string <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> local_watershed_code     string <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> watershed_group_code     string <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> downstream_route_measure number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> length_metre             number <span style='color: #949494;'>""</span>         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 17 more rows</span></span>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>fwa_hydroshed</span><span class='op'>(</span>x <span class='op'>=</span> <span class='op'>-</span><span class='fl'>132.26</span>, y <span class='op'>=</span> <span class='fl'>53.36</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Simple feature collection with 1 feature and 0 fields</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Geometry type: POLYGON</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Dimension:     XY</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -132.384 ymin: 53.25479 xmax: -132.1535 ymax: 53.38813</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A data frame: 1 × 1</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                         geometry</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>*</span>                                                                  <span style='color: #949494; font-style: italic;'>&lt;POLYGON [°]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span> ((-132.275 53.38333, -132.2601 53.38369, -132.2566 53.38715, -132.2542 53.387…</span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
