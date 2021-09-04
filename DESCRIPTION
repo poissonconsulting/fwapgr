@@ -14,8 +14,8 @@ Authors@R:
              comment = c(ORCID = "0000-0002-7683-4592")),
       person(given = "Poisson Consulting",
              role = c("cph", "fnd")))
-Description: Client for fwapg, a PostgreSQL database and web API
-    for BC Freshwater Atlas data.
+Description: Client for fwapg, a PostgreSQL database and web API for BC
+    Freshwater Atlas data.
 License: MIT + file LICENSE
 URL: https://github.com/poissonconsulting/fwapgr
 BugReports: https://github.com/poissonconsulting/fwapgr/issues
@@ -37,13 +37,13 @@ Suggests:
     magrittr,
     rmarkdown,
     testthat
-Remotes:
-    poissonconsulting/chk,
-    hadley/emo
 VignetteBuilder: 
     knitr
 RdMacros: 
     lifecycle
+Remotes:
+    hadley/emo,
+    poissonconsulting/chk
 Encoding: UTF-8
 Language: en-US
 LazyData: true
