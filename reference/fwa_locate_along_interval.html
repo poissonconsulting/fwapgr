@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FWA locate along interval — fwa_locate_along_interval • fwapgr</title>
+<title>Freshwater Atlas Locate Along Interval — fwa_locate_along_interval • fwapgr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="FWA locate along interval — fwa_locate_along_interval" />
-<meta property="og:description" content="Provided a blue_line_key and starting downstream distance, return a set of points along an interval." />
+<meta property="og:title" content="Freshwater Atlas Locate Along Interval — fwa_locate_along_interval" />
+<meta property="og:description" content="Gets a regularly spaced set of points between two river metres." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -121,13 +121,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>FWA locate along interval</h1>
+    <h1>Freshwater Atlas Locate Along Interval</h1>
     <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/spatial-functions.R'><code>R/spatial-functions.R</code></a></small>
     <div class="hidden name"><code>fwa_locate_along_interval.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Provided a blue_line_key and starting downstream distance, return a set of points along an interval.</p>
+    <p>Gets a regularly spaced set of points between two river metres.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>fwa_locate_along_interval</span><span class='op'>(</span>
@@ -203,9 +203,25 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 <code><a href='fwa_watershed_stream.html'>fwa_watershed_stream</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
-<span class='r-in'><span class='fu'>fwa_locate_along_interval</span><span class='op'>(</span><span class='fl'>356308001</span>, interval_length <span class='op'>=</span> <span class='fl'>10</span>, start_measure <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></span>
-<span class='r-in'><span class='op'>}</span></span>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>fwa_locate_along_interval</span><span class='op'>(</span><span class='fl'>356308001</span>, interval_length <span class='op'>=</span> <span class='fl'>10</span>, start_measure <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Simple feature collection with 100 features and 2 fields</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Geometry type: POINT</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Dimension:     XYZ</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -122.0155 ymin: 49.16486 xmax: -122.0047 ymax: 49.16804</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> z_range:       zmin: 9.626 zmax: 10.131</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> First 10 features:</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    downstream_route_measure index                       geometry</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                         0     0 POINT Z (-122.0155 49.16804...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                        10     1 POINT Z (-122.0154 49.16795...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                        20     2 POINT Z (-122.0154 49.16787...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                        30     3 POINT Z (-122.0153 49.16778...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5                        40     4 POINT Z (-122.0153 49.1677 ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6                        50     5 POINT Z (-122.0152 49.16762...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7                        60     6 POINT Z (-122.0152 49.16753...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8                        70     7 POINT Z (-122.0151 49.16745...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9                        80     8 POINT Z (-122.0151 49.16736...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10                       90     9 POINT Z (-122.015 49.16728 ...</span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
