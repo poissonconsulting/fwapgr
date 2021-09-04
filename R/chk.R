@@ -1,4 +1,4 @@
-chk_response_status <- function(x, x_name = NULL){
+chk_response_status <- function(x){
   if(vld_response_status(x)) {
     return(invisible(x))
   }
@@ -6,21 +6,19 @@ chk_response_status <- function(x, x_name = NULL){
   abort_chk(glue("API request failed [{status_code(x)}]: {msg}"))
 }
 
-chk_response_json <- function(x, x_name = NULL){
+chk_response_json <- function(x){
   if (vld_response_json(x)){
     return(invisible(x))
   }
   msg <- status_msg(x)
-  if (is.null(x_name)) x_name <- deparse_backtick_chk((substitute(x)))
   abort_chk(glue("API did not return JSON: {msg}"))
 }
 
-chk_response_gateway <- function(x, x_name = NULL){
+chk_response_gateway <- function(x){
   if (vld_response_gateway(x)){
     return(invisible(x))
   }
   msg <- "Bad Gateway"
-  if (is.null(x_name)) x_name <- deparse_backtick_chk((substitute(x)))
   abort_chk(glue("API request failed [{status_code(x)}]: {msg}"))
 }
 
