@@ -2,12 +2,11 @@ destination: docs
 
 reference:
 - title: Information
-  desc: Get information about the collections, a collection's properties or
-  the valid transform functions.
+  desc: Get information about the collections, a collection's properties or the valid transform functions.
   contents:
   - '`fwa_meta_collections`'
   - '`fwa_meta_properties`'
-  - '`fwa_valid_transform_functions`'
+  - '`fwa_valid_transforms`'
 - title: Collection
   desc: Query a collection.
   contents:
