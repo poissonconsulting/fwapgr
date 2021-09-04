@@ -172,9 +172,28 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>An sf object.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The function selects and aggregate all the fundamental watershed polygons
+upstream of the fundamental watershed in which the point lies.</p>
+<p>Depending on where the point is in the fundamental watershed one of four
+things can happen to the fundamental watershed.</p><ol>
+<li><p>If the point is &lt; 50 m upstream from the bottom of the fundamental
+watershed then the fundamental watershed is included in the aggregation
+(recorded as KEEP in the refine_method property).</p></li>
+<li><p>Else if the point is &lt; 100m downstream from the top of the fundamental
+watershed then the fundamental watershed is not included in the aggregation
+(recorded as DROP in the refine_method property).</p></li>
+<li><p>Else if the point is on a polygonal river/canal the fundamental watershed
+is cut across the banks of the river before being included in the aggregation
+(recorded as CUT in the refine_method property).</p></li>
+<li><p>Otherwise something else happens (recorded as DEM in the refine_method
+property).</p></li>
+</ol>
+
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html'>fwa_watershedatmeasure API documentation</a></p>
+    <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html'>API documentation</a></p>
 <p>Other functions: 
 <code><a href='fwa_index_point.html'>fwa_index_point</a>()</code>,
 <code><a href='fwa_locate_along_interval.html'>fwa_locate_along_interval</a>()</code>,

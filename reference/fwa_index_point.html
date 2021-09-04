@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="FWA Index Point — fwa_index_point" />
-<meta property="og:description" content="Gets the nearest point(s) on a stream(s) to the coordinates within the specified tolerance." />
+<meta property="og:description" content="Gets the nearest point on a stream to the coordinates (within the tolerance)." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -127,7 +127,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Gets the nearest point(s) on a stream(s) to the coordinates within the specified tolerance.</p>
+    <p>Gets the nearest point on a stream to the coordinates (within the tolerance).</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>fwa_index_point</span><span class='op'>(</span>
@@ -187,9 +187,13 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>An sf object.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>To also return the second nearest point to a stream (within the tolerance)
+set <code>limit = 2</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html'>fwa_indexpoint API documentation</a></p>
+    <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html'>API documentation</a></p>
 <p>Other functions: 
 <code><a href='fwa_locate_along_interval.html'>fwa_locate_along_interval</a>()</code>,
 <code><a href='fwa_locate_along.html'>fwa_locate_along</a>()</code>,
