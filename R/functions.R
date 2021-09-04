@@ -6,7 +6,7 @@
 #' @param function_id A character string of the function id
 #' @param parameters A named list of the parameters and values for a specific function.
 #' @return A sf object
-#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions.html}{API documentation}
+#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions.html)
 fwa_function <- function(function_id,
                             parameters,
                             limit = 100,
@@ -54,7 +54,7 @@ fwa_function <- function(function_id,
 #' @param num_features A positive whole number of the maximum number of features to return.
 #' @return A sf object
 #' @family functions
-#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html}{fwa_indexpoint API documentation}
+#' @seealso [fwa_indexpoint API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html)
 #' @export
 #' @examples
 #' \dontrun{fwa_index_point(x = -132.26, y = 53.36, srid = 4326)}
@@ -101,7 +101,7 @@ fwa_index_point <- function(x, y, srid,
 #' @param downstream_route_measure A positive number of the downstream route measure.
 #' @return A sf object
 #' @family functions
-#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html}{fwa_watershedatmeasure API documentation}
+#' @seealso [fwa_watershedatmeasure API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html)
 #' @export
 #' @examples
 #' \dontrun{fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)}
@@ -138,7 +138,7 @@ fwa_watershed_at_measure <- function(blue_line_key,
 #' @inheritParams fwa_watershed_at_measure
 #' @return A sf object
 #' @family functions
-#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html}{fwa_watershedstream API documentation}
+#' @seealso [fwa_watershedstream API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html)
 #' @export
 #' @examples
 #' \dontrun{fwa_watershed_stream(356308001, downstream_route_measure = 10000)}
@@ -175,7 +175,7 @@ fwa_watershed_stream <- function(blue_line_key,
 #' @inheritParams fwa_watershed_at_measure
 #' @return A sf object
 #' @family functions
-#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html}{fwa_watershedhex API documentation}
+#' @seealso [fwa_watershedhex API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html)
 #' @export
 #' @examples
 #' \dontrun{fwa_watershed_hex(356308001, downstream_route_measure = 10000)}
@@ -212,7 +212,7 @@ fwa_watershed_hex <- function(blue_line_key,
 #' @inheritParams fwa_watershed_at_measure
 #' @return A sf object
 #' @family functions
-#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html}{fwa_locatealong API documentation}
+#' @seealso [fwa_locatealong API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html)
 #' @export
 #' @examples
 #' \dontrun{fwa_locate_along(356308001, downstream_route_measure = 10000)}
@@ -253,7 +253,7 @@ fwa_locate_along <- function(blue_line_key,
 #' @param end_measure An integer of the distance in meters upstream from the river mouth to end at.
 #' @return A sf object
 #' @family functions
-#' @seealso \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{fwa_locatealonginterval API documentation}
+#' @seealso [fwa_locatealonginterval API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html)
 #' @export
 #' @examples
 #' \dontrun{fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)}
