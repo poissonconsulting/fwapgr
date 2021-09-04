@@ -1,9 +1,5 @@
-test_that("fwa_meta_collections", {
-  x <- fwa_meta_collections()
-  expect_is(x, "tbl")
-  expect_identical(names(x), c("collection_id", "description", "extent", "links"))
-
-  collections <- c(
+collection_ids <- function() {
+  c(
     "hydrosheds.hybas_lev12_v1c",
     "usgs.wbdhu12",
     "whse_basemapping.fwa_approx_borders",
@@ -44,12 +40,4 @@ test_that("fwa_meta_collections", {
     "whse_fish.pscis_habitat_confirmation_svw",
     "whse_fish.pscis_remediation_svw"
   )
-
-  expect_setequal(collections, x$collection_id)
-})
-
-test_that("fwa_meta_properties", {
-  x <- fwa_meta_properties("whse_basemapping.fwa_stream_networks_sp")
-  expect_is(x, "tbl")
-  expect_identical(names(x), c("name", "type", "description"))
-})
+}

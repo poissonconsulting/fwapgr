@@ -9,8 +9,8 @@ test_that("api utils", {
   expect_chk_error(fwa_api(bad_path, query))
 
   x <- fwa_api(path, query)
-  expect_is(x, "character")
+  expect_type(x, "character")
 
   x <- read_feature(x, 4326)
-  expect_is(x, "sf")
+  expect_s3_class(x, "sf")
 })

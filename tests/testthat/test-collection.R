@@ -47,43 +47,43 @@ test_that("fwa_collection", {
   # default vals
   y <- fwa_collection(collectionid, filter = filter)
   expect_true(all(y$gnis_name == "Chilliwack Creek"))
-  expect_is(y, "sf")
+  expect_s3_class(y, "sf")
   # including coordinates
   expect_identical(colnames(sf::st_coordinates(y)), c("X", "Y", "Z", "L1"))
 
   # check columns
   x <- fwa_collection(collectionid, filter = filter, properties = properties)
-  expect_is(x, "sf")
+  expect_s3_class(x, "sf")
   expect_identical(c(properties, "geometry"), names(x))
 
   # check filter and bounds
   x <- fwa_collection(collectionid, filter = filter, bbox = bbox)
-  expect_is(x, "sf")
+  expect_s3_class(x, "sf")
   expect_true(nrow(x) > 0)
   expect_true(all(x$gnis_name == "Chilliwack Creek"))
 
   # returns features within bounds of lake table
   x <- fwa_collection("whse_basemapping.fwa_lakes_poly", bbox = bbox)
-  expect_is(x, "sf")
+  expect_s3_class(x, "sf")
   expect_identical(sort(unique(x$gnis_name_1)), c("Ryder Lake", "Sardis Pond"))
 
   # check filter  when outside of bounds
   filter <- list(gnis_name_1 = "Sardis Pond")
   x <- fwa_collection("whse_basemapping.fwa_lakes_poly", filter = filter, bbox = bbox)
-  expect_is(x, "sf")
+  expect_s3_class(x, "sf")
   expect_identical(nrow(x), 1L)
 
   # check bbox outside feature
   filter <- list(gnis_name = "Sangan River")
   x <- fwa_collection(collectionid, filter = filter, bbox = bbox)
-  expect_is(x, "sf")
+  expect_s3_class(x, "sf")
   expect_identical(nrow(x), 0L)
 
   ### check transform
   # test multiple args
   filter <- list(gnis_name = "Chilliwack Creek")
   z <- fwa_collection(collectionid, filter = filter, transform = c("ST_Simplify", 1000))
-  expect_is(z, "sf")
+  expect_s3_class(z, "sf")
   # expect a triangle
   expect_true(length(unlist(z$geometry)) < length(unlist(y$geometry)))
 })

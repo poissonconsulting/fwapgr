@@ -4,7 +4,7 @@
 \name{fwapgr-package}
 \alias{fwapgr}
 \alias{fwapgr-package}
-\title{fwapgr: Client for BC Freshwater Atlas Web API}
+\title{fwapgr: Client for BC Freshwater Atlas fwapg API}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 

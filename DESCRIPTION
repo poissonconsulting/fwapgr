@@ -1,5 +1,5 @@
 Package: fwapgr
-Title: Client for BC Freshwater Atlas Web API
+Title: Client for BC Freshwater Atlas fwapg API
 Version: 0.1.0.9003
 Authors@R: 
     c(person(given = "Sebastian",
@@ -35,8 +35,9 @@ Suggests:
     ggplot2,
     knitr,
     magrittr,
+    readr,
     rmarkdown,
-    testthat
+    testthat (>= 3.0.0)
 VignetteBuilder: 
     knitr
 RdMacros: 
@@ -44,6 +45,7 @@ RdMacros:
 Remotes:
     hadley/emo,
     poissonconsulting/chk
+Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 LazyData: true
