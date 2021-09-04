@@ -10,8 +10,8 @@ chk_response_json <- function(x){
   if (vld_response_json(x)){
     return(invisible(x))
   }
-  msg <- status_msg(x)
-  abort_chk(glue("API did not return JSON: {msg}"))
+  type <- http_type(x)
+  abort_chk(glue("API returned '{type}' not 'application/json' or 'application/geo+json'"))
 }
 
 chk_response_gateway <- function(x){

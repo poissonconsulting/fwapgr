@@ -3,7 +3,7 @@ vld_response_status <- function(x){
 }
 
 vld_response_json <- function(x){
-  http_type(x) == "application/json"
+  vld_match(http_type(x), "application/(geo\\+){0,1}json")
 }
 
 vld_response_gateway <- function(x){
