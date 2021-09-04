@@ -11,11 +11,11 @@ reference:
   contents:
   - '`fwa_collection`'
 - title: Function
-  desc: General API function.
+  desc: General spatial function.
   contents:
   - '`fwa_function`'
 - title: Spatial Functions
-  desc: API spatial functions.
+  desc: Specific spatial functions.
   contents:
   - '`fwa_index_point`'
   - '`fwa_locate_along`'
