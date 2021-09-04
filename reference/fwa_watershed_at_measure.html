@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FWA watershed at downstream route measure — fwa_watershed_at_measure • fwapgr</title>
+<title>FWA Watershed at Downstream Route Measure — fwa_watershed_at_measure • fwapgr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,9 +46,8 @@
 
 
 
-<meta property="og:title" content="FWA watershed at downstream route measure — fwa_watershed_at_measure" />
-<meta property="og:description" content="Provided a location as blue_line_key and downstream_route_measure,
-return the entire watershed boundary upstream of the location." />
+<meta property="og:title" content="FWA Watershed at Downstream Route Measure — fwa_watershed_at_measure" />
+<meta property="og:description" content="Gets a polygon of the watershed at a specified river metre." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -122,21 +121,18 @@ return the entire watershed boundary upstream of the location." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>FWA watershed at downstream route measure</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/functions.R'><code>R/functions.R</code></a></small>
+    <h1>FWA Watershed at Downstream Route Measure</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/spatial-functions.R'><code>R/spatial-functions.R</code></a></small>
     <div class="hidden name"><code>fwa_watershed_at_measure.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Provided a location as blue_line_key and downstream_route_measure,
-return the entire watershed boundary upstream of the location.</p>
+    <p>Gets a polygon of the watershed at a specified river metre.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>fwa_watershed_at_measure</span><span class='op'>(</span>
   <span class='va'>blue_line_key</span>,
   downstream_route_measure <span class='op'>=</span> <span class='fl'>0</span>,
-  limit <span class='op'>=</span> <span class='fl'>100</span>,
-  offset <span class='op'>=</span> <span class='fl'>0</span>,
   bbox <span class='op'>=</span> <span class='cn'>NULL</span>,
   properties <span class='op'>=</span> <span class='cn'>NULL</span>,
   transform <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -152,15 +148,7 @@ return the entire watershed boundary upstream of the location.</p>
     </tr>
     <tr>
       <th>downstream_route_measure</th>
-      <td><p>A positive number of the downstream route measure.</p></td>
-    </tr>
-    <tr>
-      <th>limit</th>
-      <td><p>A positive whole number indicating the maximum number of features to return.</p></td>
-    </tr>
-    <tr>
-      <th>offset</th>
-      <td><p>A positive whole number indicating the offset of start of returned results.</p></td>
+      <td><p>A positive number of the river metre.</p></td>
     </tr>
     <tr>
       <th>bbox</th>
@@ -183,7 +171,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A sf object</p>
+    <p>An sf object.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html'>fwa_watershedatmeasure API documentation</a></p>
@@ -195,9 +183,16 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 <code><a href='fwa_watershed_stream.html'>fwa_watershed_stream</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
-<span class='r-in'><span class='fu'>fwa_watershed_at_measure</span><span class='op'>(</span><span class='fl'>356308001</span>, downstream_route_measure <span class='op'>=</span> <span class='fl'>10000</span><span class='op'>)</span></span>
-<span class='r-in'><span class='op'>}</span></span>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>fwa_watershed_at_measure</span><span class='op'>(</span><span class='fl'>356308001</span>, downstream_route_measure <span class='op'>=</span> <span class='fl'>10000</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Simple feature collection with 1 feature and 4 fields</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Geometry type: POLYGON</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Dimension:     XY</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -121.9625 ymin: 49.09301 xmax: -121.8528 ymax: 49.14291</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   area_ha   localcode_ltree refine_method wscode_ltree</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 2364.24 100.070889.490268           DEM   100.070889</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                         geometry</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 POLYGON ((-121.9625 49.1038...</span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
