@@ -1,3 +1,32 @@
+test_that("fwa_collection offset works", {
+  collectionid <- "whse_basemapping.fwa_stream_networks_sp"
+
+  x <- fwa_collection(collectionid, offset = 0, limit = 2)
+  z <- fwa_collection(collectionid, offset = 1, limit = 1)
+  expect_true(identical(x$geometry[2], z$geometry))
+})
+
+test_that("fwa_collection offset doesn't work higher number!!!", {
+  collectionid <- "whse_basemapping.fwa_stream_networks_sp"
+
+  x <- fwa_collection(collectionid, offset = 100, limit = 2)
+  z <- fwa_collection(collectionid, offset = 100+1, limit = 1)
+  expect_false(identical(x$geometry[2], z$geometry))
+})
+
+test_that("fwa_collection offset errors at 100,000", {
+  collectionid <- "whse_basemapping.fwa_stream_networks_sp"
+
+  expect_silent(fwa_collection(collectionid, offset = 99999, limit = 1))
+  expect_error(fwa_collection(collectionid, offset = 100000, limit = 1),
+               "Invalid value for parameter offset")
+})
+
+test_that("fwa_collection offset works at 100,001 !!!!", {
+  collectionid <- "whse_basemapping.fwa_stream_networks_sp"
+  expect_silent(fwa_collection(collectionid, offset = 100001, limit = 1))
+})
+
 test_that("fwa_collection", {
   collectionid <- "whse_basemapping.fwa_stream_networks_sp"
 
