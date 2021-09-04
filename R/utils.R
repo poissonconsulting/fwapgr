@@ -2,8 +2,11 @@ api_url <- function() {
   "https://hillcrestgeo.ca/"
 }
 
-user <- function() {
-  user_agent("http://github.com/poissonconsulting/fwapgr")
+format_parameter <- function(x) {
+  if (is.null(x)) {
+    return(x)
+  }
+  paste(x, collapse = ",")
 }
 
 fwa_api <- function(path, query) {
@@ -21,10 +24,6 @@ fwa_api <- function(path, query) {
   content(resp, "text", encoding = "UTF-8")
 }
 
-status_msg <- function(x) {
-  content(x, "text")
-}
-
 read_feature <- function(response, epsg) {
   x <- sf::st_read(response, quiet = TRUE, stringsAsFactors = FALSE)
   # api default is 4326
@@ -34,11 +33,8 @@ read_feature <- function(response, epsg) {
   sf::st_transform(x, epsg)
 }
 
-format_parameter <- function(x) {
-  if (is.null(x)) {
-    return(x)
-  }
-  paste(x, collapse = ",")
+status_msg <- function(x) {
+  content(x, "text")
 }
 
 # valid Transform functions from https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29
@@ -52,4 +48,8 @@ valid_transform_functions <- function() {
     "ST_Simplify", "ST_ChaikinSmoothing",
     "ST_LineSubstring"
   )
+}
+
+user <- function() {
+  user_agent("http://github.com/poissonconsulting/fwapgr")
 }
