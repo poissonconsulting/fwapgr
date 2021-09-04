@@ -40,10 +40,10 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 An sf object.
 }
 \description{
-Gets the nearest point on a stream to the coordinates (within the tolerance).
+Gets the nearest point on a stream as the crow flies to the coordinates (within the tolerance).
 }
 \details{
-To also return the second nearest point to a stream (within the tolerance)
+To also return the second nearest point on a stream as the crow flies (within the tolerance)
 set \code{limit = 2}.
 }
 \examples{

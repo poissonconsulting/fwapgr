@@ -6,10 +6,10 @@
 \usage{
 fwa_locate_along_interval(
   blue_line_key,
-  interval_length = 1000,
+  interval_length = 100,
   start_measure = 0,
   end_measure = NULL,
-  limit = 100,
+  limit = 1000,
   offset = 0,
   bbox = NULL,
   properties = NULL,

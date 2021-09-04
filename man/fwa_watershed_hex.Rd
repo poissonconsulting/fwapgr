@@ -2,12 +2,12 @@
 % Please edit documentation in R/spatial-functions.R
 \name{fwa_watershed_hex}
 \alias{fwa_watershed_hex}
-\title{Freshwater Atlas watershed hex}
+\title{Freshwater Atlas Watershed Hex}
 \usage{
 fwa_watershed_hex(
   blue_line_key,
   downstream_route_measure = 0,
-  limit = 100,
+  limit = 10000,
   offset = 0,
   bbox = NULL,
   properties = NULL,
@@ -37,7 +37,7 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 An sf object.
 }
 \description{
-Provided a location as blue_line_key and downstream_route_measure, return a 25m hexagon grid covering first order watershed in which location lies.
+Gets a 25m hexagon grid covering the fundamental watershed in which the river metre lies.
 }
 \examples{
 \dontrun{

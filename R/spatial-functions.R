@@ -94,10 +94,10 @@ fwa_locate_along <- function(blue_line_key,
 #' @examples
 #' fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)
 fwa_locate_along_interval <- function(blue_line_key,
-                                      interval_length = 1000,
+                                      interval_length = 100,
                                       start_measure = 0,
                                       end_measure = NULL,
-                                      limit = 100,
+                                      limit = 1000,
                                       offset = 0,
                                       bbox = NULL,
                                       properties = NULL,
@@ -235,9 +235,9 @@ fwa_watershed_stream <- function(blue_line_key,
   )
 }
 
-#' Freshwater Atlas watershed hex
+#' Freshwater Atlas Watershed Hex
 #'
-#' Provided a location as blue_line_key and downstream_route_measure, return a 25m hexagon grid covering first order watershed in which location lies.
+#' Gets a 25m hexagon grid covering the fundamental watershed in which the river metre lies.
 #'
 #' @inherit internal
 #' @family functions
@@ -249,7 +249,7 @@ fwa_watershed_stream <- function(blue_line_key,
 #' }
 fwa_watershed_hex <- function(blue_line_key,
                               downstream_route_measure = 0,
-                              limit = 100,
+                              limit = 10000,
                               offset = 0,
                               bbox = NULL,
                               properties = NULL,
