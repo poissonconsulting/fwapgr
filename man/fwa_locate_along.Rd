@@ -24,12 +24,12 @@ fwa_locate_along(
 
 \item{offset}{A positive whole number indicating the offset of start of returned results.}
 
-\item{bbox}{A vector of numbers indicating bounding box to limit output
+\item{bbox}{A vector of four numbers indicating bounding box to limit output
 features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 
 \item{properties}{A vector of strings of the column names to include. If NULL (default), all columns are retained.}
 
-\item{transform}{A vector of strings of the geometry transform function followed by parameter values (e.g. c("ST_Simplify", 100))}
+\item{transform}{A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 }

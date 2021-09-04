@@ -2,7 +2,7 @@ destination: docs
 
 reference:
 - title: Metadata
-  desc: Get information about a collection or a collection's properties.
+  desc: Get information about the collections or a collection's properties.
   contents:
   - '`fwa_meta_collections`'
   - '`fwa_meta_properties`'
@@ -11,11 +11,11 @@ reference:
   contents:
   - '`fwa_collection`'
 - title: Function
-  desc: General API function call.
+  desc: General API function.
   contents:
   - '`fwa_function`'
 - title: Spatial Functions
-  desc: Execute spatial functions.
+  desc: API spatial functions.
   contents:
   - '`fwa_index_point`'
   - '`fwa_locate_along`'
