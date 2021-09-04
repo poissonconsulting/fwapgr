@@ -37,7 +37,7 @@ Gets a polygon of the watershed at a specified river metre.
 fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)
 }
 \seealso{
-\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html}{fwa_watershedatmeasure API documentation}
+\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html}{API documentation}
 
 Other functions: 
 \code{\link{fwa_index_point}()},

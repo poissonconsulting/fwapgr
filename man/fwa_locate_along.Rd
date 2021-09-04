@@ -45,7 +45,7 @@ fwa_locate_along(356308001, downstream_route_measure = 10000)
 }
 }
 \seealso{
-\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html}{fwa_locatealong API documentation}
+\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html}{API documentation}
 
 Other functions: 
 \code{\link{fwa_index_point}()},

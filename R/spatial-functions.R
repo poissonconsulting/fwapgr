@@ -1,10 +1,13 @@
 #' FWA Index Point
 #'
-#' Gets the nearest point(s) on a stream(s) to the coordinates within the specified tolerance.
+#' Gets the nearest point on a stream to the coordinates within the tolerance.
+#'
+#' To return the first and second closest points on streams within the tolerance
+#' increase limit to 2.
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [fwa_indexpoint API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html)
+#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html)
 #' @export
 #' @examples
 #' fwa_index_point(x = -132.26, y = 53.36)
@@ -48,7 +51,7 @@ fwa_index_point <- function(x, y, srid = 4326,
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [fwa_watershedatmeasure API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html)
+#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html)
 #' @export
 #' @examples
 #' fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)
@@ -84,7 +87,7 @@ fwa_watershed_at_measure <- function(blue_line_key,
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [fwa_watershedstream API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html)
+#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html)
 #' @export
 #' @examples
 #' \dontrun{
@@ -125,7 +128,7 @@ fwa_watershed_stream <- function(blue_line_key,
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [fwa_watershedhex API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html)
+#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html)
 #' @export
 #' @examples
 #' \dontrun{
@@ -166,7 +169,7 @@ fwa_watershed_hex <- function(blue_line_key,
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [fwa_locatealong API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html)
+#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html)
 #' @export
 #' @examples
 #' \dontrun{
@@ -207,7 +210,7 @@ fwa_locate_along <- function(blue_line_key,
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [fwa_locatealonginterval API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html)
+#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html)
 #' @export
 #' @examples
 #' \dontrun{

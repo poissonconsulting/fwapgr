@@ -3,7 +3,7 @@
 #' Get and filter collection from database.
 #'
 #' @inherit internal
-#' @seealso [collections API documentation](https://www.hillcrestgeo.ca/fwapg/collections.html).
+#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/collections.html).
 #' @export
 #' @examples
 #' collection_id <- "whse_basemapping.fwa_stream_networks_sp"

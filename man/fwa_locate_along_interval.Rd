@@ -51,7 +51,7 @@ fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)
 }
 }
 \seealso{
-\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{fwa_locatealonginterval API documentation}
+\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{API documentation}
 
 Other functions: 
 \code{\link{fwa_index_point}()},
