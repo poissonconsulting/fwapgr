@@ -2,11 +2,49 @@ test_that("fwa_collection works default values", {
   collection_id <- "whse_basemapping.fwa_named_streams"
   collection <- fwa_collection(collection_id, limit = 10)
   expect_s3_class(collection, "sf")
+  expect_s3_class(collection, "tbl_df")
+  expect_s3_class(collection$geometry, "sfc_MULTILINESTRING")
+  expect_identical(colnames(sf::st_coordinates(collection)), c("X", "Y", "L1", "L2"))
   collection <- tibble::as_tibble(collection)
   collection$geometry <- NULL
 
-  expect_snapshot_data(collection, "collection_default")
+  expect_snapshot_data(collection, "default10")
 })
+
+test_that("fwa_collection properties works", {
+  collection_id <- "whse_basemapping.fwa_named_streams"
+
+  properties <- c("blue_line_key", "gnis_name")
+
+  collection <- fwa_collection(collection_id, limit = 1, properties = properties)
+  expect_identical(colnames(collection), c(properties, "geometry"))
+})
+
+test_that("fwa_collection filter works", {
+  collection_id <- "whse_basemapping.fwa_lakes_poly"
+
+  filter <- list(gnis_name_1 = "Trout Lake")
+
+  collection <- fwa_collection(collection_id, filter = filter)
+  expect_s3_class(collection, "sf")
+  expect_s3_class(collection, "tbl_df")
+  expect_true(all(collection$gnis_name_1 == "Trout Lake"))
+  collection <- tibble::as_tibble(collection)
+  collection$geometry <- NULL
+  expect_snapshot_data(collection, "trout_lake")
+})
+#
+# test_that("fwa_collection bounding box works", {
+#   collection_id <- "whse_basemapping.fwa_lakes_poly"
+#
+#   bbox <- c(-122.01, 49.11, -121.86, 49.16)
+#
+#   # returns features within bounds of lake table
+#   collection <- fwa_collection(collection_id, bbox = bbox)
+#   expect_identical(sort(unique(collection$gnis_name_1)), c("Ryder Lake", "Sardis Pond"))
+# })
+#
+
 
 test_that("fwa_collection offset works", {
   collection_id <- "whse_basemapping.fwa_named_streams"
@@ -26,19 +64,19 @@ test_that("fwa_collection offset doesn't work with higher numbers!!!!", {
 })
 
 test_that("fwa_collection offset works at 99,999", {
-  collection_id <- "whse_basemapping.fwa_stream_networks_sp"
+  collection_id <- "whse_basemapping.fwa_named_streams"
   expect_silent(fwa_collection(collection_id, offset = 99999, limit = 1))
 })
 
 test_that("fwa_collection offset errors at 100,000", {
-  collection_id <- "whse_basemapping.fwa_stream_networks_sp"
+  collection_id <- "whse_basemapping.fwa_named_streams"
   expect_error(
     fwa_collection(collection_id, offset = 100000),
     "`offset` must be less than 100000"
   )
 })
 
-test_that("fwa_collection offset errors at 100,001", {
+test_that("fwa_collection offset errors above 100,000", {
   collection_id <- "whse_basemapping.fwa_stream_networks_sp"
   expect_error(fwa_collection(collection_id, offset = 100001))
   expect_error(
@@ -54,29 +92,6 @@ test_that("fwa_collection", {
   bbox <- c(-122.01, 49.11, -121.86, 49.16)
   properties <- c("blue_line_key", "gnis_name")
   filter <- list(gnis_name = "Chilliwack Creek")
-
-  # default vals
-  y <- fwa_collection(collection_id, filter = filter)
-  expect_true(all(y$gnis_name == "Chilliwack Creek"))
-  expect_s3_class(y, "sf")
-  # including coordinates
-  expect_identical(colnames(sf::st_coordinates(y)), c("X", "Y", "Z", "L1"))
-
-  # check columns
-  x <- fwa_collection(collection_id, filter = filter, properties = properties)
-  expect_s3_class(x, "sf")
-  expect_identical(c(properties, "geometry"), names(x))
-
-  # check filter and bounds
-  x <- fwa_collection(collection_id, filter = filter, bbox = bbox)
-  expect_s3_class(x, "sf")
-  expect_true(nrow(x) > 0)
-  expect_true(all(x$gnis_name == "Chilliwack Creek"))
-
-  # returns features within bounds of lake table
-  x <- fwa_collection("whse_basemapping.fwa_lakes_poly", bbox = bbox)
-  expect_s3_class(x, "sf")
-  expect_identical(sort(unique(x$gnis_name_1)), c("Ryder Lake", "Sardis Pond"))
 
   # check filter  when outside of bounds
   filter <- list(gnis_name_1 = "Sardis Pond")
@@ -96,5 +111,5 @@ test_that("fwa_collection", {
   z <- fwa_collection(collection_id, filter = filter, transform = c("ST_Simplify", 1000))
   expect_s3_class(z, "sf")
   # expect a triangle
-  expect_true(length(unlist(z$geometry)) < length(unlist(y$geometry)))
+#  expect_true(length(unlist(z$geometry)) < length(unlist(y$geometry)))
 })
