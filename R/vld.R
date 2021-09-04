@@ -11,12 +11,9 @@ vld_response_gateway <- function(x){
 }
 
 vld_bbox <- function(x){
-  if(is.null(x)) return(TRUE)
   vld_numeric(x) && vld_identical(length(x), 4L) && vld_not_any_na(x)
 }
 
 vld_transform <- function(x){
-  if(is.null(x)) return(TRUE)
-
   vld_character(x) && vld_not_any_na(x) && x[1] %in% valid_transform_functions()
 }

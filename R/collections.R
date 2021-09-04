@@ -37,9 +37,9 @@ fwa_collection <- function(collection_id,
   chk_whole_number(offset)
   chk_gte(offset)
   chk_lt(offset, 100000L)
-  chk_bbox(bbox)
+  chk_null_or(bbox, vld = vld_bbox)
   chk_null_or(properties, vld = vld_character)
-  chk_transform(transform)
+  chk_null_or(transform, vld = vld_transform)
   chk_whole_number(epsg)
   chk_gt(epsg)
 

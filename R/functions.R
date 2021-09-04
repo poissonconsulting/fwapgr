@@ -21,9 +21,9 @@ fwa_function <- function(function_id,
   chk_named(parameters)
   chk_whole_number(limit)
   chk_whole_number(offset)
-  chk_bbox(bbox)
+  chk_null_or(bbox, vld = vld_bbox)
   chk_null_or(properties, vld = vld_character)
-  chk_transform(transform)
+  chk_null_or(transform, vld = vld_transform)
   chk_whole_number(epsg)
 
   properties  <- format_parameter(properties)
