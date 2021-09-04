@@ -1,1 +1,21 @@
 destination: docs
+
+reference:
+- title: Collections
+  desc: Query features from collections.
+  contents:
+  - '`fwa_collection`'
+- title: Metadata
+  desc: Get meta data about collections and collection properties.
+  contents:
+  - '`fwa_meta_collections`'
+  - '`fwa_meta_properties`'
+- title: Spatial Functions
+  desc: Execute spatial functions.
+  contents:
+  - '`fwa_index_point`'
+  - '`fwa_locate_along`'
+  - '`fwa_locate_along_interval`'
+  - '`fwa_watershed_at_measure`'
+  - '`fwa_watershed_hex`'
+  - '`fwa_watershed_stream`'
