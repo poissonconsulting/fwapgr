@@ -20,7 +20,7 @@ License: MIT + file LICENSE
 URL: https://github.com/poissonconsulting/fwapgr
 BugReports: https://github.com/poissonconsulting/fwapgr/issues
 Depends: 
-    R (>= 3.6)
+    R (>= 4.0)
 Imports:
     chk,
     glue,
