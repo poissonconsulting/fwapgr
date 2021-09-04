@@ -30,14 +30,15 @@ fwa_collection <- function(collection_id,
                         epsg = 4326){
 
   chk_string(collection_id)
-  chkor(chk_is(filter, "vector"), chk_is(filter, "list"), chk_null(filter))
-  chk_null_or(filter, chk_named)
+  chk_null_or(filter, vld = vld_vector)
+  chk_null_or(filter, vld = vld_named)
   chk_whole_number(limit)
   chk_gt(limit)
   chk_whole_number(offset)
   chk_gte(offset)
+  chk_lt(limit, 100000L)
   chk_bbox(bbox)
-  chk_null_or(properties, chk_character)
+  chk_null_or(properties, vld = vld_character)
   chk_transform(transform)
   chk_whole_number(epsg)
   chk_gt(epsg)

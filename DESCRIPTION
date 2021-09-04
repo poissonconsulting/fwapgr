@@ -38,6 +38,7 @@ Suggests:
     rmarkdown,
     testthat
 Remotes:
+    poissonconsulting/chk,
     hadley/emo
 VignetteBuilder: 
     knitr

@@ -23,7 +23,7 @@ fwa_function <- function(function_id,
   chk_whole_number(limit)
   chk_whole_number(offset)
   chk_bbox(bbox)
-  chk_null_or(properties, chk_character)
+  chk_null_or(properties, vld = vld_character)
   chk_transform(transform)
   chk_whole_number(epsg)
 
@@ -272,10 +272,10 @@ fwa_locate_along_interval <- function(blue_line_key,
   chk_gt(blue_line_key)
   chk_whole_number(interval_length)
   chk_whole_number(start_measure)
-  chk_null_or(end_measure, chk_whole_number)
+  chk_null_or(end_measure, vld = vld_whole_number)
   chk_gt(interval_length)
   chk_gte(start_measure)
-  chk_null_or(end_measure, chk_gt, start_measure)
+  chk_null_or(end_measure, vld = vld_gt, start_measure)
 
   if(!is.null(end_measure) && !is.null(limit)) {
     lim <- (end_measure - start_measure) / interval_length
