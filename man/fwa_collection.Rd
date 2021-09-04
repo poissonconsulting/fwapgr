@@ -42,10 +42,8 @@ An sf object
 Get and filter collection from database.
 }
 \examples{
-\dontrun{
 collection_id <- "whse_basemapping.fwa_stream_networks_sp"
 fwa_collection(collection_id, filter = list(gnis_name = "Sangan River"))
-}
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/collections.html}{collections API documentation}.

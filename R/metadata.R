@@ -1,14 +1,12 @@
-#' FWA collections metadata
+#' FWA Collections Metadata
 #'
-#' Provide collection metadata.
+#' Get information about the collections.
 #'
-#' @return A tibble
+#' @return A tibble.
 #' @family metadata
 #' @export
 #' @examples
-#' \dontrun{
 #' fwa_meta_collections()
-#' }
 fwa_meta_collections <- function() {
   path <- "fwapg/collections"
   query <- list(a = NULL)
@@ -21,18 +19,16 @@ fwa_meta_collections <- function() {
   tibble::as_tibble(df)
 }
 
-#' FWA property metadata
+#' FWA Property Metadata
 #'
-#' Provide column names of collection.
+#' Get information about the column names of a collection.
 #'
-#' @return A tibble
+#' @return A tibble.
 #' @family metadata
 #' @inheritParams fwa_collection
 #' @export
 #' @examples
-#' \dontrun{
 #' fwa_meta_properties("whse_basemapping.fwa_stream_networks_sp")
-#' }
 fwa_meta_properties <- function(collection_id) {
   path <- glue("fwapg/collections/{collection_id}")
   query <- list(a = NULL)

@@ -17,10 +17,8 @@
 #' @seealso [collections API documentation](https://www.hillcrestgeo.ca/fwapg/collections.html).
 #' @export
 #' @examples
-#' \dontrun{
 #' collection_id <- "whse_basemapping.fwa_stream_networks_sp"
 #' fwa_collection(collection_id, filter = list(gnis_name = "Sangan River"))
-#' }
 fwa_collection <- function(collection_id,
                            filter = NULL,
                            limit = 100,

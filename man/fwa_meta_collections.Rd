@@ -2,20 +2,18 @@
 % Please edit documentation in R/metadata.R
 \name{fwa_meta_collections}
 \alias{fwa_meta_collections}
-\title{FWA collections metadata}
+\title{FWA Collections Metadata}
 \usage{
 fwa_meta_collections()
 }
 \value{
-A tibble
+A tibble.
 }
 \description{
-Provide collection metadata.
+Get information about the collections.
 }
 \examples{
-\dontrun{
 fwa_meta_collections()
-}
 }
 \seealso{
 Other metadata: 
