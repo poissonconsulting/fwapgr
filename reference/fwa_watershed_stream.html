@@ -162,7 +162,7 @@
     </tr>
     <tr>
       <th>bbox</th>
-      <td><p>A vector of numbers indicating bounding box to limit output
+      <td><p>A vector of four numbers indicating bounding box to limit output
 features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     </tr>
     <tr>
@@ -171,7 +171,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     </tr>
     <tr>
       <th>transform</th>
-      <td><p>A vector of strings of the geometry transform function followed by parameter values (e.g. c("ST_Simplify", 100))</p></td>
+      <td><p>A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
     </tr>
     <tr>
       <th>epsg</th>
@@ -193,7 +193,9 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 <code><a href='fwa_watershed_hex.html'>fwa_watershed_hex</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='fu'>fwa_watershed_stream</span><span class='op'>(</span><span class='fl'>356308001</span>, downstream_route_measure <span class='op'>=</span> <span class='fl'>10000</span><span class='op'>)</span></span>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'><span class='fu'>fwa_watershed_stream</span><span class='op'>(</span><span class='fl'>356308001</span>, downstream_route_measure <span class='op'>=</span> <span class='fl'>10000</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

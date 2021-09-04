@@ -164,7 +164,7 @@ value, e.g. <code>list(gnis_name = "Sangan River")</code>.</p></td>
     </tr>
     <tr>
       <th>bbox</th>
-      <td><p>A vector of numbers indicating bounding box to limit output
+      <td><p>A vector of four numbers indicating bounding box to limit output
 features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     </tr>
     <tr>
@@ -173,7 +173,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     </tr>
     <tr>
       <th>transform</th>
-      <td><p>A vector of strings of the geometry transform function followed by parameter values (e.g. c("ST_Simplify", 100))</p></td>
+      <td><p>A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
     </tr>
     <tr>
       <th>epsg</th>
@@ -183,15 +183,142 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A sf object</p>
+    <p>An sf object</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/collections.html'>collections API documentation</a>.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
-<span class='r-in'><span class='fu'>fwa_collection</span><span class='op'>(</span><span class='st'>"whse_basemapping.fwa_stream_networks_sp"</span>, filter <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>gnis_name <span class='op'>=</span> <span class='st'>'Sangan River'</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-in'><span class='op'>}</span></span>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='va'>collection_id</span> <span class='op'>&lt;-</span> <span class='st'>"whse_basemapping.fwa_stream_networks_sp"</span></span>
+<span class='r-in'><span class='fu'>fwa_collection</span><span class='op'>(</span><span class='va'>collection_id</span>, filter <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>gnis_name <span class='op'>=</span> <span class='st'>"Sangan River"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Simple feature collection with 21 features and 28 fields</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Geometry type: LINESTRING</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Dimension:     XYZ</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -131.9972 ymin: 53.94994 xmax: -131.9168 ymax: 54.0332</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> z_range:       zmin: 1 zmax: 67</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> First 10 features:</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>          id blue_line_key blue_line_key_50k downstream_route_measure edge_type</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  59029299     360879896                11                 1266.234      1000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  59038020     360879896                11                 8743.778      1000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  59028963     360879896                11                 2318.819      1000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  59029083     360879896                11                    0.000      1250</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  59052964     360879896               130                17516.161      1050</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  59040619     360879896                11                10075.283      1000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7  59033632     360879896                11                 6807.728      1000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8  59028661     360879896                11                 4720.979      1000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9  59045671     360879896                11                13067.935      1000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10 59036446     360879896                11                 7848.741      1000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    feature_code  feature_source</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1    GA24850000 linear stream -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2    GA24850000 linear stream -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3    GA24850000 linear stream -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4    WA24111120 areal stream sk</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5    GA24850140 linear stream -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6    GA24850000 linear stream -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7    GA24850000 linear stream -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8    GA24850000 linear stream -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9    GA24850000 linear stream -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10   GA24850000 linear stream -</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                                 fwa_watershed_code</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  940-971473-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  940-971473-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  940-971473-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  940-971473-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  940-971473-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  940-971473-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7  940-971473-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8  940-971473-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9  940-971473-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10 940-971473-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    gnis_id    gnis_name gradient left_right_tributary length_metre</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1     3390 Sangan River   0.0000                 NONE    1052.5845</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2     3390 Sangan River   0.0038                 NONE     799.8396</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3     3390 Sangan River   0.0009                 NONE    1127.5262</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4     3390 Sangan River   0.0136                 NONE     366.7395</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5     3390 Sangan River   0.0000                 NONE      55.2556</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6     3390 Sangan River   0.0024                 NONE     833.9275</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7     3390 Sangan River   0.0069                 NONE     576.6665</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8     3390 Sangan River   0.0032                 NONE     307.8877</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9     3390 Sangan River   0.0042                 NONE     707.9944</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10    3390 Sangan River   0.0022                 NONE     895.0372</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    linear_feature_id</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1           59029299</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2           59038020</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3           59028963</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4           59029083</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5           59052964</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6           59040619</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7           59033632</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8           59028661</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9           59045671</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10          59036446</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                                               local_watershed_code</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  940-971473-016923-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  940-971473-403487-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  940-971473-107003-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  940-971473-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  940-971473-765465-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  940-971473-464930-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7  940-971473-314146-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8  940-971473-217852-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9  940-971473-603028-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10 940-971473-362185-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000-000000</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      localcode_ltree stream_magnitude stream_order upstream_area_ha</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  940.971473.016923              230            5             &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  940.971473.403487               30            3             &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  940.971473.107003               60            4             &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4         940.971473              238            5             &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  940.971473.765465                4            2             &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  940.971473.464930               28            3             &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7  940.971473.314146               33            3             &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8  940.971473.217852               46            4             &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9  940.971473.603028               20            3             &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10 940.971473.362185               31            3             &lt;NA&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    upstream_route_measure waterbody_key</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1               2318.8184            NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2               9543.6177            NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3               3446.3452            NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                366.7394     329164263</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5              17571.4170     329163195</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6              10909.2099            NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7               7384.3934            NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8               5028.8673            NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9              13775.9302            NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10              8743.7778            NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                               watershed_code_50k watershed_group_code</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1  940974000000000000000000000000000000000000000                 GRAI</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2  940974000000000000000000000000000000000000000                 GRAI</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3  940974000000000000000000000000000000000000000                 GRAI</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4  940974000000000000000000000000000000000000000                 GRAI</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5  940974000880000000000000000000000000000000000                 GRAI</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6  940974000000000000000000000000000000000000000                 GRAI</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7  940974000000000000000000000000000000000000000                 GRAI</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8  940974000000000000000000000000000000000000000                 GRAI</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9  940974000000000000000000000000000000000000000                 GRAI</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10 940974000000000000000000000000000000000000000                 GRAI</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    watershed_group_code_50k watershed_group_id watershed_key watershed_key_50k</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1                      GRAI                 60     360879896                11</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2                      GRAI                 60     360879896                11</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3                      GRAI                 60     360879896                11</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4                      GRAI                 60     360879896                11</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5                      GRAI                 60     360879896               130</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6                      GRAI                 60     360879896                11</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7                      GRAI                 60     360879896                11</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8                      GRAI                 60     360879896                11</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9                      GRAI                 60     360879896                11</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10                     GRAI                 60     360879896                11</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    wscode_ltree                       geometry</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1    940.971473 LINESTRING Z (-131.9786 54....</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2    940.971473 LINESTRING Z (-131.9212 54....</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3    940.971473 LINESTRING Z (-131.9631 54....</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4    940.971473 LINESTRING Z (-131.9972 54....</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5    940.971473 LINESTRING Z (-131.9458 53....</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6    940.971473 LINESTRING Z (-131.9191 53....</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 7    940.971473 LINESTRING Z (-131.9195 54....</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 8    940.971473 LINESTRING Z (-131.9285 54....</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 9    940.971473 LINESTRING Z (-131.9272 53....</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 10   940.971473 LINESTRING Z (-131.9169 54....</span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
