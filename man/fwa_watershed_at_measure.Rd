@@ -2,7 +2,7 @@
 % Please edit documentation in R/spatial-functions.R
 \name{fwa_watershed_at_measure}
 \alias{fwa_watershed_at_measure}
-\title{FWA Watershed at Downstream Route Measure}
+\title{Freshwater Atlas Watershed at Downstream Route Measure}
 \usage{
 fwa_watershed_at_measure(
   blue_line_key,

@@ -2,7 +2,7 @@
 % Please edit documentation in R/spatial-functions.R
 \name{fwa_watershed_hex}
 \alias{fwa_watershed_hex}
-\title{FWA watershed hex}
+\title{Freshwater Atlas watershed hex}
 \usage{
 fwa_watershed_hex(
   blue_line_key,

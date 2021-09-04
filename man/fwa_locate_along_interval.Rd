@@ -2,7 +2,7 @@
 % Please edit documentation in R/spatial-functions.R
 \name{fwa_locate_along_interval}
 \alias{fwa_locate_along_interval}
-\title{FWA locate along interval}
+\title{Freshwater Atlas Locate Along Interval}
 \usage{
 fwa_locate_along_interval(
   blue_line_key,
@@ -43,12 +43,10 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 An sf object.
 }
 \description{
-Provided a blue_line_key and starting downstream distance, return a set of points along an interval.
+Gets a regularly spaced set of points between two river metres.
 }
 \examples{
-\dontrun{
 fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)
-}
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{API documentation}

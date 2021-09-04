@@ -2,13 +2,11 @@
 % Please edit documentation in R/spatial-functions.R
 \name{fwa_locate_along}
 \alias{fwa_locate_along}
-\title{FWA locate along}
+\title{Freshwater Atlas Locate Along}
 \usage{
 fwa_locate_along(
   blue_line_key,
   downstream_route_measure = 0,
-  limit = 100,
-  offset = 0,
   bbox = NULL,
   properties = NULL,
   transform = NULL,
@@ -19,10 +17,6 @@ fwa_locate_along(
 \item{blue_line_key}{A positive whole number of the stream blue line key.}
 
 \item{downstream_route_measure}{A positive number of the river metre.}
-
-\item{limit}{A positive whole number indicating the maximum number of features to return.}
-
-\item{offset}{A positive whole number indicating the offset of start of returned results.}
 
 \item{bbox}{A vector of four numbers indicating bounding box to limit output
 features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
@@ -37,12 +31,11 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 An sf object.
 }
 \description{
-Provided a location as blue_line_key and downstream_route_measure, return a point.
+Gets the point on a stream corresponding to the river metre
+(downstream route measure).
 }
 \examples{
-\dontrun{
 fwa_locate_along(356308001, downstream_route_measure = 10000)
-}
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html}{API documentation}

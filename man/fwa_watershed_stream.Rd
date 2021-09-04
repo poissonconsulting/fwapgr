@@ -2,7 +2,7 @@
 % Please edit documentation in R/spatial-functions.R
 \name{fwa_watershed_stream}
 \alias{fwa_watershed_stream}
-\title{FWA watershed stream}
+\title{Freshwater Atlas watershed stream}
 \usage{
 fwa_watershed_stream(
   blue_line_key,

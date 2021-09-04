@@ -2,7 +2,7 @@
 % Please edit documentation in R/spatial-functions.R
 \name{fwa_index_point}
 \alias{fwa_index_point}
-\title{FWA Index Point}
+\title{Freshwater Atlas Index Point}
 \usage{
 fwa_index_point(
   x,

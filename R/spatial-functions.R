@@ -1,4 +1,4 @@
-#' FWA Index Point
+#' Freshwater Atlas Index Point
 #'
 #' Gets the nearest point on a stream to the coordinates (within the tolerance).
 #'
@@ -36,32 +36,29 @@ fwa_index_point <- function(x, y, srid = 4326,
   )
 
   fwa_function("fwa_indexpoint",
-    parameters = parameters,
-    limit = limit,
-    bbox = bbox,
-    properties = properties,
-    transform = transform,
-    epsg = epsg
+               parameters = parameters,
+               limit = limit,
+               bbox = bbox,
+               properties = properties,
+               transform = transform,
+               epsg = epsg
   )
 }
 
 
-#' FWA locate along
+#' Freshwater Atlas Locate Along
 #'
-#' Provided a location as blue_line_key and downstream_route_measure, return a point.
+#' Gets the point on a stream corresponding to the river metre
+#' (downstream route measure).
 #'
 #' @inherit internal
 #' @family functions
 #' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html)
 #' @export
 #' @examples
-#' \dontrun{
 #' fwa_locate_along(356308001, downstream_route_measure = 10000)
-#' }
 fwa_locate_along <- function(blue_line_key,
                              downstream_route_measure = 0,
-                             limit = 100,
-                             offset = 0,
                              bbox = NULL,
                              properties = NULL,
                              transform = NULL,
@@ -78,8 +75,7 @@ fwa_locate_along <- function(blue_line_key,
 
   fwa_function("fwa_locatealong",
                parameters = parameters,
-               limit = limit,
-               offset = offset,
+               limit = 1,
                bbox = bbox,
                properties = properties,
                transform = transform,
@@ -87,18 +83,16 @@ fwa_locate_along <- function(blue_line_key,
   )
 }
 
-#' FWA locate along interval
+#' Freshwater Atlas Locate Along Interval
 #'
-#' Provided a blue_line_key and starting downstream distance, return a set of points along an interval.
+#' Gets a regularly spaced set of points between two river metres.
 #'
 #' @inherit internal
 #' @family functions
 #' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html)
 #' @export
 #' @examples
-#' \dontrun{
 #' fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)
-#' }
 fwa_locate_along_interval <- function(blue_line_key,
                                       interval_length = 1000,
                                       start_measure = 0,
@@ -118,10 +112,12 @@ fwa_locate_along_interval <- function(blue_line_key,
   chk_null_or(end_measure, vld = vld_whole_number)
   if (!is.null(end_measure)) chk_gt(end_measure, start_measure)
 
-  if (!is.null(end_measure) && !is.null(limit)) {
-    lim <- (end_measure - start_measure) / interval_length
-    if (lim > limit) {
-      chk::abort_chk("`limit` must be greater than (`end_measure` - `start_measure`) / `interval_length` (", lim, ") not ", limit, ".")
+  if (!is.null(end_measure)) {
+    lim <- ceiling((end_measure - start_measure) / interval_length)
+    if (lim > limit + offset) {
+      chk::abort_chk("`limit + offset` must be greater than ",
+                     "(`end_measure` - `start_measure`) / `interval_length` (",
+                     lim, ") not ", limit + offset, ".")
     }
   }
 
@@ -143,7 +139,7 @@ fwa_locate_along_interval <- function(blue_line_key,
   )
 }
 
-#' FWA Watershed at Downstream Route Measure
+#' Freshwater Atlas Watershed at Downstream Route Measure
 #'
 #' Gets a polygon of the watershed at a specified river metre.
 #'
@@ -192,16 +188,16 @@ fwa_watershed_at_measure <- function(blue_line_key,
   )
 
   fwa_function("fwa_watershedatmeasure",
-    parameters = parameters,
-    limit = 1,
-    bbox = bbox,
-    properties = properties,
-    transform = transform,
-    epsg = epsg
+               parameters = parameters,
+               limit = 1,
+               bbox = bbox,
+               properties = properties,
+               transform = transform,
+               epsg = epsg
   )
 }
 
-#' FWA watershed stream
+#' Freshwater Atlas watershed stream
 #'
 #' Provided a location as blue_line_key and downstream_route_measure, return stream segments upstream, within the same first order watershed.
 #'
@@ -232,17 +228,17 @@ fwa_watershed_stream <- function(blue_line_key,
   )
 
   fwa_function("fwa_watershedstream",
-    parameters = parameters,
-    limit = limit,
-    offset = offset,
-    bbox = bbox,
-    properties = properties,
-    transform = transform,
-    epsg = epsg
+               parameters = parameters,
+               limit = limit,
+               offset = offset,
+               bbox = bbox,
+               properties = properties,
+               transform = transform,
+               epsg = epsg
   )
 }
 
-#' FWA watershed hex
+#' Freshwater Atlas watershed hex
 #'
 #' Provided a location as blue_line_key and downstream_route_measure, return a 25m hexagon grid covering first order watershed in which location lies.
 #'
@@ -273,12 +269,12 @@ fwa_watershed_hex <- function(blue_line_key,
   )
 
   fwa_function("fwa_watershedhex",
-    parameters = parameters,
-    limit = limit,
-    offset = offset,
-    bbox = bbox,
-    properties = properties,
-    transform = transform,
-    epsg = epsg
+               parameters = parameters,
+               limit = limit,
+               offset = offset,
+               bbox = bbox,
+               properties = properties,
+               transform = transform,
+               epsg = epsg
   )
 }
