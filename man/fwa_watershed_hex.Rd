@@ -40,7 +40,9 @@ A sf object
 Provided a location as blue_line_key and downstream_route_measure, return a 25m hexagon grid covering first order watershed in which location lies.
 }
 \examples{
-\dontrun{fwa_watershed_hex(356308001, downstream_route_measure = 10000)}
+\dontrun{
+fwa_watershed_hex(356308001, downstream_route_measure = 10000)
+}
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html}{fwa_watershedhex API documentation}

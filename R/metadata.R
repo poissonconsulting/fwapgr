@@ -6,9 +6,10 @@
 #' @family metadata
 #' @export
 #' @examples
-#' \dontrun{fwa_meta_collections()}
-fwa_meta_collections <- function(){
-
+#' \dontrun{
+#' fwa_meta_collections()
+#' }
+fwa_meta_collections <- function() {
   path <- "fwapg/collections"
   query <- list(a = NULL)
 
@@ -29,9 +30,10 @@ fwa_meta_collections <- function(){
 #' @inheritParams fwa_collection
 #' @export
 #' @examples
-#' \dontrun{fwa_meta_properties("whse_basemapping.fwa_stream_networks_sp")}
-fwa_meta_properties <- function(collection_id){
-
+#' \dontrun{
+#' fwa_meta_properties("whse_basemapping.fwa_stream_networks_sp")
+#' }
+fwa_meta_properties <- function(collection_id) {
   path <- glue("fwapg/collections/{collection_id}")
   query <- list(a = NULL)
 

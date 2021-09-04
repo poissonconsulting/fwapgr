@@ -10,7 +10,7 @@ test_that("fwa_collection offset doesn't work higher number!!!", {
   collectionid <- "whse_basemapping.fwa_stream_networks_sp"
 
   x <- fwa_collection(collectionid, offset = 100, limit = 2)
-  z <- fwa_collection(collectionid, offset = 100+1, limit = 1)
+  z <- fwa_collection(collectionid, offset = 100 + 1, limit = 1)
   expect_false(identical(x$geometry[2], z$geometry))
 })
 
@@ -21,15 +21,19 @@ test_that("fwa_collection offset works at 99,999", {
 
 test_that("fwa_collection offset errors at 100,000", {
   collectionid <- "whse_basemapping.fwa_stream_networks_sp"
-  expect_error(fwa_collection(collectionid, offset = 100000),
-               "`offset` must be less than 100000")
+  expect_error(
+    fwa_collection(collectionid, offset = 100000),
+    "`offset` must be less than 100000"
+  )
 })
 
 test_that("fwa_collection offset errors at 100,001", {
   collectionid <- "whse_basemapping.fwa_stream_networks_sp"
   expect_error(fwa_collection(collectionid, offset = 100001))
-  expect_error(fwa_collection(collectionid, offset = 100000),
-               "`offset` must be less than 100000")
+  expect_error(
+    fwa_collection(collectionid, offset = 100000),
+    "`offset` must be less than 100000"
+  )
 })
 
 test_that("fwa_collection", {
@@ -64,7 +68,7 @@ test_that("fwa_collection", {
   expect_identical(sort(unique(x$gnis_name_1)), c("Ryder Lake", "Sardis Pond"))
 
   # check filter  when outside of bounds
-  filter <- list(gnis_name_1 = 'Sardis Pond')
+  filter <- list(gnis_name_1 = "Sardis Pond")
   x <- fwa_collection("whse_basemapping.fwa_lakes_poly", filter = filter, bbox = bbox)
   expect_is(x, "sf")
   expect_identical(nrow(x), 1L)
@@ -82,5 +86,4 @@ test_that("fwa_collection", {
   expect_is(z, "sf")
   # expect a triangle
   expect_true(length(unlist(z$geometry)) < length(unlist(y$geometry)))
-
 })

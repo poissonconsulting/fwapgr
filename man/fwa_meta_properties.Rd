@@ -16,7 +16,9 @@ A tibble
 Provide column names of collection.
 }
 \examples{
-\dontrun{fwa_meta_properties("whse_basemapping.fwa_stream_networks_sp")}
+\dontrun{
+fwa_meta_properties("whse_basemapping.fwa_stream_networks_sp")
+}
 }
 \seealso{
 Other metadata: 

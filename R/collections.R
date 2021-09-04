@@ -18,17 +18,16 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_name = 'Sangan River'))
+#' fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_name = "Sangan River"))
 #' }
 fwa_collection <- function(collection_id,
-                        filter = NULL,
-                        limit = 100,
-                        offset = 0,
-                        bbox = NULL,
-                        properties = NULL,
-                        transform = NULL,
-                        epsg = 4326){
-
+                           filter = NULL,
+                           limit = 100,
+                           offset = 0,
+                           bbox = NULL,
+                           properties = NULL,
+                           transform = NULL,
+                           epsg = 4326) {
   chk_string(collection_id)
   chk_null_or(filter, vld = vld_filter)
   chk_whole_number(limit)
@@ -42,17 +41,21 @@ fwa_collection <- function(collection_id,
   chk_whole_number(epsg)
   chk_gt(epsg)
 
-  properties  <- format_parameter(properties)
+  properties <- format_parameter(properties)
   bbox <- format_parameter(bbox)
   transform <- format_parameter(transform)
 
   path <- glue("fwapg/collections/{collection_id}/items.json")
-  query <- c(filter,
-             list(limit = limit,
-                  offset = offset,
-                  bbox = bbox,
-                  properties = properties,
-                  transform = transform))
+  query <- c(
+    filter,
+    list(
+      limit = limit,
+      offset = offset,
+      bbox = bbox,
+      properties = properties,
+      transform = transform
+    )
+  )
 
   resp <- fwa_api(path, query)
 

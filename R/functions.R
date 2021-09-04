@@ -8,14 +8,13 @@
 #' @return A sf object
 #' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions.html)
 fwa_function <- function(function_id,
-                            parameters,
-                            limit = 100,
-                            offset = 0,
-                            bbox = NULL,
-                            properties = NULL,
-                            transform = NULL,
-                            epsg = 4326){
-
+                         parameters,
+                         limit = 100,
+                         offset = 0,
+                         bbox = NULL,
+                         properties = NULL,
+                         transform = NULL,
+                         epsg = 4326) {
   chk_string(function_id)
   chk_list(parameters)
   chk_named(parameters)
@@ -26,17 +25,18 @@ fwa_function <- function(function_id,
   chk_null_or(transform, vld = vld_transform)
   chk_whole_number(epsg)
 
-  properties  <- format_parameter(properties)
+  properties <- format_parameter(properties)
   bbox <- format_parameter(bbox)
   transform <- format_parameter(transform)
 
   path <- glue("fwapg/functions/{function_id}/items.json")
   query <- c(parameters, list(
-                limit = limit,
-                offset = offset,
-                bbox = bbox,
-                properties = properties,
-                transform = transform))
+    limit = limit,
+    offset = offset,
+    bbox = bbox,
+    properties = properties,
+    transform = transform
+  ))
 
   resp <- fwa_api(path, query)
   read_feature(resp, epsg)
@@ -57,7 +57,9 @@ fwa_function <- function(function_id,
 #' @seealso [fwa_indexpoint API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html)
 #' @export
 #' @examples
-#' \dontrun{fwa_index_point(x = -132.26, y = 53.36, srid = 4326)}
+#' \dontrun{
+#' fwa_index_point(x = -132.26, y = 53.36, srid = 4326)
+#' }
 fwa_index_point <- function(x, y, srid,
                             tolerance = 5000,
                             num_features = 1,
@@ -66,7 +68,7 @@ fwa_index_point <- function(x, y, srid,
                             bbox = NULL,
                             properties = NULL,
                             transform = NULL,
-                            epsg = srid){
+                            epsg = srid) {
   chk_number(x)
   chk_number(y)
   chk_number(tolerance)
@@ -75,20 +77,23 @@ fwa_index_point <- function(x, y, srid,
   chk_whole_number(srid)
   chk_gt(srid)
 
-  parameters <- list(x = x,
-                     y = y,
-                     srid = srid,
-                     tolerance = tolerance,
-                     num_features = num_features)
+  parameters <- list(
+    x = x,
+    y = y,
+    srid = srid,
+    tolerance = tolerance,
+    num_features = num_features
+  )
 
   fwa_function("fwa_indexpoint",
-               parameters = parameters,
-               limit = limit,
-               offset = offset,
-               bbox = bbox,
-               properties = properties,
-               transform = transform,
-               epsg = epsg)
+    parameters = parameters,
+    limit = limit,
+    offset = offset,
+    bbox = bbox,
+    properties = properties,
+    transform = transform,
+    epsg = epsg
+  )
 }
 
 #' FWA watershed at downstream route measure
@@ -104,7 +109,9 @@ fwa_index_point <- function(x, y, srid,
 #' @seealso [fwa_watershedatmeasure API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html)
 #' @export
 #' @examples
-#' \dontrun{fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)}
+#' \dontrun{
+#' fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)
+#' }
 fwa_watershed_at_measure <- function(blue_line_key,
                                      downstream_route_measure = 0,
                                      limit = 100,
@@ -112,23 +119,26 @@ fwa_watershed_at_measure <- function(blue_line_key,
                                      bbox = NULL,
                                      properties = NULL,
                                      transform = NULL,
-                                     epsg = 4326){
+                                     epsg = 4326) {
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
   chk_number(downstream_route_measure)
   chk_gte(downstream_route_measure)
 
-  parameters <- list(blue_line_key = blue_line_key,
-                     downstream_route_measure = downstream_route_measure)
+  parameters <- list(
+    blue_line_key = blue_line_key,
+    downstream_route_measure = downstream_route_measure
+  )
 
   fwa_function("fwa_watershedatmeasure",
-               parameters = parameters,
-               limit = limit,
-               offset = offset,
-               bbox = bbox,
-               properties = properties,
-               transform = transform,
-               epsg = epsg)
+    parameters = parameters,
+    limit = limit,
+    offset = offset,
+    bbox = bbox,
+    properties = properties,
+    transform = transform,
+    epsg = epsg
+  )
 }
 
 #' FWA watershed stream
@@ -141,31 +151,36 @@ fwa_watershed_at_measure <- function(blue_line_key,
 #' @seealso [fwa_watershedstream API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html)
 #' @export
 #' @examples
-#' \dontrun{fwa_watershed_stream(356308001, downstream_route_measure = 10000)}
+#' \dontrun{
+#' fwa_watershed_stream(356308001, downstream_route_measure = 10000)
+#' }
 fwa_watershed_stream <- function(blue_line_key,
-                                  downstream_route_measure = 0,
-                                  limit = 100,
-                                  offset = 0,
-                                  bbox = NULL,
-                                  properties = NULL,
-                                  transform = NULL,
-                                  epsg = 4326){
+                                 downstream_route_measure = 0,
+                                 limit = 100,
+                                 offset = 0,
+                                 bbox = NULL,
+                                 properties = NULL,
+                                 transform = NULL,
+                                 epsg = 4326) {
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
   chk_number(downstream_route_measure)
   chk_gte(downstream_route_measure)
 
-  parameters <- list(blue_line_key = blue_line_key,
-                     downstream_route_measure = downstream_route_measure)
+  parameters <- list(
+    blue_line_key = blue_line_key,
+    downstream_route_measure = downstream_route_measure
+  )
 
   fwa_function("fwa_watershedstream",
-               parameters = parameters,
-               limit = limit,
-               offset = offset,
-               bbox = bbox,
-               properties = properties,
-               transform = transform,
-               epsg = epsg)
+    parameters = parameters,
+    limit = limit,
+    offset = offset,
+    bbox = bbox,
+    properties = properties,
+    transform = transform,
+    epsg = epsg
+  )
 }
 
 #' FWA watershed hex
@@ -178,7 +193,9 @@ fwa_watershed_stream <- function(blue_line_key,
 #' @seealso [fwa_watershedhex API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html)
 #' @export
 #' @examples
-#' \dontrun{fwa_watershed_hex(356308001, downstream_route_measure = 10000)}
+#' \dontrun{
+#' fwa_watershed_hex(356308001, downstream_route_measure = 10000)
+#' }
 fwa_watershed_hex <- function(blue_line_key,
                               downstream_route_measure = 0,
                               limit = 100,
@@ -186,23 +203,26 @@ fwa_watershed_hex <- function(blue_line_key,
                               bbox = NULL,
                               properties = NULL,
                               transform = NULL,
-                              epsg = 4326){
+                              epsg = 4326) {
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
   chk_number(downstream_route_measure)
   chk_gte(downstream_route_measure)
 
-  parameters <- list(blue_line_key = blue_line_key,
-                     downstream_route_measure = downstream_route_measure)
+  parameters <- list(
+    blue_line_key = blue_line_key,
+    downstream_route_measure = downstream_route_measure
+  )
 
   fwa_function("fwa_watershedhex",
-               parameters = parameters,
-               limit = limit,
-               offset = offset,
-               bbox = bbox,
-               properties = properties,
-               transform = transform,
-               epsg = epsg)
+    parameters = parameters,
+    limit = limit,
+    offset = offset,
+    bbox = bbox,
+    properties = properties,
+    transform = transform,
+    epsg = epsg
+  )
 }
 
 #' FWA locate along
@@ -215,7 +235,9 @@ fwa_watershed_hex <- function(blue_line_key,
 #' @seealso [fwa_locatealong API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html)
 #' @export
 #' @examples
-#' \dontrun{fwa_locate_along(356308001, downstream_route_measure = 10000)}
+#' \dontrun{
+#' fwa_locate_along(356308001, downstream_route_measure = 10000)
+#' }
 fwa_locate_along <- function(blue_line_key,
                              downstream_route_measure = 0,
                              limit = 100,
@@ -223,23 +245,26 @@ fwa_locate_along <- function(blue_line_key,
                              bbox = NULL,
                              properties = NULL,
                              transform = NULL,
-                             epsg = 4326){
+                             epsg = 4326) {
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
   chk_number(downstream_route_measure)
   chk_gte(downstream_route_measure)
 
-  parameters <- list(blue_line_key = blue_line_key,
-                     downstream_route_measure = downstream_route_measure)
+  parameters <- list(
+    blue_line_key = blue_line_key,
+    downstream_route_measure = downstream_route_measure
+  )
 
   fwa_function("fwa_locatealong",
-               parameters = parameters,
-               limit = limit,
-               offset = offset,
-               bbox = bbox,
-               properties = properties,
-               transform = transform,
-               epsg = epsg)
+    parameters = parameters,
+    limit = limit,
+    offset = offset,
+    bbox = bbox,
+    properties = properties,
+    transform = transform,
+    epsg = epsg
+  )
 }
 
 #' FWA locate along interval
@@ -256,7 +281,9 @@ fwa_locate_along <- function(blue_line_key,
 #' @seealso [fwa_locatealonginterval API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html)
 #' @export
 #' @examples
-#' \dontrun{fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)}
+#' \dontrun{
+#' fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)
+#' }
 fwa_locate_along_interval <- function(blue_line_key,
                                       interval_length = 1000,
                                       start_measure = 0,
@@ -266,7 +293,7 @@ fwa_locate_along_interval <- function(blue_line_key,
                                       bbox = NULL,
                                       properties = NULL,
                                       transform = NULL,
-                                      epsg = 4326){
+                                      epsg = 4326) {
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
   chk_whole_number(interval_length)
@@ -274,25 +301,29 @@ fwa_locate_along_interval <- function(blue_line_key,
   chk_whole_number(start_measure)
   chk_gte(start_measure)
   chk_null_or(end_measure, vld = vld_whole_number)
-  if(!is.null(end_measure)) chk_gt(end_measure, start_measure)
+  if (!is.null(end_measure)) chk_gt(end_measure, start_measure)
 
-  if(!is.null(end_measure) && !is.null(limit)) {
+  if (!is.null(end_measure) && !is.null(limit)) {
     lim <- (end_measure - start_measure) / interval_length
-    if(lim > limit)
-    chk::abort_chk("`limit` must be greater than (`end_measure` - `start_measure`) / `interval_length` (", lim ,") not ", limit, ".")
+    if (lim > limit) {
+      chk::abort_chk("`limit` must be greater than (`end_measure` - `start_measure`) / `interval_length` (", lim, ") not ", limit, ".")
+    }
   }
 
-  parameters <- list(blue_line_key = blue_line_key,
-                     start_measure = start_measure,
-                     interval_length = interval_length,
-                     end_measure = end_measure)
+  parameters <- list(
+    blue_line_key = blue_line_key,
+    start_measure = start_measure,
+    interval_length = interval_length,
+    end_measure = end_measure
+  )
 
   fwa_function("fwa_locatealonginterval",
-               parameters = parameters,
-               limit = limit,
-               offset = offset,
-               bbox = bbox,
-               properties = properties,
-               transform = transform,
-               epsg = epsg)
+    parameters = parameters,
+    limit = limit,
+    offset = offset,
+    bbox = bbox,
+    properties = properties,
+    transform = transform,
+    epsg = epsg
+  )
 }

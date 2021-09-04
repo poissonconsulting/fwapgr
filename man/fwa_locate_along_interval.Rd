@@ -46,7 +46,9 @@ A sf object
 Provided a blue_line_key and starting downstream distance, return a set of points along an interval.
 }
 \examples{
-\dontrun{fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)}
+\dontrun{
+fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)
+}
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{fwa_locatealonginterval API documentation}

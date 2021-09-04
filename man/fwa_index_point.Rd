@@ -49,7 +49,9 @@ A sf object
 Provided a point (x, y, srid), return the point along a stream(s) nearest to the point provided within specified tolerance.
 }
 \examples{
-\dontrun{fwa_index_point(x = -132.26, y = 53.36, srid = 4326)}
+\dontrun{
+fwa_index_point(x = -132.26, y = 53.36, srid = 4326)
+}
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html}{fwa_indexpoint API documentation}

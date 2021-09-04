@@ -43,7 +43,7 @@ Get and filter collection from database.
 }
 \examples{
 \dontrun{
-fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_name = 'Sangan River'))
+fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_name = "Sangan River"))
 }
 }
 \seealso{

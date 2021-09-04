@@ -13,7 +13,9 @@ A tibble
 Provide collection metadata.
 }
 \examples{
-\dontrun{fwa_meta_collections()}
+\dontrun{
+fwa_meta_collections()
+}
 }
 \seealso{
 Other metadata: 

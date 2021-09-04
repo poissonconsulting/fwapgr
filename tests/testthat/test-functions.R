@@ -63,6 +63,8 @@ test_that("API functions work", {
 
 
 test_that("chk errors", {
-  chk::expect_chk_error(fwa_locate_along_interval(1, end_measure = 100, interval_length = 10, limit = 9),
-                        "`limit` must be greater than")
+  chk::expect_chk_error(
+    fwa_locate_along_interval(1, end_measure = 100, interval_length = 10, limit = 9),
+    "`limit` must be greater than"
+  )
 })

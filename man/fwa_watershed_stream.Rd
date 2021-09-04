@@ -40,7 +40,9 @@ A sf object
 Provided a location as blue_line_key and downstream_route_measure, return stream segments upstream, within the same first order watershed.
 }
 \examples{
-\dontrun{fwa_watershed_stream(356308001, downstream_route_measure = 10000)}
+\dontrun{
+fwa_watershed_stream(356308001, downstream_route_measure = 10000)
+}
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html}{fwa_watershedstream API documentation}
