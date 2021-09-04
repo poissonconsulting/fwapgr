@@ -1,8 +1,8 @@
 #' Freshwater Atlas Index Point
 #'
-#' Gets the nearest point on a stream to the coordinates (within the tolerance).
+#' Gets the nearest point on a stream as the crow flies to the coordinates (within the tolerance).
 #'
-#' To also return the second nearest point to a stream (within the tolerance)
+#' To also return the second nearest point on a stream as the crow flies (within the tolerance)
 #' set `limit = 2`.
 #'
 #' @inherit internal
@@ -197,22 +197,21 @@ fwa_watershed_at_measure <- function(blue_line_key,
   )
 }
 
-#' Freshwater Atlas watershed stream
+#' Freshwater Atlas Watershed Stream
 #'
-#' Provided a location as blue_line_key and downstream_route_measure, return stream segments upstream, within the same first order watershed.
+#' Gets the upstream stream segment within the fundamental watershed.
+#'
+#' This is useful for adding stream network that was not included in the
+#' watershed at measure.
 #'
 #' @inherit internal
 #' @family functions
 #' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html)
 #' @export
 #' @examples
-#' \dontrun{
 #' fwa_watershed_stream(356308001, downstream_route_measure = 10000)
-#' }
 fwa_watershed_stream <- function(blue_line_key,
                                  downstream_route_measure = 0,
-                                 limit = 100,
-                                 offset = 0,
                                  bbox = NULL,
                                  properties = NULL,
                                  transform = NULL,
@@ -229,8 +228,6 @@ fwa_watershed_stream <- function(blue_line_key,
 
   fwa_function("fwa_watershedstream",
                parameters = parameters,
-               limit = limit,
-               offset = offset,
                bbox = bbox,
                properties = properties,
                transform = transform,
