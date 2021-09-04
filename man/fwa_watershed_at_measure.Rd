@@ -2,13 +2,11 @@
 % Please edit documentation in R/spatial-functions.R
 \name{fwa_watershed_at_measure}
 \alias{fwa_watershed_at_measure}
-\title{FWA watershed at downstream route measure}
+\title{FWA Watershed at Downstream Route Measure}
 \usage{
 fwa_watershed_at_measure(
   blue_line_key,
   downstream_route_measure = 0,
-  limit = 100,
-  offset = 0,
   bbox = NULL,
   properties = NULL,
   transform = NULL,
@@ -18,11 +16,7 @@ fwa_watershed_at_measure(
 \arguments{
 \item{blue_line_key}{A positive whole number of the stream blue line key.}
 
-\item{downstream_route_measure}{A positive number of the downstream route measure.}
-
-\item{limit}{A positive whole number indicating the maximum number of features to return.}
-
-\item{offset}{A positive whole number indicating the offset of start of returned results.}
+\item{downstream_route_measure}{A positive number of the river metre.}
 
 \item{bbox}{A vector of four numbers indicating bounding box to limit output
 features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
@@ -34,16 +28,13 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 }
 \value{
-A sf object
+An sf object.
 }
 \description{
-Provided a location as blue_line_key and downstream_route_measure,
-return the entire watershed boundary upstream of the location.
+Gets a polygon of the watershed at a specified river metre.
 }
 \examples{
-\dontrun{
 fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)
-}
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html}{fwa_watershedatmeasure API documentation}

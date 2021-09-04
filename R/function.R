@@ -2,10 +2,7 @@
 #'
 #' Execute general spatial function.
 #'
-#' @inheritParams fwa_collection
-#' @param function_id A character string of the function id.
-#' @param parameters A named list of the parameters and values for a specific function.
-#' @return An sf object.
+#' @inherit internal
 #' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions.html)
 fwa_function <- function(function_id,
                          parameters,

@@ -1,35 +1,26 @@
-#' FWA index point
+#' FWA Index Point
 #'
-#' Provided a point (x, y, srid), return the point along a stream(s) nearest to the point provided within specified tolerance.
+#' Gets the nearest point(s) on a stream(s) to the coordinates within the specified tolerance.
 #'
-#' @inheritParams fwa_collection
-#' @param x A number of the x coordinate.
-#' @param y A number of the y coordinate.
-#' @param srid An positive whole number of the srid of the coordinate (e.g. epsg).
-#' @param tolerance A number of the tolerance.
-#' @param num_features A positive whole number of the maximum number of features to return.
-#' @return A sf object
+#' @inherit internal
 #' @family functions
 #' @seealso [fwa_indexpoint API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html)
 #' @export
 #' @examples
-#' \dontrun{
-#' fwa_index_point(x = -132.26, y = 53.36, srid = 4326)
-#' }
-fwa_index_point <- function(x, y, srid,
+#' fwa_index_point(x = -132.26, y = 53.36)
+fwa_index_point <- function(x, y, srid = 4326,
                             tolerance = 5000,
-                            num_features = 1,
-                            limit = 100,
-                            offset = 0,
+                            limit = 1,
                             bbox = NULL,
                             properties = NULL,
                             transform = NULL,
-                            epsg = srid) {
+                            epsg = 4326) {
   chk_number(x)
   chk_number(y)
   chk_number(tolerance)
-  chk_whole_number(num_features)
-  chk_gt(num_features)
+  chk_gt(tolerance)
+  chk_whole_number(limit)
+  chk_gt(limit)
   chk_whole_number(srid)
   chk_gt(srid)
 
@@ -38,13 +29,12 @@ fwa_index_point <- function(x, y, srid,
     y = y,
     srid = srid,
     tolerance = tolerance,
-    num_features = num_features
+    num_features = limit
   )
 
   fwa_function("fwa_indexpoint",
     parameters = parameters,
     limit = limit,
-    offset = offset,
     bbox = bbox,
     properties = properties,
     transform = transform,
@@ -52,26 +42,18 @@ fwa_index_point <- function(x, y, srid,
   )
 }
 
-#' FWA watershed at downstream route measure
+#' FWA Watershed at Downstream Route Measure
 #'
-#' Provided a location as blue_line_key and downstream_route_measure,
-#' return the entire watershed boundary upstream of the location.
+#' Gets a polygon of the watershed at a specified river metre.
 #'
-#' @inheritParams fwa_collection
-#' @param blue_line_key A positive whole number of the stream blue line key.
-#' @param downstream_route_measure A positive number of the downstream route measure.
-#' @return A sf object
+#' @inherit internal
 #' @family functions
 #' @seealso [fwa_watershedatmeasure API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html)
 #' @export
 #' @examples
-#' \dontrun{
 #' fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)
-#' }
 fwa_watershed_at_measure <- function(blue_line_key,
                                      downstream_route_measure = 0,
-                                     limit = 100,
-                                     offset = 0,
                                      bbox = NULL,
                                      properties = NULL,
                                      transform = NULL,
@@ -88,8 +70,7 @@ fwa_watershed_at_measure <- function(blue_line_key,
 
   fwa_function("fwa_watershedatmeasure",
     parameters = parameters,
-    limit = limit,
-    offset = offset,
+    limit = 1,
     bbox = bbox,
     properties = properties,
     transform = transform,
@@ -101,8 +82,7 @@ fwa_watershed_at_measure <- function(blue_line_key,
 #'
 #' Provided a location as blue_line_key and downstream_route_measure, return stream segments upstream, within the same first order watershed.
 #'
-#' @inheritParams fwa_watershed_at_measure
-#' @return A sf object
+#' @inherit internal
 #' @family functions
 #' @seealso [fwa_watershedstream API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html)
 #' @export
@@ -143,8 +123,7 @@ fwa_watershed_stream <- function(blue_line_key,
 #'
 #' Provided a location as blue_line_key and downstream_route_measure, return a 25m hexagon grid covering first order watershed in which location lies.
 #'
-#' @inheritParams fwa_watershed_at_measure
-#' @return A sf object
+#' @inherit internal
 #' @family functions
 #' @seealso [fwa_watershedhex API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html)
 #' @export
@@ -185,8 +164,7 @@ fwa_watershed_hex <- function(blue_line_key,
 #'
 #' Provided a location as blue_line_key and downstream_route_measure, return a point.
 #'
-#' @inheritParams fwa_watershed_at_measure
-#' @return A sf object
+#' @inherit internal
 #' @family functions
 #' @seealso [fwa_locatealong API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html)
 #' @export
@@ -227,12 +205,7 @@ fwa_locate_along <- function(blue_line_key,
 #'
 #' Provided a blue_line_key and starting downstream distance, return a set of points along an interval.
 #'
-#' @inheritParams fwa_collection
-#' @param blue_line_key An integer of the stream blue line key.
-#' @param interval_length An integer of the interval distance in meters.
-#' @param start_measure An integer of the distance in meters upstream from the river mouth to start from.
-#' @param end_measure An integer of the distance in meters upstream from the river mouth to end at.
-#' @return A sf object
+#' @inherit internal
 #' @family functions
 #' @seealso [fwa_locatealonginterval API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html)
 #' @export

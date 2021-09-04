@@ -18,7 +18,7 @@ fwa_watershed_hex(
 \arguments{
 \item{blue_line_key}{A positive whole number of the stream blue line key.}
 
-\item{downstream_route_measure}{A positive number of the downstream route measure.}
+\item{downstream_route_measure}{A positive number of the river metre.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
 
@@ -34,7 +34,7 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 }
 \value{
-A sf object
+An sf object.
 }
 \description{
 Provided a location as blue_line_key and downstream_route_measure, return a 25m hexagon grid covering first order watershed in which location lies.

@@ -2,18 +2,7 @@
 #'
 #' Get and filter collection from database.
 #'
-#' @param collection_id A character string of the collection id.
-#' @param filter A named vector or list of the filter(s) to apply, where the list
-#' names correspond to column names and the list values correspond to the desired
-#' value, e.g. `list(gnis_name = "Sangan River")`.
-#' @param limit A positive whole number indicating the maximum number of features to return.
-#' @param offset A positive whole number indicating the offset of start of returned results.
-#' @param bbox A vector of four numbers indicating bounding box to limit output
-#' features to, e.g. `c(minLon, minLat, maxLon, maxLat)`.
-#' @param properties A vector of strings of the column names to include. If NULL (default), all columns are retained.
-#' @param transform A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))
-#' @param epsg A positive whole number of the epsg to transform features to.
-#' @return An sf object
+#' @inherit internal
 #' @seealso [collections API documentation](https://www.hillcrestgeo.ca/fwapg/collections.html).
 #' @export
 #' @examples

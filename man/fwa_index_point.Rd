@@ -2,20 +2,18 @@
 % Please edit documentation in R/spatial-functions.R
 \name{fwa_index_point}
 \alias{fwa_index_point}
-\title{FWA index point}
+\title{FWA Index Point}
 \usage{
 fwa_index_point(
   x,
   y,
-  srid,
+  srid = 4326,
   tolerance = 5000,
-  num_features = 1,
-  limit = 100,
-  offset = 0,
+  limit = 1,
   bbox = NULL,
   properties = NULL,
   transform = NULL,
-  epsg = srid
+  epsg = 4326
 )
 }
 \arguments{
@@ -23,15 +21,11 @@ fwa_index_point(
 
 \item{y}{A number of the y coordinate.}
 
-\item{srid}{An positive whole number of the srid of the coordinate (e.g. epsg).}
+\item{srid}{A positive whole number of the epsg of the coordinates.}
 
-\item{tolerance}{A number of the tolerance.}
-
-\item{num_features}{A positive whole number of the maximum number of features to return.}
+\item{tolerance}{A number of the tolerance in m.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
-
-\item{offset}{A positive whole number indicating the offset of start of returned results.}
 
 \item{bbox}{A vector of four numbers indicating bounding box to limit output
 features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
@@ -43,15 +37,13 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 }
 \value{
-A sf object
+An sf object.
 }
 \description{
-Provided a point (x, y, srid), return the point along a stream(s) nearest to the point provided within specified tolerance.
+Gets the nearest point(s) on a stream(s) to the coordinates within the specified tolerance.
 }
 \examples{
-\dontrun{
-fwa_index_point(x = -132.26, y = 53.36, srid = 4326)
-}
+fwa_index_point(x = -132.26, y = 53.36)
 }
 \seealso{
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html}{fwa_indexpoint API documentation}

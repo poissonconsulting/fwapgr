@@ -18,7 +18,7 @@ fwa_locate_along_interval(
 )
 }
 \arguments{
-\item{blue_line_key}{An integer of the stream blue line key.}
+\item{blue_line_key}{A positive whole number of the stream blue line key.}
 
 \item{interval_length}{An integer of the interval distance in meters.}
 
@@ -40,7 +40,7 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 }
 \value{
-A sf object
+An sf object.
 }
 \description{
 Provided a blue_line_key and starting downstream distance, return a set of points along an interval.

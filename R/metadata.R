@@ -23,9 +23,9 @@ fwa_meta_collections <- function() {
 #'
 #' Get information about the column names of a collection.
 #'
+#' @inherit internal
 #' @return A tibble.
 #' @family metadata
-#' @inheritParams fwa_collection
 #' @export
 #' @examples
 #' fwa_meta_properties("whse_basemapping.fwa_stream_networks_sp")
