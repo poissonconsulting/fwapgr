@@ -11,7 +11,8 @@
 #' @export
 #' @examples
 #' fwa_index_point(x = -132.26, y = 53.36)
-fwa_index_point <- function(x, y, srid = 4326,
+fwa_index_point <- function(x, y,
+                            srid = 4326,
                             tolerance = 5000,
                             limit = 1,
                             bbox = NULL,

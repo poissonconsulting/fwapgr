@@ -35,7 +35,7 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 
 \item{properties}{A vector of strings of the column names to include. If NULL (default), all columns are retained.}
 
-\item{transform}{A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))}
+\item{transform}{A character vector with the name of the \href{https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29}{valid transform} function followed by the parameter values (e.g. c("ST_Simplify", 100)). See crunchy data froThe permitted values are described at}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 }
@@ -52,6 +52,7 @@ fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{API documentation}
 
 Other functions: 
+\code{\link{fwa_hydroshed}()},
 \code{\link{fwa_index_point}()},
 \code{\link{fwa_locate_along}()},
 \code{\link{fwa_watershed_at_measure}()},

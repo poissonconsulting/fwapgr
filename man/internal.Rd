@@ -39,7 +39,7 @@ value, e.g. \code{list(gnis_name = "Sangan River")}.}
 
 \item{tolerance}{A number of the tolerance in m.}
 
-\item{transform}{A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))}
+\item{transform}{A character vector with the name of the \href{https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29}{valid transform} function followed by the parameter values (e.g. c("ST_Simplify", 100)). See crunchy data froThe permitted values are described at}
 
 \item{x}{A number of the x coordinate.}
 

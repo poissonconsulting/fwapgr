@@ -15,7 +15,7 @@ vld_bbox <- function(x) {
 }
 
 vld_transform <- function(x) {
-  vld_character(x) && vld_not_any_na(x) && x[1] %in% valid_transform_functions()
+  vld_character(x) && vld_not_any_na(x) && x[1] %in% fwa_valid_transforms()
 }
 
 vld_filter <- function(x) {

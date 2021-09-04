@@ -1,21 +1,23 @@
 destination: docs
 
 reference:
-- title: Metadata
-  desc: Get information about the collections or a collection's properties.
+- title: Information
+  desc: Get information about the collections, a collection's properties or
+  the valid transform functions.
   contents:
   - '`fwa_meta_collections`'
   - '`fwa_meta_properties`'
+  - '`fwa_valid_transform_functions`'
 - title: Collection
   desc: Query a collection.
   contents:
   - '`fwa_collection`'
-- title: Function
-  desc: General spatial function.
+- title: General Function
+  desc: General function.
   contents:
   - '`fwa_function`'
-- title: Spatial Functions
-  desc: Specific spatial functions.
+- title: Specific Functions
+  desc: Specific functions.
   contents:
   - '`fwa_index_point`'
   - '`fwa_locate_along`'

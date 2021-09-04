@@ -30,7 +30,7 @@
 #' @param srid A positive whole number of the epsg of the coordinates.
 #' @param start_measure An integer of the distance in meters upstream from the river mouth to start from.
 #' @param tolerance A number of the tolerance in m.
-#' @param transform A character vector with the name of the transform function followed by the parameter values (e.g. c("ST_Simplify", 100))
+#' @param transform A character vector with the name of the [valid transform](https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29) function followed by the parameter values (e.g. c("ST_Simplify", 100)). See crunchy data froThe permitted values are described at
 #' @param x A number of the x coordinate.
 #' @param y A number of the y coordinate.
 #' @return
