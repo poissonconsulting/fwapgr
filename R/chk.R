@@ -27,7 +27,7 @@ chk_bbox <- function(x){
     return(invisible())
   }
   chk_numeric(x)
-  chk_identical(length(x), 4L)
+  chk_length(x, 4L)
   chk_not_any_na(x)
 }
 
@@ -37,8 +37,5 @@ chk_transform <- function(x){
   }
   chk_character(x)
   chk_not_any_na(x)
-  # valid Transform functions from https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29
-  chk_subset(x[1], c("ST_Boundary", "ST_Centroid", "ST_Envelope", "ST_PointOnSurface",
-                         "ST_Buffer", "ST_ConvexHull", "ST_MinimumBoundingCircle", "ST_OffsetCurve",
-                         "ST_GeneratePoints", "ST_Simplify", "ST_ChaikinSmoothing", "ST_LineSubstring"))
+  chk_subset(x[1], valid_transform_functions())
 }

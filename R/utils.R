@@ -39,3 +39,13 @@ format_parameter <- function(x){
   paste(x, collapse = ",")
 }
 
+# valid Transform functions from https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29
+valid_transform_functions <- function() {
+  c("ST_Boundary", "ST_Centroid",
+    "ST_Envelope", "ST_PointOnSurface",
+    "ST_Buffer", "ST_ConvexHull",
+    "ST_MinimumBoundingCircle",
+    "ST_OffsetCurve", "ST_GeneratePoints",
+    "ST_Simplify", "ST_ChaikinSmoothing",
+    "ST_LineSubstring")
+}
