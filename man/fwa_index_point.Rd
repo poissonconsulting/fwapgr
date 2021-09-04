@@ -40,11 +40,11 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 An sf object.
 }
 \description{
-Gets the nearest point on a stream to the coordinates within the tolerance.
+Gets the nearest point on a stream to the coordinates (within the tolerance).
 }
 \details{
-To return the first and second closest points on streams within the tolerance
-increase limit to 2.
+To also return the second nearest point to a stream (within the tolerance)
+set \code{limit = 2}.
 }
 \examples{
 fwa_index_point(x = -132.26, y = 53.36)

@@ -33,6 +33,26 @@ An sf object.
 \description{
 Gets a polygon of the watershed at a specified river metre.
 }
+\details{
+The function selects and aggregate all the fundamental watershed polygons
+upstream of the fundamental watershed in which the point lies.
+
+Depending on where the point is in the fundamental watershed one of four
+things can happen to the fundamental watershed.
+\enumerate{
+\item If the point is < 50 m upstream from the bottom of the fundamental
+watershed then the fundamental watershed is included in the aggregation
+(recorded as KEEP in the refine_method property).
+\item Else if the point is < 100m downstream from the top of the fundamental
+watershed then the fundamental watershed is not included in the aggregation
+(recorded as DROP in the refine_method property).
+\item Else if the point is on a polygonal river/canal the fundamental watershed
+is cut across the banks of the river before being included in the aggregation
+(recorded as CUT in the refine_method property).
+\item Otherwise something else happens (recorded as DEM in the refine_method
+property).
+}
+}
 \examples{
 fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)
 }
