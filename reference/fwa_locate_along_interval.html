@@ -88,7 +88,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9006</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9007</span>
       </span>
     </div>
 
@@ -135,8 +135,7 @@
   interval_length <span class='op'>=</span> <span class='fl'>100</span>,
   start_measure <span class='op'>=</span> <span class='fl'>0</span>,
   end_measure <span class='op'>=</span> <span class='cn'>NULL</span>,
-  limit <span class='op'>=</span> <span class='fl'>100</span>,
-  offset <span class='op'>=</span> <span class='fl'>0</span>,
+  limit <span class='op'>=</span> <span class='fl'>10000</span>,
   bbox <span class='op'>=</span> <span class='cn'>NULL</span>,
   properties <span class='op'>=</span> <span class='cn'>NULL</span>,
   transform <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -165,10 +164,6 @@
     <tr>
       <th>limit</th>
       <td><p>A positive whole number indicating the maximum number of features to return.</p></td>
-    </tr>
-    <tr>
-      <th>offset</th>
-      <td><p>A positive whole number indicating the offset of start of returned results.</p></td>
     </tr>
     <tr>
       <th>bbox</th>
@@ -205,13 +200,13 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>fwa_locate_along_interval</span><span class='op'>(</span><span class='fl'>356308001</span>, interval_length <span class='op'>=</span> <span class='fl'>10</span>, start_measure <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Simple feature collection with 100 features and 2 fields</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Simple feature collection with 1924 features and 2 fields</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Geometry type: POINT</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Dimension:     XYZ</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -122.0155 ymin: 49.16486 xmax: -122.0047 ymax: 49.16804</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> z_range:       zmin: 9.626 zmax: 10.131</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Bounding box:  xmin: -122.0155 ymin: 49.11263 xmax: -121.8697 ymax: 49.16804</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> z_range:       zmin: 7.5 zmax: 214.8791</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Geodetic CRS:  WGS 84</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A data frame: 100 × 3</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A data frame: 1,924 × 3</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>    downstream_route_measure index                        geometry</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>                       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>                     <span style='color: #949494; font-style: italic;'>&lt;POINT [°]&gt;</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span>                        0     0    Z (-122.0155 49.16804 9.626)</span>
@@ -224,7 +219,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span>                       70     7 Z (-122.0151 49.16745 9.746222)</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span>                       80     8 Z (-122.0151 49.16736 9.763397)</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span>                       90     9  Z (-122.015 49.16728 9.780571)</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 90 more rows</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 1,914 more rows</span></span>
 </code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
