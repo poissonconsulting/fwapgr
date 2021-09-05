@@ -140,8 +140,21 @@ test_that("fwa_collection transform works", {
   expect_identical(nrow(sf::st_coordinates(sf::st_cast(collection$geometry, "POINT"))), 4L)
 })
 
-test_that("fwa_collection gives informative error invalid collections errors", {
-  collection_id <- "not_a_collection"
-  expect_chk_error(fwa_collection(collection_id),
+test_that("fwa_collection informative error invalid collection", {
+  expect_chk_error(fwa_collection("not_a_collection"),
                    "API request failed \\[404\\]: Collection not found: not_a_collection")
+})
+
+test_that("fwa_collection informative error invalid transform", {
+  collection_id <- "whse_basemapping.fwa_lakes_poly"
+
+  expect_chk_error(fwa_collection(collection_id,
+                   transform = "not_a_transform"),
+                   "API request failed \\[400\\]: Invalid value for parameter transform: not_a_transform")
+})
+
+test_that("fwa_collection informative error invalid bbox", {
+  collection_id <- "whse_basemapping.fwa_lakes_poly"
+  expect_chk_error(fwa_collection(collection_id, bbox = 1),
+                   "API request failed \\[400\\]: Invalid value for parameter bbox: 1")
 })

@@ -11,12 +11,8 @@ reference:
   desc: Query a collection.
   contents:
   - '`fwa_collection`'
-- title: General Function
-  desc: General function.
-  contents:
-  - '`fwa_function`'
-- title: Specific Functions
-  desc: Specific functions.
+- title: Spatial Functions
+  desc: Spatial functions.
   contents:
   - '`fwa_hydroshed`'
   - '`fwa_index_point`'

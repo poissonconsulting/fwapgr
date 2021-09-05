@@ -1,9 +1,3 @@
-#' FWA Function
-#'
-#' Execute general spatial function.
-#'
-#' @inherit internal
-#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions.html)
 fwa_function <- function(function_id,
                          parameters,
                          limit = 100,
@@ -19,9 +13,9 @@ fwa_function <- function(function_id,
   chk_lte(limit, 10000L)
   chk_whole_number(offset)
   chk_lt(offset, 100000L)
-  chk_null_or(bbox, vld = vld_bbox)
+  chk_null_or(bbox, vld = vld_numeric)
   chk_null_or(properties, vld = vld_character)
-  chk_null_or(transform, vld = vld_transform)
+  chk_null_or(transform, vld = vld_string)
   chk_whole_number(epsg)
 
   properties <- format_parameter(properties)
