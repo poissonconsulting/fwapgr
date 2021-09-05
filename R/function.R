@@ -15,7 +15,7 @@ fwa_function <- function(function_id,
   chk_lt(offset, 100000L)
   chk_null_or(bbox, vld = vld_numeric)
   chk_null_or(properties, vld = vld_character)
-  chk_null_or(transform, vld = vld_string)
+  chk_null_or(transform, vld = vld_character)
   chk_whole_number(epsg)
 
   properties <- format_parameter(properties)

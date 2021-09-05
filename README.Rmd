@@ -29,8 +29,7 @@ library(fwapgr)
 Data are returned as [simple features](https://github.com/r-spatial/sf). 
 Functions and arguments exactly match those available in the API.
 
-If you are looking for a user-friendly R `r emo::ji("package")` for retrieving data from the [B.C. Freshwater Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater) please see [fwatlasbc](https://github.com/poissonconsulting/fwatlasbc) `r emo::ji("smile")`. 
-`fwatlasbc` wraps `fwapgr`.
+If you are looking for a user-friendly R `r emo::ji("package")` for retrieving data from the [B.C. Freshwater Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater) please see [fwatlasbc](https://github.com/poissonconsulting/fwatlasbc) which wraps `fwapgr`.
 
 ## Introduction
 
@@ -40,11 +39,6 @@ Query features from [collections](https://www.hillcrestgeo.ca/fwapg/collections.
 
 * `fwa_collection()`  
 
-Get metadata:  
-
-* `fwa_meta_collections()`  
-* `fwa_meta_properties()`  
-
 Execute spatial [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):  
 
 * `fwa_index_point()`  
@@ -53,6 +47,11 @@ Execute spatial [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):
 * `fwa_watershed_at_measure()`  
 * `fwa_watershed_hex()`  
 * `fwa_watershed_stream()`  
+
+Get metadata:  
+
+* `fwa_meta_collections()`  
+* `fwa_meta_properties()`  
 
 ## Installation
 

@@ -25,7 +25,7 @@ If you are looking for a user-friendly R 📦 for retrieving data from the
 [B.C. Freshwater
 Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater)
 please see [fwatlasbc](https://github.com/poissonconsulting/fwatlasbc)
-😄. `fwatlasbc` wraps `fwapgr`.
+which wraps `fwapgr`.
 
 ## Introduction
 
@@ -36,11 +36,6 @@ Query features from
 
 -   `fwa_collection()`
 
-Get metadata:
-
--   `fwa_meta_collections()`  
--   `fwa_meta_properties()`
-
 Execute spatial
 [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):
 
@@ -50,6 +45,11 @@ Execute spatial
 -   `fwa_watershed_at_measure()`  
 -   `fwa_watershed_hex()`  
 -   `fwa_watershed_stream()`
+
+Get metadata:
+
+-   `fwa_meta_collections()`  
+-   `fwa_meta_properties()`
 
 ## Installation
 
@@ -75,18 +75,20 @@ yakoun[c("blue_line_key", "gnis_name", "length_metre")]
 #> Bounding box:  xmin: -132.2789 ymin: 53.34324 xmax: -132.1304 ymax: 53.65705
 #> z_range:       zmin: 1 zmax: 99
 #> Geodetic CRS:  WGS 84
-#> First 10 features:
-#>    blue_line_key    gnis_name length_metre                       geometry
-#> 1      360881586 Yakoun River    938.01423 LINESTRING Z (-132.2671 53....
-#> 2      360881586 Yakoun River     30.88153 LINESTRING Z (-132.2761 53....
-#> 3      360881586 Yakoun River     92.76360 LINESTRING Z (-132.2754 53....
-#> 4      360881586 Yakoun River    435.70849 LINESTRING Z (-132.254 53.4...
-#> 5      360881586 Yakoun River    223.56843 LINESTRING Z (-132.2703 53....
-#> 6      360881586 Yakoun River     51.77070 LINESTRING Z (-132.2643 53....
-#> 7      360881586 Yakoun River     56.44271 LINESTRING Z (-132.2524 53....
-#> 8      360881586 Yakoun River    933.29000 LINESTRING Z (-132.1531 53....
-#> 9      360881586 Yakoun River    295.39766 LINESTRING Z (-132.2401 53....
-#> 10     360881586 Yakoun River   1195.33617 LINESTRING Z (-132.2539 53....
+#> # A data frame: 100 × 4
+#>    blue_line_key gnis_name    length_metre                              geometry
+#>            <int> <chr>               <dbl>                      <LINESTRING [°]>
+#>  1     360881586 Yakoun River        938.  Z (-132.2671 53.43742 63.25, -132.26…
+#>  2     360881586 Yakoun River         30.9 Z (-132.2761 53.43518 65.5, -132.276…
+#>  3     360881586 Yakoun River         92.8 Z (-132.2754 53.38684 91, -132.2754 …
+#>  4     360881586 Yakoun River        436.  Z (-132.254 53.47959 47.516, -132.25…
+#>  5     360881586 Yakoun River        224.  Z (-132.2703 53.40627 86.245, -132.2…
+#>  6     360881586 Yakoun River         51.8 Z (-132.2643 53.45082 54, -132.2643 …
+#>  7     360881586 Yakoun River         56.4 Z (-132.2524 53.48409 45.503, -132.2…
+#>  8     360881586 Yakoun River        933.  Z (-132.1531 53.5715 14.439, -132.15…
+#>  9     360881586 Yakoun River        295.  Z (-132.2401 53.50416 41.928, -132.2…
+#> 10     360881586 Yakoun River       1195.  Z (-132.2539 53.46113 53, -132.2541 …
+#> # … with 90 more rows
 ```
 
 Get Yakoun River watershed starting 10km upstream:
