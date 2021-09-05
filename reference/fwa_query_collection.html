@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FWA collection — fwa_collection • fwapgr</title>
+<title>Query Freshwater Atlas Collection — fwa_collection • fwapgr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="FWA collection — fwa_collection" />
-<meta property="og:description" content="Get and filter collection from database." />
+<meta property="og:title" content="Query Freshwater Atlas Collection — fwa_collection" />
+<meta property="og:description" content="Query a collection from the freshwater atlas." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -121,16 +121,27 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>FWA collection</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/collection.R'><code>R/collection.R</code></a></small>
-    <div class="hidden name"><code>fwa_collection.Rd</code></div>
+    <h1>Query Freshwater Atlas Collection</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/collection.R'><code>R/collection.R</code></a>, <a href='https://github.com/poissonconsulting/fwapgr/blob/master/R/query-collection.R'><code>R/query-collection.R</code></a></small>
+    <div class="hidden name"><code>fwa_query_collection.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get and filter collection from database.</p>
+    <p>Query a collection from the freshwater atlas.</p>
     </div>
 
     <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>fwa_collection</span><span class='op'>(</span>
+  <span class='va'>collection_id</span>,
+  filter <span class='op'>=</span> <span class='cn'>NULL</span>,
+  limit <span class='op'>=</span> <span class='fl'>100</span>,
+  offset <span class='op'>=</span> <span class='fl'>0</span>,
+  bbox <span class='op'>=</span> <span class='cn'>NULL</span>,
+  properties <span class='op'>=</span> <span class='cn'>NULL</span>,
+  transform <span class='op'>=</span> <span class='cn'>NULL</span>,
+  epsg <span class='op'>=</span> <span class='fl'>4326</span>
+<span class='op'>)</span>
+
+<span class='fu'>fwa_query_collection</span><span class='op'>(</span>
   <span class='va'>collection_id</span>,
   filter <span class='op'>=</span> <span class='cn'>NULL</span>,
   limit <span class='op'>=</span> <span class='fl'>100</span>,
@@ -184,13 +195,25 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>An sf object.</p>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    
+<ul>
+<li><p><code>fwa_collection</code>: Query Freshwater Atlas Collection</p>
+<p><a href='https://lifecycle.r-lib.org/articles/stages.html#soft-deprecated'><img src='figures/lifecycle-soft-deprecated.svg' alt='[Soft-deprecated]' /></a></p></li>
+</ul>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='https://www.hillcrestgeo.ca/fwapg/collections.html'>API documentation</a>.</p></div>
+    <div class='dont-index'><p>Other collections: 
+<code><a href='fwa_collections_properties.html'>fwa_collections_properties</a>()</code>,
+<code><a href='fwa_collections.html'>fwa_collections</a>()</code>,
+<code><a href='fwa_meta_collections.html'>fwa_meta_collections</a>()</code>,
+<code><a href='fwa_meta_properties.html'>fwa_meta_properties</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='va'>collection_id</span> <span class='op'>&lt;-</span> <span class='st'>"whse_basemapping.fwa_stream_networks_sp"</span></span>
-<span class='r-in'><span class='fu'>fwa_collection</span><span class='op'>(</span><span class='va'>collection_id</span>, filter <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>gnis_name <span class='op'>=</span> <span class='st'>"Sangan River"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>filter</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>gnis_name <span class='op'>=</span> <span class='st'>"Sangan River"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>fwa_query_collection</span><span class='op'>(</span><span class='va'>collection_id</span>, filter <span class='op'>=</span> <span class='va'>filter</span><span class='op'>)</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Simple feature collection with 21 features and 28 fields</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Geometry type: LINESTRING</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Dimension:     XYZ</span>

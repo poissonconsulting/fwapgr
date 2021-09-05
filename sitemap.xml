@@ -22,9 +22,6 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/fwa_collection.html</loc>
-  </url>
-  <url>
     <loc>/reference/fwa_collections.html</loc>
   </url>
   <url>
@@ -47,6 +44,9 @@
   </url>
   <url>
     <loc>/reference/fwa_meta_properties.html</loc>
+  </url>
+  <url>
+    <loc>/reference/fwa_query_collection.html</loc>
   </url>
   <url>
     <loc>/reference/fwa_watershed_at_measure.html</loc>

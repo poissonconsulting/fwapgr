@@ -94,7 +94,7 @@
 </ul>
 <p>Query features from a <a href="https://www.hillcrestgeo.ca/fwapg/collections.html" class="external-link">collection</a>:</p>
 <ul>
-<li><code><a href="reference/fwa_collection.html">fwa_collection()</a></code></li>
+<li><code><a href="reference/fwa_query_collection.html">fwa_collection()</a></code></li>
 </ul>
 <p>Execute spatial <a href="https://www.hillcrestgeo.ca/fwapg/functions.html" class="external-link">functions</a>:</p>
 <ul>
@@ -125,7 +125,7 @@
 <a href="#demonstration" class="anchor" aria-hidden="true"></a>Demonstration</h2>
 <p>Get Yakoun River stream from ‘whse_basemapping.fwa_stream_networks_sp’ collection:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Yakoun River"</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_query_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Yakoun River"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">yakoun</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue_line_key"</span>, <span class="st">"gnis_name"</span>, <span class="st">"length_metre"</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; Simple feature collection with 100 features and 3 fields</span>
 <span class="co">#&gt; Geometry type: LINESTRING</span>
