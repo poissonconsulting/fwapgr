@@ -17,6 +17,7 @@ fwa_collections()
 }
 \seealso{
 Other metadata: 
+\code{\link{fwa_collections_properties}()},
 \code{\link{fwa_meta_collections}()},
 \code{\link{fwa_meta_properties}()}
 }

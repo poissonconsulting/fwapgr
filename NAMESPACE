@@ -2,6 +2,7 @@
 
 export(fwa_collection)
 export(fwa_collections)
+export(fwa_collections_properties)
 export(fwa_hydroshed)
 export(fwa_index_point)
 export(fwa_locate_along)

@@ -31,15 +31,15 @@ which wraps `fwapgr`.
 
 `fwapgr` allows you to perform three types of operation.
 
-Get information about
+Get information about the
 [collections](https://www.hillcrestgeo.ca/fwapg/collections.html) or a
 collection’s properties:
 
 -   `fwa_collections()`  
--   `fwa_meta_properties()`
+-   `fwa_collections_properties()`
 
-Query features from
-[collections](https://www.hillcrestgeo.ca/fwapg/collections.html):
+Query features from a
+[collection](https://www.hillcrestgeo.ca/fwapg/collections.html):
 
 -   `fwa_collection()`
 
