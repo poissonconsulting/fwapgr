@@ -1,14 +1,10 @@
-#' FWA Collections Metadata
+#' Freshwater Atlas Collections Metadata
+
+#' @describeIn fwa_collections Freshwater Atlas Collections
 #'
-#' Get information about the collections.
+#' \lifecycle{soft-deprecated}
 #'
-#' Deprecated for `fwa_collections()`.
-#'
-#' @return A tibble.
-#' @family collections
 #' @export
-#' @examples
-#' fwa_meta_collections()
 fwa_meta_collections <- function() {
   lifecycle::deprecate_soft(" 0.1.1", "fwa_meta_collections()", "fwa_collections()")
   fwa_collections()

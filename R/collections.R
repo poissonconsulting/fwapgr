@@ -1,4 +1,4 @@
-#' FWA Collections
+#' Freshwater Atlas Collections
 #'
 #' Get information about the collections.
 #'

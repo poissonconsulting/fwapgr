@@ -1,4 +1,4 @@
-#' FWA Collection's Properties
+#' Freshwater Atlas Collection's Properties
 #'
 #' Get information about a collection's column names.
 #'

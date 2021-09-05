@@ -49,6 +49,6 @@ value, e.g. \code{list(gnis_name = "Sangan River")}.}
 An sf object.
 }
 \description{
-Descriptions of the parameters and return value for typical FWA functions.
+Descriptions of the parameters and a typical return value for the provided functions.
 }
 \keyword{internal}

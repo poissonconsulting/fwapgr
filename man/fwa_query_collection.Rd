@@ -68,8 +68,6 @@ fwa_query_collection(collection_id, filter = filter)
 \seealso{
 Other collections: 
 \code{\link{fwa_collections_properties}()},
-\code{\link{fwa_collections}()},
-\code{\link{fwa_meta_collections}()},
-\code{\link{fwa_meta_properties}()}
+\code{\link{fwa_collections}()}
 }
 \concept{collections}

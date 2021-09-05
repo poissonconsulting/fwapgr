@@ -1,15 +1,10 @@
-#' FWA Property Metadata
+#' Freshwater Atlas Collections Metadata
+
+#' @describeIn fwa_collections_properties Freshwater Atlas Collection's Properties
 #'
-#' Get information about the column names of a collection.
+#' \lifecycle{soft-deprecated}
 #'
-#' Soft_deprecated for [`fwa_collections_properties()`]
-#'
-#' @inherit internal
-#' @return A tibble.
-#' @family collections
 #' @export
-#' @examples
-#' fwa_meta_properties("whse_basemapping.fwa_stream_networks_sp")
 fwa_meta_properties <- function(collection_id) {
   lifecycle::deprecate_soft(" 0.1.1", "fwa_meta_properties()", "fwa_collections_properties()")
   fwa_collections_properties(collection_id)

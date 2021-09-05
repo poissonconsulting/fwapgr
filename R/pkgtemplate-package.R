@@ -7,7 +7,7 @@
 ## usethis namespace: end
 #' Parameter Descriptions
 #'
-#' Descriptions of the parameters and return value for typical FWA functions.
+#' Descriptions of the parameters and a typical return value for the provided functions.
 #'
 #' @keywords internal
 #' @name internal
