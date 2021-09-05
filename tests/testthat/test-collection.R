@@ -1,14 +1,19 @@
-test_that("fwa_collection works default values", {
+test_that("fwa_collection works with default values", {
   collection_id <- "whse_basemapping.fwa_named_streams"
   collection <- fwa_collection(collection_id, limit = 10)
   expect_s3_class(collection, "sf")
   expect_s3_class(collection, "tbl_df")
   expect_s3_class(collection$geometry, "sfc_MULTILINESTRING")
+  expect_identical(sf::st_crs(collection)$epsg, 4326L)
   expect_identical(colnames(sf::st_coordinates(collection)), c("X", "Y", "L1", "L2"))
-  collection <- tibble::as_tibble(collection)
-  collection$geometry <- NULL
 
   expect_snapshot_data(collection, "default10")
+})
+
+test_that("fwa_collection epsg can be set", {
+  collection_id <- "whse_basemapping.fwa_named_streams"
+  collection <- fwa_collection(collection_id, limit = 10, epsg = 3153)
+  expect_identical(sf::st_crs(collection)$epsg, 3153L)
 })
 
 test_that("fwa_collection properties works", {
@@ -29,22 +34,58 @@ test_that("fwa_collection filter works", {
   expect_s3_class(collection, "sf")
   expect_s3_class(collection, "tbl_df")
   expect_true(all(collection$gnis_name_1 == "Trout Lake"))
-  collection <- tibble::as_tibble(collection)
-  collection$geometry <- NULL
+
+  expect_identical(
+    colnames(collection),
+    c("id", "area_ha", "blue_line_key", "feature_code", "fwa_watershed_code",
+      "gnis_id_1", "gnis_id_2", "gnis_id_3", "gnis_name_1", "gnis_name_2",
+      "gnis_name_3", "left_right_tributary", "local_watershed_code",
+      "localcode_ltree", "waterbody_key", "waterbody_key_50k", "waterbody_key_group_code_50k",
+      "waterbody_poly_id", "waterbody_type", "watershed_code_50k",
+      "watershed_group_code", "watershed_group_code_50k", "watershed_group_id",
+      "watershed_key", "wscode_ltree", "geometry"))
+
   expect_snapshot_data(collection, "trout_lake")
 })
-#
-# test_that("fwa_collection bounding box works", {
-#   collection_id <- "whse_basemapping.fwa_lakes_poly"
-#
-#   bbox <- c(-122.01, 49.11, -121.86, 49.16)
-#
-#   # returns features within bounds of lake table
-#   collection <- fwa_collection(collection_id, bbox = bbox)
-#   expect_identical(sort(unique(collection$gnis_name_1)), c("Ryder Lake", "Sardis Pond"))
-# })
-#
 
+test_that("fwa_collection bounding box gets everything overlapping bounding box", {
+  collection_id <- "whse_basemapping.fwa_lakes_poly"
+
+  bbox <- c(-117.46, 50.6, -117.4601, 50.6001)
+
+  collection <- fwa_collection(collection_id, bbox = bbox)
+  expect_identical(collection$gnis_name_1, "Trout Lake")
+  expect_identical(
+    colnames(collection),
+    c("id", "area_ha", "blue_line_key", "feature_code", "fwa_watershed_code",
+      "gnis_id_1", "gnis_id_2", "gnis_id_3", "gnis_name_1", "gnis_name_2",
+      "gnis_name_3", "left_right_tributary", "local_watershed_code",
+      "localcode_ltree", "waterbody_key", "waterbody_key_50k", "waterbody_key_group_code_50k",
+      "waterbody_poly_id", "waterbody_type", "watershed_code_50k",
+      "watershed_group_code", "watershed_group_code_50k", "watershed_group_id",
+      "watershed_key", "wscode_ltree", "geometry"))
+})
+
+test_that("fwa_collection bounding box and filter work together", {
+  collection_id <- "whse_basemapping.fwa_lakes_poly"
+
+  bbox <- c(-117.46, 50.6, -117.4601, 50.6001)
+  filter <- list(gnis_name_1 = "Kootenay Lake")
+
+  collection <- fwa_collection(collection_id, filter = filter, bbox = bbox)
+  expect_s3_class(collection, "sf")
+  expect_identical(nrow(collection), 0L)
+  skip("fwa_collection all columns missing except geometry when no rows!!!")
+  expect_identical(
+    colnames(collection),
+    c("id", "area_ha", "blue_line_key", "feature_code", "fwa_watershed_code",
+      "gnis_id_1", "gnis_id_2", "gnis_id_3", "gnis_name_1", "gnis_name_2",
+      "gnis_name_3", "left_right_tributary", "local_watershed_code",
+      "localcode_ltree", "waterbody_key", "waterbody_key_50k", "waterbody_key_group_code_50k",
+      "waterbody_poly_id", "waterbody_type", "watershed_code_50k",
+      "watershed_group_code", "watershed_group_code_50k", "watershed_group_id",
+      "watershed_key", "wscode_ltree", "geometry"))
+})
 
 test_that("fwa_collection offset works", {
   collection_id <- "whse_basemapping.fwa_named_streams"
@@ -88,31 +129,13 @@ test_that("fwa_collection offset errors above 100,000", {
   )
 })
 
-test_that("fwa_collection", {
-  collection_id <- "whse_basemapping.fwa_stream_networks_sp"
+test_that("fwa_collection transform works", {
+  collection_id <- "whse_basemapping.fwa_lakes_poly"
 
-  ### fwa_collection
-  bbox <- c(-122.01, 49.11, -121.86, 49.16)
-  properties <- c("blue_line_key", "gnis_name")
-  filter <- list(gnis_name = "Chilliwack Creek")
+  filter <- list(gnis_name_1 = "Kootenay Lake")
 
-  # check filter  when outside of bounds
-  filter <- list(gnis_name_1 = "Sardis Pond")
-  x <- fwa_collection("whse_basemapping.fwa_lakes_poly", filter = filter, bbox = bbox)
-  expect_s3_class(x, "sf")
-  expect_identical(nrow(x), 1L)
-
-  # check bbox outside feature
-  filter <- list(gnis_name = "Sangan River")
-  x <- fwa_collection(collection_id, filter = filter, bbox = bbox)
-  expect_s3_class(x, "sf")
-  expect_identical(nrow(x), 0L)
-
-  ### check transform
-  # test multiple args
-  filter <- list(gnis_name = "Chilliwack Creek")
-  z <- fwa_collection(collection_id, filter = filter, transform = c("ST_Simplify", 1000))
-  expect_s3_class(z, "sf")
-  # expect a triangle
-#  expect_true(length(unlist(z$geometry)) < length(unlist(y$geometry)))
+  collection <- fwa_collection(collection_id, filter = filter, transform = c("ST_Simplify", 50000))
+  expect_s3_class(collection, "sf")
+  expect_identical(nrow(collection), 1L)
+  expect_identical(nrow(sf::st_coordinates(sf::st_cast(collection$geometry, "POINT"))), 4L)
 })
