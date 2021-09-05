@@ -6,24 +6,11 @@ test_that("API functions work", {
   drm <- 0
   drm2 <- 10000
   properties <- c("area_ha")
-  #
-  # df2 <- fwa_watershed_at_measure(blk, downstream_route_measure = drm2)
-  # expect_true(df$area_ha > df2$area_ha)
-
-  ### watershed_stream
-  df <- fwa_watershed_stream(blk, downstream_route_measure = drm)
-  expect_s3_class(df, "sf")
-  expect_s3_class(df$geometry, "sfc_MULTILINESTRING")
-  expect_identical(nrow(df), 1L)
-
-  df2 <- fwa_watershed_stream(blk, downstream_route_measure = drm2)
-  expect_true(df$linear_feature_id != df2$linear_feature_id)
 
   ### watershed hex
   df <- fwa_watershed_hex(blk, downstream_route_measure = drm2)
   expect_s3_class(df, "sf")
   expect_s3_class(df$geometry, "sfc_MULTIPOLYGON")
-
 
   ### check transform
   # test multiple args
