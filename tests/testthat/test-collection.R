@@ -75,7 +75,7 @@ test_that("fwa_collection bounding box and filter work together", {
   collection <- fwa_collection(collection_id, filter = filter, bbox = bbox)
   expect_s3_class(collection, "sf")
   expect_identical(nrow(collection), 0L)
-  skip("fwa_collection all columns missing except geometry when no rows!!!")
+  skip("fwa_collection all columns missing except geometry when no rows")
   expect_identical(
     colnames(collection),
     c("id", "area_ha", "blue_line_key", "feature_code", "fwa_watershed_code",
@@ -103,7 +103,7 @@ test_that("fwa_collection offset works with higher numbers", {
   collection2 <- fwa_collection(collection_id, offset = 998, limit = 1)
   expect_s3_class(collection, "sf")
   expect_s3_class(collection2, "sf")
-  skip("fwa_collection offset often doesn't work with higher numbers!!!!")
+  skip("fwa_collection offset often doesn't work with higher numbers")
   expect_true(identical(collection2$id, collection$id[2]))
 })
 

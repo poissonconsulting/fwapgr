@@ -1,18 +1,5 @@
 test_that("API functions work", {
 
-  ### index point
-  x <- -124.6
-  y <- 54.8
-
-  df <- fwa_index_point(x = x, y = y)
-  expect_s3_class(df, "sf")
-  expect_s3_class(df$geometry, "sfc_POINT")
-  expect_identical(nrow(df), 1L)
-  expect_identical(119, round(df$distance_to_stream))
-
-  # gets multiple within tolerance.
-  expect_identical(nrow(fwa_index_point(x = x, y = y, limit = 3)), 3L)
-
 
   ### watershed_at_measure
   blk <- 356308001
