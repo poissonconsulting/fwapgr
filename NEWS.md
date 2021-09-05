@@ -1,13 +1,22 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# fwapgr 0.1.0.9005
+
+- Soft-deprecated `fwa_collection()` for `fwa_query_collection()`.
+- Soft-deprecated `fwa_meta_properties()` for `fwa_collections_properties()`.
+- Soft-deprecate `fwa_meta_collections()` for `fwa_collections()`.
+- Dropped `fwa_valid_transform()`.
+- Rolled back to R <= 3.6.
+
+
 # fwapgr 0.1.0.9004
 
-- Added `fwa_hydroshed()` and exported `fwa_valid_transforms()`
+- Added `fwa_hydroshed()` and exported `fwa_valid_transforms()`.
 
 
 # fwapgr 0.1.0.9003
 
-- Now requires R 4.0
+- Now requires R 4.0.
 
 
 # fwapgr 0.1.0.9002
