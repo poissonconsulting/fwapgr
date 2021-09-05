@@ -17,7 +17,7 @@ fwa_collection <- function(collection_id,
                            transform = NULL,
                            epsg = 4326) {
   chk_string(collection_id)
-  chk_null_or(filter, vld = vld_filter)
+  chk_filter(filter)
   chk_whole_number(limit)
   chk_gt(limit)
   chk_lte(limit, 10000L)

@@ -7,5 +7,5 @@ vld_response_gateway <- function(x) {
 }
 
 vld_filter <- function(x) {
-  vld_vector(x) && vld_named(x)
+  is.null(x) || (vld_vector(x) && vld_named(x))
 }

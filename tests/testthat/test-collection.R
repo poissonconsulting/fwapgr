@@ -158,3 +158,9 @@ test_that("fwa_collection informative error invalid bbox", {
   expect_chk_error(fwa_collection(collection_id, bbox = 1),
                    "API request failed \\[400\\]: Invalid value for parameter bbox: 1")
 })
+
+test_that("fwa_collection informative error invalid bbox", {
+  collection_id <- "whse_basemapping.fwa_lakes_poly"
+  expect_chk_error(fwa_collection(collection_id, filter = c(1)),
+                   "^`filter` must be named\\.$")
+})
