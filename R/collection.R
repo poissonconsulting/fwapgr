@@ -5,8 +5,7 @@
 #' @export
 fwa_collection <- function(collection_id,
                            filter = NULL,
-                           limit = 100,
-                           offset = 0,
+                           limit = 10000,
                            bbox = NULL,
                            properties = NULL,
                            transform = NULL,
@@ -14,7 +13,7 @@ fwa_collection <- function(collection_id,
 
   fwa_query_collection(collection_id,
                        filter = filter, limit = limit,
-                       offset = offset, bbox = bbox,
+                       bbox = bbox,
                        properties = properties, transform = transform,
                        epsg = epsg)
 }

@@ -1,7 +1,6 @@
 fwa_function <- function(function_id,
                          parameters,
-                         limit = 100,
-                         offset = 0,
+                         limit = 10000,
                          bbox = NULL,
                          properties = NULL,
                          transform = NULL,
@@ -11,8 +10,6 @@ fwa_function <- function(function_id,
   chk_named(parameters)
   chk_whole_number(limit)
   chk_lte(limit, 10000L)
-  chk_whole_number(offset)
-  chk_lt(offset, 100000L)
   chk_null_or(bbox, vld = vld_numeric)
   chk_null_or(properties, vld = vld_character)
   chk_null_or(transform, vld = vld_character)
@@ -25,7 +22,6 @@ fwa_function <- function(function_id,
   path <- glue("fwapg/functions/{function_id}/items.json")
   query <- c(parameters, list(
     limit = limit,
-    offset = offset,
     bbox = bbox,
     properties = properties,
     transform = transform

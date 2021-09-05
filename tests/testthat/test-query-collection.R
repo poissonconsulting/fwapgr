@@ -87,48 +87,6 @@ test_that("fwa_query_collection bounding box and filter work together", {
       "watershed_key", "wscode_ltree", "geometry"))
 })
 
-test_that("fwa_query_collection offset works", {
-  collection_id <- "whse_basemapping.fwa_named_streams"
-
-  collection <- fwa_query_collection(collection_id, limit = 2)
-  expect_identical(collection$id, c('1', '2'))
-  collection2 <- fwa_query_collection(collection_id, offset = 1, limit = 1)
-  expect_identical(collection2$id, collection$id[2])
-})
-
-test_that("fwa_query_collection offset works with higher numbers", {
-  collection_id <- "whse_basemapping.fwa_named_streams"
-
-  collection <- fwa_query_collection(collection_id, offset = 997, limit = 2)
-  collection2 <- fwa_query_collection(collection_id, offset = 998, limit = 1)
-  expect_s3_class(collection, "sf")
-  expect_s3_class(collection2, "sf")
-  skip("fwa_query_collection offset often doesn't work with higher numbers")
-  expect_true(identical(collection2$id, collection$id[2]))
-})
-
-test_that("fwa_query_collection offset works at 99,999", {
-  collection_id <- "whse_basemapping.fwa_named_streams"
-  expect_silent(fwa_query_collection(collection_id, offset = 99999, limit = 1))
-})
-
-test_that("fwa_query_collection offset errors at 100,000", {
-  collection_id <- "whse_basemapping.fwa_named_streams"
-  expect_error(
-    fwa_query_collection(collection_id, offset = 100000),
-    "`offset` must be less than 100000"
-  )
-})
-
-test_that("fwa_query_collection offset errors above 100,000", {
-  collection_id <- "whse_basemapping.fwa_stream_networks_sp"
-  expect_error(fwa_query_collection(collection_id, offset = 100001))
-  expect_error(
-    fwa_query_collection(collection_id, offset = 100000),
-    "`offset` must be less than 100000"
-  )
-})
-
 test_that("fwa_query_collection transform works", {
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 

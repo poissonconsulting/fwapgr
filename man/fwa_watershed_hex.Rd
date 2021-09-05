@@ -7,8 +7,7 @@
 fwa_watershed_hex(
   blue_line_key,
   downstream_route_measure = 0,
-  limit = 100,
-  offset = 0,
+  limit = 10000,
   bbox = NULL,
   properties = NULL,
   transform = NULL,
@@ -21,8 +20,6 @@ fwa_watershed_hex(
 \item{downstream_route_measure}{A positive number of the river metre.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
-
-\item{offset}{A positive whole number indicating the offset of start of returned results.}
 
 \item{bbox}{A vector of four numbers indicating bounding box to limit output
 features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}

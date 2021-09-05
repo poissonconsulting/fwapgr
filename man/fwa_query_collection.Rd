@@ -8,8 +8,7 @@
 fwa_collection(
   collection_id,
   filter = NULL,
-  limit = 100,
-  offset = 0,
+  limit = 10000,
   bbox = NULL,
   properties = NULL,
   transform = NULL,
@@ -19,8 +18,7 @@ fwa_collection(
 fwa_query_collection(
   collection_id,
   filter = NULL,
-  limit = 100,
-  offset = 0,
+  limit = 10000,
   bbox = NULL,
   properties = NULL,
   transform = NULL,
@@ -35,8 +33,6 @@ names correspond to column names and the list values correspond to the desired
 value, e.g. \code{list(gnis_name = "Sangan River")}.}
 
 \item{limit}{A positive whole number indicating the maximum number of features to return.}
-
-\item{offset}{A positive whole number indicating the offset of start of returned results.}
 
 \item{bbox}{A vector of four numbers indicating bounding box to limit output
 features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}

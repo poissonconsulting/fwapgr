@@ -10,6 +10,6 @@ test_that("fwa_locate_along_interval works", {
 test_that("fwa_locate_along_interval errors with invalid", {
   chk::expect_chk_error(
     fwa_locate_along_interval(1, end_measure = 100, interval_length = 10, limit = 9),
-    "`limit \\+ offset` must be greater than"
+    "`limit` must be greater than"
   )
 })
