@@ -25,9 +25,6 @@
     <loc>/reference/fwa_collection.html</loc>
   </url>
   <url>
-    <loc>/reference/fwa_function.html</loc>
-  </url>
-  <url>
     <loc>/reference/fwa_hydroshed.html</loc>
   </url>
   <url>
@@ -44,9 +41,6 @@
   </url>
   <url>
     <loc>/reference/fwa_meta_properties.html</loc>
-  </url>
-  <url>
-    <loc>/reference/fwa_valid_transforms.html</loc>
   </url>
   <url>
     <loc>/reference/fwa_watershed_at_measure.html</loc>
