@@ -30,12 +30,6 @@ test_that("API functions work", {
   expect_s3_class(df, "sf")
   expect_s3_class(df$geometry, "sfc_MULTIPOLYGON")
 
-  ### locate along
-  df <- fwa_locate_along(blk, downstream_route_measure = drm2)
-  expect_s3_class(df, "sf")
-  expect_s3_class(df$geometry, "sfc_POINT")
-  expect_identical(nrow(df), 1L)
-
   ### locate along interval
   df <- fwa_locate_along_interval(blk, interval_length = 100, start_measure = 10000)
   expect_s3_class(df, "sf")
