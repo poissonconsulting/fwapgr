@@ -80,7 +80,7 @@
 <!-- badges: start -->
 
 <p><code>fwapgr</code> is an R client for the <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg pg-featureserv web API</a> used to get data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater" class="external-link">B.C. Freshwater Atlas</a>. Data are returned as <a href="https://github.com/r-spatial/sf" class="external-link">simple features</a>. Functions and arguments exactly match those available in the API.</p>
-<p>If you are looking for a user-friendly R 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater" class="external-link">B.C. Freshwater Atlas</a> please see <a href="https://github.com/poissonconsulting/fwatlasbc" class="external-link">fwatlasbc</a> 😄. <code>fwatlasbc</code> wraps <code>fwapgr</code>.</p>
+<p>If you are looking for a user-friendly R 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater" class="external-link">B.C. Freshwater Atlas</a> please see <a href="https://github.com/poissonconsulting/fwatlasbc" class="external-link">fwatlasbc</a> which wraps <code>fwapgr</code>.</p>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor" aria-hidden="true"></a>Introduction</h2>
@@ -88,13 +88,6 @@
 <p>Query features from <a href="https://www.hillcrestgeo.ca/fwapg/collections.html" class="external-link">collections</a>:</p>
 <ul>
 <li><code><a href="reference/fwa_collection.html">fwa_collection()</a></code></li>
-</ul>
-<p>Get metadata:</p>
-<ul>
-<li>
-<code><a href="reference/fwa_meta_collections.html">fwa_meta_collections()</a></code><br>
-</li>
-<li><code><a href="reference/fwa_meta_properties.html">fwa_meta_properties()</a></code></li>
 </ul>
 <p>Execute spatial <a href="https://www.hillcrestgeo.ca/fwapg/functions.html" class="external-link">functions</a>:</p>
 <ul>
@@ -110,6 +103,13 @@
 <code><a href="reference/fwa_watershed_hex.html">fwa_watershed_hex()</a></code><br>
 </li>
 <li><code><a href="reference/fwa_watershed_stream.html">fwa_watershed_stream()</a></code></li>
+</ul>
+<p>Get metadata:</p>
+<ul>
+<li>
+<code><a href="reference/fwa_meta_collections.html">fwa_meta_collections()</a></code><br>
+</li>
+<li><code><a href="reference/fwa_meta_properties.html">fwa_meta_properties()</a></code></li>
 </ul>
 </div>
 <div id="installation" class="section level2">
@@ -133,18 +133,20 @@
 <span class="co">#&gt; Bounding box:  xmin: -132.2789 ymin: 53.34324 xmax: -132.1304 ymax: 53.65705</span>
 <span class="co">#&gt; z_range:       zmin: 1 zmax: 99</span>
 <span class="co">#&gt; Geodetic CRS:  WGS 84</span>
-<span class="co">#&gt; First 10 features:</span>
-<span class="co">#&gt;    blue_line_key    gnis_name length_metre                       geometry</span>
-<span class="co">#&gt; 1      360881586 Yakoun River    938.01423 LINESTRING Z (-132.2671 53....</span>
-<span class="co">#&gt; 2      360881586 Yakoun River     30.88153 LINESTRING Z (-132.2761 53....</span>
-<span class="co">#&gt; 3      360881586 Yakoun River     92.76360 LINESTRING Z (-132.2754 53....</span>
-<span class="co">#&gt; 4      360881586 Yakoun River    435.70849 LINESTRING Z (-132.254 53.4...</span>
-<span class="co">#&gt; 5      360881586 Yakoun River    223.56843 LINESTRING Z (-132.2703 53....</span>
-<span class="co">#&gt; 6      360881586 Yakoun River     51.77070 LINESTRING Z (-132.2643 53....</span>
-<span class="co">#&gt; 7      360881586 Yakoun River     56.44271 LINESTRING Z (-132.2524 53....</span>
-<span class="co">#&gt; 8      360881586 Yakoun River    933.29000 LINESTRING Z (-132.1531 53....</span>
-<span class="co">#&gt; 9      360881586 Yakoun River    295.39766 LINESTRING Z (-132.2401 53....</span>
-<span class="co">#&gt; 10     360881586 Yakoun River   1195.33617 LINESTRING Z (-132.2539 53....</span></code></pre></div>
+<span class="co">#&gt; # A data frame: 100 × 4</span>
+<span class="co">#&gt;    blue_line_key gnis_name    length_metre                              geometry</span>
+<span class="co">#&gt;            &lt;int&gt; &lt;chr&gt;               &lt;dbl&gt;                      &lt;LINESTRING [°]&gt;</span>
+<span class="co">#&gt;  1     360881586 Yakoun River        938.  Z (-132.2671 53.43742 63.25, -132.26…</span>
+<span class="co">#&gt;  2     360881586 Yakoun River         30.9 Z (-132.2761 53.43518 65.5, -132.276…</span>
+<span class="co">#&gt;  3     360881586 Yakoun River         92.8 Z (-132.2754 53.38684 91, -132.2754 …</span>
+<span class="co">#&gt;  4     360881586 Yakoun River        436.  Z (-132.254 53.47959 47.516, -132.25…</span>
+<span class="co">#&gt;  5     360881586 Yakoun River        224.  Z (-132.2703 53.40627 86.245, -132.2…</span>
+<span class="co">#&gt;  6     360881586 Yakoun River         51.8 Z (-132.2643 53.45082 54, -132.2643 …</span>
+<span class="co">#&gt;  7     360881586 Yakoun River         56.4 Z (-132.2524 53.48409 45.503, -132.2…</span>
+<span class="co">#&gt;  8     360881586 Yakoun River        933.  Z (-132.1531 53.5715 14.439, -132.15…</span>
+<span class="co">#&gt;  9     360881586 Yakoun River        295.  Z (-132.2401 53.50416 41.928, -132.2…</span>
+<span class="co">#&gt; 10     360881586 Yakoun River       1195.  Z (-132.2539 53.46113 53, -132.2541 …</span>
+<span class="co">#&gt; # … with 90 more rows</span></code></pre></div>
 <p>Get Yakoun River watershed starting 10km upstream:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></code></pre></div>
