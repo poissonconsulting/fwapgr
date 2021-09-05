@@ -139,3 +139,9 @@ test_that("fwa_collection transform works", {
   expect_identical(nrow(collection), 1L)
   expect_identical(nrow(sf::st_coordinates(sf::st_cast(collection$geometry, "POINT"))), 4L)
 })
+
+test_that("fwa_collection gives informative error invalid collections errors", {
+  collection_id <- "not_a_collection"
+  expect_chk_error(fwa_collection(collection_id),
+                   "API request failed \\[404\\]: Collection not found: not_a_collection")
+})
