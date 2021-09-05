@@ -12,11 +12,15 @@ A tibble.
 \description{
 Get information about the collections.
 }
+\details{
+Deprecated for \code{fwa_collections()}.
+}
 \examples{
 fwa_meta_collections()
 }
 \seealso{
 Other metadata: 
+\code{\link{fwa_collections}()},
 \code{\link{fwa_meta_properties}()}
 }
 \concept{metadata}

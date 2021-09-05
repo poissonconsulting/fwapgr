@@ -31,6 +31,13 @@ which wraps `fwapgr`.
 
 `fwapgr` allows you to perform three types of operation.
 
+Get information about
+[collections](https://www.hillcrestgeo.ca/fwapg/collections.html) or a
+collection’s properties:
+
+-   `fwa_collections()`  
+-   `fwa_meta_properties()`
+
 Query features from
 [collections](https://www.hillcrestgeo.ca/fwapg/collections.html):
 
@@ -45,11 +52,6 @@ Execute spatial
 -   `fwa_watershed_at_measure()`  
 -   `fwa_watershed_hex()`  
 -   `fwa_watershed_stream()`
-
-Get metadata:
-
--   `fwa_meta_collections()`  
--   `fwa_meta_properties()`
 
 ## Installation
 

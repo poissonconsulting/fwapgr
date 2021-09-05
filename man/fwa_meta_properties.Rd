@@ -20,6 +20,7 @@ fwa_meta_properties("whse_basemapping.fwa_stream_networks_sp")
 }
 \seealso{
 Other metadata: 
+\code{\link{fwa_collections}()},
 \code{\link{fwa_meta_collections}()}
 }
 \concept{metadata}
