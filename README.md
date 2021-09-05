@@ -36,12 +36,12 @@ Get information about the
 collection’s properties:
 
 -   `fwa_collections()`  
--   `fwa_collections_properties()`
+-   `fwa_collection_properties()`
 
 Query features from a
 [collection](https://www.hillcrestgeo.ca/fwapg/collections.html):
 
--   `fwa_collection()`
+-   `fwa_query_collection()`
 
 Execute spatial
 [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):

@@ -7,8 +7,8 @@
 #' @family collections
 #' @export
 #' @examples
-#' fwa_collections_properties("whse_basemapping.fwa_stream_networks_sp")
-fwa_collections_properties <- function(collection_id) {
+#' fwa_collection_properties("whse_basemapping.fwa_stream_networks_sp")
+fwa_collection_properties <- function(collection_id) {
   path <- glue("fwapg/collections/{collection_id}")
   query <- list(a = NULL)
 

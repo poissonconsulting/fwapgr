@@ -5,7 +5,7 @@ reference:
   desc: Get information about the collections, a collection's properties or the valid transform functions.
   contents:
   - '`fwa_collections`'
-  - '`fwa_collections_properties`'
+  - '`fwa_collection_properties`'
 - title: Collection
   desc: Query a collection.
   contents:
