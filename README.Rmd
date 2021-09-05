@@ -42,7 +42,7 @@ Get information about the [collections](https://www.hillcrestgeo.ca/fwapg/collec
 
 Query features from a [collection](https://www.hillcrestgeo.ca/fwapg/collections.html):  
 
-* `fwa_collection()`  
+* `fwa_query_collection()`  
 
 Execute spatial [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):  
 

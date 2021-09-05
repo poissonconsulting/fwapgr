@@ -22,9 +22,10 @@ Soft_deprecated for \code{\link[=fwa_collections_properties]{fwa_collections_pro
 fwa_meta_properties("whse_basemapping.fwa_stream_networks_sp")
 }
 \seealso{
-Other metadata: 
+Other collections: 
 \code{\link{fwa_collections_properties}()},
 \code{\link{fwa_collections}()},
+\code{\link{fwa_collection}()},
 \code{\link{fwa_meta_collections}()}
 }
-\concept{metadata}
+\concept{collections}

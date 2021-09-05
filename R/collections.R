@@ -3,7 +3,7 @@
 #' Get information about the collections.
 #'
 #' @return A tibble.
-#' @family metadata
+#' @family collections
 #' @export
 #' @examples
 #' fwa_collections()

@@ -19,9 +19,10 @@ Deprecated for \code{fwa_collections()}.
 fwa_meta_collections()
 }
 \seealso{
-Other metadata: 
+Other collections: 
 \code{\link{fwa_collections_properties}()},
 \code{\link{fwa_collections}()},
+\code{\link{fwa_collection}()},
 \code{\link{fwa_meta_properties}()}
 }
-\concept{metadata}
+\concept{collections}

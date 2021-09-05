@@ -5,7 +5,7 @@
 #' Deprecated for `fwa_collections()`.
 #'
 #' @return A tibble.
-#' @family metadata
+#' @family collections
 #' @export
 #' @examples
 #' fwa_meta_collections()

@@ -6,7 +6,7 @@
 #'
 #' @inherit internal
 #' @return A tibble.
-#' @family metadata
+#' @family collections
 #' @export
 #' @examples
 #' fwa_meta_properties("whse_basemapping.fwa_stream_networks_sp")

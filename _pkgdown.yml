@@ -9,7 +9,7 @@ reference:
 - title: Collection
   desc: Query a collection.
   contents:
-  - '`fwa_collection`'
+  - '`fwa_query_collection`'
 - title: Spatial Functions
   desc: Spatial functions.
   contents:
@@ -25,3 +25,4 @@ reference:
   contents:
   - '`fwa_meta_collections`'
   - '`fwa_meta_properties`'
+  - '`fwa_collection`'
