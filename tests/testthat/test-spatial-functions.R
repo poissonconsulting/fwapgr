@@ -6,12 +6,6 @@ test_that("API functions work", {
   drm <- 0
   drm2 <- 10000
   properties <- c("area_ha")
-
-  df <- fwa_watershed_at_measure(blk, downstream_route_measure = drm2, properties = properties)
-  expect_s3_class(df, "sf")
-  expect_s3_class(df$geometry, "sfc_POLYGON")
-  expect_identical(nrow(df), 1L)
-  expect_identical(names(df), c(properties, "geometry"))
   #
   # df2 <- fwa_watershed_at_measure(blk, downstream_route_measure = drm2)
   # expect_true(df$area_ha > df2$area_ha)
@@ -30,11 +24,6 @@ test_that("API functions work", {
   expect_s3_class(df, "sf")
   expect_s3_class(df$geometry, "sfc_MULTIPOLYGON")
 
-  ### locate along interval
-  df <- fwa_locate_along_interval(blk, interval_length = 100, start_measure = 10000)
-  expect_s3_class(df, "sf")
-  expect_s3_class(df$geometry, "sfc_POINT")
-  expect_identical(nrow(df), 93L)
 
   ### check transform
   # test multiple args
