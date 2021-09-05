@@ -1,6 +1,6 @@
 Package: fwapgr
 Title: Client for BC Freshwater Atlas fwapg API
-Version: 0.1.0.9005
+Version: 0.1.0.9006
 Authors@R: 
     c(person(given = "Sebastian",
              family = "Dalgarno",
