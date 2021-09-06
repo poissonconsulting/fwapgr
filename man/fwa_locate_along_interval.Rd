@@ -9,7 +9,6 @@ fwa_locate_along_interval(
   interval_length = 100,
   start_measure = 0,
   end_measure = NULL,
-  limit = 10000,
   bbox = NULL,
   properties = NULL,
   transform = NULL,
@@ -24,8 +23,6 @@ fwa_locate_along_interval(
 \item{start_measure}{An integer of the distance in meters upstream from the river mouth to start from.}
 
 \item{end_measure}{An integer of the distance in meters upstream from the river mouth to end at.}
-
-\item{limit}{A positive whole number indicating the maximum number of features to return.}
 
 \item{bbox}{A vector of four numbers indicating bounding box to limit output
 features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}

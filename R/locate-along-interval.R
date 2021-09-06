@@ -12,7 +12,6 @@ fwa_locate_along_interval <- function(blue_line_key,
                                       interval_length = 100,
                                       start_measure = 0,
                                       end_measure = NULL,
-                                      limit = 10000,
                                       bbox = NULL,
                                       properties = NULL,
                                       transform = NULL,
@@ -28,10 +27,10 @@ fwa_locate_along_interval <- function(blue_line_key,
 
   if (!is.null(end_measure)) {
     lim <- ceiling((end_measure - start_measure) / interval_length)
-    if (lim > limit) {
+    if (lim > 10000) {
       chk::abort_chk("`limit` must be greater than ",
                      "(`end_measure` - `start_measure`) / `interval_length` (",
-                     lim, ") not ", limit, ".")
+                     lim, ") not ", 10000L, ".")
     }
   }
 
@@ -44,7 +43,7 @@ fwa_locate_along_interval <- function(blue_line_key,
 
   fwa_function("fwa_locatealonginterval",
                parameters = parameters,
-               limit = limit,
+               limit = 10000L,
                bbox = bbox,
                properties = properties,
                transform = transform,
