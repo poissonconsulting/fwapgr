@@ -41,9 +41,9 @@ fwa_query_collection <- function(collection_id,
   query <- c(
     filter,
     list(
+      sortBy = id,
       limit = limit,
       offset = offset,
-      sortBy = id,
       bbox = bbox,
       properties = properties,
       transform = transform

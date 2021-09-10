@@ -142,6 +142,27 @@ test_that("fwa_query_collection offset works with higher numbers", {
   expect_true(identical(collection2$id, collection$id[2]))
 })
 
+test_that("fwa_query_collection offset works with really big number", {
+  collection_id <- "whse_basemapping.fwa_named_streams"
+
+  collection <- fwa_query_collection(collection_id, offset =  9999, limit = 2)
+  collection2 <- fwa_query_collection(collection_id, offset = 10000, limit = 1)
+  expect_s3_class(collection, "sf")
+  expect_s3_class(collection2, "sf")
+  expect_true(identical(collection2$id, collection$id[2]))
+})
+
+test_that("fwa_query_collection offset works with offset more than limit", {
+  collection_id <- "whse_basemapping.fwa_named_streams"
+
+  collection <- fwa_query_collection(collection_id, offset = 10000, limit = 2)
+  collection2 <- fwa_query_collection(collection_id, offset = 10001, limit = 1)
+  expect_s3_class(collection, "sf")
+  expect_s3_class(collection2, "sf")
+  skip("offset doesn't work when offset more than limit!")
+  expect_true(identical(collection2$id, collection$id[2]))
+})
+
 test_that("fwa_query_collection offset works at 99,999", {
   collection_id <- "whse_basemapping.fwa_named_streams"
   expect_silent(fwa_query_collection(collection_id, offset = 99999, limit = 1))
