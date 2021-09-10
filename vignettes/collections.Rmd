@@ -1,0 +1,33 @@
+---
+title: "The Collections and their Properies"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{The Collections and their Properties}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(fwapgr)
+```
+
+## Collections
+
+```{r}
+collection_id <- fwa_collections()$collection_id
+collection_id
+```
+
+## Collection Properties
+
+```{r}
+names(collection_id) <- collection_id
+lapply(collection_id, fwa_collection_properties)
+```
