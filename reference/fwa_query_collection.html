@@ -97,6 +97,18 @@
         <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/collections.html">The Collections and their Properies</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
@@ -144,6 +156,7 @@
   <span class='va'>collection_id</span>,
   filter <span class='op'>=</span> <span class='cn'>NULL</span>,
   limit <span class='op'>=</span> <span class='fl'>10000</span>,
+  offset <span class='op'>=</span> <span class='fl'>0</span>,
   bbox <span class='op'>=</span> <span class='cn'>NULL</span>,
   properties <span class='op'>=</span> <span class='cn'>NULL</span>,
   transform <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -184,6 +197,10 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
       <th>epsg</th>
       <td><p>A positive whole number of the epsg to transform features to.</p></td>
     </tr>
+    <tr>
+      <th>offset</th>
+      <td><p>A positive whole number indicating the offset of start of returned results.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -215,16 +232,16 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A data frame: 21 × 29</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>    id       blue_line_key blue_line_key_5… downstream_rout… edge_type feature_code</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> 59029299     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>1</span>266.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> 59038020     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>8</span>744.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> 59028661     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>4</span>721.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> 59028739     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>3</span>446.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> 59028963     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>2</span>319.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> 59029083     360<span style='text-decoration: underline;'>879</span>896               11               0       <span style='text-decoration: underline;'>1</span>250 WA24111120  </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> 59052964     360<span style='text-decoration: underline;'>879</span>896              130           <span style='text-decoration: underline;'>17</span>516.      <span style='text-decoration: underline;'>1</span>050 GA24850140  </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> 59040619     360<span style='text-decoration: underline;'>879</span>896               11           <span style='text-decoration: underline;'>10</span>075.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> 59033632     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>6</span>808.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> 59028661     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>4</span>721.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> 59045671     360<span style='text-decoration: underline;'>879</span>896               11           <span style='text-decoration: underline;'>13</span>068.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> 59036446     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>7</span>849.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> 59029299     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>1</span>266.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> 59029455     360<span style='text-decoration: underline;'>879</span>896               11             367.      <span style='text-decoration: underline;'>1</span>250 WA24111120  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> 59031813     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>5</span>029.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> 59032427     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>6</span>466.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> 59033632     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>6</span>808.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> 59034768     360<span style='text-decoration: underline;'>879</span>896               11            <span style='text-decoration: underline;'>7</span>384.      <span style='text-decoration: underline;'>1</span>000 GA24850000  </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 11 more rows, and 23 more variables: feature_source &lt;chr&gt;,</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   fwa_watershed_code &lt;chr&gt;, gnis_id &lt;int&gt;, gnis_name &lt;chr&gt;, gradient &lt;dbl&gt;,</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   left_right_tributary &lt;chr&gt;, length_metre &lt;dbl&gt;, linear_feature_id &lt;int&gt;,</span></span>
