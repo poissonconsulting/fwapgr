@@ -19,6 +19,7 @@ fwa_query_collection(
   collection_id,
   filter = NULL,
   limit = 10000,
+  offset = 0,
   bbox = NULL,
   properties = NULL,
   transform = NULL,
@@ -42,6 +43,8 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 \item{transform}{A character vector with the name of the \href{https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29}{\emph{valid transform}} function followed by the parameter values (e.g. c("ST_Simplify", 100))}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
+
+\item{offset}{A positive whole number indicating the offset of start of returned results.}
 }
 \value{
 An sf object.

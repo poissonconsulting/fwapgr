@@ -12,6 +12,7 @@
 fwa_query_collection <- function(collection_id,
                            filter = NULL,
                            limit = 10000,
+                           offset = 0,
                            bbox = NULL,
                            properties = NULL,
                            transform = NULL,
@@ -21,6 +22,8 @@ fwa_query_collection <- function(collection_id,
   chk_whole_number(limit)
   chk_gt(limit)
   chk_lte(limit, 10000L)
+  chk_whole_number(offset)
+  chk_gte(offset)
   chk_null_or(bbox, vld = vld_numeric)
   chk_null_or(properties, vld = vld_character)
   chk_null_or(transform, vld = vld_character)
@@ -37,6 +40,7 @@ fwa_query_collection <- function(collection_id,
     filter,
     list(
       limit = limit,
+      offset = offset,
       bbox = bbox,
       properties = properties,
       transform = transform
