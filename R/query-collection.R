@@ -34,6 +34,8 @@ fwa_query_collection <- function(collection_id,
   bbox <- format_parameter(bbox)
   transform <- format_parameter(transform)
 
+  id <- fwa_collection_properties(collection_id)$name[1]
+
   path <- glue("fwapg/collections/{collection_id}/items.json")
 
   query <- c(
@@ -41,6 +43,7 @@ fwa_query_collection <- function(collection_id,
     list(
       limit = limit,
       offset = offset,
+      sortBy = id,
       bbox = bbox,
       properties = properties,
       transform = transform

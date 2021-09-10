@@ -139,7 +139,6 @@ test_that("fwa_query_collection offset works with higher numbers", {
   collection2 <- fwa_query_collection(collection_id, offset = 998, limit = 1)
   expect_s3_class(collection, "sf")
   expect_s3_class(collection2, "sf")
-  skip("fwa_query_collection offset often doesn't work with higher numbers")
   expect_true(identical(collection2$id, collection$id[2]))
 })
 
