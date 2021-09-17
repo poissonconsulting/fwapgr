@@ -159,7 +159,6 @@ test_that("fwa_query_collection offset works with offset more than limit", {
   collection2 <- fwa_query_collection(collection_id, offset = 10001, limit = 1)
   expect_s3_class(collection, "sf")
   expect_s3_class(collection2, "sf")
-  skip("offset doesn't work when offset more than limit!")
   expect_true(identical(collection2$id, collection$id[2]))
 })
 
