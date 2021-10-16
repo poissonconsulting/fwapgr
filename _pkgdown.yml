@@ -1,25 +1,25 @@
 destination: docs
 
 reference:
-- title: Information
+- title: Get Information on Collections
   desc: Get information about the collections, a collection's properties or the valid transform functions.
   contents:
   - '`fwa_collections`'
   - '`fwa_collection_properties`'
-- title: Collection
+- title: Query a Collection
   desc: Query a collection.
   contents:
   - '`fwa_query_collection`'
-- title: Spatial Functions
-  desc: Spatial functions.
+- title: Execute Spatial Functions
+  desc: Execute spatial functions.
   contents:
-  - '`fwa_hydroshed`'
   - '`fwa_index_point`'
   - '`fwa_locate_along`'
   - '`fwa_locate_along_interval`'
   - '`fwa_watershed_at_measure`'
   - '`fwa_watershed_hex`'
   - '`fwa_watershed_stream`'
+  - '`hydroshed`'
 - title: Deprecated
   desc: Deprecated functions.
   contents:

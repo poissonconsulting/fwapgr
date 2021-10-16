@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/fwapgr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/fwapgr?branch=master)
@@ -24,6 +24,16 @@ match those available in the API.
 If you are looking for a higher-level R package to query the FWA of BC
 see [`fwatlasbc`](https://github.com/poissonconsulting/fwatlasbc) which
 wraps `fwapgr`.
+
+## Installation
+
+To install the lastest version from
+[GitHub](https://github.com/poissonconsulting/fwapgr)
+
+``` r
+# install.packages("devtools")
+devtools::install_github("poissonconsulting/fwapgr")
+```
 
 ## Introduction
 
@@ -51,22 +61,12 @@ Execute spatial
 [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):
 
 -   [`fwa_index_point()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_index_point.html)
--   [`fwa_hydroshed()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_hydroshed.html)
 -   [`fwa_locate_along()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along.html)
 -   [`fwa_locate_along_interval()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along_interval.html)
 -   [`fwa_watershed_at_measure()`](https://poissonconsulting.github.io/fwapgr/reference/ffwa_watershed_at_measure.html)
 -   [`fwa_watershed_hex()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_hex.html)
 -   [`fwa_watershed_stream()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_stream.html)
-
-## Installation
-
-To install the lastest version from
-[GitHub](https://github.com/poissonconsulting/fwapgr)
-
-``` r
-# install.packages("devtools")
-devtools::install_github("poissonconsulting/fwapgr")
-```
+-   [`hydroshed()`](https://poissonconsulting.github.io/fwapgr/reference/hydroshed.html)
 
 ## Demonstration
 
@@ -130,10 +130,7 @@ Geographics](https://hillcrestgeo.ca/main/). `fwapgr` supersedes the
 archived [`fwabc`](https://github.com/poissonconsulting/fwabc) R package
 which retrieved data via
 [WFS](https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&outputFormat=json&SRSNAME=epsg%3A3005&CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27)
-using [`bcdata`](https://github.com/bcgov/bcdata) 📦.
-
-Hats off to [Simon Norris](https://github.com/smnorris/fwapg) for his
-work on the [fwapg API](https://github.com/smnorris/fwapg)!
+using [`bcdata`](https://github.com/bcgov/bcdata).
 
 ## Contribution
 
@@ -145,7 +142,6 @@ always welcome.
 
 ## Code of Conduct
 
-Please note that the fwapgr project is released with a [Contributor Code
-of
+Please note that `fwapgr` is released with a [Contributor Code of
 Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
