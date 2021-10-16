@@ -1,8 +1,8 @@
-test_that("fwa_hydroshed works", {
+test_that("hydroshed works", {
   x <- -124.6
   y <- 54.8
 
-  sf <- fwa_hydroshed(x = x, y = y)
+  sf <- hydroshed(x = x, y = y)
 
   expect_s3_class(sf, "sf")
   expect_s3_class(sf, "tbl_df")

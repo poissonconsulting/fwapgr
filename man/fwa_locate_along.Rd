@@ -41,11 +41,11 @@ fwa_locate_along(356308001, downstream_route_measure = 10000)
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html}{API documentation}
 
 Other functions: 
-\code{\link{fwa_hydroshed}()},
 \code{\link{fwa_index_point}()},
 \code{\link{fwa_locate_along_interval}()},
 \code{\link{fwa_watershed_at_measure}()},
 \code{\link{fwa_watershed_hex}()},
-\code{\link{fwa_watershed_stream}()}
+\code{\link{fwa_watershed_stream}()},
+\code{\link{hydroshed}()}
 }
 \concept{functions}

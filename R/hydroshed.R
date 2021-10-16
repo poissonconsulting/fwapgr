@@ -1,6 +1,7 @@
-#' Freshwater Atlas Hydroshed
+#' Hydroshed
 #'
-#' Gets the hydroshed polygon for any point.
+#' Gets aggregated boundary of all [hydroshed](https://www.hydrosheds.org)
+#' polygons upstream of the provided location.
 #'
 #' @inherit internal
 #' @family functions
@@ -8,8 +9,8 @@
 #'
 #' @export
 #' @examples
-#' fwa_hydroshed(x = -132.26, y = 53.36)
-fwa_hydroshed <- function(x, y,
+#' hydroshed(x = -132.26, y = 53.36)
+hydroshed <- function(x, y,
                           srid = 4326,
                           bbox = NULL,
                           properties = NULL,

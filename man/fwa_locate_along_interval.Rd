@@ -46,11 +46,11 @@ fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)
 \href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html}{API documentation}
 
 Other functions: 
-\code{\link{fwa_hydroshed}()},
 \code{\link{fwa_index_point}()},
 \code{\link{fwa_locate_along}()},
 \code{\link{fwa_watershed_at_measure}()},
 \code{\link{fwa_watershed_hex}()},
-\code{\link{fwa_watershed_stream}()}
+\code{\link{fwa_watershed_stream}()},
+\code{\link{hydroshed}()}
 }
 \concept{functions}
