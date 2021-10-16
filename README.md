@@ -121,16 +121,13 @@ ggplot2::ggplot() +
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
-## Credit and Inspiration
+## Creditation
 
-`fwapgr` uses [fwapg API](https://www.hillcrestgeo.ca/fwapg/index.html)
-which is hosted and created by [Simon
+`fwapgr` relies on [fwapg
+API](https://www.hillcrestgeo.ca/fwapg/index.html) which is created,
+maintained and hosted by [Simon
 Norris](https://github.com/smnorris/fwapg) at [Hillcrest
-Geographics](https://hillcrestgeo.ca/main/). `fwapgr` supersedes the
-archived [`fwabc`](https://github.com/poissonconsulting/fwabc) R package
-which retrieved data via
-[WFS](https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&outputFormat=json&SRSNAME=epsg%3A3005&CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27)
-using [`bcdata`](https://github.com/bcgov/bcdata).
+Geographics](https://hillcrestgeo.ca/main/).
 
 ## Contribution
 
@@ -140,7 +137,7 @@ Please report any
 [Pull requests](https://github.com/poissonconsulting/fwapgr/pulls) are
 always welcome.
 
-## Code of Conduct
+### Code of Conduct
 
 Please note that `fwapgr` is released with a [Contributor Code of
 Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
