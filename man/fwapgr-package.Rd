@@ -8,13 +8,11 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Client for fwapg, a PostgreSQL database and web API for BC
-    Freshwater Atlas data.
+Client for fwapg, a PostgreSQL database and web API for BC Freshwater Atlas data.
 
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Client for fwapg, a PostgreSQL database and web API for BC
-    Freshwater Atlas data.
+Client for fwapg, a PostgreSQL database and web API for BC Freshwater Atlas data.
 }
 \seealso{
 Useful links:

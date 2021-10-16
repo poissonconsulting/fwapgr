@@ -46,12 +46,13 @@ Query features from a
 Execute spatial
 [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):
 
--   `fwa_index_point()`  
--   `fwa_locate_along()`
--   `fwa_locate_along_interval()`
--   `fwa_watershed_at_measure()`  
--   `fwa_watershed_hex()`  
--   `fwa_watershed_stream()`
+-   [`fwa_index_point()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_index_point.html)
+-   [`fwa_locate_along()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along.html)
+-   [`fwa_locate_along_interval()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along_interval.html)
+-   [`fwa_watershed_at_measure()`](https://poissonconsulting.github.io/fwapgr/reference/ffwa_watershed_at_measure.html)
+-   [`fwa_watershed_hex()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_hex.html)
+-   [`fwa_watershed_stream()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_stream.html)
+-   [`fwa_hydroshed()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_hydroshed.html)
 
 ## Installation
 
@@ -65,32 +66,32 @@ devtools::install_github("poissonconsulting/fwapgr")
 
 ## Demonstration
 
-Get Yakoun River stream from
-‘whse\_basemapping.fwa\_stream\_networks\_sp’ collection:
+Get Yakoun River stream from ‘whse_basemapping.fwa_stream_networks_sp’
+collection:
 
 ``` r
 yakoun <- fwapgr::fwa_collection("whse_basemapping.fwa_stream_networks_sp", filter = list(gnis_name = "Yakoun River"))
 yakoun[c("blue_line_key", "gnis_name", "length_metre")]
-#> Simple feature collection with 100 features and 3 fields
+#> Simple feature collection with 129 features and 3 fields
 #> Geometry type: LINESTRING
 #> Dimension:     XYZ
-#> Bounding box:  xmin: -132.2789 ymin: 53.34324 xmax: -132.1304 ymax: 53.65705
+#> Bounding box:  xmin: -132.2789 ymin: 53.34324 xmax: -132.1283 ymax: 53.65705
 #> z_range:       zmin: 1 zmax: 99
 #> Geodetic CRS:  WGS 84
-#> # A data frame: 100 × 4
+#> # A data frame: 129 × 4
 #>    blue_line_key gnis_name    length_metre                              geometry
 #>            <int> <chr>               <dbl>                      <LINESTRING [°]>
-#>  1     360881586 Yakoun River        938.  Z (-132.2671 53.43742 63.25, -132.26…
-#>  2     360881586 Yakoun River         30.9 Z (-132.2761 53.43518 65.5, -132.276…
-#>  3     360881586 Yakoun River         92.8 Z (-132.2754 53.38684 91, -132.2754 …
-#>  4     360881586 Yakoun River        436.  Z (-132.254 53.47959 47.516, -132.25…
-#>  5     360881586 Yakoun River        224.  Z (-132.2703 53.40627 86.245, -132.2…
-#>  6     360881586 Yakoun River         51.8 Z (-132.2643 53.45082 54, -132.2643 …
-#>  7     360881586 Yakoun River         56.4 Z (-132.2524 53.48409 45.503, -132.2…
-#>  8     360881586 Yakoun River        933.  Z (-132.1531 53.5715 14.439, -132.15…
-#>  9     360881586 Yakoun River        295.  Z (-132.2401 53.50416 41.928, -132.2…
-#> 10     360881586 Yakoun River       1195.  Z (-132.2539 53.46113 53, -132.2541 …
-#> # … with 90 more rows
+#>  1     360881586 Yakoun River       1808.  Z (-132.206 53.65705 1, -132.2042 53…
+#>  2     360881586 Yakoun River        500.  Z (-132.204 53.64188 7, -132.2041 53…
+#>  3     360881586 Yakoun River         34.3 Z (-132.2088 53.63862 7, -132.2093 5…
+#>  4     360881586 Yakoun River       1619.  Z (-132.2093 53.63859 7, -132.2107 5…
+#>  5     360881586 Yakoun River       2816.  Z (-132.2076 53.63039 7.367, -132.20…
+#>  6     360881586 Yakoun River       1268.  Z (-132.2071 53.61951 7.367, -132.20…
+#>  7     360881586 Yakoun River        231.  Z (-132.2122 53.61336 7.367, -132.21…
+#>  8     360881586 Yakoun River       1092.  Z (-132.2146 53.61189 8, -132.2154 5…
+#>  9     360881586 Yakoun River        282.  Z (-132.2063 53.605 8.062, -132.2066…
+#> 10     360881586 Yakoun River        851.  Z (-132.208 53.60271 8.494, -132.207…
+#> # … with 119 more rows
 ```
 
 Get Yakoun River watershed starting 10km upstream:
