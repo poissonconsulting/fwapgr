@@ -34,9 +34,6 @@
     <loc>/reference/fwa_collections.html</loc>
   </url>
   <url>
-    <loc>/reference/fwa_hydroshed.html</loc>
-  </url>
-  <url>
     <loc>/reference/fwa_index_point.html</loc>
   </url>
   <url>
@@ -59,6 +56,9 @@
   </url>
   <url>
     <loc>/reference/fwapgr-package.html</loc>
+  </url>
+  <url>
+    <loc>/reference/hydroshed.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>

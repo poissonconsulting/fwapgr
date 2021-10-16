@@ -41,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9008</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9009</span>
       </span>
     </div>
 
@@ -92,6 +92,14 @@
 
 <p><code>fwapgr</code> is an R package that uses the <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg API</a> to query the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater" class="external-link">Freshwater Atlas</a> (FWA) of British Columbia (BC). The functions and arguments in <code>fwapgr</code> match those available in the API.</p>
 <p>If you are looking for a higher-level R package to query the FWA of BC see <a href="https://github.com/poissonconsulting/fwatlasbc" class="external-link"><code>fwatlasbc</code></a> which wraps <code>fwapgr</code>.</p>
+<div id="installation" class="section level2">
+<h2>Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>To install the lastest version from <a href="https://github.com/poissonconsulting/fwapgr" class="external-link">GitHub</a></p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"poissonconsulting/fwapgr"</span><span class="op">)</span></code></pre></div>
+</div>
 <div id="introduction" class="section level2">
 <h2>Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
@@ -121,22 +129,14 @@
 <p>Execute spatial <a href="https://www.hillcrestgeo.ca/fwapg/functions.html" class="external-link">functions</a>:</p>
 <ul>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_index_point.html" class="external-link"><code>fwa_index_point()</code></a></li>
-<li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_hydroshed.html" class="external-link"><code>fwa_hydroshed()</code></a></li>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along.html" class="external-link"><code>fwa_locate_along()</code></a></li>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along_interval.html" class="external-link"><code>fwa_locate_along_interval()</code></a></li>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/ffwa_watershed_at_measure.html" class="external-link"><code>fwa_watershed_at_measure()</code></a></li>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_hex.html" class="external-link"><code>fwa_watershed_hex()</code></a></li>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_stream.html" class="external-link"><code>fwa_watershed_stream()</code></a></li>
+<li><a href="https://poissonconsulting.github.io/fwapgr/reference/hydroshed.html" class="external-link"><code>hydroshed()</code></a></li>
 </ul>
 </div>
-</div>
-<div id="installation" class="section level2">
-<h2>Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
-</h2>
-<p>To install the lastest version from <a href="https://github.com/poissonconsulting/fwapgr" class="external-link">GitHub</a></p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"poissonconsulting/fwapgr"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="demonstration" class="section level2">
 <h2>Demonstration<a class="anchor" aria-label="anchor" href="#demonstration"></a>
@@ -186,8 +186,7 @@
 <div id="credit-and-inspiration" class="section level2">
 <h2>Credit and Inspiration<a class="anchor" aria-label="anchor" href="#credit-and-inspiration"></a>
 </h2>
-<p><code>fwapgr</code> uses <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg API</a> which is hosted and created by <a href="https://github.com/smnorris/fwapg" class="external-link">Simon Norris</a> at <a href="https://hillcrestgeo.ca/main/" class="external-link">Hillcrest Geographics</a>. <code>fwapgr</code> supersedes the archived <a href="https://github.com/poissonconsulting/fwabc" class="external-link"><code>fwabc</code></a> R package which retrieved data via <a href="https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&amp;version=2.0.0&amp;request=GetFeature&amp;typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&amp;outputFormat=json&amp;SRSNAME=epsg%3A3005&amp;CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27" class="external-link">WFS</a> using <a href="https://github.com/bcgov/bcdata" class="external-link"><code>bcdata</code></a> 📦.</p>
-<p>Hats off to <a href="https://github.com/smnorris/fwapg" class="external-link">Simon Norris</a> for his work on the <a href="https://github.com/smnorris/fwapg" class="external-link">fwapg API</a>!</p>
+<p><code>fwapgr</code> uses <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg API</a> which is hosted and created by <a href="https://github.com/smnorris/fwapg" class="external-link">Simon Norris</a> at <a href="https://hillcrestgeo.ca/main/" class="external-link">Hillcrest Geographics</a>. <code>fwapgr</code> supersedes the archived <a href="https://github.com/poissonconsulting/fwabc" class="external-link"><code>fwabc</code></a> R package which retrieved data via <a href="https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&amp;version=2.0.0&amp;request=GetFeature&amp;typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&amp;outputFormat=json&amp;SRSNAME=epsg%3A3005&amp;CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27" class="external-link">WFS</a> using <a href="https://github.com/bcgov/bcdata" class="external-link"><code>bcdata</code></a>.</p>
 </div>
 <div id="contribution" class="section level2">
 <h2>Contribution<a class="anchor" aria-label="anchor" href="#contribution"></a>
@@ -198,7 +197,7 @@
 <div id="code-of-conduct" class="section level2">
 <h2>Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
 </h2>
-<p>Please note that the fwapgr project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Please note that <code>fwapgr</code> is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
@@ -241,7 +240,7 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
 <li><a href="https://github.com/poissonconsulting/fwapgr/actions" class="external-link"><img src="https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://codecov.io/gh/poissonconsulting/fwapgr?branch=master" class="external-link"><img src="https://codecov.io/gh/poissonconsulting/fwapgr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://opensource.org/licenses/MIT" class="external-link"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
