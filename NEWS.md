@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# fwapgr 0.1.0.9009
+
+- Renamed `fwa_hydroshed()` to `hydroshed()`.
+
+
 # fwapgr 0.1.0.9008
 
 - Remove limit argument from `fwa_locate_along_interval()` as specified by start_measure, end_measure and interval_length.
