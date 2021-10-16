@@ -56,7 +56,7 @@ Execute spatial
 
 ## Installation
 
-To install the developmental version from
+To install the lastest version from
 [GitHub](https://github.com/poissonconsulting/fwapgr)
 
 ``` r

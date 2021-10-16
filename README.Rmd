@@ -56,7 +56,7 @@ Execute spatial [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):
 
 ## Installation
 
-To install the developmental version from [GitHub](https://github.com/poissonconsulting/fwapgr)
+To install the lastest version from [GitHub](https://github.com/poissonconsulting/fwapgr)
 ```{r, eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("poissonconsulting/fwapgr")
