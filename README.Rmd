@@ -69,16 +69,16 @@ Execute spatial [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):
 
 ## Demonstration
 
-Get Yakoun River stream from `whse_basemapping.fwa_stream_networks_sp` collection:
+Get Sangan River from `whse_basemapping.fwa_stream_networks_sp` collection:
 ```{r}
 coll <- "whse_basemapping.fwa_stream_networks_sp"
-yak <- fwapgr::fwa_collection(coll, filter = list(gnis_name = "Yakoun River"))
-yak
+river <- fwapgr::fwa_collection(coll, filter = list(gnis_name = "Sangan River"))
+river
 ```
 
 Get simplified Yakoun River watershed starting 10km upstream:
 ```{r}
-blk <- yak$blue_line_key[1]
+blk <- river$blue_line_key[1]
 wshed <- fwapgr::fwa_watershed_at_measure(blk, downstream_route_measure = 10000,
                                           transform = c("ST_Simplify", 2000))
 ```
@@ -86,7 +86,7 @@ wshed <- fwapgr::fwa_watershed_at_measure(blk, downstream_route_measure = 10000,
 ```{r dpi=300, fig.width=7, fig.height=7}
 ggplot2::ggplot() +
   ggplot2::geom_sf(data = wshed, lwd = 0.15, fill = "steelblue", alpha = 0.5) +
-  ggplot2::geom_sf(data = yak, lwd = 0.15)
+  ggplot2::geom_sf(data = river, lwd = 0.15)
 ```
 
 ## Creditation

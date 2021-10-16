@@ -70,33 +70,33 @@ Execute spatial
 
 ## Demonstration
 
-Get Yakoun River stream from `whse_basemapping.fwa_stream_networks_sp`
+Get Sangan River from `whse_basemapping.fwa_stream_networks_sp`
 collection:
 
 ``` r
 coll <- "whse_basemapping.fwa_stream_networks_sp"
-yak <- fwapgr::fwa_collection(coll, filter = list(gnis_name = "Yakoun River"))
-yak
-#> Simple feature collection with 129 features and 28 fields
+river <- fwapgr::fwa_collection(coll, filter = list(gnis_name = "Sangan River"))
+river
+#> Simple feature collection with 21 features and 28 fields
 #> Geometry type: LINESTRING
 #> Dimension:     XYZ
-#> Bounding box:  xmin: -132.2789 ymin: 53.34324 xmax: -132.1283 ymax: 53.65705
-#> z_range:       zmin: 1 zmax: 99
+#> Bounding box:  xmin: -131.9972 ymin: 53.94994 xmax: -131.9168 ymax: 54.0332
+#> z_range:       zmin: 1 zmax: 67
 #> Geodetic CRS:  WGS 84
-#> # A data frame: 129 × 29
+#> # A data frame: 21 × 29
 #>    id       blue_line_key blue_line_key_5… downstream_rout… edge_type feature_code
 #>    <chr>            <int>            <int>            <dbl>     <int> <chr>       
-#>  1 59099140     360881586             1551               0       1250 WA24111120  
-#>  2 59099416     360881586             1551            1808.      1000 GA24850000  
-#>  3 59099419     360881586             1551            2307.      1250 WA24111120  
-#>  4 59100176     360881586             1551            2342.      1250 WA24111120  
-#>  5 59101376     360881586             1551            3960.      1250 WA24111120  
-#>  6 59102089     360881586             1551            6776.      1250 WA24111120  
-#>  7 59102227     360881586             1551            8044.      1250 WA24111120  
-#>  8 59102987     360881586             1551            8275.      1250 WA24111120  
-#>  9 59103235     360881586             1551            9367.      1250 WA24111120  
-#> 10 59103900     360881586             1551            9649.      1250 WA24111120  
-#> # … with 119 more rows, and 23 more variables: feature_source <chr>,
+#>  1 59028661     360879896               11            4721.      1000 GA24850000  
+#>  2 59028739     360879896               11            3446.      1000 GA24850000  
+#>  3 59028963     360879896               11            2319.      1000 GA24850000  
+#>  4 59029083     360879896               11               0       1250 WA24111120  
+#>  5 59029299     360879896               11            1266.      1000 GA24850000  
+#>  6 59029455     360879896               11             367.      1250 WA24111120  
+#>  7 59031813     360879896               11            5029.      1000 GA24850000  
+#>  8 59032427     360879896               11            6466.      1000 GA24850000  
+#>  9 59033632     360879896               11            6808.      1000 GA24850000  
+#> 10 59034768     360879896               11            7384.      1000 GA24850000  
+#> # … with 11 more rows, and 23 more variables: feature_source <chr>,
 #> #   fwa_watershed_code <chr>, gnis_id <int>, gnis_name <chr>, gradient <dbl>,
 #> #   left_right_tributary <chr>, length_metre <dbl>, linear_feature_id <int>,
 #> #   local_watershed_code <chr>, localcode_ltree <chr>, stream_magnitude <int>,
@@ -108,7 +108,7 @@ yak
 Get simplified Yakoun River watershed starting 10km upstream:
 
 ``` r
-blk <- yak$blue_line_key[1]
+blk <- river$blue_line_key[1]
 wshed <- fwapgr::fwa_watershed_at_measure(blk, downstream_route_measure = 10000,
                                           transform = c("ST_Simplify", 2000))
 ```
@@ -116,7 +116,7 @@ wshed <- fwapgr::fwa_watershed_at_measure(blk, downstream_route_measure = 10000,
 ``` r
 ggplot2::ggplot() +
   ggplot2::geom_sf(data = wshed, lwd = 0.15, fill = "steelblue", alpha = 0.5) +
-  ggplot2::geom_sf(data = yak, lwd = 0.15)
+  ggplot2::geom_sf(data = river, lwd = 0.15)
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
