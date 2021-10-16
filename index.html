@@ -90,33 +90,45 @@
 </h1></div>
 <!-- badges: start -->
 
-<p><code>fwapgr</code> is an R client for the <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg pg-featureserv web API</a> used to get data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater" class="external-link">B.C. Freshwater Atlas</a>. Data are returned as <a href="https://github.com/r-spatial/sf" class="external-link">simple features</a>. Functions and arguments exactly match those available in the API.</p>
-<p>If you are looking for a user-friendly R 📦 for retrieving data from the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater" class="external-link">B.C. Freshwater Atlas</a> please see <a href="https://github.com/poissonconsulting/fwatlasbc" class="external-link">fwatlasbc</a> which wraps <code>fwapgr</code>.</p>
+<p><code>fwapgr</code> is an R package that uses the <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg API</a> to query the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater" class="external-link">Freshwater Atlas</a> (FWA) of British Columbia (BC). The functions and arguments in <code>fwapgr</code> match those available in the API.</p>
+<p>If you are looking for a higher-level R package to query the FWA of BC see <a href="https://github.com/poissonconsulting/fwatlasbc" class="external-link"><code>fwatlasbc</code></a> which wraps <code>fwapgr</code>.</p>
 <div id="introduction" class="section level2">
 <h2>Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p><code>fwapgr</code> allows you to perform three types of operation.</p>
+<div id="get-information-on-collections" class="section level3">
+<h3>Get Information on Collections<a class="anchor" aria-label="anchor" href="#get-information-on-collections"></a>
+</h3>
 <p>Get information about the <a href="https://www.hillcrestgeo.ca/fwapg/collections.html" class="external-link">collections</a> or a collection’s properties:</p>
 <ul>
 <li>
-<code><a href="reference/fwa_collections.html">fwa_collections()</a></code><br>
+<a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_collections.html" class="external-link"><code>fwa_collections()</code></a><br>
 </li>
-<li><code><a href="reference/fwa_collection_properties.html">fwa_collection_properties()</a></code></li>
+<li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_collection_properties.html" class="external-link"><code>fwa_collection_properties()</code></a></li>
 </ul>
+</div>
+<div id="query-a-collection" class="section level3">
+<h3>Query a Collection<a class="anchor" aria-label="anchor" href="#query-a-collection"></a>
+</h3>
 <p>Query features from a <a href="https://www.hillcrestgeo.ca/fwapg/collections.html" class="external-link">collection</a>:</p>
 <ul>
-<li><code><a href="reference/fwa_query_collection.html">fwa_query_collection()</a></code></li>
+<li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_query_collection.html" class="external-link"><code>fwa_query_collection()</code></a></li>
 </ul>
+</div>
+<div id="execute-spatial-functions" class="section level3">
+<h3>Execute Spatial Functions<a class="anchor" aria-label="anchor" href="#execute-spatial-functions"></a>
+</h3>
 <p>Execute spatial <a href="https://www.hillcrestgeo.ca/fwapg/functions.html" class="external-link">functions</a>:</p>
 <ul>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_index_point.html" class="external-link"><code>fwa_index_point()</code></a></li>
+<li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_hydroshed.html" class="external-link"><code>fwa_hydroshed()</code></a></li>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along.html" class="external-link"><code>fwa_locate_along()</code></a></li>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along_interval.html" class="external-link"><code>fwa_locate_along_interval()</code></a></li>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/ffwa_watershed_at_measure.html" class="external-link"><code>fwa_watershed_at_measure()</code></a></li>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_hex.html" class="external-link"><code>fwa_watershed_hex()</code></a></li>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_stream.html" class="external-link"><code>fwa_watershed_stream()</code></a></li>
-<li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_hydroshed.html" class="external-link"><code>fwa_hydroshed()</code></a></li>
 </ul>
+</div>
 </div>
 <div id="installation" class="section level2">
 <h2>Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -129,48 +141,53 @@
 <div id="demonstration" class="section level2">
 <h2>Demonstration<a class="anchor" aria-label="anchor" href="#demonstration"></a>
 </h2>
-<p>Get Yakoun River stream from ‘whse_basemapping.fwa_stream_networks_sp’ collection:</p>
+<p>Get Yakoun River stream from <code>whse_basemapping.fwa_stream_networks_sp</code> collection:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">yakoun</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_query_collection.html">fwa_collection</a></span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Yakoun River"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">yakoun</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue_line_key"</span>, <span class="st">"gnis_name"</span>, <span class="st">"length_metre"</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt; Simple feature collection with 129 features and 3 fields</span>
+<code class="sourceCode R"><span class="va">coll</span> <span class="op">&lt;-</span> <span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>
+<span class="va">yak</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_query_collection.html">fwa_collection</a></span><span class="op">(</span><span class="va">coll</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Yakoun River"</span><span class="op">)</span><span class="op">)</span>
+<span class="va">yak</span>
+<span class="co">#&gt; Simple feature collection with 129 features and 28 fields</span>
 <span class="co">#&gt; Geometry type: LINESTRING</span>
 <span class="co">#&gt; Dimension:     XYZ</span>
 <span class="co">#&gt; Bounding box:  xmin: -132.2789 ymin: 53.34324 xmax: -132.1283 ymax: 53.65705</span>
 <span class="co">#&gt; z_range:       zmin: 1 zmax: 99</span>
 <span class="co">#&gt; Geodetic CRS:  WGS 84</span>
-<span class="co">#&gt; # A data frame: 129 × 4</span>
-<span class="co">#&gt;    blue_line_key gnis_name    length_metre                              geometry</span>
-<span class="co">#&gt;            &lt;int&gt; &lt;chr&gt;               &lt;dbl&gt;                      &lt;LINESTRING [°]&gt;</span>
-<span class="co">#&gt;  1     360881586 Yakoun River       1808.  Z (-132.206 53.65705 1, -132.2042 53…</span>
-<span class="co">#&gt;  2     360881586 Yakoun River        500.  Z (-132.204 53.64188 7, -132.2041 53…</span>
-<span class="co">#&gt;  3     360881586 Yakoun River         34.3 Z (-132.2088 53.63862 7, -132.2093 5…</span>
-<span class="co">#&gt;  4     360881586 Yakoun River       1619.  Z (-132.2093 53.63859 7, -132.2107 5…</span>
-<span class="co">#&gt;  5     360881586 Yakoun River       2816.  Z (-132.2076 53.63039 7.367, -132.20…</span>
-<span class="co">#&gt;  6     360881586 Yakoun River       1268.  Z (-132.2071 53.61951 7.367, -132.20…</span>
-<span class="co">#&gt;  7     360881586 Yakoun River        231.  Z (-132.2122 53.61336 7.367, -132.21…</span>
-<span class="co">#&gt;  8     360881586 Yakoun River       1092.  Z (-132.2146 53.61189 8, -132.2154 5…</span>
-<span class="co">#&gt;  9     360881586 Yakoun River        282.  Z (-132.2063 53.605 8.062, -132.2066…</span>
-<span class="co">#&gt; 10     360881586 Yakoun River        851.  Z (-132.208 53.60271 8.494, -132.207…</span>
-<span class="co">#&gt; # … with 119 more rows</span></code></pre></div>
-<p>Get Yakoun River watershed starting 10km upstream:</p>
+<span class="co">#&gt; # A data frame: 129 × 29</span>
+<span class="co">#&gt;    id       blue_line_key blue_line_key_5… downstream_rout… edge_type feature_code</span>
+<span class="co">#&gt;    &lt;chr&gt;            &lt;int&gt;            &lt;int&gt;            &lt;dbl&gt;     &lt;int&gt; &lt;chr&gt;       </span>
+<span class="co">#&gt;  1 59099140     360881586             1551               0       1250 WA24111120  </span>
+<span class="co">#&gt;  2 59099416     360881586             1551            1808.      1000 GA24850000  </span>
+<span class="co">#&gt;  3 59099419     360881586             1551            2307.      1250 WA24111120  </span>
+<span class="co">#&gt;  4 59100176     360881586             1551            2342.      1250 WA24111120  </span>
+<span class="co">#&gt;  5 59101376     360881586             1551            3960.      1250 WA24111120  </span>
+<span class="co">#&gt;  6 59102089     360881586             1551            6776.      1250 WA24111120  </span>
+<span class="co">#&gt;  7 59102227     360881586             1551            8044.      1250 WA24111120  </span>
+<span class="co">#&gt;  8 59102987     360881586             1551            8275.      1250 WA24111120  </span>
+<span class="co">#&gt;  9 59103235     360881586             1551            9367.      1250 WA24111120  </span>
+<span class="co">#&gt; 10 59103900     360881586             1551            9649.      1250 WA24111120  </span>
+<span class="co">#&gt; # … with 119 more rows, and 23 more variables: feature_source &lt;chr&gt;,</span>
+<span class="co">#&gt; #   fwa_watershed_code &lt;chr&gt;, gnis_id &lt;int&gt;, gnis_name &lt;chr&gt;, gradient &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   left_right_tributary &lt;chr&gt;, length_metre &lt;dbl&gt;, linear_feature_id &lt;int&gt;,</span>
+<span class="co">#&gt; #   local_watershed_code &lt;chr&gt;, localcode_ltree &lt;chr&gt;, stream_magnitude &lt;int&gt;,</span>
+<span class="co">#&gt; #   stream_order &lt;int&gt;, upstream_area_ha &lt;chr&gt;, upstream_route_measure &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   waterbody_key &lt;int&gt;, watershed_code_50k &lt;chr&gt;, watershed_group_code &lt;chr&gt;,</span>
+<span class="co">#&gt; #   watershed_group_code_50k &lt;chr&gt;, watershed_group_id &lt;int&gt;, …</span></code></pre></div>
+<p>Get simplified Yakoun River watershed starting 10km upstream:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></code></pre></div>
-<p>Use <code>transform</code> argument to simplify polygons. See valid transformation functions <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29" class="external-link">here</a></p>
+<code class="sourceCode R"><span class="va">blk</span> <span class="op">&lt;-</span> <span class="va">yak</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>
+<span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="va">blk</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span>,
+                                          transform <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ST_Simplify"</span>, <span class="fl">2000</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">wshed_simple</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">yakoun</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">)</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span>, transform <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ST_Simplify"</span>, <span class="fl">2000</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed_simple</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, fill <span class="op">=</span> <span class="st">"red"</span>, alpha <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, fill <span class="op">=</span> <span class="st">"steelblue"</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">yakoun</span>, lwd <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-6-1.png" width="100%"></p>
+  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">yak</span>, lwd <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-5-1.png" width="100%"></p>
 </div>
 <div id="credit-and-inspiration" class="section level2">
 <h2>Credit and Inspiration<a class="anchor" aria-label="anchor" href="#credit-and-inspiration"></a>
 </h2>
-<p><code>fwapgr</code> is built on the <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg pg-featureserv web API</a> hosted and created by <a href="https://github.com/smnorris/fwapg" class="external-link">Simon Norris</a> at <a href="https://hillcrestgeo.ca/main/" class="external-link">Hillcrest Geographics</a>. It supersedes the archived <a href="https://github.com/poissonconsulting/fwabc" class="external-link"><code>fwabc</code></a> 📦 which retrieved data <a href="https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&amp;version=2.0.0&amp;request=GetFeature&amp;typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&amp;outputFormat=json&amp;SRSNAME=epsg%3A3005&amp;CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27" class="external-link">via WFS</a> using the <a href="https://github.com/bcgov/bcdata" class="external-link">bcdata</a> 📦.</p>
-<p>Many thanks to <a href="https://github.com/smnorris/fwapg" class="external-link">Simon Norris</a> for his work on <a href="https://github.com/smnorris/fwapg" class="external-link">fwapg</a> PostgreSQL database and <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">the pg-featureserv web API</a>.</p>
+<p><code>fwapgr</code> uses <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg API</a> which is hosted and created by <a href="https://github.com/smnorris/fwapg" class="external-link">Simon Norris</a> at <a href="https://hillcrestgeo.ca/main/" class="external-link">Hillcrest Geographics</a>. <code>fwapgr</code> supersedes the archived <a href="https://github.com/poissonconsulting/fwabc" class="external-link"><code>fwabc</code></a> R package which retrieved data via <a href="https://openmaps.gov.bc.ca/geo/pub/wfs?service=WFS&amp;version=2.0.0&amp;request=GetFeature&amp;typeName=WHSE_BASEMAPPING.FWA_LAKES_POLY&amp;outputFormat=json&amp;SRSNAME=epsg%3A3005&amp;CQL_FILTER=GNIS_NAME_1=%27Quamichan%20Lake%27" class="external-link">WFS</a> using <a href="https://github.com/bcgov/bcdata" class="external-link"><code>bcdata</code></a> 📦.</p>
+<p>Hats off to <a href="https://github.com/smnorris/fwapg" class="external-link">Simon Norris</a> for his work on the <a href="https://github.com/smnorris/fwapg" class="external-link">fwapg API</a>!</p>
 </div>
 <div id="contribution" class="section level2">
 <h2>Contribution<a class="anchor" aria-label="anchor" href="#contribution"></a>
