@@ -63,7 +63,7 @@ Execute spatial
 -   [`fwa_index_point()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_index_point.html)
 -   [`fwa_locate_along()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along.html)
 -   [`fwa_locate_along_interval()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along_interval.html)
--   [`fwa_watershed_at_measure()`](https://poissonconsulting.github.io/fwapgr/reference/ffwa_watershed_at_measure.html)
+-   [`fwa_watershed_at_measure()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_at_measure.html)
 -   [`fwa_watershed_hex()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_hex.html)
 -   [`fwa_watershed_stream()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_stream.html)
 -   [`hydroshed()`](https://poissonconsulting.github.io/fwapgr/reference/hydroshed.html)
