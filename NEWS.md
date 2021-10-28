@@ -1,5 +1,11 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# fwapgr 0.1.0.9010
+
+- fwagp removed non-FWA WHSE_BASEMAPPING collections.
+- Switch to Sangan River in example
+
+
 # fwapgr 0.1.0.9009
 
 - Renamed `fwa_hydroshed()` to `hydroshed()`.
