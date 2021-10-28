@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9009</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9010</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/poissonconsulting/fwapgr/">
+  <a href="https://github.com/poissonconsulting/fwapgr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -54,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Parameter Descriptions</h1>
-    <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/fwapgr/blob/master/R/pkgtemplate-package.R"><code>R/pkgtemplate-package.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/fwapgr/blob/HEAD/R/pkgtemplate-package.R" class="external-link"><code>R/pkgtemplate-package.R</code></a></small>
     <div class="hidden name"><code>internal.Rd</code></div>
     </div>
 
@@ -63,54 +63,55 @@
     </div>
 
 
+    <div id="ref-sections">
     <div id="arguments">
-    <h2>Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>bbox</th>
-      <td><p>A vector of four numbers indicating bounding box to limit output
-features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
-    </tr><tr><th>blue_line_key</th>
-      <td><p>A positive whole number of the stream blue line key.</p></td>
-    </tr><tr><th>collection_id</th>
-      <td><p>A character string of the collection id.</p></td>
-    </tr><tr><th>downstream_route_measure</th>
-      <td><p>A positive number of the river metre.</p></td>
-    </tr><tr><th>end_measure</th>
-      <td><p>An integer of the distance in meters upstream from the river mouth to end at.</p></td>
-    </tr><tr><th>epsg</th>
-      <td><p>A positive whole number of the epsg to transform features to.</p></td>
-    </tr><tr><th>function_id</th>
-      <td><p>A character string of the function id.</p></td>
-    </tr><tr><th>filter</th>
-      <td><p>A named vector or list of the filter(s) to apply, where the list
+    <h2>Arguments</h2>
+    <dl><dt>bbox</dt>
+<dd><p>A vector of four numbers indicating bounding box to limit output
+features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></dd>
+<dt>blue_line_key</dt>
+<dd><p>A positive whole number of the stream blue line key.</p></dd>
+<dt>collection_id</dt>
+<dd><p>A character string of the collection id.</p></dd>
+<dt>downstream_route_measure</dt>
+<dd><p>A positive number of the river metre.</p></dd>
+<dt>end_measure</dt>
+<dd><p>An integer of the distance in meters upstream from the river mouth to end at.</p></dd>
+<dt>epsg</dt>
+<dd><p>A positive whole number of the epsg to transform features to.</p></dd>
+<dt>function_id</dt>
+<dd><p>A character string of the function id.</p></dd>
+<dt>filter</dt>
+<dd><p>A named vector or list of the filter(s) to apply, where the list
 names correspond to column names and the list values correspond to the desired
-value, e.g. <code>list(gnis_name = "Sangan River")</code>.</p></td>
-    </tr><tr><th>interval_length</th>
-      <td><p>An integer of the interval distance in meters.</p></td>
-    </tr><tr><th>limit</th>
-      <td><p>A positive whole number indicating the maximum number of features to return.</p></td>
-    </tr><tr><th>offset</th>
-      <td><p>A positive whole number indicating the offset of start of returned results.</p></td>
-    </tr><tr><th>parameters</th>
-      <td><p>A named list of the parameters and values for a specific function.</p></td>
-    </tr><tr><th>properties</th>
-      <td><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></td>
-    </tr><tr><th>srid</th>
-      <td><p>A positive whole number of the epsg of the coordinates.</p></td>
-    </tr><tr><th>start_measure</th>
-      <td><p>An integer of the distance in meters upstream from the river mouth to start from.</p></td>
-    </tr><tr><th>tolerance</th>
-      <td><p>A number of the tolerance in m.</p></td>
-    </tr><tr><th>transform</th>
-      <td><p>A character vector with the name of the <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29"><em>valid transform</em></a> function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
-    </tr><tr><th>x</th>
-      <td><p>A number of the x coordinate.</p></td>
-    </tr><tr><th>y</th>
-      <td><p>A number of the y coordinate.</p></td>
-    </tr></table></div>
-
+value, e.g. <code>list(gnis_name = "Sangan River")</code>.</p></dd>
+<dt>interval_length</dt>
+<dd><p>An integer of the interval distance in meters.</p></dd>
+<dt>limit</dt>
+<dd><p>A positive whole number indicating the maximum number of features to return.</p></dd>
+<dt>offset</dt>
+<dd><p>A positive whole number indicating the offset of start of returned results.</p></dd>
+<dt>parameters</dt>
+<dd><p>A named list of the parameters and values for a specific function.</p></dd>
+<dt>properties</dt>
+<dd><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></dd>
+<dt>srid</dt>
+<dd><p>A positive whole number of the epsg of the coordinates.</p></dd>
+<dt>start_measure</dt>
+<dd><p>An integer of the distance in meters upstream from the river mouth to start from.</p></dd>
+<dt>tolerance</dt>
+<dd><p>A number of the tolerance in m.</p></dd>
+<dt>transform</dt>
+<dd><p>A character vector with the name of the <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29" class="external-link"><em>valid transform</em></a> function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></dd>
+<dt>x</dt>
+<dd><p>A number of the x coordinate.</p></dd>
+<dt>y</dt>
+<dd><p>A number of the y coordinate.</p></dd>
+</dl></div>
     <div id="value">
-    <h2>Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    <h2>Value</h2>
     <p>An sf object.</p>
+    </div>
     </div>
 
   </div>

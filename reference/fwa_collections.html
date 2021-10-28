@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9009</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9010</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/poissonconsulting/fwapgr/">
+  <a href="https://github.com/poissonconsulting/fwapgr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -54,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Freshwater Atlas Collections</h1>
-    <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/fwapgr/blob/master/R/collections.R"><code>R/collections.R</code></a>, <a href="https://github.com/poissonconsulting/fwapgr/blob/master/R/meta-collections.R"><code>R/meta-collections.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/fwapgr/blob/HEAD/R/collections.R" class="external-link"><code>R/collections.R</code></a>, <a href="https://github.com/poissonconsulting/fwapgr/blob/HEAD/R/meta-collections.R" class="external-link"><code>R/meta-collections.R</code></a></small>
     <div class="hidden name"><code>fwa_collections.Rd</code></div>
     </div>
 
@@ -66,28 +66,29 @@
 
 <span class="fu">fwa_meta_collections</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 
-
+    <div id="ref-sections">
     <div id="value">
-    <h2>Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    <h2>Value</h2>
     <p>A tibble.</p>
     </div>
     <div id="functions">
-    <h2>Functions<a class="anchor" aria-label="anchor" href="#functions"></a></h2>
+    <h2>Functions</h2>
     
 <ul><li><p><code>fwa_meta_collections</code>: Freshwater Atlas Collections</p>
-<p><a href="https://lifecycle.r-lib.org/articles/stages.html#soft-deprecated"><img src="figures/lifecycle-soft-deprecated.svg" alt="[Soft-deprecated]"></a></p></li>
+<p><a href="https://lifecycle.r-lib.org/articles/stages.html#soft-deprecated" class="external-link"><img src="figures/lifecycle-soft-deprecated.svg" alt="[Soft-deprecated]"></a></p></li>
 </ul></div>
     <div id="see-also">
-    <h2>See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <h2>See also</h2>
     <div class="dont-index"><p>Other collections: 
 <code><a href="fwa_collection_properties.html">fwa_collection_properties</a>()</code>,
 <code><a href="fwa_query_collection.html">fwa_collection</a>()</code></p></div>
     </div>
+    </div>
 
     <div id="examples">
-    <h2>Examples<a class="anchor" aria-label="anchor" href="#examples"></a></h2>
+    <h2>Examples</h2>
     <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">fwa_collections</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 39 × 4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 22 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    collection_id      description        extent$spatial$crs   extent$$bbox links</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;lis&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> hydrosheds.hybas_… Data for table hy… http://www.opengis.… <span style="color: #949494;">&lt;int [4]&gt;</span>    <span style="color: #949494;">&lt;df </span>…</span>
@@ -100,7 +101,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> whse_basemapping.… Data for table wh… http://www.opengis.… <span style="color: #949494;">&lt;int [4]&gt;</span>    <span style="color: #949494;">&lt;df </span>…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> whse_basemapping.… Data for table wh… http://www.opengis.… <span style="color: #949494;">&lt;int [4]&gt;</span>    <span style="color: #949494;">&lt;df </span>…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> whse_basemapping.… Data for table wh… http://www.opengis.… <span style="color: #949494;">&lt;int [4]&gt;</span>    <span style="color: #949494;">&lt;df </span>…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 29 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 12 more rows</span></span>
 </code></pre></div>
     </div>
   </div>

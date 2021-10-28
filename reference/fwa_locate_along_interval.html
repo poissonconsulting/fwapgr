@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9009</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9010</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/poissonconsulting/fwapgr/">
+  <a href="https://github.com/poissonconsulting/fwapgr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -54,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Freshwater Atlas Locate Along Interval</h1>
-    <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/fwapgr/blob/master/R/locate-along-interval.R"><code>R/locate-along-interval.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/fwapgr/blob/HEAD/R/locate-along-interval.R" class="external-link"><code>R/locate-along-interval.R</code></a></small>
     <div class="hidden name"><code>fwa_locate_along_interval.Rd</code></div>
     </div>
 
@@ -73,34 +73,34 @@
   epsg <span class="op">=</span> <span class="fl">4326</span>
 <span class="op">)</span></code></pre></div>
 
+    <div id="ref-sections">
     <div id="arguments">
-    <h2>Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>blue_line_key</th>
-      <td><p>A positive whole number of the stream blue line key.</p></td>
-    </tr><tr><th>interval_length</th>
-      <td><p>An integer of the interval distance in meters.</p></td>
-    </tr><tr><th>start_measure</th>
-      <td><p>An integer of the distance in meters upstream from the river mouth to start from.</p></td>
-    </tr><tr><th>end_measure</th>
-      <td><p>An integer of the distance in meters upstream from the river mouth to end at.</p></td>
-    </tr><tr><th>bbox</th>
-      <td><p>A vector of four numbers indicating bounding box to limit output
-features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
-    </tr><tr><th>properties</th>
-      <td><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></td>
-    </tr><tr><th>transform</th>
-      <td><p>A character vector with the name of the <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29"><em>valid transform</em></a> function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
-    </tr><tr><th>epsg</th>
-      <td><p>A positive whole number of the epsg to transform features to.</p></td>
-    </tr></table></div>
-
+    <h2>Arguments</h2>
+    <dl><dt>blue_line_key</dt>
+<dd><p>A positive whole number of the stream blue line key.</p></dd>
+<dt>interval_length</dt>
+<dd><p>An integer of the interval distance in meters.</p></dd>
+<dt>start_measure</dt>
+<dd><p>An integer of the distance in meters upstream from the river mouth to start from.</p></dd>
+<dt>end_measure</dt>
+<dd><p>An integer of the distance in meters upstream from the river mouth to end at.</p></dd>
+<dt>bbox</dt>
+<dd><p>A vector of four numbers indicating bounding box to limit output
+features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></dd>
+<dt>properties</dt>
+<dd><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></dd>
+<dt>transform</dt>
+<dd><p>A character vector with the name of the <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29" class="external-link"><em>valid transform</em></a> function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></dd>
+<dt>epsg</dt>
+<dd><p>A positive whole number of the epsg to transform features to.</p></dd>
+</dl></div>
     <div id="value">
-    <h2>Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    <h2>Value</h2>
     <p>An sf object.</p>
     </div>
     <div id="see-also">
-    <h2>See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p><a href="https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html">API documentation</a></p>
+    <h2>See also</h2>
+    <div class="dont-index"><p><a href="https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html" class="external-link">API documentation</a></p>
 <p>Other functions: 
 <code><a href="fwa_index_point.html">fwa_index_point</a>()</code>,
 <code><a href="fwa_locate_along.html">fwa_locate_along</a>()</code>,
@@ -109,9 +109,10 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 <code><a href="fwa_watershed_stream.html">fwa_watershed_stream</a>()</code>,
 <code><a href="hydroshed.html">hydroshed</a>()</code></p></div>
     </div>
+    </div>
 
     <div id="examples">
-    <h2>Examples<a class="anchor" aria-label="anchor" href="#examples"></a></h2>
+    <h2>Examples</h2>
     <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">fwa_locate_along_interval</span><span class="op">(</span><span class="fl">356308001</span>, interval_length <span class="op">=</span> <span class="fl">10</span>, start_measure <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 1924 features and 2 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POINT</span>

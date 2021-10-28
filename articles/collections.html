@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9009</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9010</span>
       </span>
     </div>
 
@@ -88,7 +88,7 @@
       <h1 data-toc-skip>The Collections and their Properies</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/fwapgr/blob/master/vignettes/collections.Rmd" class="external-link"><code>vignettes/collections.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/fwapgr/blob/HEAD/vignettes/collections.Rmd" class="external-link"><code>vignettes/collections.Rmd</code></a></small>
       <div class="hidden name"><code>collections.Rmd</code></div>
 
     </div>
@@ -97,8 +97,8 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/fwapgr" class="external-link">fwapgr</a></span><span class="op">)</span></code></pre></div>
-<div id="collections" class="section level2">
-<h2>Collections<a class="anchor" aria-label="anchor" href="#collections"></a>
+<div class="section level2">
+<h2 id="collections">Collections<a class="anchor" aria-label="anchor" href="#collections"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">collection_id</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fwa_collections.html">fwa_collections</a></span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">collection_id</span>
@@ -124,27 +124,10 @@
 <span class="co">#&gt; [19] "whse_basemapping.fwa_watershed_groups_poly"      </span>
 <span class="co">#&gt; [20] "whse_basemapping.fwa_watershed_groups_subdivided"</span>
 <span class="co">#&gt; [21] "whse_basemapping.fwa_watersheds_poly"            </span>
-<span class="co">#&gt; [22] "whse_basemapping.fwa_wetlands_poly"              </span>
-<span class="co">#&gt; [23] "whse_basemapping.gba_railway_tracks_sp"          </span>
-<span class="co">#&gt; [24] "whse_basemapping.gba_transmission_lines_sp"      </span>
-<span class="co">#&gt; [25] "whse_basemapping.gns_geographical_names_sp"      </span>
-<span class="co">#&gt; [26] "whse_basemapping.transport_line"                 </span>
-<span class="co">#&gt; [27] "whse_basemapping.trim_cultural_lines"            </span>
-<span class="co">#&gt; [28] "whse_basemapping.trim_cultural_points"           </span>
-<span class="co">#&gt; [29] "whse_basemapping.trim_ebm_airfields"             </span>
-<span class="co">#&gt; [30] "whse_basemapping.trim_ebm_ocean"                 </span>
-<span class="co">#&gt; [31] "whse_fish.fiss_fish_obsrvtn_events_sp"           </span>
-<span class="co">#&gt; [32] "whse_fish.fiss_fish_obsrvtn_pnt_distinct"        </span>
-<span class="co">#&gt; [33] "whse_fish.fiss_fish_obsrvtn_pnt_sp"              </span>
-<span class="co">#&gt; [34] "whse_fish.fiss_fish_obsrvtn_unmatched"           </span>
-<span class="co">#&gt; [35] "whse_fish.fiss_obstacles_pnt_sp"                 </span>
-<span class="co">#&gt; [36] "whse_fish.pscis_assessment_svw"                  </span>
-<span class="co">#&gt; [37] "whse_fish.pscis_design_proposal_svw"             </span>
-<span class="co">#&gt; [38] "whse_fish.pscis_habitat_confirmation_svw"        </span>
-<span class="co">#&gt; [39] "whse_fish.pscis_remediation_svw"</span></code></pre></div>
+<span class="co">#&gt; [22] "whse_basemapping.fwa_wetlands_poly"</span></code></pre></div>
 </div>
-<div id="collection-properties" class="section level2">
-<h2>Collection Properties<a class="anchor" aria-label="anchor" href="#collection-properties"></a>
+<div class="section level2">
+<h2 id="collection-properties">Collection Properties<a class="anchor" aria-label="anchor" href="#collection-properties"></a>
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">collection_id</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">collection_id</span>
@@ -470,276 +453,7 @@
 <span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> gnis_id_2          number <span style="color: #949494;">""</span>         </span>
 <span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> gnis_name_2        string <span style="color: #949494;">""</span>         </span>
 <span class="co">#&gt; <span style="color: #BCBCBC;">10</span> gnis_id_3          number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 14 more rows</span></span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_basemapping.gba_railway_tracks_sp</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 48 × 3</span></span>
-<span class="co">#&gt;    name                 type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id                   string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> railway_track_id     number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> nid                  string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> track_segment_id     string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> track_name           string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> track_classification string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> regulator            string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> transport_type       string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> use_type             string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> gauge                string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 38 more rows</span></span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_basemapping.gba_transmission_lines_sp</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 11 × 3</span></span>
-<span class="co">#&gt;    name                 type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id                   string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> transmission_line_id number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> circuit_name         string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> circuit_description  string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> voltage              string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> owner                string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> source_date          string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> feature_length_m     number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> objectid             number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> se_anno_cad_data     string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">11</span> ogc_fid              number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_basemapping.gns_geographical_names_sp</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 24 × 3</span></span>
-<span class="co">#&gt;    name                  type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id                    string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> geographical_names_id number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> feature_id            number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> feature_uuid          string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> geographical_name     string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> feature_type          string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> feature_type_code     number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> feature_category      string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> feature_class         string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> latitude              number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 14 more rows</span></span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_basemapping.transport_line</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 90 × 3</span></span>
-<span class="co">#&gt;    name                          type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> transport_line_id             number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> create_integration_session_id number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> create_integration_date       string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> modify_integration_session_id number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> modify_integration_date       string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> create_partner_org_id         number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> create_partner_org            string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> modify_partner_org_id         number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> modify_partner_org            string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> custodian_partner_org_id      number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 80 more rows</span></span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_basemapping.trim_cultural_lines</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 32 × 3</span></span>
-<span class="co">#&gt;    name       type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id         string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> fcode      string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> elevation  number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> admit_year number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> admit_mnth number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> admit_day  number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> asrc_year  number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> asrc_mnth  number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> asrc_day   number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> admit_rfc  string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 22 more rows</span></span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_basemapping.trim_cultural_points</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 32 × 3</span></span>
-<span class="co">#&gt;    name       type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id         string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> fcode      string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> elevation  number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> rotation   number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> admit_year number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> admit_mnth number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> admit_day  number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> asrc_year  number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> asrc_mnth  number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> asrc_day   number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 22 more rows</span></span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_basemapping.trim_ebm_airfields</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 11 × 3</span></span>
-<span class="co">#&gt;    name             type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id               string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> fcode            string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> feature_type     string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> area             number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> is_symbol        string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> rotation         number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> objectid         number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> se_anno_cad_data string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> feature_area_sqm number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> feature_length_m number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">11</span> ogc_fid          number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_basemapping.trim_ebm_ocean</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 9 × 3</span></span>
-<span class="co">#&gt;   name             type   description</span>
-<span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> id               string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> fcode            string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">3</span> feature_type     string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">4</span> area             number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">5</span> objectid         number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">6</span> se_anno_cad_data string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">7</span> feature_area_sqm number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">8</span> feature_length_m number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">9</span> ogc_fid          number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_fish.fiss_fish_obsrvtn_events_sp</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 17 × 3</span></span>
-<span class="co">#&gt;    name                      type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> fish_observation_point_id number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> linear_feature_id         number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> wscode_ltree              string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> localcode_ltree           string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> blue_line_key             number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> waterbody_key             number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> downstream_route_measure  number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> distance_to_stream        number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> match_type                string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> watershed_group_code      string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">11</span> species_id                number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">12</span> species_code              string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">13</span> agency_id                 string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">14</span> observation_date          string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">15</span> agency_name               string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">16</span> source                    string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">17</span> source_ref                string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_fish.fiss_fish_obsrvtn_pnt_distinct</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 11 × 3</span></span>
-<span class="co">#&gt;    name                         type     description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> fish_obsrvtn_pnt_distinct_id number   <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> obs_ids                      number[] <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> utm_zone                     number   <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> utm_easting                  number   <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> utm_northing                 number   <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> wbody_id                     number   <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> waterbody_type               string   <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> new_watershed_code           string   <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> species_ids                  number[] <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> species_codes                string[] <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">11</span> watershed_group_code         string   <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_fish.fiss_fish_obsrvtn_pnt_sp</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 28 × 3</span></span>
-<span class="co">#&gt;    name                      type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id                        string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> fish_observation_point_id number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> wbody_id                  number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> species_code              string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> agency_id                 string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> point_type_code           string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> observation_date          string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> agency_name               string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> source                    string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> source_ref                string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 18 more rows</span></span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_fish.fiss_fish_obsrvtn_unmatched</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 3</span></span>
-<span class="co">#&gt;   name                         type     description</span>
-<span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> fish_obsrvtn_pnt_distinct_id number   <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> obs_ids                      number[] <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">3</span> species_ids                  number[] <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">4</span> distance_to_stream           number   <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_fish.fiss_obstacles_pnt_sp</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 25 × 3</span></span>
-<span class="co">#&gt;    name                   type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id                     string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> fish_obstacle_point_id number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> agency_id              number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> wbody_id               number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> obstacle_code          string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> obstacle_name          string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> agency_name            string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> source                 string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> source_ref             string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> height                 number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 15 more rows</span></span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_fish.pscis_assessment_svw</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 70 × 3</span></span>
-<span class="co">#&gt;    name                   type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id                     string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> funding_project_number string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> funding_project        string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> project_id             number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> funding_source         string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> responsible_party_name string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> consultant_name        string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> assessment_date        string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> stream_crossing_id     number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> assessment_id          number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 60 more rows</span></span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_fish.pscis_design_proposal_svw</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 38 × 3</span></span>
-<span class="co">#&gt;    name                    type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id                      string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> funding_project_number  string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> funding_project         string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> project_id              number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> funding_source          string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> responsible_party_name  string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> consultant_name         string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> proposal_date           string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> stream_crossing_id      number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> remediation_proposal_id number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 28 more rows</span></span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_fish.pscis_habitat_confirmation_svw</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 41 × 3</span></span>
-<span class="co">#&gt;    name                         type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id                           string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> assmt_funding_project_number string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> assmt_funding_project        string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> assmt_project_id             number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> assmt_funding_source         string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> assmt_responsible_party_name string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> assmt_consultant_name        string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> assmt_date                   string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> stream_crossing_id           number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> habconf_assmt_id             number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 31 more rows</span></span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $whse_fish.pscis_remediation_svw</span>
-<span class="co">#&gt; <span style="color: #949494;"># A tibble: 43 × 3</span></span>
-<span class="co">#&gt;    name                   type   description</span>
-<span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> id                     string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> funding_project_number string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> funding_project        string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> project_id             number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> funding_source         string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> responsible_party_name string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> consultant_name        string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> completion_date        string <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> stream_crossing_id     number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">10</span> remediation_id         number <span style="color: #949494;">""</span>         </span>
-<span class="co">#&gt; <span style="color: #949494;"># … with 33 more rows</span></span></code></pre></div>
+<span class="co">#&gt; <span style="color: #949494;"># … with 14 more rows</span></span></code></pre></div>
 </div>
   </div>
 
@@ -760,7 +474,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a> 1.9000.9000.9000.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
 </div>
 
       </footer>

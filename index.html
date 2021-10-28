@@ -41,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9009</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9010</span>
       </span>
     </div>
 
@@ -68,7 +68,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/poissonconsulting/fwapgr/">
+  <a href="https://github.com/poissonconsulting/fwapgr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -85,27 +85,27 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="fwapgr-" class="section level1">
-<div class="page-header"><h1>fwapgr <img src="reference/figures/logo.png" align="right"><a class="anchor" aria-label="anchor" href="#fwapgr-"></a>
+<div class="section level1">
+<div class="page-header"><h1 id="fwapgr-">fwapgr <img src="reference/figures/logo.png" align="right"><a class="anchor" aria-label="anchor" href="#fwapgr-"></a>
 </h1></div>
 <!-- badges: start -->
 
 <p><code>fwapgr</code> is an R package that uses the <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg API</a> to query the <a href="https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater" class="external-link">Freshwater Atlas</a> (FWA) of British Columbia (BC). The functions and arguments in <code>fwapgr</code> match those available in the API.</p>
 <p>If you are looking for a higher-level R package to query the FWA of BC see <a href="https://github.com/poissonconsulting/fwatlasbc" class="external-link"><code>fwatlasbc</code></a> which wraps <code>fwapgr</code>.</p>
-<div id="installation" class="section level2">
-<h2>Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>To install the lastest version from <a href="https://github.com/poissonconsulting/fwapgr" class="external-link">GitHub</a></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"poissonconsulting/fwapgr"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="introduction" class="section level2">
-<h2>Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<div class="section level2">
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p><code>fwapgr</code> allows you to perform three types of operation.</p>
-<div id="get-information-on-collections" class="section level3">
-<h3>Get Information on Collections<a class="anchor" aria-label="anchor" href="#get-information-on-collections"></a>
+<div class="section level3">
+<h3 id="get-information-on-collections">Get Information on Collections<a class="anchor" aria-label="anchor" href="#get-information-on-collections"></a>
 </h3>
 <p>Get information about the <a href="https://www.hillcrestgeo.ca/fwapg/collections.html" class="external-link">collections</a> or a collection’s properties:</p>
 <ul>
@@ -115,16 +115,16 @@
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_collection_properties.html" class="external-link"><code>fwa_collection_properties()</code></a></li>
 </ul>
 </div>
-<div id="query-a-collection" class="section level3">
-<h3>Query a Collection<a class="anchor" aria-label="anchor" href="#query-a-collection"></a>
+<div class="section level3">
+<h3 id="query-a-collection">Query a Collection<a class="anchor" aria-label="anchor" href="#query-a-collection"></a>
 </h3>
 <p>Query features from a <a href="https://www.hillcrestgeo.ca/fwapg/collections.html" class="external-link">collection</a>:</p>
 <ul>
 <li><a href="https://poissonconsulting.github.io/fwapgr/reference/fwa_query_collection.html" class="external-link"><code>fwa_query_collection()</code></a></li>
 </ul>
 </div>
-<div id="execute-spatial-functions" class="section level3">
-<h3>Execute Spatial Functions<a class="anchor" aria-label="anchor" href="#execute-spatial-functions"></a>
+<div class="section level3">
+<h3 id="execute-spatial-functions">Execute Spatial Functions<a class="anchor" aria-label="anchor" href="#execute-spatial-functions"></a>
 </h3>
 <p>Execute spatial <a href="https://www.hillcrestgeo.ca/fwapg/functions.html" class="external-link">functions</a>:</p>
 <ul>
@@ -138,8 +138,8 @@
 </ul>
 </div>
 </div>
-<div id="demonstration" class="section level2">
-<h2>Demonstration<a class="anchor" aria-label="anchor" href="#demonstration"></a>
+<div class="section level2">
+<h2 id="demonstration">Demonstration<a class="anchor" aria-label="anchor" href="#demonstration"></a>
 </h2>
 <p>Get Sangan River from <code>whse_basemapping.fwa_stream_networks_sp</code> collection:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -183,18 +183,18 @@
   <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">river</span>, lwd <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-5-1.png" width="100%"></p>
 </div>
-<div id="creditation" class="section level2">
-<h2>Creditation<a class="anchor" aria-label="anchor" href="#creditation"></a>
+<div class="section level2">
+<h2 id="creditation">Creditation<a class="anchor" aria-label="anchor" href="#creditation"></a>
 </h2>
 <p><code>fwapgr</code> relies on <a href="https://www.hillcrestgeo.ca/fwapg/index.html" class="external-link">fwapg API</a> which is created, maintained and hosted by <a href="https://github.com/smnorris/fwapg" class="external-link">Simon Norris</a> at <a href="https://hillcrestgeo.ca/main/" class="external-link">Hillcrest Geographics</a>.</p>
 </div>
-<div id="contribution" class="section level2">
-<h2>Contribution<a class="anchor" aria-label="anchor" href="#contribution"></a>
+<div class="section level2">
+<h2 id="contribution">Contribution<a class="anchor" aria-label="anchor" href="#contribution"></a>
 </h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/fwapgr/issues" class="external-link">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/fwapgr/pulls" class="external-link">Pull requests</a> are always welcome.</p>
-<div id="code-of-conduct" class="section level3">
-<h3>Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+<div class="section level3">
+<h3 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
 </h3>
 <p>Please note that <code>fwapgr</code> is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
@@ -206,10 +206,8 @@
     <div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/poissonconsulting/fwapgr/">https://​github.com/​poissonconsulting/​fwapgr/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/poissonconsulting/fwapgr/issues">https://​github.com/​poissonconsulting/​fwapgr/​issues</a>
-</li>
+<li><a href="https://github.com/poissonconsulting/fwapgr/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/poissonconsulting/fwapgr/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -217,7 +215,7 @@
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 
@@ -231,8 +229,8 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Sebastian Dalgarno <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-3658-4517" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Joe Thorley <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-7683-4592" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Sebastian Dalgarno <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-3658-4517" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Joe Thorley <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-7683-4592" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Poisson Consulting <br><small class="roles"> Copyright holder, funder </small>  </li>
 </ul>
 </div>

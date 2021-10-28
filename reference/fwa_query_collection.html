@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fwapgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9009</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9010</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/poissonconsulting/fwapgr/">
+  <a href="https://github.com/poissonconsulting/fwapgr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -54,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Query Freshwater Atlas Collection</h1>
-    <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/fwapgr/blob/master/R/collection.R"><code>R/collection.R</code></a>, <a href="https://github.com/poissonconsulting/fwapgr/blob/master/R/query-collection.R"><code>R/query-collection.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/fwapgr/blob/HEAD/R/collection.R" class="external-link"><code>R/collection.R</code></a>, <a href="https://github.com/poissonconsulting/fwapgr/blob/HEAD/R/query-collection.R" class="external-link"><code>R/query-collection.R</code></a></small>
     <div class="hidden name"><code>fwa_query_collection.Rd</code></div>
     </div>
 
@@ -83,50 +83,51 @@
   epsg <span class="op">=</span> <span class="fl">4326</span>
 <span class="op">)</span></code></pre></div>
 
+    <div id="ref-sections">
     <div id="arguments">
-    <h2>Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <table class="ref-arguments"><colgroup><col class="name"><col class="desc"></colgroup><tr><th>collection_id</th>
-      <td><p>A character string of the collection id.</p></td>
-    </tr><tr><th>filter</th>
-      <td><p>A named vector or list of the filter(s) to apply, where the list
+    <h2>Arguments</h2>
+    <dl><dt>collection_id</dt>
+<dd><p>A character string of the collection id.</p></dd>
+<dt>filter</dt>
+<dd><p>A named vector or list of the filter(s) to apply, where the list
 names correspond to column names and the list values correspond to the desired
-value, e.g. <code>list(gnis_name = "Sangan River")</code>.</p></td>
-    </tr><tr><th>limit</th>
-      <td><p>A positive whole number indicating the maximum number of features to return.</p></td>
-    </tr><tr><th>bbox</th>
-      <td><p>A vector of four numbers indicating bounding box to limit output
-features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
-    </tr><tr><th>properties</th>
-      <td><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></td>
-    </tr><tr><th>transform</th>
-      <td><p>A character vector with the name of the <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29"><em>valid transform</em></a> function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></td>
-    </tr><tr><th>epsg</th>
-      <td><p>A positive whole number of the epsg to transform features to.</p></td>
-    </tr><tr><th>offset</th>
-      <td><p>A positive whole number indicating the offset of start of returned results.</p></td>
-    </tr></table></div>
-
+value, e.g. <code>list(gnis_name = "Sangan River")</code>.</p></dd>
+<dt>limit</dt>
+<dd><p>A positive whole number indicating the maximum number of features to return.</p></dd>
+<dt>bbox</dt>
+<dd><p>A vector of four numbers indicating bounding box to limit output
+features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></dd>
+<dt>properties</dt>
+<dd><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></dd>
+<dt>transform</dt>
+<dd><p>A character vector with the name of the <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29" class="external-link"><em>valid transform</em></a> function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></dd>
+<dt>epsg</dt>
+<dd><p>A positive whole number of the epsg to transform features to.</p></dd>
+<dt>offset</dt>
+<dd><p>A positive whole number indicating the offset of start of returned results.</p></dd>
+</dl></div>
     <div id="value">
-    <h2>Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    <h2>Value</h2>
     <p>An sf object.</p>
     </div>
     <div id="functions">
-    <h2>Functions<a class="anchor" aria-label="anchor" href="#functions"></a></h2>
+    <h2>Functions</h2>
     
 <ul><li><p><code>fwa_collection</code>: Query Freshwater Atlas Collection</p>
-<p><a href="https://lifecycle.r-lib.org/articles/stages.html#soft-deprecated"><img src="figures/lifecycle-soft-deprecated.svg" alt="[Soft-deprecated]"></a></p></li>
+<p><a href="https://lifecycle.r-lib.org/articles/stages.html#soft-deprecated" class="external-link"><img src="figures/lifecycle-soft-deprecated.svg" alt="[Soft-deprecated]"></a></p></li>
 </ul></div>
     <div id="see-also">
-    <h2>See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <h2>See also</h2>
     <div class="dont-index"><p>Other collections: 
 <code><a href="fwa_collection_properties.html">fwa_collection_properties</a>()</code>,
 <code><a href="fwa_collections.html">fwa_collections</a>()</code></p></div>
     </div>
+    </div>
 
     <div id="examples">
-    <h2>Examples<a class="anchor" aria-label="anchor" href="#examples"></a></h2>
+    <h2>Examples</h2>
     <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">collection_id</span> <span class="op">&lt;-</span> <span class="st">"whse_basemapping.fwa_stream_networks_sp"</span></span>
-<span class="r-in"><span class="va">filter</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Sangan River"</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">filter</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Sangan River"</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu">fwa_query_collection</span><span class="op">(</span><span class="va">collection_id</span>, filter <span class="op">=</span> <span class="va">filter</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 21 features and 28 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: LINESTRING</span>
@@ -135,18 +136,18 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></td>
 <span class="r-out co"><span class="r-pr">#&gt;</span> z_range:       zmin: 1 zmax: 67</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A data frame: 21 × 29</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    id       blue_line_key blue_line_key_5… downstream_rout… edge_type feature_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 59028661     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">4</span>721.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 59028739     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">3</span>446.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 59028963     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">2</span>319.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 59029083     360<span style="text-decoration: underline;">879</span>896               11               0       <span style="text-decoration: underline;">1</span>250 WA24111120  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 59029299     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">1</span>266.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 59029455     360<span style="text-decoration: underline;">879</span>896               11             367.      <span style="text-decoration: underline;">1</span>250 WA24111120  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 59031813     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">5</span>029.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 59032427     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">6</span>466.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 59033632     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">6</span>808.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 59034768     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">7</span>384.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    id     blue_line_key blue_line_key_5… downstream_rout… edge_type feature_code</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 59028…     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">4</span>721.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 59028…     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">3</span>446.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 59028…     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">2</span>319.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 59029…     360<span style="text-decoration: underline;">879</span>896               11               0       <span style="text-decoration: underline;">1</span>250 WA24111120  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 59029…     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">1</span>266.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 59029…     360<span style="text-decoration: underline;">879</span>896               11             367.      <span style="text-decoration: underline;">1</span>250 WA24111120  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 59031…     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">5</span>029.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 59032…     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">6</span>466.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 59033…     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">6</span>808.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 59034…     360<span style="text-decoration: underline;">879</span>896               11            <span style="text-decoration: underline;">7</span>384.      <span style="text-decoration: underline;">1</span>000 GA24850000  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 11 more rows, and 23 more variables: feature_source &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fwa_watershed_code &lt;chr&gt;, gnis_id &lt;int&gt;, gnis_name &lt;chr&gt;, gradient &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   left_right_tributary &lt;chr&gt;, length_metre &lt;dbl&gt;, linear_feature_id &lt;int&gt;,</span></span>
