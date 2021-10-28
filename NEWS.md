@@ -2,7 +2,7 @@
 
 # fwapgr 0.1.0.9010
 
-- `fwagp` removed non-FWA WHSE_BASEMAPPING collections.
+- `fwapg` removed non-FWA WHSE_BASEMAPPING collections.
 
 
 # fwapgr 0.1.0.9009
