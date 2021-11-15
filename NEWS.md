@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# fwapgr 0.1.0.9011
+
+- Change endpoint.
+
+
 # fwapgr 0.1.0.9010
 
 - `fwapg` removed non-FWA WHSE_BASEMAPPING collections.
