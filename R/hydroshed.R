@@ -5,7 +5,7 @@
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/hydroshed.html)
+#' @seealso [API documentation](https://features.hillcrestgeo.ca/fwa/functions/hydroshed.html)
 #'
 #' @export
 #' @examples

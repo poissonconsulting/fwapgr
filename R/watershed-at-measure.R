@@ -25,7 +25,7 @@
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedatmeasure.html)
+#' @seealso [API documentation](https://features.hillcrestgeo.ca/fwa/functions/fwa_watershedatmeasure.html)
 #'
 #' @export
 #' @examples

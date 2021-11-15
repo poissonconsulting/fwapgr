@@ -41,7 +41,7 @@ watershed at measure.
 fwa_watershed_stream(356308001, downstream_route_measure = 10000)
 }
 \seealso{
-\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html}{API documentation}
+\href{https://features.hillcrestgeo.ca/fwa/functions/fwa_watershedstream.html}{API documentation}
 
 Other functions: 
 \code{\link{fwa_index_point}()},

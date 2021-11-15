@@ -41,7 +41,7 @@ polygons upstream of the provided location.
 hydroshed(x = -132.26, y = 53.36)
 }
 \seealso{
-\href{https://www.hillcrestgeo.ca/fwapg/functions/hydroshed.html}{API documentation}
+\href{https://features.hillcrestgeo.ca/fwa/functions/hydroshed.html}{API documentation}
 
 Other functions: 
 \code{\link{fwa_index_point}()},

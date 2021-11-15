@@ -8,7 +8,7 @@
 #' @examples
 #' fwa_collections()
 fwa_collections <- function() {
-  path <- "fwapg/collections"
+  path <- "fwa/collections"
   query <- list(a = NULL)
 
   resp <- fwa_api(path, query)

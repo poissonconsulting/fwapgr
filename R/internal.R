@@ -1,5 +1,5 @@
 api_url <- function() {
-  "https://hillcrestgeo.ca/"
+  "https://features.hillcrestgeo.ca/"
 }
 
 format_parameter <- function(x) {

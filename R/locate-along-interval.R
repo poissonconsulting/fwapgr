@@ -4,7 +4,7 @@
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealonginterval.html)
+#' @seealso [API documentation](https://features.hillcrestgeo.ca/fwa/functions/fwa_locatealonginterval.html)
 #' @export
 #' @examples
 #' fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)

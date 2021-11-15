@@ -7,7 +7,7 @@
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedstream.html)
+#' @seealso [API documentation](https://features.hillcrestgeo.ca/fwa/functions/fwa_watershedstream.html)
 #' @export
 #' @examples
 #' fwa_watershed_stream(356308001, downstream_route_measure = 10000)

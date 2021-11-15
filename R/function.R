@@ -19,7 +19,7 @@ fwa_function <- function(function_id,
   bbox <- format_parameter(bbox)
   transform <- format_parameter(transform)
 
-  path <- glue("fwapg/functions/{function_id}/items.json")
+  path <- glue("fwa/functions/{function_id}/items.json")
   query <- c(parameters, list(
     limit = limit,
     bbox = bbox,

@@ -7,7 +7,7 @@
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html)
+#' @seealso [API documentation](https://features.hillcrestgeo.ca/fwa/functions/fwa_indexpoint.html)
 #' @export
 #' @examples
 #' fwa_index_point(x = -132.26, y = 53.36)

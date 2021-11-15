@@ -4,7 +4,7 @@
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html)
+#' @seealso [API documentation](https://features.hillcrestgeo.ca/fwa/functions/fwa_watershedhex.html)
 #' @export
 #' @examples
 #' \dontrun{

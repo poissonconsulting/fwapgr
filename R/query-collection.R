@@ -36,7 +36,7 @@ fwa_query_collection <- function(collection_id,
 
   id <- fwa_collection_properties(collection_id)$name[1]
 
-  path <- glue("fwapg/collections/{collection_id}/items.json")
+  path <- glue("fwa/collections/{collection_id}/items.json")
 
   query <- c(
     filter,

@@ -5,7 +5,7 @@
 #'
 #' @inherit internal
 #' @family functions
-#' @seealso [API documentation](https://www.hillcrestgeo.ca/fwapg/functions/fwa_locatealong.html)
+#' @seealso [API documentation](https://features.hillcrestgeo.ca/fwa/functions/fwa_locatealong.html)
 #' @export
 #' @examples
 #' fwa_locate_along(356308001, downstream_route_measure = 10000)

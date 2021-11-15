@@ -50,7 +50,7 @@ set \code{limit = 2}.
 fwa_index_point(x = -132.26, y = 53.36)
 }
 \seealso{
-\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_indexpoint.html}{API documentation}
+\href{https://features.hillcrestgeo.ca/fwa/functions/fwa_indexpoint.html}{API documentation}
 
 Other functions: 
 \code{\link{fwa_locate_along_interval}()},

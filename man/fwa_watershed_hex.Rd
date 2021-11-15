@@ -42,7 +42,7 @@ fwa_watershed_hex(356308001, downstream_route_measure = 10000)
 }
 }
 \seealso{
-\href{https://www.hillcrestgeo.ca/fwapg/functions/fwa_watershedhex.html}{API documentation}
+\href{https://features.hillcrestgeo.ca/fwa/functions/fwa_watershedhex.html}{API documentation}
 
 Other functions: 
 \code{\link{fwa_index_point}()},
