@@ -75,7 +75,7 @@ collection:
 
 ``` r
 coll <- "whse_basemapping.fwa_stream_networks_sp"
-river <- fwapgr::fwa_collection(coll, filter = list(gnis_name = "Sangan River"))
+river <- fwapgr::fwa_query_collection(coll, filter = list(gnis_name = "Sangan River"))
 river
 #> Simple feature collection with 21 features and 28 fields
 #> Geometry type: LINESTRING
