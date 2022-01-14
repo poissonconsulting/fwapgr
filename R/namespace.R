@@ -1,2 +1,2 @@
-#' @import chk lifecycle glue httr
+#' @import chk lifecycle
 NULL

@@ -23,9 +23,6 @@ Depends:
     R (>= 3.6)
 Imports:
     chk,
-    glue,
-    httr,
-    jsonlite,
     pgfeatureserv,
     lifecycle,
     sf,

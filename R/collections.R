@@ -14,5 +14,5 @@ fwa_collections <- function() {
   )
   df$collection_id <- df$id
   df <- df[c("collection_id", "description", "extent", "links")]
-  tibble::as_tibble(df)
+  df
 }
