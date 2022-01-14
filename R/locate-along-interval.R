@@ -30,9 +30,11 @@ fwa_locate_along_interval <- function(blue_line_key,
   if (!is.null(end_measure)) {
     lim <- ceiling((end_measure - start_measure) / interval_length)
     if (lim > 10000) {
-      chk::abort_chk("`limit` must be greater than ",
-                     "(`end_measure` - `start_measure`) / `interval_length` (",
-                     lim, ") not ", 10000L, ".")
+      chk::abort_chk(
+        "`limit` must be greater than ",
+        "(`end_measure` - `start_measure`) / `interval_length` (",
+        lim, ") not ", 10000L, "."
+      )
     }
   }
 

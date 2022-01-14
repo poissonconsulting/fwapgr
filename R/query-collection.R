@@ -10,16 +10,15 @@
 #' filter <- list(gnis_name = "Sangan River")
 #' fwa_query_collection(collection_id, filter = filter)
 fwa_query_collection <- function(collection_id,
-                           filter = NULL,
-                           limit = 10000,
-                           offset = 0,
-                           bbox = NULL,
-                           properties = NULL,
-                           transform = NULL,
-                           sortby = NULL,
-                           groupby = NULL,
-                           epsg = 4326) {
-
+                                 filter = NULL,
+                                 limit = 10000,
+                                 offset = 0,
+                                 bbox = NULL,
+                                 properties = NULL,
+                                 transform = NULL,
+                                 sortby = NULL,
+                                 groupby = NULL,
+                                 epsg = 4326) {
   chk_whole_number(epsg)
   chk_gt(epsg)
 
@@ -40,7 +39,7 @@ fwa_query_collection <- function(collection_id,
     sortby = sortby,
     groupby = groupby,
     user = user
-    )
+  )
 
   sf::st_transform(x, epsg)
 }

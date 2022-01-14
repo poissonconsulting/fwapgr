@@ -79,8 +79,10 @@ river
 Get simplified Yakoun River watershed starting 10km upstream:
 ```{r}
 blk <- river$blue_line_key[1]
-wshed <- fwapgr::fwa_watershed_at_measure(blk, downstream_route_measure = 10000,
-                                          transform = c("ST_Simplify", 2000))
+wshed <- fwapgr::fwa_watershed_at_measure(blk,
+  downstream_route_measure = 10000,
+  transform = c("ST_Simplify", 2000)
+)
 ```
 
 ```{r dpi=300, fig.width=7, fig.height=7}

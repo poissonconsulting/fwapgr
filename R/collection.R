@@ -10,10 +10,10 @@ fwa_collection <- function(collection_id,
                            properties = NULL,
                            transform = NULL,
                            epsg = 4326) {
-
   fwa_query_collection(collection_id,
-                       filter = filter, limit = limit,
-                       bbox = bbox,
-                       properties = properties, transform = transform,
-                       epsg = epsg)
+    filter = filter, limit = limit,
+    bbox = bbox,
+    properties = properties, transform = transform,
+    epsg = epsg
+  )
 }

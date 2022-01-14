@@ -1,6 +1,8 @@
 test_that("fwa_watershed_at_measure works", {
-  sf <- fwa_watershed_at_measure(356308001, downstream_route_measure = 10000,
-                                 properties = "area_ha")
+  sf <- fwa_watershed_at_measure(356308001,
+    downstream_route_measure = 10000,
+    properties = "area_ha"
+  )
   expect_s3_class(sf, "sf")
   expect_s3_class(sf, "tbl_df")
   expect_s3_class(sf$geometry, "sfc_POLYGON")
