@@ -94,6 +94,14 @@ value, e.g. <code>list(gnis_name = "Sangan River")</code>.</p></dd>
 <dd><p>A named list of the parameters and values for a specific function.</p></dd>
 <dt>properties</dt>
 <dd><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></dd>
+<dt>sortby</dt>
+<dd><p>A string that sorts the response items by a property.
+Default is ascending but property name can be prepended with
+'-' to indicate descending.</p></dd>
+<dt>groupby</dt>
+<dd><p>A string of the property name (i.e., column name) to group
+response features by. This would typically be used with an aggregate
+transform function.</p></dd>
 <dt>srid</dt>
 <dd><p>A positive whole number of the epsg of the coordinates.</p></dd>
 <dt>start_measure</dt>
