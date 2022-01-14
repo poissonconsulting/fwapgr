@@ -32,7 +32,6 @@ Imports:
     tibble
 Suggests: 
     covr,
-    emo,
     ggplot2,
     knitr,
     magrittr,
@@ -45,7 +44,6 @@ VignetteBuilder:
 RdMacros: 
     lifecycle
 Remotes:
-    hadley/emo,
     poissonconsulting/chk,
     poissonconsulting/pgfeatureserv
 Config/testthat/edition: 3
