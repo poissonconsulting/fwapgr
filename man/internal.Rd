@@ -33,6 +33,14 @@ value, e.g. \code{list(gnis_name = "Sangan River")}.}
 
 \item{properties}{A vector of strings of the column names to include. If NULL (default), all columns are retained.}
 
+\item{sortby}{A string that sorts the response items by a property.
+Default is ascending but property name can be prepended with
+'-' to indicate descending.}
+
+\item{groupby}{A string of the property name (i.e., column name) to group
+response features by. This would typically be used with an aggregate
+transform function.}
+
 \item{srid}{A positive whole number of the epsg of the coordinates.}
 
 \item{start_measure}{An integer of the distance in meters upstream from the river mouth to start from.}

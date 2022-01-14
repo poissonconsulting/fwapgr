@@ -23,6 +23,8 @@ fwa_locate_along_interval <- function(blue_line_key,
   chk_whole_number(start_measure)
   chk_gte(start_measure)
   chk_null_or(end_measure, vld = vld_whole_number)
+  chk_whole_number(epsg)
+  chk_gt(epsg)
   if (!is.null(end_measure)) chk_gt(end_measure, start_measure)
 
   if (!is.null(end_measure)) {
@@ -41,12 +43,20 @@ fwa_locate_along_interval <- function(blue_line_key,
     end_measure = end_measure
   )
 
-  fwa_function("fwa_locatealonginterval",
-               parameters = parameters,
-               limit = 10000L,
-               bbox = bbox,
-               properties = properties,
-               transform = transform,
-               epsg = epsg
+  base_url <- api_url()
+  path <- "fwa"
+  user <- gh_user()
+
+  x <- pgfeatureserv::pgf_function_result(
+    "fwa_locatealonginterval",
+    base_url = base_url,
+    path = path,
+    user = user,
+    parameters = parameters,
+    bbox = bbox,
+    properties = properties,
+    transform = transform
   )
+
+  sf::st_transform(x, epsg)
 }

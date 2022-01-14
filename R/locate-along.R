@@ -19,18 +19,28 @@ fwa_locate_along <- function(blue_line_key,
   chk_gt(blue_line_key)
   chk_number(downstream_route_measure)
   chk_gte(downstream_route_measure)
+  chk_whole_number(epsg)
+  chk_gt(epsg)
 
   parameters <- list(
     blue_line_key = blue_line_key,
     downstream_route_measure = downstream_route_measure
   )
 
-  fwa_function("fwa_locatealong",
-               parameters = parameters,
-               limit = 1,
-               bbox = bbox,
-               properties = properties,
-               transform = transform,
-               epsg = epsg
+  base_url <- api_url()
+  path <- "fwa"
+  user <- gh_user()
+
+  x <- pgfeatureserv::pgf_function_result(
+    "fwa_locatealong",
+    base_url = base_url,
+    path = path,
+    user = user,
+    parameters = parameters,
+    bbox = bbox,
+    properties = properties,
+    transform = transform
   )
+
+  sf::st_transform(x, epsg)
 }

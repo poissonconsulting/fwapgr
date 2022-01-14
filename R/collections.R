@@ -8,12 +8,10 @@
 #' @examples
 #' fwa_collections()
 fwa_collections <- function() {
-  path <- "fwa/collections"
-  query <- list(a = NULL)
-
-  resp <- fwa_api(path, query)
-
-  df <- jsonlite::fromJSON(resp)$collections
+  df <- pgfeatureserv::pgf_collections(
+    base_url = api_url(),
+    path = "fwa"
+  )
   df$collection_id <- df$id
   df <- df[c("collection_id", "description", "extent", "links")]
   tibble::as_tibble(df)
