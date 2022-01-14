@@ -27,6 +27,8 @@ fwa_index_point <- function(x, y,
   chk_gt(tolerance)
   chk_whole_number(limit)
   chk_gt(limit)
+  chk_whole_number(epsg)
+  chk_gt(epsg)
 
   parameters <- list(
     x = x,
@@ -36,12 +38,21 @@ fwa_index_point <- function(x, y,
     num_features = limit
   )
 
-  fwa_function("fwa_indexpoint",
-               parameters = parameters,
-               limit = limit,
-               bbox = bbox,
-               properties = properties,
-               transform = transform,
-               epsg = epsg
+  base_url <- api_url()
+  path <- "fwa"
+  user <- gh_user()
+
+  x <- pgfsr::pgf_function_result(
+    "fwa_indexpoint",
+    base_url = base_url,
+    path = path,
+    user = user,
+    parameters = parameters,
+    limit = limit,
+    bbox = bbox,
+    properties = properties,
+    transform = transform
   )
+
+  sf::st_transform(x, epsg)
 }

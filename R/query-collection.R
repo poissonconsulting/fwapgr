@@ -16,41 +16,31 @@ fwa_query_collection <- function(collection_id,
                            bbox = NULL,
                            properties = NULL,
                            transform = NULL,
+                           sortby = NULL,
+                           groupby = NULL,
                            epsg = 4326) {
-  chk_string(collection_id)
-  chk_filter(filter)
-  chk_whole_number(limit)
-  chk_gt(limit)
-  chk_lte(limit, 10000L)
-  chk_whole_number(offset)
-  chk_gte(offset)
-  chk_null_or(bbox, vld = vld_numeric)
-  chk_null_or(properties, vld = vld_character)
-  chk_null_or(transform, vld = vld_character)
+
   chk_whole_number(epsg)
   chk_gt(epsg)
 
-  properties <- format_parameter(properties)
-  bbox <- format_parameter(bbox)
-  transform <- format_parameter(transform)
+  base_url <- api_url()
+  path <- "fwa"
+  user <- gh_user()
 
-  id <- fwa_collection_properties(collection_id)$name[1]
-
-  path <- glue("fwa/collections/{collection_id}/items.json")
-
-  query <- c(
-    filter,
-    list(
-      sortBy = id,
-      limit = limit,
-      offset = offset,
-      bbox = bbox,
-      properties = properties,
-      transform = transform
+  x <- pgfsr::pgf_collection_features(
+    collection_id = collection_id,
+    base_url = base_url,
+    path = path,
+    filter = filter,
+    limit = limit,
+    offset = offset,
+    bbox = bbox,
+    properties = properties,
+    transform = transform,
+    sortby = sortby,
+    groupby = groupby,
+    user = user
     )
-  )
 
-  resp <- fwa_api(path, query)
-
-  read_feature(resp, epsg)
+  sf::st_transform(x, epsg)
 }

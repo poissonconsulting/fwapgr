@@ -9,11 +9,9 @@
 #' @examples
 #' fwa_collection_properties("whse_basemapping.fwa_stream_networks_sp")
 fwa_collection_properties <- function(collection_id) {
-  path <- glue("fwa/collections/{collection_id}")
-  query <- list(a = NULL)
-
-  resp <- fwa_api(path, query)
-
-  df <- jsonlite::fromJSON(resp)$properties
-  tibble::as_tibble(df)
+  pgfsr::pgf_collection_properties(
+    collection_id = collection_id,
+    base_url = api_url(),
+    path = "fwa"
+  )
 }

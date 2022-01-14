@@ -23,6 +23,8 @@ fwa_query_collection(
   bbox = NULL,
   properties = NULL,
   transform = NULL,
+  sortby = NULL,
+  groupby = NULL,
   epsg = 4326
 )
 }
