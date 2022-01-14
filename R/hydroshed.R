@@ -33,7 +33,7 @@ hydroshed <- function(x, y,
   path <- "fwa"
   user <- gh_user()
 
-  x <- pgfsr::pgf_function_result(
+  x <- pgfeatureserv::pgf_function_result(
     "hydroshed",
     base_url = base_url,
     path = path,

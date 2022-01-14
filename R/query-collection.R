@@ -27,7 +27,7 @@ fwa_query_collection <- function(collection_id,
   path <- "fwa"
   user <- gh_user()
 
-  x <- pgfsr::pgf_collection_features(
+  x <- pgfeatureserv::pgf_collection_features(
     collection_id = collection_id,
     base_url = base_url,
     path = path,

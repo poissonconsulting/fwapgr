@@ -42,7 +42,7 @@ fwa_index_point <- function(x, y,
   path <- "fwa"
   user <- gh_user()
 
-  x <- pgfsr::pgf_function_result(
+  x <- pgfeatureserv::pgf_function_result(
     "fwa_indexpoint",
     base_url = base_url,
     path = path,

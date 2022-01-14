@@ -8,7 +8,7 @@
 #' @examples
 #' fwa_collections()
 fwa_collections <- function() {
-  df <- pgfsr::pgf_collections(
+  df <- pgfeatureserv::pgf_collections(
     base_url = api_url(),
     path = "fwa"
   )

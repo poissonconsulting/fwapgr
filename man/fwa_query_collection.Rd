@@ -47,6 +47,14 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 
 \item{offset}{A positive whole number indicating the offset of start of returned results.}
+
+\item{sortby}{A string that sorts the response items by a property.
+Default is ascending but property name can be prepended with
+'-' to indicate descending.}
+
+\item{groupby}{A string of the property name (i.e., column name) to group
+response features by. This would typically be used with an aggregate
+transform function.}
 }
 \value{
 An sf object.

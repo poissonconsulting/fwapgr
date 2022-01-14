@@ -26,7 +26,7 @@ Imports:
     glue,
     httr,
     jsonlite,
-    pgfsr,
+    pgfeatureserv,
     lifecycle,
     sf,
     tibble
@@ -47,7 +47,7 @@ RdMacros:
 Remotes:
     hadley/emo,
     poissonconsulting/chk,
-    poissonconsulting/pgfsr
+    poissonconsulting/pgfeatureserv
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
