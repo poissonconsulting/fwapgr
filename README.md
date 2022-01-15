@@ -15,7 +15,7 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 <!-- badges: end -->
 
 `fwapgr` is an R package that uses the [fwapg
-API](https://www.hillcrestgeo.ca/fwapg/index.html) to query the
+API](https://features.hillcrestgeo.ca/fwa/index.html) to query the
 [Freshwater
 Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater)
 (FWA) of British Columbia (BC). The functions and arguments in `fwapgr`
@@ -42,8 +42,8 @@ devtools::install_github("poissonconsulting/fwapgr")
 ### Get Information on Collections
 
 Get information about the
-[collections](https://www.hillcrestgeo.ca/fwapg/collections.html) or a
-collection’s properties:
+[collections](https://features.hillcrestgeo.ca/fwa/collections.html) or
+a collection’s properties:
 
 -   [`fwa_collections()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_collections.html)  
 -   [`fwa_collection_properties()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_collection_properties.html)
@@ -51,14 +51,14 @@ collection’s properties:
 ### Query a Collection
 
 Query features from a
-[collection](https://www.hillcrestgeo.ca/fwapg/collections.html):
+[collection](https://features.hillcrestgeo.ca/fwa/collections.html):
 
 -   [`fwa_query_collection()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_query_collection.html)
 
 ### Execute Spatial Functions
 
 Execute spatial
-[functions](https://www.hillcrestgeo.ca/fwapg/functions.html):
+[functions](https://features.hillcrestgeo.ca/fwa/functions.html):
 
 -   [`fwa_index_point()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_index_point.html)
 -   [`fwa_locate_along()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along.html)
@@ -77,40 +77,42 @@ collection:
 coll <- "whse_basemapping.fwa_stream_networks_sp"
 river <- fwapgr::fwa_query_collection(coll, filter = list(gnis_name = "Sangan River"))
 river
-#> Simple feature collection with 21 features and 28 fields
+#> Simple feature collection with 21 features and 27 fields
 #> Geometry type: LINESTRING
 #> Dimension:     XYZ
 #> Bounding box:  xmin: -131.9972 ymin: 53.94994 xmax: -131.9168 ymax: 54.0332
 #> z_range:       zmin: 1 zmax: 67
 #> Geodetic CRS:  WGS 84
-#> # A data frame: 21 × 29
-#>    id     blue_line_key blue_line_key_5… downstream_rout… edge_type feature_code
-#>    <chr>          <int>            <int>            <dbl>     <int> <chr>       
-#>  1 59028…     360879896               11            4721.      1000 GA24850000  
-#>  2 59028…     360879896               11            3446.      1000 GA24850000  
-#>  3 59028…     360879896               11            2319.      1000 GA24850000  
-#>  4 59029…     360879896               11               0       1250 WA24111120  
-#>  5 59029…     360879896               11            1266.      1000 GA24850000  
-#>  6 59029…     360879896               11             367.      1250 WA24111120  
-#>  7 59031…     360879896               11            5029.      1000 GA24850000  
-#>  8 59032…     360879896               11            6466.      1000 GA24850000  
-#>  9 59033…     360879896               11            6808.      1000 GA24850000  
-#> 10 59034…     360879896               11            7384.      1000 GA24850000  
+#> # A data frame: 21 × 28
+#>    blue_line_key blue_line_key_50k downstream_route_meas… edge_type feature_code
+#>  *         <dbl>             <dbl>                  <dbl>     <dbl> <chr>       
+#>  1     360879896                11                  1266.      1000 GA24850000  
+#>  2     360879896                11                  8744.      1000 GA24850000  
+#>  3     360879896                11                  2319.      1000 GA24850000  
+#>  4     360879896                11                     0       1250 WA24111120  
+#>  5     360879896               130                 17516.      1050 GA24850140  
+#>  6     360879896                11                 10075.      1000 GA24850000  
+#>  7     360879896                11                  6808.      1000 GA24850000  
+#>  8     360879896                11                  4721.      1000 GA24850000  
+#>  9     360879896                11                 13068.      1000 GA24850000  
+#> 10     360879896                11                  7849.      1000 GA24850000  
 #> # … with 11 more rows, and 23 more variables: feature_source <chr>,
-#> #   fwa_watershed_code <chr>, gnis_id <int>, gnis_name <chr>, gradient <dbl>,
-#> #   left_right_tributary <chr>, length_metre <dbl>, linear_feature_id <int>,
-#> #   local_watershed_code <chr>, localcode_ltree <chr>, stream_magnitude <int>,
-#> #   stream_order <int>, upstream_area_ha <chr>, upstream_route_measure <dbl>,
-#> #   waterbody_key <int>, watershed_code_50k <chr>, watershed_group_code <chr>,
-#> #   watershed_group_code_50k <chr>, watershed_group_id <int>, …
+#> #   fwa_watershed_code <chr>, gnis_id <dbl>, gnis_name <chr>, gradient <dbl>,
+#> #   left_right_tributary <chr>, length_metre <dbl>, linear_feature_id <dbl>,
+#> #   local_watershed_code <chr>, localcode_ltree <chr>, stream_magnitude <dbl>,
+#> #   stream_order <dbl>, upstream_area_ha <chr>, upstream_route_measure <dbl>,
+#> #   waterbody_key <chr>, watershed_code_50k <chr>, watershed_group_code <chr>,
+#> #   watershed_group_code_50k <chr>, watershed_group_id <dbl>, …
 ```
 
 Get simplified Yakoun River watershed starting 10km upstream:
 
 ``` r
 blk <- river$blue_line_key[1]
-wshed <- fwapgr::fwa_watershed_at_measure(blk, downstream_route_measure = 10000,
-                                          transform = c("ST_Simplify", 2000))
+wshed <- fwapgr::fwa_watershed_at_measure(blk,
+  downstream_route_measure = 10000,
+  transform = c("ST_Simplify", 2000)
+)
 ```
 
 ``` r
@@ -124,10 +126,10 @@ ggplot2::ggplot() +
 ## Creditation
 
 `fwapgr` relies on [fwapg
-API](https://www.hillcrestgeo.ca/fwapg/index.html) which is created,
+API](https://features.hillcrestgeo.ca/fwa/index.html) which is created,
 maintained and hosted by [Simon
 Norris](https://github.com/smnorris/fwapg) at [Hillcrest
-Geographics](https://hillcrestgeo.ca/main/).
+Geographics](https://hillcrestgeo.ca/).
 
 ## Contribution
 
