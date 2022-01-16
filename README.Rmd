@@ -25,7 +25,7 @@ library(fwapgr)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
-`fwapgr` is an R package that uses the [fwapg API](https://www.hillcrestgeo.ca/fwapg/index.html) to query the [Freshwater Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater) (FWA) of British Columbia (BC).
+`fwapgr` is an R package that uses the [fwapg API](https://features.hillcrestgeo.ca/fwa/index.html) to query the [Freshwater Atlas](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/topographic-data/freshwater) (FWA) of British Columbia (BC).
 The functions and arguments in `fwapgr` match those available in the API.
 
 If you are looking for a higher-level R package to query the FWA of BC see [`fwatlasbc`](https://github.com/poissonconsulting/fwatlasbc) which wraps `fwapgr`.
@@ -44,20 +44,20 @@ devtools::install_github("poissonconsulting/fwapgr")
 
 ### Get Information on Collections
 
-Get information about the [collections](https://www.hillcrestgeo.ca/fwapg/collections.html) or a collection's properties:  
+Get information about the [collections](https://features.hillcrestgeo.ca/fwa/collections.html) or a collection's properties:  
 
 * [`fwa_collections()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_collections.html)  
 * [`fwa_collection_properties()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_collection_properties.html)  
 
 ### Query a Collection
 
-Query features from a [collection](https://www.hillcrestgeo.ca/fwapg/collections.html):  
+Query features from a [collection](https://features.hillcrestgeo.ca/fwa/collections.html):  
 
 * [`fwa_query_collection()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_query_collection.html)  
 
 ### Execute Spatial Functions
 
-Execute spatial [functions](https://www.hillcrestgeo.ca/fwapg/functions.html):  
+Execute spatial [functions](https://features.hillcrestgeo.ca/fwa/functions.html):  
 
 * [`fwa_index_point()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_index_point.html)
 * [`fwa_locate_along()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along.html)
@@ -93,7 +93,7 @@ ggplot2::ggplot() +
 
 ## Creditation
 
-`fwapgr` relies on [fwapg API](https://www.hillcrestgeo.ca/fwapg/index.html) which is created, maintained and hosted by [Simon Norris](https://github.com/smnorris/fwapg) at [Hillcrest Geographics](https://hillcrestgeo.ca/main/). 
+`fwapgr` relies on [fwapg API](https://features.hillcrestgeo.ca/fwa/index.html) which is created, maintained and hosted by [Simon Norris](https://github.com/smnorris/fwapg) at [Hillcrest Geographics](https://hillcrestgeo.ca/). 
 
 ## Contribution
 
