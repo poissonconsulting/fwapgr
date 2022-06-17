@@ -77,21 +77,34 @@
     <h2>Arguments</h2>
     <dl><dt>blue_line_key</dt>
 <dd><p>A positive whole number of the stream blue line key.</p></dd>
+
+
 <dt>downstream_route_measure</dt>
 <dd><p>A positive number of the river metre.</p></dd>
+
+
 <dt>bbox</dt>
 <dd><p>A vector of four numbers indicating bounding box to limit output
 features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></dd>
+
+
 <dt>properties</dt>
 <dd><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></dd>
+
+
 <dt>transform</dt>
 <dd><p>A character vector with the name of the <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29" class="external-link"><em>valid transform</em></a> function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></dd>
+
+
 <dt>epsg</dt>
 <dd><p>A positive whole number of the epsg to transform features to.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An sf object.</p>
+    
+
+<p>An sf object.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -116,12 +129,13 @@ watershed at measure.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 1 feature and 1 field</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: MULTILINESTRING</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -121.9504 ymin: 49.1401 xmax: -121.9413 ymax: 49.15144</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: 1295576 ymin: 466687.7 xmax: 1296301 ymax: 467914</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>bounding box has potentially an invalid value range for longlat data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A data frame: 1 × 2</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   linear_feature_id                                                     geometry</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">*</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                                        <span style="color: #949494; font-style: italic;">&lt;MULTILINESTRING [°]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>         700<span style="text-decoration: underline;">730</span>811 ((-121.9504 49.15144, -121.9501 49.15144, -121.9498 49.1513…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>         700<span style="text-decoration: underline;">730</span>811 ((1295576 467912.3, 1295596 467914, 1295620 467907.1, 12956…</span>
 </code></pre></div>
     </div>
   </div>
@@ -136,7 +150,7 @@ watershed at measure.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.9000.</p>
 </div>
 
       </footer></div>

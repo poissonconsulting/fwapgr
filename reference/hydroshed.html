@@ -80,23 +80,38 @@ polygons upstream of the provided location.</p>
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>A number of the x coordinate.</p></dd>
+
+
 <dt>y</dt>
 <dd><p>A number of the y coordinate.</p></dd>
+
+
 <dt>srid</dt>
 <dd><p>A positive whole number of the epsg of the coordinates.</p></dd>
+
+
 <dt>bbox</dt>
 <dd><p>A vector of four numbers indicating bounding box to limit output
 features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></dd>
+
+
 <dt>properties</dt>
 <dd><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></dd>
+
+
 <dt>transform</dt>
 <dd><p>A character vector with the name of the <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29" class="external-link"><em>valid transform</em></a> function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></dd>
+
+
 <dt>epsg</dt>
 <dd><p>A positive whole number of the epsg to transform features to.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An sf object.</p>
+    
+
+<p>An sf object.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -116,12 +131,13 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 1 feature and 0 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POLYGON</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -132.384 ymin: 53.25479 xmax: -132.1535 ymax: 53.38813</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: 576106.7 ymin: 935187.8 xmax: 591542 ymax: 949973.3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>bounding box has potentially an invalid value range for longlat data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A data frame: 1 × 1</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                         geometry</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">*</span>                                                                  <span style="color: #949494; font-style: italic;">&lt;POLYGON [°]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> ((-132.275 53.38333, -132.2601 53.38369, -132.2566 53.38715, -132.2542 53.387…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> ((584072.5 949239.8, 585062.7 949191.5, 585327.1 949555.6, 585490.8 949580.7,…</span>
 </code></pre></div>
     </div>
   </div>
@@ -136,7 +152,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.9000.</p>
 </div>
 
       </footer></div>

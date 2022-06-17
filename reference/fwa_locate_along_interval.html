@@ -79,25 +79,42 @@
     <h2>Arguments</h2>
     <dl><dt>blue_line_key</dt>
 <dd><p>A positive whole number of the stream blue line key.</p></dd>
+
+
 <dt>interval_length</dt>
 <dd><p>An integer of the interval distance in meters.</p></dd>
+
+
 <dt>start_measure</dt>
 <dd><p>An integer of the distance in meters upstream from the river mouth to start from.</p></dd>
+
+
 <dt>end_measure</dt>
 <dd><p>An integer of the distance in meters upstream from the river mouth to end at.</p></dd>
+
+
 <dt>bbox</dt>
 <dd><p>A vector of four numbers indicating bounding box to limit output
 features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></dd>
+
+
 <dt>properties</dt>
 <dd><p>A vector of strings of the column names to include. If NULL (default), all columns are retained.</p></dd>
+
+
 <dt>transform</dt>
 <dd><p>A character vector with the name of the <a href="https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29" class="external-link"><em>valid transform</em></a> function followed by the parameter values (e.g. c("ST_Simplify", 100))</p></dd>
+
+
 <dt>epsg</dt>
 <dd><p>A positive whole number of the epsg to transform features to.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An sf object.</p>
+    
+
+<p>An sf object.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -117,22 +134,23 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 1924 features and 2 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POINT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XYZ</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -122.0155 ymin: 49.11263 xmax: -121.8697 ymax: 49.16804</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: 1290726 ymin: 463941.9 xmax: 1301692 ymax: 469483.5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> z_range:       zmin: 7.5 zmax: 214.8791</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>bounding box has potentially an invalid value range for longlat data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A data frame: 1,924 × 3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    downstream_route_measure index                        geometry</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  <span style="color: #BCBCBC;">*</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;POINT [°]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>                        0     0    Z (-122.0155 49.16804 9.626)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>                       10     1 Z (-122.0154 49.16795 9.643175)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>                       20     2 Z (-122.0154 49.16787 9.660349)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>                       30     3 Z (-122.0153 49.16778 9.677524)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>                       40     4  Z (-122.0153 49.1677 9.694698)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>                       50     5 Z (-122.0152 49.16762 9.711873)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>                       60     6 Z (-122.0152 49.16753 9.729048)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>                       70     7 Z (-122.0151 49.16745 9.746222)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>                       80     8 Z (-122.0151 49.16736 9.763397)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>                       90     9  Z (-122.015 49.16728 9.780571)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    downstream_route_measure index                      geometry</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  <span style="color: #BCBCBC;">*</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;POINT [°]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>                        0     0    Z (1290726 469483.5 9.626)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>                       10     1 Z (1290730 469474.4 9.643175)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>                       20     2 Z (1290734 469465.3 9.660349)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>                       30     3 Z (1290738 469456.2 9.677524)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>                       40     4 Z (1290742 469447.1 9.694698)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>                       50     5 Z (1290746 469437.9 9.711873)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>                       60     6 Z (1290750 469428.8 9.729048)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>                       70     7 Z (1290754 469419.7 9.746222)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>                       80     8 Z (1290758 469410.6 9.763397)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>                       90     9 Z (1290763 469401.5 9.780571)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1,914 more rows</span></span>
 </code></pre></div>
     </div>
@@ -148,7 +166,7 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.9000.</p>
 </div>
 
       </footer></div>
