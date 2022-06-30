@@ -227,21 +227,21 @@ test_that("collection offset works", {
   x <- fwa_query_collection(collection_id,
     limit = 2
   )
-  expect_identical(x$fwa_stream_networks_label_id, c(1, 2))
+  expect_identical(x$named_streams_id, c(1, 2))
   x2 <- fwa_query_collection(collection_id,
     offset = 1,
     limit = 1
   )
   expect_identical(
-    x2$fwa_stream_networks_label_id,
-    x$fwa_stream_networks_label_id[2]
+    x2$named_streams_id,
+    x$named_streams_id[2]
   )
 })
 
 test_that("collection offset works with higher numbers", {
   collection_id <- "whse_basemapping.fwa_named_streams"
 
-  sortby <- "fwa_stream_networks_label_id"
+  sortby <- "named_streams_id"
   x <- fwa_query_collection(collection_id,
     offset = 997,
     limit = 2,
@@ -254,13 +254,13 @@ test_that("collection offset works with higher numbers", {
   )
   expect_s3_class(x, "sf")
   expect_s3_class(x2, "sf")
-  expect_true(identical(x2$fwa_stream_networks_label_id, x$fwa_stream_networks_label_id[2]))
+  expect_true(identical(x2$named_streams_id, x$named_streams_id[2]))
 })
 
 test_that("collection offset works with really big number", {
   collection_id <- "whse_basemapping.fwa_named_streams"
 
-  sortby <- "fwa_stream_networks_label_id"
+  sortby <- "named_streams_id"
   x <- fwa_query_collection(collection_id,
     offset = 9999,
     limit = 2,
@@ -275,15 +275,15 @@ test_that("collection offset works with really big number", {
   expect_s3_class(x2, "sf")
 
   expect_true(identical(
-    x2$fwa_stream_networks_label_id,
-    x$fwa_stream_networks_label_id[2]
+    x2$named_streams_id,
+    x$named_streams_id[2]
   ))
 })
 
 test_that("collection offset works with offset more than limit", {
   collection_id <- "whse_basemapping.fwa_named_streams"
 
-  sortby <- "fwa_stream_networks_label_id"
+  sortby <- "named_streams_id"
   x <- fwa_query_collection(collection_id,
     offset = 10000,
     limit = 2,
@@ -298,8 +298,8 @@ test_that("collection offset works with offset more than limit", {
   expect_s3_class(x2, "sf")
 
   expect_true(identical(
-    x2$fwa_stream_networks_label_id,
-    x$fwa_stream_networks_label_id[2]
+    x2$named_streams_id,
+    x$named_streams_id[2]
   ))
 })
 
