@@ -96,8 +96,8 @@
 </h2>
 <p>To install the lastest version from <a href="https://github.com/poissonconsulting/fwapgr" class="external-link">GitHub</a></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"poissonconsulting/fwapgr"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"poissonconsulting/fwapgr"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
@@ -140,46 +140,46 @@
 </h2>
 <p>Get Sangan River from <code>whse_basemapping.fwa_stream_networks_sp</code> collection:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">coll</span> <span class="op">&lt;-</span> <span class="st">"whse_basemapping.fwa_stream_networks_sp"</span>
-<span class="va">river</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_query_collection.html">fwa_query_collection</a></span><span class="op">(</span><span class="va">coll</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Sangan River"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">river</span>
-<span class="co">#&gt; Simple feature collection with 21 features and 27 fields</span>
-<span class="co">#&gt; Geometry type: LINESTRING</span>
-<span class="co">#&gt; Dimension:     XYZ</span>
-<span class="co">#&gt; Bounding box:  xmin: -131.9972 ymin: 53.94994 xmax: -131.9168 ymax: 54.0332</span>
-<span class="co">#&gt; z_range:       zmin: 1 zmax: 67</span>
-<span class="co">#&gt; Geodetic CRS:  WGS 84</span>
-<span class="co">#&gt; # A data frame: 21 × 28</span>
-<span class="co">#&gt;    blue_line_key blue_line_key_50k downstream_route_meas… edge_type feature_code</span>
-<span class="co">#&gt;  *         &lt;dbl&gt;             &lt;dbl&gt;                  &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;       </span>
-<span class="co">#&gt;  1     360879896                11                  1266.      1000 GA24850000  </span>
-<span class="co">#&gt;  2     360879896                11                  8744.      1000 GA24850000  </span>
-<span class="co">#&gt;  3     360879896                11                  2319.      1000 GA24850000  </span>
-<span class="co">#&gt;  4     360879896                11                     0       1250 WA24111120  </span>
-<span class="co">#&gt;  5     360879896               130                 17516.      1050 GA24850140  </span>
-<span class="co">#&gt;  6     360879896                11                 10075.      1000 GA24850000  </span>
-<span class="co">#&gt;  7     360879896                11                  6808.      1000 GA24850000  </span>
-<span class="co">#&gt;  8     360879896                11                  4721.      1000 GA24850000  </span>
-<span class="co">#&gt;  9     360879896                11                 13068.      1000 GA24850000  </span>
-<span class="co">#&gt; 10     360879896                11                  7849.      1000 GA24850000  </span>
-<span class="co">#&gt; # … with 11 more rows, and 23 more variables: feature_source &lt;chr&gt;,</span>
-<span class="co">#&gt; #   fwa_watershed_code &lt;chr&gt;, gnis_id &lt;dbl&gt;, gnis_name &lt;chr&gt;, gradient &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   left_right_tributary &lt;chr&gt;, length_metre &lt;dbl&gt;, linear_feature_id &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   local_watershed_code &lt;chr&gt;, localcode_ltree &lt;chr&gt;, stream_magnitude &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   stream_order &lt;dbl&gt;, upstream_area_ha &lt;chr&gt;, upstream_route_measure &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   waterbody_key &lt;chr&gt;, watershed_code_50k &lt;chr&gt;, watershed_group_code &lt;chr&gt;,</span>
-<span class="co">#&gt; #   watershed_group_code_50k &lt;chr&gt;, watershed_group_id &lt;dbl&gt;, …</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">coll</span> <span class="op">&lt;-</span> <span class="st">"whse_basemapping.fwa_stream_networks_sp"</span></span>
+<span><span class="va">river</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_query_collection.html">fwa_query_collection</a></span><span class="op">(</span><span class="va">coll</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Sangan River"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">river</span></span>
+<span><span class="co">#&gt; Simple feature collection with 21 features and 27 fields</span></span>
+<span><span class="co">#&gt; Geometry type: LINESTRING</span></span>
+<span><span class="co">#&gt; Dimension:     XYZ</span></span>
+<span><span class="co">#&gt; Bounding box:  xmin: -131.9972 ymin: 53.94994 xmax: -131.9168 ymax: 54.0332</span></span>
+<span><span class="co">#&gt; z_range:       zmin: 1 zmax: 67</span></span>
+<span><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
+<span><span class="co">#&gt; # A data frame: 21 × 28</span></span>
+<span><span class="co">#&gt;    blue_line_key blue_line_key_50k downstream_route_meas… edge_type feature_code</span></span>
+<span><span class="co">#&gt;  *         &lt;dbl&gt;             &lt;dbl&gt;                  &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;       </span></span>
+<span><span class="co">#&gt;  1     360879896                11                  1266.      1000 GA24850000  </span></span>
+<span><span class="co">#&gt;  2     360879896                11                  8744.      1000 GA24850000  </span></span>
+<span><span class="co">#&gt;  3     360879896                11                  2319.      1000 GA24850000  </span></span>
+<span><span class="co">#&gt;  4     360879896                11                     0       1250 WA24111120  </span></span>
+<span><span class="co">#&gt;  5     360879896               130                 17516.      1050 GA24850140  </span></span>
+<span><span class="co">#&gt;  6     360879896                11                 10075.      1000 GA24850000  </span></span>
+<span><span class="co">#&gt;  7     360879896                11                  6808.      1000 GA24850000  </span></span>
+<span><span class="co">#&gt;  8     360879896                11                  4721.      1000 GA24850000  </span></span>
+<span><span class="co">#&gt;  9     360879896                11                 13068.      1000 GA24850000  </span></span>
+<span><span class="co">#&gt; 10     360879896                11                  7849.      1000 GA24850000  </span></span>
+<span><span class="co">#&gt; # … with 11 more rows, and 23 more variables: feature_source &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   fwa_watershed_code &lt;chr&gt;, gnis_id &lt;dbl&gt;, gnis_name &lt;chr&gt;, gradient &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   left_right_tributary &lt;chr&gt;, length_metre &lt;dbl&gt;, linear_feature_id &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   local_watershed_code &lt;chr&gt;, localcode_ltree &lt;chr&gt;, stream_magnitude &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   stream_order &lt;dbl&gt;, upstream_area_ha &lt;chr&gt;, upstream_route_measure &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   waterbody_key &lt;chr&gt;, watershed_code_50k &lt;chr&gt;, watershed_group_code &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   watershed_group_code_50k &lt;chr&gt;, watershed_group_id &lt;dbl&gt;, …</span></span></code></pre></div>
 <p>Get simplified Yakoun River watershed starting 10km upstream:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">blk</span> <span class="op">&lt;-</span> <span class="va">river</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>
-<span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="va">blk</span>,
-  downstream_route_measure <span class="op">=</span> <span class="fl">10000</span>,
-  transform <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ST_Simplify"</span>, <span class="fl">2000</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">blk</span> <span class="op">&lt;-</span> <span class="va">river</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
+<span><span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="va">blk</span>,</span>
+<span>  downstream_route_measure <span class="op">=</span> <span class="fl">10000</span>,</span>
+<span>  transform <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ST_Simplify"</span>, <span class="fl">2000</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, fill <span class="op">=</span> <span class="st">"steelblue"</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">river</span>, lwd <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">wshed</span>, lwd <span class="op">=</span> <span class="fl">0.15</span>, fill <span class="op">=</span> <span class="st">"steelblue"</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">river</span>, lwd <span class="op">=</span> <span class="fl">0.15</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-5-1.png" width="100%"></p>
 </div>
 <div class="section level2">
@@ -262,7 +262,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.9000.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.9000.</p>
 </div>
 
       </footer>
