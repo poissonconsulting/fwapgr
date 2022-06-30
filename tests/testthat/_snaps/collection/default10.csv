@@ -1,11 +1,11 @@
-blue_line_key,fwa_stream_networks_label_id,gnis_name,stream_order,watershed_group_code
-356350610,1,111 Mile Creek,5,SAJR
-356352333,2,117 Mile Creek,3,SAJR
-354091024,3,150 Yard Creek,1,SANJ
-356328957,4,3 Mile Creek,3,QUES
-359538484,5,3 Mile Creek,4,LOMI
-360886335,6,Aaltanhash River,4,KHTZ
-356355679,7,Abbott Creek,4,QUES
-356364151,8,Abbott Creek,4,LNIC
-356456720,9,Abbott Creek,3,DUNC
-356508798,10,Abbott Creek,2,OKAN
+blue_line_key,gnis_name,named_streams_id,stream_order,watershed_group_code
+356350610,111 Mile Creek,1,5,SAJR
+356352333,117 Mile Creek,2,3,SAJR
+354091024,150 Yard Creek,3,1,SANJ
+356328957,3 Mile Creek,4,3,QUES
+359538484,3 Mile Creek,5,4,LOMI
+360886335,Aaltanhash River,6,4,KHTZ
+356355679,Abbott Creek,7,4,QUES
+356364151,Abbott Creek,8,4,LNIC
+356456720,Abbott Creek,9,3,DUNC
+356508798,Abbott Creek,10,2,OKAN
