@@ -19,7 +19,7 @@ Depends:
     R (>= 3.6)
 Imports:
     chk,
-    pgfeatureserv,
+    pgfeatureserv (>= 0.0.0.9003),
     lifecycle,
     sf,
     tibble
