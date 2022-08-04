@@ -77,7 +77,7 @@
     <div id="functions">
     <h2>Functions</h2>
     
-<ul><li><p><code>fwa_meta_collections</code>: Freshwater Atlas Collections</p>
+<ul><li><p><code>fwa_meta_collections()</code>: Freshwater Atlas Collections</p>
 <p><a href="https://lifecycle.r-lib.org/articles/stages.html#soft-deprecated" class="external-link"><img src="figures/lifecycle-soft-deprecated.svg" alt="[Soft-deprecated]"></a></p></li>
 </ul></div>
     <div id="see-also">
@@ -91,19 +91,21 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">fwa_collections</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 21 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    collection_id                              description extent$spatial$… links</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;lis&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> hydrosheds.hybas_lev12_v1c                 HydroBasin… http://www.open… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> usgs.wbdhu12                               USGS Natio… http://www.open… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> whse_basemapping.fwa_approx_borders        Lines of l… http://www.open… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> whse_basemapping.fwa_assessment_watershed… Data for t… http://www.open… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> whse_basemapping.fwa_basins_poly           Large BC w… http://www.open… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> whse_basemapping.fwa_bays_and_channels_po… Data for t… http://www.open… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> whse_basemapping.fwa_bc_boundary           Data for t… http://www.open… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> whse_basemapping.fwa_coastlines_sp         Data for t… http://www.open… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> whse_basemapping.fwa_glaciers_poly         Data for t… http://www.open… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> whse_basemapping.fwa_islands_poly          Data for t… http://www.open… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 11 more rows, and 1 more variable: extent$spatial$bbox &lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    collection_id                                   description     exten…¹ links</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lis&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> hydrosheds.hybas_lev12_v1c                      HydroBasins fo… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> usgs.wbdhu12                                    USGS National … http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> whse_basemapping.fwa_approx_borders             Lines of latit… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> whse_basemapping.fwa_assessment_watersheds_poly Data for table… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> whse_basemapping.fwa_basins_poly                Large BC water… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> whse_basemapping.fwa_bays_and_channels_poly     Data for table… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> whse_basemapping.fwa_bcboundary                 Boundary of BC… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> whse_basemapping.fwa_coastlines_sp              Data for table… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> whse_basemapping.fwa_glaciers_poly              Data for table… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> whse_basemapping.fwa_islands_poly               Data for table… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 11 more rows, 1 more variable: extent$spatial$bbox &lt;list&gt;, and</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   abbreviated variable name ¹​extent$spatial$crs</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -118,7 +120,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.9000.</p>
 </div>
 
       </footer></div>
