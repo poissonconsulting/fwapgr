@@ -1,5 +1,11 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# fwapgr 0.1.0.9012
+
+- `collection` dropped `id` column.
+- `bc_ind` from `TRUE` to `FALSE` for `index-point` Grostete Creek and two others.
+- In `collection` properties dropped `upstream_area_ha`.
+
 # fwapgr 0.1.0.9011
 
 - Change endpoint.
