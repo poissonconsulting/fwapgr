@@ -20,11 +20,11 @@ Get information about a collection's column names.
 }
 \section{Functions}{
 \itemize{
-\item \code{fwa_meta_properties}: Freshwater Atlas Collection's Properties
+\item \code{fwa_meta_properties()}: Freshwater Atlas Collection's Properties
 
 \lifecycle{soft-deprecated}
-}}
 
+}}
 \examples{
 fwa_collection_properties("whse_basemapping.fwa_stream_networks_sp")
 }

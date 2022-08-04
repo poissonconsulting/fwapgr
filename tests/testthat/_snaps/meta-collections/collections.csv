@@ -5,7 +5,7 @@ whse_basemapping.fwa_approx_borders
 whse_basemapping.fwa_assessment_watersheds_poly
 whse_basemapping.fwa_basins_poly
 whse_basemapping.fwa_bays_and_channels_poly
-whse_basemapping.fwa_bc_boundary
+whse_basemapping.fwa_bcboundary
 whse_basemapping.fwa_coastlines_sp
 whse_basemapping.fwa_glaciers_poly
 whse_basemapping.fwa_islands_poly
@@ -18,6 +18,5 @@ whse_basemapping.fwa_obstructions_sp
 whse_basemapping.fwa_rivers_poly
 whse_basemapping.fwa_stream_networks_sp
 whse_basemapping.fwa_watershed_groups_poly
-whse_basemapping.fwa_watershed_groups_subdivided
 whse_basemapping.fwa_watersheds_poly
 whse_basemapping.fwa_wetlands_poly

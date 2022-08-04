@@ -54,11 +54,11 @@ Query a collection from the freshwater atlas.
 }
 \section{Functions}{
 \itemize{
-\item \code{fwa_collection}: Query Freshwater Atlas Collection
+\item \code{fwa_collection()}: Query Freshwater Atlas Collection
 
 \lifecycle{soft-deprecated}
-}}
 
+}}
 \examples{
 collection_id <- "whse_basemapping.fwa_stream_networks_sp"
 filter <- list(gnis_name = "Sangan River")

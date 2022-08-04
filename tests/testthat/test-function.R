@@ -6,7 +6,7 @@ test_that("fwa_function informative error invalid function_id", {
   )
 
   expect_chk_error(fwa_function("not_a_function", parameters = parameters),
-                   "API request failed \\[404\\]: Function not found: not_a_function")
+                   "API request failed \\[404\\]: Function not found: postgisftw.not_a_function")
 })
 
 test_that("fwa_function informative error invalid transform", {

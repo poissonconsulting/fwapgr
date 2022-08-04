@@ -17,11 +17,11 @@ Get information about the collections.
 }
 \section{Functions}{
 \itemize{
-\item \code{fwa_meta_collections}: Freshwater Atlas Collections
+\item \code{fwa_meta_collections()}: Freshwater Atlas Collections
 
 \lifecycle{soft-deprecated}
-}}
 
+}}
 \examples{
 fwa_collections()
 }
