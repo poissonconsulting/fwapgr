@@ -40,6 +40,7 @@ Authors:
 Other contributors:
 \itemize{
   \item Poisson Consulting [copyright holder, funder]
+  \item Nadine Hussein \email{nadine@poissonconsulting.ca} (\href{https://orcid.org/0000-0003-4470-8361}{ORCID}) [contributor]
 }
 
 }

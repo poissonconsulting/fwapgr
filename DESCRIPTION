@@ -1,19 +1,15 @@
 Package: fwapgr
 Title: Client for BC Freshwater Atlas fwapg API
 Version: 0.1.0.9011
-Authors@R: 
-    c(person(given = "Sebastian",
-             family = "Dalgarno",
-             role = c("aut", "cre"),
-             email = "seb@poissonconsulting.ca",
-             comment = c(ORCID = "0000-0002-3658-4517")),
-      person(given = "Joe",
-             family = "Thorley",
-             role = "aut",
-             email = "joe@poissonconsulting.ca",
-             comment = c(ORCID = "0000-0002-7683-4592")),
-      person(given = "Poisson Consulting",
-             role = c("cph", "fnd")))
+Authors@R: c(
+    person("Sebastian", "Dalgarno", , "seb@poissonconsulting.ca", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-3658-4517")),
+    person("Joe", "Thorley", , "joe@poissonconsulting.ca", role = "aut",
+           comment = c(ORCID = "0000-0002-7683-4592")),
+    person("Poisson Consulting", role = c("cph", "fnd")),
+    person("Nadine", "Hussein", , "nadine@poissonconsulting.ca", role = "ctb",
+           comment = c(ORCID = "0000-0003-4470-8361"))
+  )
 Description: Client for fwapg, a PostgreSQL database and web API for BC
     Freshwater Atlas data.
 License: MIT + file LICENSE
