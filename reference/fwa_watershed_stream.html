@@ -126,8 +126,15 @@ watershed at measure.</p>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">fwa_watershed_stream</span><span class="op">(</span><span class="fl">356308001</span>, downstream_route_measure <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in get_request(url = url, user = user, verbose = verbose):</span> API request failed [500]: Unable to read data from: postgisftw.fwa_watershedstream</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> .</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 1 feature and 1 field</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: MULTILINESTRING</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -121.9504 ymin: 49.1401 xmax: -121.9413 ymax: 49.15144</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A data frame: 1 × 2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   linear_feature_id                                                     geometry</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">*</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                                        <span style="color: #949494; font-style: italic;">&lt;MULTILINESTRING [°]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>         700<span style="text-decoration: underline;">730</span>811 ((-121.9504 49.15144, -121.9501 49.15144, -121.9498 49.1513…</span>
 </code></pre></div>
     </div>
   </div>

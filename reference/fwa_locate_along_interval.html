@@ -131,8 +131,26 @@ features to, e.g. <code>c(minLon, minLat, maxLon, maxLat)</code>.</p></dd>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">fwa_locate_along_interval</span><span class="op">(</span><span class="fl">356308001</span>, interval_length <span class="op">=</span> <span class="fl">10</span>, start_measure <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in get_request(url = url, user = user, verbose = verbose):</span> API request failed [500]: Unable to read data from: postgisftw.fwa_locatealonginterval</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> .</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 1924 features and 2 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POINT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XYZ</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -122.0155 ymin: 49.11263 xmax: -121.8697 ymax: 49.16804</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> z_range:       zmin: 7.5 zmax: 214.8791</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A data frame: 1,924 × 3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    downstream_route_measure index                        geometry</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  <span style="color: #BCBCBC;">*</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;POINT [°]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>                        0     0    Z (-122.0155 49.16804 9.626)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>                       10     1 Z (-122.0154 49.16795 9.643175)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>                       20     2 Z (-122.0154 49.16787 9.660349)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>                       30     3 Z (-122.0153 49.16778 9.677524)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>                       40     4  Z (-122.0153 49.1677 9.694698)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>                       50     5 Z (-122.0152 49.16762 9.711873)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>                       60     6 Z (-122.0152 49.16753 9.729048)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>                       70     7 Z (-122.0151 49.16745 9.746222)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>                       80     8 Z (-122.0151 49.16736 9.763397)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>                       90     9  Z (-122.015 49.16728 9.780571)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1,914 more rows</span></span>
 </code></pre></div>
     </div>
   </div>

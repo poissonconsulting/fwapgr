@@ -95,9 +95,21 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">fwa_collection_properties</span><span class="op">(</span><span class="st">"whse_basemapping.fwa_stream_networks_sp"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in get_request(url = url, user = user, verbose = verbose):</span> API request failed [404]: Collection not found: whse_basemapping.fwa_stream_networks_sp</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> .</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">fwa_collection_properties</span><span class="op">(</span><span class="st">"fwapg.fwa_stream_networks_sp"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 26 × 3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    name                     type   description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> linear_feature_id        number <span style="color: #949494;">""</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> watershed_group_id       number <span style="color: #949494;">""</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> edge_type                number <span style="color: #949494;">""</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> blue_line_key            number <span style="color: #949494;">""</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> watershed_key            number <span style="color: #949494;">""</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> fwa_watershed_code       string <span style="color: #949494;">""</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> local_watershed_code     string <span style="color: #949494;">""</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> watershed_group_code     string <span style="color: #949494;">""</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> downstream_route_measure number <span style="color: #949494;">""</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> length_metre             number <span style="color: #949494;">""</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 16 more rows</span></span>
 </code></pre></div>
     </div>
   </div>
