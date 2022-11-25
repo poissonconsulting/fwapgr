@@ -146,31 +146,31 @@
 <code class="sourceCode R"><span><span class="va">coll</span> <span class="op">&lt;-</span> <span class="st">"whse_basemapping.fwa_stream_networks_sp"</span></span>
 <span><span class="va">river</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_query_collection.html">fwa_query_collection</a></span><span class="op">(</span><span class="va">coll</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Sangan River"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">river</span></span>
-<span><span class="co">#&gt; Simple feature collection with 21 features and 27 fields</span></span>
+<span><span class="co">#&gt; Simple feature collection with 21 features and 28 fields</span></span>
 <span><span class="co">#&gt; Geometry type: LINESTRING</span></span>
 <span><span class="co">#&gt; Dimension:     XYZ</span></span>
 <span><span class="co">#&gt; Bounding box:  xmin: -131.9972 ymin: 53.94994 xmax: -131.9168 ymax: 54.0332</span></span>
 <span><span class="co">#&gt; z_range:       zmin: 1 zmax: 67</span></span>
 <span><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
-<span><span class="co">#&gt; # A data frame: 21 × 28</span></span>
-<span><span class="co">#&gt;    blue_line_key blue_line_key_50k downstream_route_meas… edge_type feature_code</span></span>
-<span><span class="co">#&gt;  *         &lt;dbl&gt;             &lt;dbl&gt;                  &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;       </span></span>
-<span><span class="co">#&gt;  1     360879896                11                  1266.      1000 GA24850000  </span></span>
-<span><span class="co">#&gt;  2     360879896                11                  8744.      1000 GA24850000  </span></span>
-<span><span class="co">#&gt;  3     360879896                11                  2319.      1000 GA24850000  </span></span>
-<span><span class="co">#&gt;  4     360879896                11                     0       1250 WA24111120  </span></span>
-<span><span class="co">#&gt;  5     360879896               130                 17516.      1050 GA24850140  </span></span>
-<span><span class="co">#&gt;  6     360879896                11                 10075.      1000 GA24850000  </span></span>
-<span><span class="co">#&gt;  7     360879896                11                  6808.      1000 GA24850000  </span></span>
-<span><span class="co">#&gt;  8     360879896                11                  4721.      1000 GA24850000  </span></span>
-<span><span class="co">#&gt;  9     360879896                11                 13068.      1000 GA24850000  </span></span>
-<span><span class="co">#&gt; 10     360879896                11                  7849.      1000 GA24850000  </span></span>
-<span><span class="co">#&gt; # … with 11 more rows, and 23 more variables: feature_source &lt;chr&gt;,</span></span>
-<span><span class="co">#&gt; #   fwa_watershed_code &lt;chr&gt;, gnis_id &lt;dbl&gt;, gnis_name &lt;chr&gt;, gradient &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; # A data frame: 21 × 29</span></span>
+<span><span class="co">#&gt;    blue_line_key blue_…¹ downs…² edge_…³ featu…⁴ featu…⁵ fwa_w…⁶ gnis_id gnis_…⁷</span></span>
+<span><span class="co">#&gt;  *         &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;  </span></span>
+<span><span class="co">#&gt;  1     360879896      11   7849.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span><span class="co">#&gt;  2     360879896      11  10909.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span><span class="co">#&gt;  3     360879896     130  16588.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span><span class="co">#&gt;  4     360879896      11   4721.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span><span class="co">#&gt;  5     360879896      11   3446.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span><span class="co">#&gt;  6     360879896      11  13911.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span><span class="co">#&gt;  7     360879896      11  13776.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span><span class="co">#&gt;  8     360879896      11   6466.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span><span class="co">#&gt;  9     360879896     130  17516.    1050 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span><span class="co">#&gt; 10     360879896      11   1266.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span><span class="co">#&gt; # … with 11 more rows, 20 more variables: gradient &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   left_right_tributary &lt;chr&gt;, length_metre &lt;dbl&gt;, linear_feature_id &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   local_watershed_code &lt;chr&gt;, localcode_ltree &lt;chr&gt;, stream_magnitude &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   stream_order &lt;dbl&gt;, upstream_area_ha &lt;chr&gt;, upstream_route_measure &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   waterbody_key &lt;chr&gt;, watershed_code_50k &lt;chr&gt;, watershed_group_code &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   stream_order &lt;dbl&gt;, stream_order_max &lt;dbl&gt;, stream_order_parent &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   upstream_route_measure &lt;dbl&gt;, waterbody_key &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   watershed_code_50k &lt;chr&gt;, watershed_group_code &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   watershed_group_code_50k &lt;chr&gt;, watershed_group_id &lt;dbl&gt;, …</span></span></code></pre></div>
 <p>Get simplified Yakoun River watershed starting 10km upstream:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -249,7 +249,7 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="https://github.com/poissonconsulting/fwapgr/actions" class="external-link"><img src="https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://github.com/poissonconsulting/fwapgr/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/poissonconsulting/fwapgr/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://codecov.io/gh/poissonconsulting/fwapgr?branch=master" class="external-link"><img src="https://codecov.io/gh/poissonconsulting/fwapgr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://opensource.org/licenses/MIT" class="external-link"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
 </ul>
