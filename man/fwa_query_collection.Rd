@@ -70,8 +70,8 @@ Query a collection from the freshwater atlas.
 
 }}
 \examples{
-collection_id <- "whse_basemapping.fwa_stream_networks_sp"
-filter <- list(gnis_name = "Sangan River")
+collection_id <- "whse_basemapping.fwa_approx_borders"
+filter <- list(border = "USA_49")
 fwa_query_collection(collection_id, filter = filter)
 }
 \seealso{

@@ -7,7 +7,7 @@
 #' @family collections
 #' @export
 #' @examples
-#' fwa_collection_properties("whse_basemapping.fwa_stream_networks_sp")
+#' fwa_collection_properties("fwapg.fwa_stream_networks_sp")
 fwa_collection_properties <- function(collection_id) {
   pgfeatureserv::pgf_collection_properties(
     collection_id = collection_id,

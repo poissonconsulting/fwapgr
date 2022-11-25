@@ -26,7 +26,7 @@ Get information about a collection's column names.
 
 }}
 \examples{
-fwa_collection_properties("whse_basemapping.fwa_stream_networks_sp")
+fwa_collection_properties("fwapg.fwa_stream_networks_sp")
 }
 \seealso{
 Other collections: 
