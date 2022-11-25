@@ -9,6 +9,10 @@
 #' collection_id <- "whse_basemapping.fwa_approx_borders"
 #' filter <- list(border = "USA_49")
 #' fwa_query_collection(collection_id, filter = filter)
+#'
+#' collection_id <- "whse_basemapping.fwa_stream_networks_sp"
+#' filter <- list(gnis_name = "Sangan River")
+#' fwa_query_collection(collection_id, filter = filter)
 fwa_query_collection <- function(collection_id,
                                  filter = NULL,
                                  limit = 10000,

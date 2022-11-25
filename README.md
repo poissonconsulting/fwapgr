@@ -7,7 +7,7 @@
 
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R-CMD-check](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/fwapgr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/fwapgr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/fwapgr?branch=master)
 [![License:
@@ -45,28 +45,28 @@ Get information about the
 [collections](https://features.hillcrestgeo.ca/fwa/collections.html) or
 a collection’s properties:
 
--   [`fwa_collections()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_collections.html)  
--   [`fwa_collection_properties()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_collection_properties.html)
+- [`fwa_collections()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_collections.html)  
+- [`fwa_collection_properties()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_collection_properties.html)
 
 ### Query a Collection
 
 Query features from a
 [collection](https://features.hillcrestgeo.ca/fwa/collections.html):
 
--   [`fwa_query_collection()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_query_collection.html)
+- [`fwa_query_collection()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_query_collection.html)
 
 ### Execute Spatial Functions
 
 Execute spatial
 [functions](https://features.hillcrestgeo.ca/fwa/functions.html):
 
--   [`fwa_index_point()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_index_point.html)
--   [`fwa_locate_along()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along.html)
--   [`fwa_locate_along_interval()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along_interval.html)
--   [`fwa_watershed_at_measure()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_at_measure.html)
--   [`fwa_watershed_hex()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_hex.html)
--   [`fwa_watershed_stream()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_stream.html)
--   [`hydroshed()`](https://poissonconsulting.github.io/fwapgr/reference/hydroshed.html)
+- [`fwa_index_point()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_index_point.html)
+- [`fwa_locate_along()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along.html)
+- [`fwa_locate_along_interval()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_locate_along_interval.html)
+- [`fwa_watershed_at_measure()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_at_measure.html)
+- [`fwa_watershed_hex()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_hex.html)
+- [`fwa_watershed_stream()`](https://poissonconsulting.github.io/fwapgr/reference/fwa_watershed_stream.html)
+- [`hydroshed()`](https://poissonconsulting.github.io/fwapgr/reference/hydroshed.html)
 
 ## Demonstration
 
@@ -77,31 +77,31 @@ collection:
 coll <- "whse_basemapping.fwa_stream_networks_sp"
 river <- fwapgr::fwa_query_collection(coll, filter = list(gnis_name = "Sangan River"))
 river
-#> Simple feature collection with 21 features and 27 fields
+#> Simple feature collection with 21 features and 28 fields
 #> Geometry type: LINESTRING
 #> Dimension:     XYZ
 #> Bounding box:  xmin: -131.9972 ymin: 53.94994 xmax: -131.9168 ymax: 54.0332
 #> z_range:       zmin: 1 zmax: 67
 #> Geodetic CRS:  WGS 84
-#> # A data frame: 21 × 28
-#>    blue_line_key blue_line_key_50k downstream_route_meas… edge_type feature_code
-#>  *         <dbl>             <dbl>                  <dbl>     <dbl> <chr>       
-#>  1     360879896                11                  1266.      1000 GA24850000  
-#>  2     360879896                11                  8744.      1000 GA24850000  
-#>  3     360879896                11                  2319.      1000 GA24850000  
-#>  4     360879896                11                     0       1250 WA24111120  
-#>  5     360879896               130                 17516.      1050 GA24850140  
-#>  6     360879896                11                 10075.      1000 GA24850000  
-#>  7     360879896                11                  6808.      1000 GA24850000  
-#>  8     360879896                11                  4721.      1000 GA24850000  
-#>  9     360879896                11                 13068.      1000 GA24850000  
-#> 10     360879896                11                  7849.      1000 GA24850000  
-#> # … with 11 more rows, and 23 more variables: feature_source <chr>,
-#> #   fwa_watershed_code <chr>, gnis_id <dbl>, gnis_name <chr>, gradient <dbl>,
+#> # A data frame: 21 × 29
+#>    blue_line_key blue_…¹ downs…² edge_…³ featu…⁴ featu…⁵ fwa_w…⁶ gnis_id gnis_…⁷
+#>  *         <dbl>   <dbl>   <dbl>   <dbl> <chr>   <chr>   <chr>     <dbl> <chr>  
+#>  1     360879896      11   7849.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  2     360879896      11  10909.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  3     360879896     130  16588.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  4     360879896      11   4721.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  5     360879896      11   3446.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  6     360879896      11  13911.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  7     360879896      11  13776.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  8     360879896      11   6466.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  9     360879896     130  17516.    1050 GA2485… linear… 940-97…    3390 Sangan…
+#> 10     360879896      11   1266.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#> # … with 11 more rows, 20 more variables: gradient <dbl>,
 #> #   left_right_tributary <chr>, length_metre <dbl>, linear_feature_id <dbl>,
 #> #   local_watershed_code <chr>, localcode_ltree <chr>, stream_magnitude <dbl>,
-#> #   stream_order <dbl>, upstream_area_ha <chr>, upstream_route_measure <dbl>,
-#> #   waterbody_key <chr>, watershed_code_50k <chr>, watershed_group_code <chr>,
+#> #   stream_order <dbl>, stream_order_max <dbl>, stream_order_parent <chr>,
+#> #   upstream_route_measure <dbl>, waterbody_key <chr>,
+#> #   watershed_code_50k <chr>, watershed_group_code <chr>,
 #> #   watershed_group_code_50k <chr>, watershed_group_id <dbl>, …
 ```
 
