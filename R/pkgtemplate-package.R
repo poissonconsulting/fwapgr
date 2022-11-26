@@ -39,6 +39,7 @@
 #' @param transform A character vector with the name of the [*valid transform*](https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29) function followed by the parameter values (e.g. c("ST_Simplify", 100))
 #' @param x A number of the x coordinate.
 #' @param y A number of the y coordinate.
+#' @param nocache A flag specifying whether or not to cache results.
 #'
 #' @return
 #' An sf object.

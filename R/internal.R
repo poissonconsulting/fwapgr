@@ -5,3 +5,10 @@ api_url <- function() {
 gh_user <- function() {
   "http://github.com/poissonconsulting/fwapgr"
 }
+
+nocache_conversion <- function(nocache) {
+  if(isTRUE(nocache)) {
+    return('true')
+  }
+  'false'
+}

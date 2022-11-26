@@ -1,4 +1,6 @@
 test_that("multiplication works", {
+  rlang::local_options(nocache = TRUE)
+
   sf <- fwa_watershed_stream(356308001)
   expect_s3_class(sf, "sf")
   expect_s3_class(sf, "tbl_df")

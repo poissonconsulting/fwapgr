@@ -35,13 +35,15 @@ fwa_watershed_at_measure <- function(blue_line_key,
                                      bbox = NULL,
                                      properties = NULL,
                                      transform = NULL,
-                                     epsg = 4326) {
+                                     epsg = 4326,
+                                     nocache = getOption("fwa.nocache", FALSE)) {
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
   chk_number(downstream_route_measure)
   chk_gte(downstream_route_measure)
   chk_whole_number(epsg)
   chk_gt(epsg)
+  chk_flag(nocache)
 
   parameters <- list(
     blue_line_key = blue_line_key,
@@ -60,7 +62,8 @@ fwa_watershed_at_measure <- function(blue_line_key,
     parameters = parameters,
     bbox = bbox,
     properties = properties,
-    transform = transform
+    transform = transform,
+    nocache = nocache_conversion(nocache)
   )
 
   sf::st_transform(x, epsg)

@@ -1,4 +1,6 @@
 test_that("fwa_locate_along works", {
+  rlang::local_options(nocache = TRUE)
+
   sf <- fwa_locate_along(356308001, downstream_route_measure = 10000)
   expect_s3_class(sf, "sf")
   expect_s3_class(sf, "tbl_df")

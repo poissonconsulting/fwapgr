@@ -1,4 +1,6 @@
 test_that("fwa_index_point works", {
+  rlang::local_options(nocache = TRUE)
+
   x <- -124.6
   y <- 54.8
 
@@ -13,6 +15,8 @@ test_that("fwa_index_point works", {
 })
 
 test_that("fwa_index_point gets multiple within limits", {
+  rlang::local_options(nocache = TRUE)
+
   x <- -124.6
   y <- 54.8
 
@@ -30,6 +34,8 @@ test_that("fwa_index_point gets multiple within limits", {
 })
 
 test_that("fwa_index_point returns none if tight tolerance", {
+  rlang::local_options(nocache = TRUE)
+
   x <- -124.6
   y <- 54.8
 

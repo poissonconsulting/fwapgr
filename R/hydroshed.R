@@ -15,13 +15,15 @@ hydroshed <- function(x, y,
                       bbox = NULL,
                       properties = NULL,
                       transform = NULL,
-                      epsg = 4326) {
+                      epsg = 4326,
+                      nocache = getOption("fwa.nocache", FALSE)) {
   chk_number(x)
   chk_number(y)
   chk_whole_number(srid)
   chk_gt(srid)
   chk_whole_number(epsg)
   chk_gt(epsg)
+  chk_flag(nocache)
 
   parameters <- list(
     x = x,
@@ -42,7 +44,8 @@ hydroshed <- function(x, y,
     limit = 1,
     bbox = bbox,
     properties = properties,
-    transform = transform
+    transform = transform,
+    nocache = nocache_conversion(nocache)
   )
 
   sf::st_transform(x, epsg)
