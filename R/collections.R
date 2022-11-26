@@ -2,6 +2,7 @@
 #'
 #' Get information about the collections.
 #'
+#' @inherit internal
 #' @return A tibble.
 #' @family collections
 #' @export

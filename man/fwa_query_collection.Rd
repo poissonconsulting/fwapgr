@@ -12,7 +12,8 @@ fwa_collection(
   bbox = NULL,
   properties = NULL,
   transform = NULL,
-  epsg = 4326
+  epsg = 4326,
+  nocache = getOption("fwa.nocache", TRUE)
 )
 
 fwa_query_collection(
@@ -47,6 +48,8 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 
+\item{nocache}{A flag specifying whether or not to cache results.}
+
 \item{offset}{A positive whole number indicating the offset of start of returned results.}
 
 \item{sortby}{A string that sorts the response items by a property.
@@ -56,8 +59,6 @@ Default is ascending but property name can be prepended with
 \item{groupby}{A string of the property name (i.e., column name) to group
 response features by. This would typically be used with an aggregate
 transform function.}
-
-\item{nocache}{A flag specifying whether or not to cache results.}
 }
 \value{
 An sf object.

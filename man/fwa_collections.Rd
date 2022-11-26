@@ -7,7 +7,10 @@
 \usage{
 fwa_collections(nocache = getOption("fwa.nocache", TRUE))
 
-fwa_meta_collections()
+fwa_meta_collections(nocache = getOption("fwa.nocache", TRUE))
+}
+\arguments{
+\item{nocache}{A flag specifying whether or not to cache results.}
 }
 \value{
 A tibble.

@@ -9,11 +9,13 @@ fwa_collection <- function(collection_id,
                            bbox = NULL,
                            properties = NULL,
                            transform = NULL,
-                           epsg = 4326) {
+                           epsg = 4326,
+                           nocache = getOption("fwa.nocache", TRUE)) {
+  lifecycle::deprecate_soft("0.1.1", "fwa_collection()", "fwa_query_collection()")
   fwa_query_collection(collection_id,
     filter = filter, limit = limit,
     bbox = bbox,
     properties = properties, transform = transform,
-    epsg = epsg
+    epsg = epsg, nocache = nocache
   )
 }

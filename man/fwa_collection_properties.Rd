@@ -10,7 +10,7 @@ fwa_collection_properties(
   nocache = getOption("fwa.nocache", TRUE)
 )
 
-fwa_meta_properties(collection_id)
+fwa_meta_properties(collection_id, nocache = getOption("fwa.nocache", TRUE))
 }
 \arguments{
 \item{collection_id}{A character string of the collection id.}
