@@ -63,11 +63,17 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fwa_collections</span><span class="op">(</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">fwa_collections</span><span class="op">(</span>nocache <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"fwa.nocache"</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">fwa_meta_collections</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">fwa_meta_collections</span><span class="op">(</span>nocache <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"fwa.nocache"</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>nocache</dt>
+<dd><p>A flag specifying whether or not to cache results.</p></dd>
+
+</dl></div>
     <div id="value">
     <h2>Value</h2>
     
@@ -93,16 +99,16 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 21 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    collection_id                                   description     exten…¹ links</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lis&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> fwapg.fwa_stream_networks_sp                    Data for table… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> hydrosheds.hybas_lev12_v1c                      HydroBasins fo… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> usgs.wbdhu12                                    USGS National … http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> whse_basemapping.fwa_approx_borders             Lines of latit… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> whse_basemapping.fwa_assessment_watersheds_poly Data for table… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> whse_basemapping.fwa_basins_poly                Large BC water… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> whse_basemapping.fwa_bays_and_channels_poly     Data for table… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> whse_basemapping.fwa_bcboundary                 Boundary of BC… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> whse_basemapping.fwa_coastlines_sp              Data for table… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> whse_basemapping.fwa_glaciers_poly              Data for table… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> hydrosheds.hybas_lev12_v1c                      HydroBasins fo… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> usgs.wbdhu12                                    USGS National … http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> whse_basemapping.fwa_approx_borders             Lines of latit… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> whse_basemapping.fwa_assessment_watersheds_poly Data for table… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> whse_basemapping.fwa_basins_poly                Large BC water… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> whse_basemapping.fwa_bays_and_channels_poly     Data for table… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> whse_basemapping.fwa_bcboundary                 Boundary of BC… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> whse_basemapping.fwa_coastlines_sp              Data for table… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> whse_basemapping.fwa_glaciers_poly              Data for table… http:/… &lt;df&gt; </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> whse_basemapping.fwa_islands_poly               Data for table… http:/… &lt;df&gt; </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 11 more rows, 1 more variable: extent$spatial$bbox &lt;list&gt;, and</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   abbreviated variable name ¹​extent$spatial$crs</span></span>
 </code></pre></div>

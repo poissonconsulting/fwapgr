@@ -103,24 +103,24 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">collection_id</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fwa_collections.html">fwa_collections</a></span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">collection_id</span></span>
 <span><span class="va">collection_id</span></span>
-<span><span class="co">#&gt;  [1] "fwapg.fwa_stream_networks_sp"                   </span></span>
-<span><span class="co">#&gt;  [2] "hydrosheds.hybas_lev12_v1c"                     </span></span>
-<span><span class="co">#&gt;  [3] "usgs.wbdhu12"                                   </span></span>
-<span><span class="co">#&gt;  [4] "whse_basemapping.fwa_approx_borders"            </span></span>
-<span><span class="co">#&gt;  [5] "whse_basemapping.fwa_assessment_watersheds_poly"</span></span>
-<span><span class="co">#&gt;  [6] "whse_basemapping.fwa_basins_poly"               </span></span>
-<span><span class="co">#&gt;  [7] "whse_basemapping.fwa_bays_and_channels_poly"    </span></span>
-<span><span class="co">#&gt;  [8] "whse_basemapping.fwa_bcboundary"                </span></span>
-<span><span class="co">#&gt;  [9] "whse_basemapping.fwa_coastlines_sp"             </span></span>
-<span><span class="co">#&gt; [10] "whse_basemapping.fwa_glaciers_poly"             </span></span>
-<span><span class="co">#&gt; [11] "whse_basemapping.fwa_islands_poly"              </span></span>
-<span><span class="co">#&gt; [12] "whse_basemapping.fwa_lakes_poly"                </span></span>
-<span><span class="co">#&gt; [13] "whse_basemapping.fwa_linear_boundaries_sp"      </span></span>
-<span><span class="co">#&gt; [14] "whse_basemapping.fwa_manmade_waterbodies_poly"  </span></span>
-<span><span class="co">#&gt; [15] "whse_basemapping.fwa_named_streams"             </span></span>
-<span><span class="co">#&gt; [16] "whse_basemapping.fwa_named_watersheds_poly"     </span></span>
-<span><span class="co">#&gt; [17] "whse_basemapping.fwa_obstructions_sp"           </span></span>
-<span><span class="co">#&gt; [18] "whse_basemapping.fwa_rivers_poly"               </span></span>
+<span><span class="co">#&gt;  [1] "hydrosheds.hybas_lev12_v1c"                     </span></span>
+<span><span class="co">#&gt;  [2] "usgs.wbdhu12"                                   </span></span>
+<span><span class="co">#&gt;  [3] "whse_basemapping.fwa_approx_borders"            </span></span>
+<span><span class="co">#&gt;  [4] "whse_basemapping.fwa_assessment_watersheds_poly"</span></span>
+<span><span class="co">#&gt;  [5] "whse_basemapping.fwa_basins_poly"               </span></span>
+<span><span class="co">#&gt;  [6] "whse_basemapping.fwa_bays_and_channels_poly"    </span></span>
+<span><span class="co">#&gt;  [7] "whse_basemapping.fwa_bcboundary"                </span></span>
+<span><span class="co">#&gt;  [8] "whse_basemapping.fwa_coastlines_sp"             </span></span>
+<span><span class="co">#&gt;  [9] "whse_basemapping.fwa_glaciers_poly"             </span></span>
+<span><span class="co">#&gt; [10] "whse_basemapping.fwa_islands_poly"              </span></span>
+<span><span class="co">#&gt; [11] "whse_basemapping.fwa_lakes_poly"                </span></span>
+<span><span class="co">#&gt; [12] "whse_basemapping.fwa_linear_boundaries_sp"      </span></span>
+<span><span class="co">#&gt; [13] "whse_basemapping.fwa_manmade_waterbodies_poly"  </span></span>
+<span><span class="co">#&gt; [14] "whse_basemapping.fwa_named_streams"             </span></span>
+<span><span class="co">#&gt; [15] "whse_basemapping.fwa_named_watersheds_poly"     </span></span>
+<span><span class="co">#&gt; [16] "whse_basemapping.fwa_obstructions_sp"           </span></span>
+<span><span class="co">#&gt; [17] "whse_basemapping.fwa_rivers_poly"               </span></span>
+<span><span class="co">#&gt; [18] "whse_basemapping.fwa_stream_networks_sp"        </span></span>
 <span><span class="co">#&gt; [19] "whse_basemapping.fwa_watershed_groups_poly"     </span></span>
 <span><span class="co">#&gt; [20] "whse_basemapping.fwa_watersheds_poly"           </span></span>
 <span><span class="co">#&gt; [21] "whse_basemapping.fwa_wetlands_poly"</span></span></code></pre></div>
@@ -131,22 +131,6 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">collection_id</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">collection_id</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">collection_id</span>, <span class="va">fwa_collection_properties</span><span class="op">)</span></span>
-<span><span class="co">#&gt; $fwapg.fwa_stream_networks_sp</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 26 × 3</span></span></span>
-<span><span class="co">#&gt;    name                     type   description</span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> linear_feature_id        number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> watershed_group_id       number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> edge_type                number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> blue_line_key            number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> watershed_key            number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> fwa_watershed_code       string <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> local_watershed_code     string <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> watershed_group_code     string <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> downstream_route_measure number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> length_metre             number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 16 more rows</span></span></span>
-<span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $hydrosheds.hybas_lev12_v1c</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 13 × 3</span></span></span>
 <span><span class="co">#&gt;    name      type   description</span></span>
@@ -398,6 +382,22 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> gnis_name_2        string <span style="color: #949494;">""</span>         </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> gnis_id_3          number <span style="color: #949494;">""</span>         </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># … with 14 more rows</span></span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $whse_basemapping.fwa_stream_networks_sp</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 28 × 3</span></span></span>
+<span><span class="co">#&gt;    name                     type   description</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> linear_feature_id        number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> watershed_group_id       number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> edge_type                number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> blue_line_key            number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> watershed_key            number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> fwa_watershed_code       string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> local_watershed_code     string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> watershed_group_code     string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> downstream_route_measure number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> length_metre             number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 18 more rows</span></span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $whse_basemapping.fwa_watershed_groups_poly</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 10 × 3</span></span></span>
