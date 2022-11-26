@@ -9,7 +9,7 @@
 #' @examples
 #' fwa_collection_properties("whse_basemapping.fwa_stream_networks_sp")
 fwa_collection_properties <- function(
-    collection_id, nocache = getOption("fwa.nocache", TRUE)) {
+    collection_id, nocache = getOption("fwa.nocache", FALSE)) {
   chk_flag(nocache)
   pgfeatureserv::pgf_collection_properties(
     collection_id = collection_id,

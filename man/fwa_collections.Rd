@@ -5,9 +5,9 @@
 \alias{fwa_meta_collections}
 \title{Freshwater Atlas Collections}
 \usage{
-fwa_collections(nocache = getOption("fwa.nocache", TRUE))
+fwa_collections(nocache = getOption("fwa.nocache", FALSE))
 
-fwa_meta_collections(nocache = getOption("fwa.nocache", TRUE))
+fwa_meta_collections(nocache = getOption("fwa.nocache", FALSE))
 }
 \arguments{
 \item{nocache}{A flag specifying whether or not to cache results.}

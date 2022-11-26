@@ -13,7 +13,7 @@ fwa_collection(
   properties = NULL,
   transform = NULL,
   epsg = 4326,
-  nocache = getOption("fwa.nocache", TRUE)
+  nocache = getOption("fwa.nocache", FALSE)
 )
 
 fwa_query_collection(
@@ -27,7 +27,7 @@ fwa_query_collection(
   sortby = NULL,
   groupby = NULL,
   epsg = 4326,
-  nocache = getOption("fwa.nocache", TRUE)
+  nocache = getOption("fwa.nocache", FALSE)
 )
 }
 \arguments{

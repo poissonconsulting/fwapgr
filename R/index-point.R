@@ -19,7 +19,7 @@ fwa_index_point <- function(x, y,
                             properties = NULL,
                             transform = NULL,
                             epsg = 4326,
-                            nocache = getOption("fwa.nocache", TRUE)) {
+                            nocache = getOption("fwa.nocache", FALSE)) {
   chk_number(x)
   chk_number(y)
   chk_whole_number(srid)

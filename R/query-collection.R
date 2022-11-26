@@ -23,7 +23,7 @@ fwa_query_collection <- function(collection_id,
                                  sortby = NULL,
                                  groupby = NULL,
                                  epsg = 4326,
-                                 nocache = getOption("fwa.nocache", TRUE)) {
+                                 nocache = getOption("fwa.nocache", FALSE)) {
   chk_whole_number(epsg)
   chk_gt(epsg)
   chk_flag(nocache)

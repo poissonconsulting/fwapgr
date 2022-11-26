@@ -8,7 +8,7 @@
 #' @export
 #' @examples
 #' fwa_collections()
-fwa_collections <- function(nocache = getOption("fwa.nocache", TRUE)) {
+fwa_collections <- function(nocache = getOption("fwa.nocache", FALSE)) {
   chk_flag(nocache)
   df <- pgfeatureserv::pgf_collections(
     base_url = api_url(),

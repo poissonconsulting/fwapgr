@@ -17,7 +17,7 @@ fwa_locate_along_interval <- function(
     properties = NULL,
     transform = NULL,
     epsg = 4326,
-    nocache = getOption("fwa.nocache", TRUE)) {
+    nocache = getOption("fwa.nocache", FALSE)) {
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
   chk_whole_number(interval_length)

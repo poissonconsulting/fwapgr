@@ -12,7 +12,7 @@ hydroshed(
   properties = NULL,
   transform = NULL,
   epsg = 4326,
-  nocache = getOption("fwa.nocache", TRUE)
+  nocache = getOption("fwa.nocache", FALSE)
 )
 }
 \arguments{

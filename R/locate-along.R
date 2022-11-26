@@ -15,7 +15,7 @@ fwa_locate_along <- function(blue_line_key,
                              properties = NULL,
                              transform = NULL,
                              epsg = 4326,
-                             nocache = getOption("fwa.nocache", TRUE)) {
+                             nocache = getOption("fwa.nocache", FALSE)) {
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
   chk_number(downstream_route_measure)
