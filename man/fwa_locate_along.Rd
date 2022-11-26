@@ -10,7 +10,8 @@ fwa_locate_along(
   bbox = NULL,
   properties = NULL,
   transform = NULL,
-  epsg = 4326
+  epsg = 4326,
+  nocache = getOption("fwa.nocache", TRUE)
 )
 }
 \arguments{
@@ -26,6 +27,8 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 \item{transform}{A character vector with the name of the \href{https://github.com/CrunchyData/pg_featureserv/blob/master/config/pg_featureserv.toml.example#L29}{\emph{valid transform}} function followed by the parameter values (e.g. c("ST_Simplify", 100))}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
+
+\item{nocache}{A flag specifying whether or not to cache results.}
 }
 \value{
 An sf object.

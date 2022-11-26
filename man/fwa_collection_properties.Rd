@@ -5,12 +5,17 @@
 \alias{fwa_meta_properties}
 \title{Freshwater Atlas Collection's Properties}
 \usage{
-fwa_collection_properties(collection_id)
+fwa_collection_properties(
+  collection_id,
+  nocache = getOption("fwa.nocache", TRUE)
+)
 
 fwa_meta_properties(collection_id)
 }
 \arguments{
 \item{collection_id}{A character string of the collection id.}
+
+\item{nocache}{A flag specifying whether or not to cache results.}
 }
 \value{
 A tibble.

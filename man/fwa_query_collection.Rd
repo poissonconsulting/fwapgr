@@ -25,7 +25,8 @@ fwa_query_collection(
   transform = NULL,
   sortby = NULL,
   groupby = NULL,
-  epsg = 4326
+  epsg = 4326,
+  nocache = getOption("fwa.nocache", TRUE)
 )
 }
 \arguments{
@@ -55,6 +56,8 @@ Default is ascending but property name can be prepended with
 \item{groupby}{A string of the property name (i.e., column name) to group
 response features by. This would typically be used with an aggregate
 transform function.}
+
+\item{nocache}{A flag specifying whether or not to cache results.}
 }
 \value{
 An sf object.

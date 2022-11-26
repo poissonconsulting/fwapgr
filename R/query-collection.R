@@ -22,9 +22,11 @@ fwa_query_collection <- function(collection_id,
                                  transform = NULL,
                                  sortby = NULL,
                                  groupby = NULL,
-                                 epsg = 4326) {
+                                 epsg = 4326,
+                                 nocache = getOption("fwa.nocache", TRUE)) {
   chk_whole_number(epsg)
   chk_gt(epsg)
+  chk_flag(nocache)
 
   base_url <- api_url()
   path <- "fwa"
@@ -42,7 +44,8 @@ fwa_query_collection <- function(collection_id,
     transform = transform,
     sortby = sortby,
     groupby = groupby,
-    user = user
+    user = user,
+    nocache = nocache_conversion(nocache)
   )
 
   sf::st_transform(x, epsg)

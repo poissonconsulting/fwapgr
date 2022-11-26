@@ -5,7 +5,7 @@
 \alias{fwa_meta_collections}
 \title{Freshwater Atlas Collections}
 \usage{
-fwa_collections()
+fwa_collections(nocache = getOption("fwa.nocache", TRUE))
 
 fwa_meta_collections()
 }
