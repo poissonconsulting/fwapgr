@@ -1,4 +1,6 @@
 test_that("hydroshed works", {
+  rlang::local_options(nocache = TRUE)
+
   x <- -124.6
   y <- 54.8
 
