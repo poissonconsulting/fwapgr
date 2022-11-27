@@ -1,5 +1,9 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# fwapgr 0.1.0.9013
+
+- Added `nocache = getOption("fwa.nocache", FALSE)` argument to all functions.
+
 # fwapgr 0.1.0.9012
 
 - `collection` dropped `id` column.

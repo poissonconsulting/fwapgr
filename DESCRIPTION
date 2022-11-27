@@ -1,6 +1,6 @@
 Package: fwapgr
 Title: Client for BC Freshwater Atlas fwapg API
-Version: 0.1.0.9012
+Version: 0.1.0.9013
 Authors@R: c(
     person("Sebastian", "Dalgarno", , "seb@poissonconsulting.ca", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-3658-4517")),
