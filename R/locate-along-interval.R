@@ -65,5 +65,6 @@ fwa_locate_along_interval <- function(
     nocache = nocache_conversion(nocache)
   )
 
-  sf::st_transform(x, epsg)
+  sf::st_transform(x, epsg) |>
+    dplyr::mutate(dplyr::across(tidyselect::all_of(c("downstream_route_measure", "index")), as.integer))
 }
