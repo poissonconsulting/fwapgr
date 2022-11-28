@@ -47,5 +47,6 @@ fwa_watershed_stream <- function(blue_line_key,
     nocache = nocache_conversion(nocache)
   )
 
-  sf::st_transform(x, epsg)
+  sf::st_transform(x, epsg) |>
+    any_to_int()
 }

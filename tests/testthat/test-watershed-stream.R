@@ -7,5 +7,5 @@ test_that("multiplication works", {
   expect_s3_class(sf$geometry, "sfc_MULTILINESTRING")
   expect_identical(nrow(sf), 1L)
   expect_identical(colnames(sf), c("linear_feature_id", "geometry"))
-  expect_identical(sf$linear_feature_id, 701348697)
+  expect_identical(sf$linear_feature_id, 701348697L)
 })

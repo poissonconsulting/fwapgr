@@ -57,5 +57,6 @@ fwa_index_point <- function(x, y,
     nocache = nocache_conversion(nocache)
   )
 
-  sf::st_transform(x, epsg)
+  sf::st_transform(x, epsg) |>
+    any_to_int()
 }
