@@ -96,21 +96,28 @@
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">fwa_collections</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 21 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    collection_id                                   description     exten…¹ links</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lis&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> hydrosheds.hybas_lev12_v1c                      HydroBasins fo… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> usgs.wbdhu12                                    USGS National … http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> whse_basemapping.fwa_approx_borders             Lines of latit… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> whse_basemapping.fwa_assessment_watersheds_poly Data for table… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> whse_basemapping.fwa_basins_poly                Large BC water… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> whse_basemapping.fwa_bays_and_channels_poly     Data for table… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> whse_basemapping.fwa_bcboundary                 Boundary of BC… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> whse_basemapping.fwa_coastlines_sp              Data for table… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> whse_basemapping.fwa_glaciers_poly              Data for table… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> whse_basemapping.fwa_islands_poly               Data for table… http:/… &lt;df&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 11 more rows, 1 more variable: extent$spatial$bbox &lt;list&gt;, and</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   abbreviated variable name ¹​extent$spatial$crs</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 18 × 4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    collection_id                            description extent$spatial$crs links</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;lis&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> hydrosheds.hybas_lev12_v1c               HydroBasin… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> usgs.wbdhu12                             USGS Natio… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> whse_basemapping.fwa_assessment_watersh… Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> whse_basemapping.fwa_bays_and_channels_… Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> whse_basemapping.fwa_coastlines_sp       Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> whse_basemapping.fwa_glaciers_poly       Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> whse_basemapping.fwa_islands_poly        Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> whse_basemapping.fwa_lakes_poly          Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> whse_basemapping.fwa_linear_boundaries_… Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> whse_basemapping.fwa_manmade_waterbodie… Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> whse_basemapping.fwa_named_watersheds_p… Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> whse_basemapping.fwa_obstructions_sp     Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> whse_basemapping.fwa_rivers_poly         Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> whse_basemapping.fwa_stream_networks_sp  Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> whse_basemapping.fwa_streams_vw          Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> whse_basemapping.fwa_watershed_groups_p… Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> whse_basemapping.fwa_watersheds_poly     Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> whse_basemapping.fwa_wetlands_poly       Data for t… http://www.opengi… <span style="color: #949494;">&lt;df&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1 more variable: extent$spatial$bbox &lt;list&gt;</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -125,7 +132,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
