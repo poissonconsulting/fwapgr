@@ -1,4 +1,11 @@
-<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
+
+# fwapgr 0.1.0.9014
+
+- `downstream_route_measure` of `locate_along_interval()` now returned as an integer together with `index`.
+
+- Indices including blue_line_key, gnis_id and linear_feature_id now returned as integers.
+
 
 # fwapgr 0.1.0.9013
 
