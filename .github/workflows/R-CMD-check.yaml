@@ -51,10 +51,10 @@ jobs:
           upload-snapshots: true
 
       - name: action-slack
-        if: failure()
+        if: always()
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        uses: 8398a7/action-slack@v3.0.0
+        uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
           author_name: "github action: ${{github.workflow}}"
