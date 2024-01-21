@@ -2,7 +2,6 @@
 % Please edit documentation in R/fwapgr-package.R, R/pkgtemplate-package.R
 \docType{package}
 \name{fwapgr-package}
-\alias{fwapgr}
 \alias{fwapgr-package}
 \title{fwapgr: Client for BC Freshwater Atlas fwapg API}
 \description{
