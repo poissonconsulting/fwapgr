@@ -121,9 +121,10 @@
 <span><span class="co">#&gt; [16] "whse_basemapping.fwa_obstructions_sp"           </span></span>
 <span><span class="co">#&gt; [17] "whse_basemapping.fwa_rivers_poly"               </span></span>
 <span><span class="co">#&gt; [18] "whse_basemapping.fwa_stream_networks_sp"        </span></span>
-<span><span class="co">#&gt; [19] "whse_basemapping.fwa_watershed_groups_poly"     </span></span>
-<span><span class="co">#&gt; [20] "whse_basemapping.fwa_watersheds_poly"           </span></span>
-<span><span class="co">#&gt; [21] "whse_basemapping.fwa_wetlands_poly"</span></span></code></pre></div>
+<span><span class="co">#&gt; [19] "whse_basemapping.fwa_streams_vw"                </span></span>
+<span><span class="co">#&gt; [20] "whse_basemapping.fwa_watershed_groups_poly"     </span></span>
+<span><span class="co">#&gt; [21] "whse_basemapping.fwa_watersheds_poly"           </span></span>
+<span><span class="co">#&gt; [22] "whse_basemapping.fwa_wetlands_poly"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="collection-properties">Collection Properties<a class="anchor" aria-label="anchor" href="#collection-properties"></a>
@@ -132,45 +133,43 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">collection_id</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">collection_id</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">collection_id</span>, <span class="va">fwa_collection_properties</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $hydrosheds.hybas_lev12_v1c</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 13 × 3</span></span></span>
-<span><span class="co">#&gt;    name      type   description</span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> hybas_id  number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> next_down number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> next_sink number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> main_bas  number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> dist_sink number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> dist_main number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> sub_area  number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> up_area   number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> pfaf_id   number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> endo      number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> coast     number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> order     number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> sort      number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 3</span></span></span>
+<span><span class="co">#&gt;   name      type   description</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> hybas_id  number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> next_down number <span style="color: #949494;">""</span>         </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $usgs.wbdhu12</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 21 × 3</span></span></span>
-<span><span class="co">#&gt;    name              type   description</span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> objectid          number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> tnmid             string <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> metasourceid      string <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> sourcedatadesc    string <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> sourceoriginator  string <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> sourcefeatureid   string <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> loaddate          string <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> referencegnis_ids string <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> areaacres         number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> areasqkm          number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 11 more rows</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 20 × 3</span></span></span>
+<span><span class="co">#&gt;    name                     type   description</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> tnmid                    string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> metasourceid             string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> sourcedatadesc           string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> sourceoriginator         string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> sourcefeatureid          string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> loaddate                 string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> referencegnis_ids        string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> areaacres                number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> areasqkm                 number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> states                   string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> huc12                    string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> name                     string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> hutype                   string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> humod                    string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> tohuc                    string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> noncontributingareaacres number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> noncontributingareasqkm  number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">18</span> globalid                 string <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">19</span> shape_length             number <span style="color: #949494;">""</span>         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">20</span> shape_area               number <span style="color: #949494;">""</span>         </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $whse_basemapping.fwa_approx_borders</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 3</span></span></span>
 <span><span class="co">#&gt;   name             type   description                                           </span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                 </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> approx_border_id number Unique identifer                                      </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> border           string A code identifying the border (USA49, YTNWT_60, AB_12…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> approx_border_id number unique identifer                                      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> border           string a code identifying the border (usa49, ytnwt_60, ab_12…</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $whse_basemapping.fwa_assessment_watersheds_poly</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 24 × 3</span></span></span>
@@ -384,7 +383,7 @@
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 14 more rows</span></span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $whse_basemapping.fwa_stream_networks_sp</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 28 × 3</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 26 × 3</span></span></span>
 <span><span class="co">#&gt;    name                     type   description</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> linear_feature_id        number <span style="color: #949494;">""</span>         </span></span>
@@ -397,7 +396,23 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> watershed_group_code     string <span style="color: #949494;">""</span>         </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> downstream_route_measure number <span style="color: #949494;">""</span>         </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> length_metre             number <span style="color: #949494;">""</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 18 more rows</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 16 more rows</span></span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $whse_basemapping.fwa_streams_vw</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 24 × 3</span></span></span>
+<span><span class="co">#&gt;    name                     type   description                                  </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> linear_feature_id        number See FWA documentation                        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> edge_type                number See FWA documentation                        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> blue_line_key            number See FWA documentation                        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> watershed_key            number See FWA documentation                        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> wscode                   string FWA watershed code as postgres ltree type, w…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> localcode                string FWA local watershed code as postgres ltree t…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> watershed_group_code     string See FWA documentation                        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> downstream_route_measure number See FWA documentation                        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> upstream_route_measure   number See FWA documentation                        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> length_metre             number See FWA documentation                        </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 14 more rows</span></span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $whse_basemapping.fwa_watershed_groups_poly</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 10 × 3</span></span></span>
