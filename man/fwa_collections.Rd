@@ -30,7 +30,7 @@ fwa_collections()
 }
 \seealso{
 Other collections: 
-\code{\link{fwa_collection_properties}()},
-\code{\link{fwa_collection}()}
+\code{\link{fwa_collection}()},
+\code{\link{fwa_collection_properties}()}
 }
 \concept{collections}

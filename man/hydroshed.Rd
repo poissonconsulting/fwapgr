@@ -48,8 +48,8 @@ hydroshed(x = -132.26, y = 53.36)
 
 Other functions: 
 \code{\link{fwa_index_point}()},
-\code{\link{fwa_locate_along_interval}()},
 \code{\link{fwa_locate_along}()},
+\code{\link{fwa_locate_along_interval}()},
 \code{\link{fwa_watershed_at_measure}()},
 \code{\link{fwa_watershed_hex}()},
 \code{\link{fwa_watershed_stream}()}

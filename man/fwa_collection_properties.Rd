@@ -35,7 +35,7 @@ fwa_collection_properties("whse_basemapping.fwa_stream_networks_sp")
 }
 \seealso{
 Other collections: 
-\code{\link{fwa_collections}()},
-\code{\link{fwa_collection}()}
+\code{\link{fwa_collection}()},
+\code{\link{fwa_collections}()}
 }
 \concept{collections}
