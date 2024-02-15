@@ -10,4 +10,7 @@ test_that("fwa_collection works with default values", {
   expect_identical(colnames(sf::st_coordinates(collection)), c("X", "Y", "L1", "L2"))
 
   expect_snapshot_data(collection, "default10")
+
+  collection_id <- "whse_basemapping.fwa_streams_vw"
+  collection <- fwa_collection(collection_id, limit = 10)
 })

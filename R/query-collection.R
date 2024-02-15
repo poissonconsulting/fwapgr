@@ -18,12 +18,13 @@ fwa_query_collection <- function(collection_id,
                                  transform = NULL,
                                  sortby = NULL,
                                  groupby = NULL,
+                                 nocache = NULL,
                                  epsg = 4326) {
   chk_whole_number(epsg)
   chk_gt(epsg)
 
   base_url <- api_url()
-  path <- "fwa"
+  path <- api_path()
   user <- gh_user()
 
   x <- pgfeatureserv::pgf_collection_features(
@@ -38,6 +39,7 @@ fwa_query_collection <- function(collection_id,
     transform = transform,
     sortby = sortby,
     groupby = groupby,
+    nocache = nocache,
     user = user
   )
 
