@@ -2,15 +2,14 @@
 % Please edit documentation in R/fwapgr-package.R, R/pkgtemplate-package.R
 \docType{package}
 \name{fwapgr-package}
-\alias{fwapgr}
 \alias{fwapgr-package}
 \title{fwapgr: Client for BC Freshwater Atlas fwapg API}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
 Client for fwapg, a PostgreSQL database and web API for BC Freshwater Atlas data.
 
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
 Client for fwapg, a PostgreSQL database and web API for BC Freshwater Atlas data.
 }
@@ -40,19 +39,7 @@ Authors:
 Other contributors:
 \itemize{
   \item Poisson Consulting [copyright holder, funder]
-}
-
-
-\strong{Maintainer}: Sebastian Dalgarno \email{seb@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-3658-4517}{ORCID})
-
-Authors:
-\itemize{
-  \item Joe Thorley \email{joe@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-7683-4592}{ORCID})
-}
-
-Other contributors:
-\itemize{
-  \item Poisson Consulting [copyright holder, funder]
+  \item Nadine Hussein \email{nadine@poissonconsulting.ca} (\href{https://orcid.org/0000-0003-4470-8361}{ORCID}) [contributor]
 }
 
 }

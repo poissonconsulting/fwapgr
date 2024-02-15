@@ -6,6 +6,10 @@
 #' @family collections
 #' @export
 #' @examples
+#' collection_id <- "whse_basemapping.fwa_approx_borders"
+#' filter <- list(border = "USA_49")
+#' fwa_query_collection(collection_id, filter = filter)
+#'
 #' collection_id <- "whse_basemapping.fwa_stream_networks_sp"
 #' filter <- list(gnis_name = "Sangan River")
 #' fwa_query_collection(collection_id, filter = filter)
@@ -18,10 +22,16 @@ fwa_query_collection <- function(collection_id,
                                  transform = NULL,
                                  sortby = NULL,
                                  groupby = NULL,
+<<<<<<< HEAD
                                  nocache = NULL,
                                  epsg = 4326) {
+=======
+                                 epsg = 4326,
+                                 nocache = getOption("fwa.nocache", FALSE)) {
+>>>>>>> 26c0dafdcce4b66f61fd03579f1e8ab324322c8a
   chk_whole_number(epsg)
   chk_gt(epsg)
+  chk_flag(nocache)
 
   base_url <- api_url()
   path <- api_path()
@@ -39,9 +49,15 @@ fwa_query_collection <- function(collection_id,
     transform = transform,
     sortby = sortby,
     groupby = groupby,
+<<<<<<< HEAD
     nocache = nocache,
     user = user
+=======
+    user = user,
+    nocache = nocache_conversion(nocache)
+>>>>>>> 26c0dafdcce4b66f61fd03579f1e8ab324322c8a
   )
 
-  sf::st_transform(x, epsg)
+  sf::st_transform(x, epsg) |>
+    any_to_int()
 }

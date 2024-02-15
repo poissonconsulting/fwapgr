@@ -1,4 +1,6 @@
 test_that("collection works with default values ", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   x <- fwa_query_collection(collection_id,
@@ -13,6 +15,8 @@ test_that("collection works with default values ", {
 
 # filter
 test_that("collection filter works", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 
   filter <- list(gnis_name_1 = "Trout Lake")
@@ -43,6 +47,8 @@ test_that("collection filter works", {
 
 # sortby
 test_that("collection sortby works", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   sortby <- c("blue_line_key")
@@ -59,6 +65,8 @@ test_that("collection sortby works", {
 })
 
 test_that("collection sortby descending works", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   sortby <- c("+blue_line_key")
@@ -77,6 +85,8 @@ test_that("collection sortby descending works", {
 
 # bbox
 test_that("collection bounding box gets everything intersecting bounding box", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 
   bbox <- c(-117.46, 50.6, -117.4601, 50.6001)
@@ -101,6 +111,8 @@ test_that("collection bounding box gets everything intersecting bounding box", {
 
 # properties
 test_that("collection properties works", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   properties <- c("blue_line_key", "gnis_name")
@@ -114,6 +126,8 @@ test_that("collection properties works", {
 
 # transform
 test_that("collection transform works", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 
   filter <- list(gnis_name_1 = "Kootenay Lake")
@@ -129,6 +143,8 @@ test_that("collection transform works", {
 })
 
 test_that("collection transform to get bbox works", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 
   transform <- "collect|envelope"
@@ -146,6 +162,8 @@ test_that("collection transform to get bbox works", {
 
 # groupby
 test_that("collection groupby works", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   groupby <- "gnis_name"
@@ -165,6 +183,8 @@ test_that("collection groupby works", {
 })
 
 test_that("collection bounding box and filter work together", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 
   bbox <- c(-117.46, 50.6, -117.4601, 50.6001)
@@ -185,6 +205,8 @@ test_that("collection bounding box and filter work together", {
 })
 
 test_that("informative error invalid collection", {
+  rlang::local_options(nocache = TRUE)
+
   expect_chk_error(
     fwa_query_collection("not_a_collection"),
     "API request failed \\[404\\]: Collection not found: not_a_collection"
@@ -192,6 +214,8 @@ test_that("informative error invalid collection", {
 })
 
 test_that("collection informative error invalid transform", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 
   expect_chk_error(
@@ -203,6 +227,8 @@ test_that("collection informative error invalid transform", {
 })
 
 test_that("collection informative error invalid bbox", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 
   expect_chk_error(
@@ -214,6 +240,8 @@ test_that("collection informative error invalid bbox", {
 })
 
 test_that("collection informative error invalid bbox", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 
   expect_chk_error(fwa_query_collection(collection_id,
@@ -222,6 +250,8 @@ test_that("collection informative error invalid bbox", {
 })
 
 test_that("collection offset works", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   x <- fwa_query_collection(collection_id,
@@ -239,6 +269,8 @@ test_that("collection offset works", {
 })
 
 test_that("collection offset works with higher numbers", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   sortby <- "named_streams_id"
@@ -258,6 +290,8 @@ test_that("collection offset works with higher numbers", {
 })
 
 test_that("collection offset works with really big number", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   sortby <- "named_streams_id"
@@ -281,6 +315,8 @@ test_that("collection offset works with really big number", {
 })
 
 test_that("collection offset works with offset more than limit", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   sortby <- "named_streams_id"
@@ -304,6 +340,8 @@ test_that("collection offset works with offset more than limit", {
 })
 
 test_that("collection offset works at 99,999", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   expect_silent(fwa_query_collection(collection_id,
@@ -312,6 +350,8 @@ test_that("collection offset works at 99,999", {
 })
 
 test_that("collection offset works at 100,000", {
+  rlang::local_options(nocache = TRUE)
+
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   expect_silent(fwa_query_collection(collection_id,

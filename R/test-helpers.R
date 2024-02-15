@@ -5,7 +5,7 @@ save_csv <- function(x) {
 }
 
 expect_snapshot_data <- function(x, name) {
-  x <- tibble::as_tibble(x)
+  x <- dplyr::as_tibble(x)
   x$geometry <- NULL
   testthat::skip_on_os("windows")
   path <- save_csv(x)

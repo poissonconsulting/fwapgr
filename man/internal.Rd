@@ -52,6 +52,8 @@ transform function.}
 \item{x}{A number of the x coordinate.}
 
 \item{y}{A number of the y coordinate.}
+
+\item{nocache}{A flag specifying whether or not to cache results.}
 }
 \value{
 An sf object.

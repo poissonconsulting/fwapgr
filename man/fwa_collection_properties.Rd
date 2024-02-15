@@ -5,12 +5,17 @@
 \alias{fwa_meta_properties}
 \title{Freshwater Atlas Collection's Properties}
 \usage{
-fwa_collection_properties(collection_id)
+fwa_collection_properties(
+  collection_id,
+  nocache = getOption("fwa.nocache", FALSE)
+)
 
-fwa_meta_properties(collection_id)
+fwa_meta_properties(collection_id, nocache = getOption("fwa.nocache", FALSE))
 }
 \arguments{
 \item{collection_id}{A character string of the collection id.}
+
+\item{nocache}{A flag specifying whether or not to cache results.}
 }
 \value{
 A tibble.
@@ -20,11 +25,11 @@ Get information about a collection's column names.
 }
 \section{Functions}{
 \itemize{
-\item \code{fwa_meta_properties}: Freshwater Atlas Collection's Properties
+\item \code{fwa_meta_properties()}: Freshwater Atlas Collection's Properties
 
 \lifecycle{soft-deprecated}
-}}
 
+}}
 \examples{
 fwa_collection_properties("whse_basemapping.fwa_stream_networks_sp")
 }

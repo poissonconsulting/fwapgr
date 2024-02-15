@@ -1,4 +1,6 @@
 test_that("fwa_locate_along_interval works", {
+  rlang::local_options(nocache = TRUE)
+
   sf <- fwa_locate_along_interval(356308001, interval_length = 100, start_measure = 10000)
   expect_s3_class(sf, "sf")
   expect_s3_class(sf, "tbl_df")
@@ -8,6 +10,8 @@ test_that("fwa_locate_along_interval works", {
 })
 
 test_that("fwa_locate_along_interval errors with invalid", {
+  rlang::local_options(nocache = TRUE)
+
   chk::expect_chk_error(
     fwa_locate_along_interval(1, end_measure = 100000, interval_length = 1),
     "`limit` must be greater than"

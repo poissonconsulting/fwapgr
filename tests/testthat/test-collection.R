@@ -1,5 +1,5 @@
 test_that("fwa_collection works with default values", {
-  rlang::local_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet", nocache = TRUE)
 
   collection_id <- "whse_basemapping.fwa_named_streams"
   collection <- fwa_collection(collection_id, limit = 10)

@@ -8,14 +8,16 @@
 #' @export
 #' @examples
 #' fwa_locate_along_interval(356308001, interval_length = 10, start_measure = 0)
-fwa_locate_along_interval <- function(blue_line_key,
-                                      interval_length = 100,
-                                      start_measure = 0,
-                                      end_measure = NULL,
-                                      bbox = NULL,
-                                      properties = NULL,
-                                      transform = NULL,
-                                      epsg = 4326) {
+fwa_locate_along_interval <- function(
+    blue_line_key,
+    interval_length = 100,
+    start_measure = 0,
+    end_measure = NULL,
+    bbox = NULL,
+    properties = NULL,
+    transform = NULL,
+    epsg = 4326,
+    nocache = getOption("fwa.nocache", FALSE)) {
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
   chk_whole_number(interval_length)
@@ -25,6 +27,8 @@ fwa_locate_along_interval <- function(blue_line_key,
   chk_null_or(end_measure, vld = vld_whole_number)
   chk_whole_number(epsg)
   chk_gt(epsg)
+  chk_flag(nocache)
+
   if (!is.null(end_measure)) chk_gt(end_measure, start_measure)
 
   if (!is.null(end_measure)) {
@@ -57,8 +61,10 @@ fwa_locate_along_interval <- function(blue_line_key,
     parameters = parameters,
     bbox = bbox,
     properties = properties,
-    transform = transform
+    transform = transform,
+    nocache = nocache_conversion(nocache)
   )
 
-  sf::st_transform(x, epsg)
+  sf::st_transform(x, epsg) |>
+    dplyr::mutate(dplyr::across(tidyselect::all_of(c("downstream_route_measure", "index")), as.integer))
 }

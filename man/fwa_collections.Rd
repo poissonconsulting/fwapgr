@@ -5,9 +5,12 @@
 \alias{fwa_meta_collections}
 \title{Freshwater Atlas Collections}
 \usage{
-fwa_collections()
+fwa_collections(nocache = getOption("fwa.nocache", FALSE))
 
-fwa_meta_collections()
+fwa_meta_collections(nocache = getOption("fwa.nocache", FALSE))
+}
+\arguments{
+\item{nocache}{A flag specifying whether or not to cache results.}
 }
 \value{
 A tibble.
@@ -17,11 +20,11 @@ Get information about the collections.
 }
 \section{Functions}{
 \itemize{
-\item \code{fwa_meta_collections}: Freshwater Atlas Collections
+\item \code{fwa_meta_collections()}: Freshwater Atlas Collections
 
 \lifecycle{soft-deprecated}
-}}
 
+}}
 \examples{
 fwa_collections()
 }

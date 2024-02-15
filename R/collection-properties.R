@@ -8,10 +8,13 @@
 #' @export
 #' @examples
 #' fwa_collection_properties("whse_basemapping.fwa_stream_networks_sp")
-fwa_collection_properties <- function(collection_id) {
+fwa_collection_properties <- function(
+    collection_id, nocache = getOption("fwa.nocache", FALSE)) {
+  chk_flag(nocache)
   pgfeatureserv::pgf_collection_properties(
     collection_id = collection_id,
     base_url = api_url(),
-    path = "fwa"
+    path = "fwa",
+    nocache = nocache_conversion(nocache)
   )
 }

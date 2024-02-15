@@ -1,4 +1,6 @@
 test_that("fwa_watershed_at_measure works", {
+  rlang::local_options(nocache = TRUE)
+
   sf <- fwa_watershed_at_measure(356308001,
     downstream_route_measure = 10000,
     properties = "area_ha"

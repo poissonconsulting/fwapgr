@@ -12,7 +12,8 @@ fwa_collection(
   bbox = NULL,
   properties = NULL,
   transform = NULL,
-  epsg = 4326
+  epsg = 4326,
+  nocache = getOption("fwa.nocache", FALSE)
 )
 
 fwa_query_collection(
@@ -25,7 +26,8 @@ fwa_query_collection(
   transform = NULL,
   sortby = NULL,
   groupby = NULL,
-  epsg = 4326
+  epsg = 4326,
+  nocache = getOption("fwa.nocache", FALSE)
 )
 }
 \arguments{
@@ -46,6 +48,8 @@ features to, e.g. \code{c(minLon, minLat, maxLon, maxLat)}.}
 
 \item{epsg}{A positive whole number of the epsg to transform features to.}
 
+\item{nocache}{A flag specifying whether or not to cache results.}
+
 \item{offset}{A positive whole number indicating the offset of start of returned results.}
 
 \item{sortby}{A string that sorts the response items by a property.
@@ -64,12 +68,16 @@ Query a collection from the freshwater atlas.
 }
 \section{Functions}{
 \itemize{
-\item \code{fwa_collection}: Query Freshwater Atlas Collection
+\item \code{fwa_collection()}: Query Freshwater Atlas Collection
 
 \lifecycle{soft-deprecated}
-}}
 
+}}
 \examples{
+collection_id <- "whse_basemapping.fwa_approx_borders"
+filter <- list(border = "USA_49")
+fwa_query_collection(collection_id, filter = filter)
+
 collection_id <- "whse_basemapping.fwa_stream_networks_sp"
 filter <- list(gnis_name = "Sangan River")
 fwa_query_collection(collection_id, filter = filter)

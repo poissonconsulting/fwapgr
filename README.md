@@ -7,7 +7,7 @@
 
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R-CMD-check](https://github.com/poissonconsulting/fwapgr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/fwapgr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/fwapgr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/fwapgr?branch=master)
 [![License:
@@ -85,6 +85,7 @@ river
 #> z_range:       zmin: 1 zmax: 67
 #> Geodetic CRS:  WGS 84
 #> # A data frame: 21 × 29
+<<<<<<< HEAD
 #>    blue_line_key blue_line_key_50k downstream_route_mea…¹ edge_type feature_code
 #>  *         <int>             <int>                  <dbl>     <dbl> <chr>       
 #>  1     360879896               130                 16588.      1000 GA24850140  
@@ -104,6 +105,27 @@ river
 #> #   length_metre <dbl>, linear_feature_id <int>, local_watershed_code <chr>,
 #> #   localcode_ltree <chr>, stream_magnitude <dbl>, stream_order <dbl>,
 #> #   stream_order_max <dbl>, stream_order_parent <chr>, …
+=======
+#>    blue_line_key blue_…¹ downs…² edge_…³ featu…⁴ featu…⁵ fwa_w…⁶ gnis_id gnis_…⁷
+#>  *         <dbl>   <dbl>   <dbl>   <dbl> <chr>   <chr>   <chr>     <dbl> <chr>  
+#>  1     360879896      11   7849.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  2     360879896      11  10909.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  3     360879896     130  16588.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  4     360879896      11   4721.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  5     360879896      11   3446.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  6     360879896      11  13911.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  7     360879896      11  13776.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  8     360879896      11   6466.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#>  9     360879896     130  17516.    1050 GA2485… linear… 940-97…    3390 Sangan…
+#> 10     360879896      11   1266.    1000 GA2485… linear… 940-97…    3390 Sangan…
+#> # … with 11 more rows, 20 more variables: gradient <dbl>,
+#> #   left_right_tributary <chr>, length_metre <dbl>, linear_feature_id <dbl>,
+#> #   local_watershed_code <chr>, localcode_ltree <chr>, stream_magnitude <dbl>,
+#> #   stream_order <dbl>, stream_order_max <dbl>, stream_order_parent <chr>,
+#> #   upstream_route_measure <dbl>, waterbody_key <chr>,
+#> #   watershed_code_50k <chr>, watershed_group_code <chr>,
+#> #   watershed_group_code_50k <chr>, watershed_group_id <dbl>, …
+>>>>>>> 26c0dafdcce4b66f61fd03579f1e8ab324322c8a
 ```
 
 Get simplified Yakoun River watershed starting 10km upstream:
