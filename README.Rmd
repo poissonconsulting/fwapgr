@@ -35,6 +35,7 @@ If you are looking for a higher-level R package to query the FWA of BC see [`fwa
 To install the lastest version from [GitHub](https://github.com/poissonconsulting/fwapgr)
 ```{r, eval=FALSE}
 # install.packages("devtools")
+devtools::install_github("poissonconsulting/pgfeatureserv")
 devtools::install_github("poissonconsulting/fwapgr")
 ```
 
@@ -79,7 +80,8 @@ river
 Get simplified Yakoun River watershed starting 10km upstream:
 ```{r}
 blk <- river$blue_line_key[1]
-wshed <- fwapgr::fwa_watershed_at_measure(blk,
+wshed <- fwapgr::fwa_watershed_at_measure(
+  blk,
   downstream_route_measure = 10000,
   transform = c("ST_Simplify", 2000)
 )
