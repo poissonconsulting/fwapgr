@@ -98,6 +98,7 @@
 <p>To install the lastest version from <a href="https://github.com/poissonconsulting/fwapgr" class="external-link">GitHub</a></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"poissonconsulting/pgfeatureserv"</span><span class="op">)</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"poissonconsulting/fwapgr"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -142,40 +143,62 @@
 <h2 id="demonstration">Demonstration<a class="anchor" aria-label="anchor" href="#demonstration"></a>
 </h2>
 <p>Get Sangan River from <code>whse_basemapping.fwa_stream_networks_sp</code> collection:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">coll</span> <span class="op">&lt;-</span> <span class="st">"whse_basemapping.fwa_stream_networks_sp"</span></span>
-<span><span class="va">river</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_query_collection.html">fwa_query_collection</a></span><span class="op">(</span><span class="va">coll</span>, filter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>gnis_name <span class="op">=</span> <span class="st">"Sangan River"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">river</span></span>
-<span><span class="co">#&gt; Simple feature collection with 21 features and 28 fields</span></span>
-<span><span class="co">#&gt; Geometry type: LINESTRING</span></span>
-<span><span class="co">#&gt; Dimension:     XYZ</span></span>
-<span><span class="co">#&gt; Bounding box:  xmin: -131.9972 ymin: 53.94994 xmax: -131.9168 ymax: 54.0332</span></span>
-<span><span class="co">#&gt; z_range:       zmin: 1 zmax: 67</span></span>
-<span><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
-<span><span class="co">#&gt; # A data frame: 21 × 29</span></span>
-<span><span class="co">#&gt;    blue_line_key blue_…¹ downs…² edge_…³ featu…⁴ featu…⁵ fwa_w…⁶ gnis_id gnis_…⁷</span></span>
-<span><span class="co">#&gt;  *         &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt;  1     360879896      11   7849.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
-<span><span class="co">#&gt;  2     360879896      11  10909.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
-<span><span class="co">#&gt;  3     360879896     130  16588.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
-<span><span class="co">#&gt;  4     360879896      11   4721.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
-<span><span class="co">#&gt;  5     360879896      11   3446.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
-<span><span class="co">#&gt;  6     360879896      11  13911.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
-<span><span class="co">#&gt;  7     360879896      11  13776.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
-<span><span class="co">#&gt;  8     360879896      11   6466.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
-<span><span class="co">#&gt;  9     360879896     130  17516.    1050 GA2485… linear… 940-97…    3390 Sangan…</span></span>
-<span><span class="co">#&gt; 10     360879896      11   1266.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
-<span><span class="co">#&gt; # … with 11 more rows, 20 more variables: gradient &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   left_right_tributary &lt;chr&gt;, length_metre &lt;dbl&gt;, linear_feature_id &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   local_watershed_code &lt;chr&gt;, localcode_ltree &lt;chr&gt;, stream_magnitude &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   stream_order &lt;dbl&gt;, stream_order_max &lt;dbl&gt;, stream_order_parent &lt;chr&gt;,</span></span>
-<span><span class="co">#&gt; #   upstream_route_measure &lt;dbl&gt;, waterbody_key &lt;chr&gt;,</span></span>
-<span><span class="co">#&gt; #   watershed_code_50k &lt;chr&gt;, watershed_group_code &lt;chr&gt;,</span></span>
-<span><span class="co">#&gt; #   watershed_group_code_50k &lt;chr&gt;, watershed_group_id &lt;dbl&gt;, …</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>coll <span class="ot">&lt;-</span> <span class="st">"whse_basemapping.fwa_stream_networks_sp"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>river <span class="ot">&lt;-</span> fwapgr<span class="sc">::</span><span class="fu">fwa_query_collection</span>(coll, <span class="at">filter =</span> <span class="fu">list</span>(<span class="at">gnis_name =</span> <span class="st">"Sangan River"</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>river</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Simple feature collection with 21 features and 28 fields</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Geometry type: LINESTRING</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Dimension:     XYZ</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Bounding box:  xmin: -131.9972 ymin: 53.94994 xmax: -131.9168 ymax: 54.0332</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; z_range:       zmin: 1 zmax: 67</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Geodetic CRS:  WGS 84</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A data frame: 21 × 29</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="sc">&lt;</span><span class="er">&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    blue_line_key blue_line_key_50k downstream_route_mea…¹ edge_type feature_code</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  *         &lt;int&gt;             &lt;int&gt;                  &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;       </span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1     360879896               130                 16588.      1000 GA24850140  </span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2     360879896                11                  5029.      1000 GA24850000  </span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3     360879896               130                 17516.      1050 GA24850140  </span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4     360879896                11                 10075.      1000 GA24850000  </span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5     360879896                11                  7384.      1000 GA24850000  </span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6     360879896                11                  7849.      1000 GA24850000  </span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7     360879896                11                  6808.      1000 GA24850000  </span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8     360879896                11                 12161.      1000 GA24850000  </span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9     360879896                11                 10909.      1000 GA24850000  </span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10     360879896                11                  9544.      1000 GA24850000  </span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 11 more rows</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ abbreviated name: ¹​downstream_route_measure</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 24 more variables: feature_source &lt;chr&gt;, fwa_watershed_code &lt;chr&gt;,</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   gnis_id &lt;int&gt;, gnis_name &lt;chr&gt;, gradient &lt;dbl&gt;, left_right_tributary &lt;chr&gt;,</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   length_metre &lt;dbl&gt;, linear_feature_id &lt;int&gt;, local_watershed_code &lt;chr&gt;,</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   localcode_ltree &lt;chr&gt;, stream_magnitude &lt;dbl&gt;, stream_order &lt;dbl&gt;,</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   stream_order_max &lt;dbl&gt;, stream_order_parent &lt;chr&gt;, …</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="sc">==</span><span class="er">=====</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    blue_line_key blue_…¹ downs…² edge_…³ featu…⁴ featu…⁵ fwa_w…⁶ gnis_id gnis_…⁷</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  *         &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;  </span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1     360879896      11   7849.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2     360879896      11  10909.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3     360879896     130  16588.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4     360879896      11   4721.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5     360879896      11   3446.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6     360879896      11  13911.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7     360879896      11  13776.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8     360879896      11   6466.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9     360879896     130  17516.    1050 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10     360879896      11   1266.    1000 GA2485… linear… 940-97…    3390 Sangan…</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 11 more rows, 20 more variables: gradient &lt;dbl&gt;,</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   left_right_tributary &lt;chr&gt;, length_metre &lt;dbl&gt;, linear_feature_id &lt;dbl&gt;,</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   local_watershed_code &lt;chr&gt;, localcode_ltree &lt;chr&gt;, stream_magnitude &lt;dbl&gt;,</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   stream_order &lt;dbl&gt;, stream_order_max &lt;dbl&gt;, stream_order_parent &lt;chr&gt;,</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   upstream_route_measure &lt;dbl&gt;, waterbody_key &lt;chr&gt;,</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   watershed_code_50k &lt;chr&gt;, watershed_group_code &lt;chr&gt;,</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   watershed_group_code_50k &lt;chr&gt;, watershed_group_id &lt;dbl&gt;, …</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> 26c0dafdcce4b66f61fd03579f1e8ab324322c8a</span></code></pre></div>
 <p>Get simplified Yakoun River watershed starting 10km upstream:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">blk</span> <span class="op">&lt;-</span> <span class="va">river</span><span class="op">$</span><span class="va">blue_line_key</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
-<span><span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span><span class="va">blk</span>,</span>
+<span><span class="va">wshed</span> <span class="op">&lt;-</span> <span class="fu">fwapgr</span><span class="fu">::</span><span class="fu"><a href="reference/fwa_watershed_at_measure.html">fwa_watershed_at_measure</a></span><span class="op">(</span></span>
+<span>  <span class="va">blk</span>,</span>
 <span>  downstream_route_measure <span class="op">=</span> <span class="fl">10000</span>,</span>
 <span>  transform <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ST_Simplify"</span>, <span class="fl">2000</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
