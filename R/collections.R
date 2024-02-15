@@ -12,7 +12,7 @@ fwa_collections <- function(nocache = getOption("fwa.nocache", FALSE)) {
   chk_flag(nocache)
   df <- pgfeatureserv::pgf_collections(
     base_url = api_url(),
-    path = "fwa",
+    path = api_path(),
     nocache = nocache_conversion(nocache)
   )
   df$collection_id <- df$id

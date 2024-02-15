@@ -14,7 +14,7 @@ fwa_collection_properties <- function(
   pgfeatureserv::pgf_collection_properties(
     collection_id = collection_id,
     base_url = api_url(),
-    path = "fwa",
+    path = api_path(),
     nocache = nocache_conversion(nocache)
   )
 }

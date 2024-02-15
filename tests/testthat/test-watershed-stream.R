@@ -19,5 +19,5 @@ test_that("creek with more than one multistring!", {
   expect_s3_class(sf$geometry, "sfc_MULTILINESTRING")
   expect_identical(nrow(sf), 5L)
   expect_identical(colnames(sf), c("linear_feature_id", "geometry"))
-  expect_identical(sf$linear_feature_id, c(706816010L, 706815750L, 706816149L, 706815933L, 706816140L))
+  expect_identical(sf$linear_feature_id, c(706816010L, 706815933L, 706816149L, 706815750L, 706816140L))
 })
