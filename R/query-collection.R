@@ -22,13 +22,8 @@ fwa_query_collection <- function(collection_id,
                                  transform = NULL,
                                  sortby = NULL,
                                  groupby = NULL,
-<<<<<<< HEAD
-                                 nocache = NULL,
-                                 epsg = 4326) {
-=======
                                  epsg = 4326,
                                  nocache = getOption("fwa.nocache", FALSE)) {
->>>>>>> 26c0dafdcce4b66f61fd03579f1e8ab324322c8a
   chk_whole_number(epsg)
   chk_gt(epsg)
   chk_flag(nocache)
@@ -49,13 +44,9 @@ fwa_query_collection <- function(collection_id,
     transform = transform,
     sortby = sortby,
     groupby = groupby,
-<<<<<<< HEAD
-    nocache = nocache,
-    user = user
-=======
+
     user = user,
     nocache = nocache_conversion(nocache)
->>>>>>> 26c0dafdcce4b66f61fd03579f1e8ab324322c8a
   )
 
   sf::st_transform(x, epsg) |>
