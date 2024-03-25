@@ -1,5 +1,9 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# fwapgr 0.1.0.9015
+
+- Update to new database
+
 # fwapgr 0.1.0.9014
 
 - `downstream_route_measure` of `locate_along_interval()` now returned as an integer together with `index`.
