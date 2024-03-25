@@ -3,7 +3,7 @@ api_url <- function() {
 }
 
 api_path <- function() {
-  "fwa_test"
+  "fwa"
 }
 
 gh_user <- function() {
