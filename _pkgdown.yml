@@ -1,4 +1,3 @@
-destination: docs
 
 reference:
 - title: Get Information on Collections
@@ -26,3 +25,6 @@ reference:
   - '`fwa_meta_collections`'
   - '`fwa_meta_properties`'
   - '`fwa_collection`'
+url: https://poissonconsulting.github.io/fwapgr/
+template:
+  package: poissontemplate
