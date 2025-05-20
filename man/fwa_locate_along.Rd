@@ -46,6 +46,7 @@ fwa_locate_along(356308001, downstream_route_measure = 10000)
 Other functions: 
 \code{\link{fwa_index_point}()},
 \code{\link{fwa_locate_along_interval}()},
+\code{\link{fwa_network_trace}()},
 \code{\link{fwa_watershed_at_measure}()},
 \code{\link{fwa_watershed_hex}()},
 \code{\link{fwa_watershed_stream}()},
