@@ -11,13 +11,13 @@ gh_user <- function() {
 }
 
 nocache_conversion <- function(nocache) {
-  if(isTRUE(nocache)) {
-    return('true')
+  if (isTRUE(nocache)) {
+    return("true")
   }
-  'false'
+  "false"
 }
 
 any_to_int <- function(data) {
   data |>
-dplyr::mutate(dplyr::across(tidyselect::any_of(c("blue_line_key", "blue_line_key_50k", "gnis_id", "linear_feature_id", "watershed_group_id", "watershed_key", "watershed_key_50k", "hex_id")), as.integer))
+    dplyr::mutate(dplyr::across(tidyselect::any_of(c("blue_line_key", "blue_line_key_50k", "gnis_id", "linear_feature_id", "watershed_group_id", "watershed_key", "watershed_key_50k", "hex_id")), as.integer))
 }
