@@ -257,7 +257,7 @@ test_that("collection offset works", {
   x <- fwa_query_collection(collection_id,
     limit = 2
   )
-  expect_identical(x$named_streams_id, c(11681, 11682))
+  expect_identical(x$named_streams_id, c(23361, 23362))
   x2 <- fwa_query_collection(collection_id,
     offset = 1,
     limit = 1

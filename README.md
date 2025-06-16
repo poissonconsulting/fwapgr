@@ -9,9 +9,9 @@
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/poissonconsulting/fwapgr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/poissonconsulting/fwapgr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/fwapgr?branch=master)
+coverage](https://codecov.io/gh/poissonconsulting/fwapgr/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/fwapgr)
 [![License:
-MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/license/mit/)
 <!-- badges: end -->
 
 `fwapgr` is an R package that uses the [fwapg
@@ -87,16 +87,16 @@ river
 #> # A data frame: 21 × 27
 #>    blue_line_key blue_line_key_50k downstream_route_mea…¹ edge_type feature_code
 #>  *         <int>             <int>                  <dbl>     <dbl> <chr>       
-#>  1     360879896                11                  6808.      1000 GA24850000  
-#>  2     360879896                11                 12161.      1000 GA24850000  
-#>  3     360879896                11                  9544.      1000 GA24850000  
-#>  4     360879896                11                 10909.      1000 GA24850000  
-#>  5     360879896                11                  1266.      1000 GA24850000  
-#>  6     360879896                11                 13068.      1000 GA24850000  
-#>  7     360879896                11                  8744.      1000 GA24850000  
+#>  1     360879896               130                 16588.      1000 GA24850140  
+#>  2     360879896                11                  1266.      1000 GA24850000  
+#>  3     360879896               130                 17516.      1050 GA24850140  
+#>  4     360879896                11                 13068.      1000 GA24850000  
+#>  5     360879896                11                  6808.      1000 GA24850000  
+#>  6     360879896                11                  7384.      1000 GA24850000  
+#>  7     360879896                11                 13911.      1000 GA24850000  
 #>  8     360879896                11                 13776.      1000 GA24850000  
-#>  9     360879896                11                  7849.      1000 GA24850000  
-#> 10     360879896                11                  5029.      1000 GA24850000  
+#>  9     360879896                11                 12161.      1000 GA24850000  
+#> 10     360879896                11                  4721.      1000 GA24850000  
 #> # ℹ 11 more rows
 #> # ℹ abbreviated name: ¹​downstream_route_measure
 #> # ℹ 22 more variables: feature_source <chr>, fwa_watershed_code <chr>,
