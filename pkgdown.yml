@@ -3,7 +3,7 @@ pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   collections: collections.html
-last_built: 2025-07-17T21:40Z
+last_built: 2025-07-21T16:24Z
 urls:
   reference: https://poissonconsulting.github.io/fwapgr/reference
   article: https://poissonconsulting.github.io/fwapgr/articles
