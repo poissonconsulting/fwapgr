@@ -21,7 +21,7 @@ library(fwapgr)
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/poissonconsulting/fwapgr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/fwapgr/actions/workflows/R-CMD-check.yaml)
-[![Codecov test coverage](https://codecov.io/gh/poissonconsulting/fwapgr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/fwapgr?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/poissonconsulting/fwapgr/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/fwapgr)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/license/mit/)
 <!-- badges: end -->
 

@@ -44,7 +44,6 @@ fwa_query_collection <- function(collection_id,
     transform = transform,
     sortby = sortby,
     groupby = groupby,
-
     user = user,
     nocache = nocache_conversion(nocache)
   )
