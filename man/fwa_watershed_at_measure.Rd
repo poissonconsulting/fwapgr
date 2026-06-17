@@ -67,6 +67,8 @@ Other functions:
 \code{\link{fwa_locate_along}()},
 \code{\link{fwa_locate_along_interval}()},
 \code{\link{fwa_network_trace}()},
+\code{\link{fwa_network_trace_agg}()},
+\code{\link{fwa_upstream_trace}()},
 \code{\link{fwa_watershed_hex}()},
 \code{\link{fwa_watershed_stream}()},
 \code{\link{hydroshed}()}
