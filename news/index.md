@@ -1,5 +1,10 @@
 # Changelog
 
+## fwapgr 0.1.0.9016
+
+- Add fledge-bump workflow
+- Add fledge-tag-on-merge workflow
+
 ## fwapgr 0.1.0.9015
 
 - Update to new database

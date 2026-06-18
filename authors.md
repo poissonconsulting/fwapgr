@@ -22,13 +22,13 @@ Source:
 [`DESCRIPTION`](https://github.com/poissonconsulting/fwapgr/blob/main/DESCRIPTION)
 
 Dalgarno S, Thorley J (2026). *fwapgr: Client for BC Freshwater Atlas
-fwapg API*. R package version 0.1.0.9015,
+fwapg API*. R package version 0.1.0.9016,
 <https://github.com/poissonconsulting/fwapgr>.
 
     @Manual{,
       title = {fwapgr: Client for BC Freshwater Atlas fwapg API},
       author = {Sebastian Dalgarno and Joe Thorley},
       year = {2026},
-      note = {R package version 0.1.0.9015},
+      note = {R package version 0.1.0.9016},
       url = {https://github.com/poissonconsulting/fwapgr},
     }
