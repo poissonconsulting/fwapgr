@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# fwapgr 0.1.0.9017
+
+- Same as previous version.
+
+
 # fwapgr 0.1.0.9016
 
 * Add fledge-bump workflow
