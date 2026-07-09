@@ -23,11 +23,20 @@ test_that("fwa_index_point gets multiple within limits", {
   sf <- fwa_index_point(x = x, y = y, limit = 3L)
   expect_s3_class(sf, "sf")
   expect_identical(nrow(sf), 3L)
-  expect_identical(colnames(sf), c(
-    "bc_ind", "blue_line_key", "distance_to_stream", "downstream_route_measure",
-    "gnis_name", "linear_feature_id", "localcode_ltree", "wscode_ltree",
-    "geometry"
-  ))
+  expect_identical(
+    colnames(sf),
+    c(
+      "bc_ind",
+      "blue_line_key",
+      "distance_to_stream",
+      "downstream_route_measure",
+      "gnis_name",
+      "linear_feature_id",
+      "localcode_ltree",
+      "wscode_ltree",
+      "geometry"
+    )
+  )
   expect_true(!is.unsorted(sf$distance_to_stream))
 
   expect_snapshot_data(sf, "limit3")
@@ -45,9 +54,18 @@ test_that("fwa_index_point returns none if tight tolerance", {
   expect_s3_class(sf$geometry, "sfc")
 
   skip("fwa_index_point only returns geometry column when no matches")
-  expect_identical(colnames(sf), c(
-    "bc_ind", "blue_line_key", "distance_to_stream", "downstream_route_measure",
-    "gnis_name", "linear_feature_id", "localcode_ltree", "wscode_ltree",
-    "geometry"
-  ))
+  expect_identical(
+    colnames(sf),
+    c(
+      "bc_ind",
+      "blue_line_key",
+      "distance_to_stream",
+      "downstream_route_measure",
+      "gnis_name",
+      "linear_feature_id",
+      "localcode_ltree",
+      "wscode_ltree",
+      "geometry"
+    )
+  )
 })

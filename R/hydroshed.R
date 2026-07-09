@@ -10,13 +10,16 @@
 #' @export
 #' @examples
 #' hydroshed(x = -132.26, y = 53.36)
-hydroshed <- function(x, y,
-                      srid = 4326,
-                      bbox = NULL,
-                      properties = NULL,
-                      transform = NULL,
-                      epsg = 4326,
-                      nocache = getOption("fwa.nocache", FALSE)) {
+hydroshed <- function(
+  x,
+  y,
+  srid = 4326,
+  bbox = NULL,
+  properties = NULL,
+  transform = NULL,
+  epsg = 4326,
+  nocache = getOption("fwa.nocache", FALSE)
+) {
   chk_number(x)
   chk_number(y)
   chk_whole_number(srid)

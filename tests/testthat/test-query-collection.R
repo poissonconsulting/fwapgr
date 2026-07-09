@@ -3,9 +3,7 @@ test_that("collection works with default values ", {
 
   collection_id <- "whse_basemapping.fwa_named_streams"
 
-  x <- fwa_query_collection(collection_id,
-    limit = 10
-  )
+  x <- fwa_query_collection(collection_id, limit = 10)
   expect_s3_class(x, "sf")
   expect_s3_class(x, "tbl_df")
   expect_s3_class(x$geometry, "sfc_MULTILINESTRING")
@@ -21,26 +19,41 @@ test_that("collection filter works", {
 
   filter <- list(gnis_name_1 = "Trout Lake")
 
-  x <- fwa_query_collection(collection_id,
-    filter = filter
-  )
+  x <- fwa_query_collection(collection_id, filter = filter)
   expect_s3_class(x, "sf")
   expect_true(all(x$gnis_name_1 == "Trout Lake"))
 
   colnames <- c(
-    "area_ha", "blue_line_key", "feature_code", "fwa_watershed_code",
-    "gnis_id_1", "gnis_id_2",
-    "gnis_id_3", "gnis_name_1", "gnis_name_2",
-    "gnis_name_3", "left_right_tributary", "local_watershed_code",
-    "localcode_ltree", "waterbody_key", "waterbody_key_50k",
+    "area_ha",
+    "blue_line_key",
+    "feature_code",
+    "fwa_watershed_code",
+    "gnis_id_1",
+    "gnis_id_2",
+    "gnis_id_3",
+    "gnis_name_1",
+    "gnis_name_2",
+    "gnis_name_3",
+    "left_right_tributary",
+    "local_watershed_code",
+    "localcode_ltree",
+    "waterbody_key",
+    "waterbody_key_50k",
     "waterbody_key_group_code_50k",
-    "waterbody_poly_id", "waterbody_type", "watershed_code_50k",
-    "watershed_group_code", "watershed_group_code_50k",
-    "watershed_group_id", "watershed_key", "wscode_ltree", "geometry"
+    "waterbody_poly_id",
+    "waterbody_type",
+    "watershed_code_50k",
+    "watershed_group_code",
+    "watershed_group_code_50k",
+    "watershed_group_id",
+    "watershed_key",
+    "wscode_ltree",
+    "geometry"
   )
 
   expect_identical(
-    colnames(x), colnames
+    colnames(x),
+    colnames
   )
   expect_snapshot_data(x[setdiff(colnames, "geometry")], "trout_lake")
 })
@@ -53,14 +66,9 @@ test_that("collection sortby works", {
 
   sortby <- c("blue_line_key")
 
-  x <- fwa_query_collection(collection_id,
-    limit = 1,
-    sortby = sortby
-  )
+  x <- fwa_query_collection(collection_id, limit = 1, sortby = sortby)
 
-  x2 <- fwa_query_collection(collection_id,
-    limit = 1
-  )
+  x2 <- fwa_query_collection(collection_id, limit = 1)
   expect_true(x$blue_line_key < x2$blue_line_key)
 })
 
@@ -72,14 +80,8 @@ test_that("collection sortby descending works", {
   sortby <- c("+blue_line_key")
   sortby_desc <- c("-blue_line_key")
 
-  x <- fwa_query_collection(collection_id,
-    limit = 1,
-    sortby = sortby_desc
-  )
-  x2 <- fwa_query_collection(collection_id,
-    limit = 1,
-    sortby = sortby
-  )
+  x <- fwa_query_collection(collection_id, limit = 1, sortby = sortby_desc)
+  x2 <- fwa_query_collection(collection_id, limit = 1, sortby = sortby)
   expect_true(x$blue_line_key > x2$blue_line_key)
 })
 
@@ -91,20 +93,36 @@ test_that("collection bounding box gets everything intersecting bounding box", {
 
   bbox <- c(-117.46, 50.6, -117.4601, 50.6001)
 
-  x <- fwa_query_collection(collection_id,
-    bbox = bbox
-  )
+  x <- fwa_query_collection(collection_id, bbox = bbox)
   expect_identical(x$gnis_name_1, "Trout Lake")
   expect_identical(
     sort(colnames(x)),
     c(
-      "area_ha", "blue_line_key", "feature_code", "fwa_watershed_code",
-      "geometry", "gnis_id_1", "gnis_id_2", "gnis_id_3", "gnis_name_1", "gnis_name_2",
-      "gnis_name_3", "left_right_tributary", "local_watershed_code",
-      "localcode_ltree", "waterbody_key", "waterbody_key_50k", "waterbody_key_group_code_50k",
-      "waterbody_poly_id", "waterbody_type", "watershed_code_50k",
-      "watershed_group_code", "watershed_group_code_50k", "watershed_group_id",
-      "watershed_key", "wscode_ltree"
+      "area_ha",
+      "blue_line_key",
+      "feature_code",
+      "fwa_watershed_code",
+      "geometry",
+      "gnis_id_1",
+      "gnis_id_2",
+      "gnis_id_3",
+      "gnis_name_1",
+      "gnis_name_2",
+      "gnis_name_3",
+      "left_right_tributary",
+      "local_watershed_code",
+      "localcode_ltree",
+      "waterbody_key",
+      "waterbody_key_50k",
+      "waterbody_key_group_code_50k",
+      "waterbody_poly_id",
+      "waterbody_type",
+      "watershed_code_50k",
+      "watershed_group_code",
+      "watershed_group_code_50k",
+      "watershed_group_id",
+      "watershed_key",
+      "wscode_ltree"
     )
   )
 })
@@ -117,10 +135,7 @@ test_that("collection properties works", {
 
   properties <- c("blue_line_key", "gnis_name")
 
-  x <- fwa_query_collection(collection_id,
-    limit = 1,
-    properties = properties
-  )
+  x <- fwa_query_collection(collection_id, limit = 1, properties = properties)
   expect_identical(colnames(x), c(properties, "geometry"))
 })
 
@@ -132,14 +147,18 @@ test_that("collection transform works", {
 
   filter <- list(gnis_name_1 = "Kootenay Lake")
 
-  x <- fwa_query_collection(collection_id,
+  x <- fwa_query_collection(
+    collection_id,
     filter = filter,
     transform = c("ST_Simplify", 50000)
   )
 
   expect_s3_class(x, "sf")
   expect_identical(nrow(x), 1L)
-  expect_identical(nrow(sf::st_coordinates(sf::st_cast(x$geometry, "POINT"))), 4L)
+  expect_identical(
+    nrow(sf::st_coordinates(sf::st_cast(x$geometry, "POINT"))),
+    4L
+  )
 })
 
 test_that("collection transform to get bbox works", {
@@ -150,14 +169,18 @@ test_that("collection transform to get bbox works", {
   transform <- "collect|envelope"
   properties <- "geometry"
 
-  x <- fwa_query_collection(collection_id,
+  x <- fwa_query_collection(
+    collection_id,
     transform = transform,
     properties = properties
   )
 
   expect_s3_class(x, "sf")
   expect_identical(nrow(x), 1L)
-  expect_identical(nrow(sf::st_coordinates(sf::st_cast(x$geometry, "POINT"))), 5L)
+  expect_identical(
+    nrow(sf::st_coordinates(sf::st_cast(x$geometry, "POINT"))),
+    5L
+  )
 })
 
 # groupby
@@ -168,10 +191,7 @@ test_that("collection groupby works", {
 
   groupby <- "gnis_name"
 
-  x <- fwa_query_collection(collection_id,
-    limit = 10,
-    groupby = groupby
-  )
+  x <- fwa_query_collection(collection_id, limit = 10, groupby = groupby)
 
   expect_s3_class(x, "sf")
   # without groupby there are duplicate gnis_names
@@ -190,10 +210,7 @@ test_that("collection bounding box and filter work together", {
   bbox <- c(-117.46, 50.6, -117.4601, 50.6001)
   filter <- list(gnis_name_1 = "kootenay lake")
 
-  x <- fwa_query_collection(collection_id,
-    filter = filter,
-    bbox = bbox
-  )
+  x <- fwa_query_collection(collection_id, filter = filter, bbox = bbox)
   expect_s3_class(x, "sf")
   expect_identical(nrow(x), 0L)
   # not sure why this is happening - is it an issue?
@@ -219,9 +236,7 @@ test_that("collection informative error invalid transform", {
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 
   expect_chk_error(
-    fwa_query_collection(collection_id,
-      transform = "not_a_transform"
-    ),
+    fwa_query_collection(collection_id, transform = "not_a_transform"),
     "API request failed \\[400\\]: Invalid value for parameter transform: not_a_transform"
   )
 })
@@ -232,9 +247,7 @@ test_that("collection informative error invalid bbox", {
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 
   expect_chk_error(
-    fwa_query_collection(collection_id,
-      bbox = 1
-    ),
+    fwa_query_collection(collection_id, bbox = 1),
     "API request failed \\[400\\]: Invalid value for parameter bbox: 1"
   )
 })
@@ -244,9 +257,7 @@ test_that("collection informative error invalid bbox", {
 
   collection_id <- "whse_basemapping.fwa_lakes_poly"
 
-  expect_chk_error(fwa_query_collection(collection_id,
-    filter = c(1)
-  ))
+  expect_chk_error(fwa_query_collection(collection_id, filter = c(1)))
 })
 
 test_that("collection offset works", {
@@ -254,14 +265,9 @@ test_that("collection offset works", {
 
   collection_id <- "whse_basemapping.fwa_named_streams"
 
-  x <- fwa_query_collection(collection_id,
-    limit = 2
-  )
+  x <- fwa_query_collection(collection_id, limit = 2)
   expect_identical(x$named_streams_id, c(23361, 23362))
-  x2 <- fwa_query_collection(collection_id,
-    offset = 1,
-    limit = 1
-  )
+  x2 <- fwa_query_collection(collection_id, offset = 1, limit = 1)
   expect_identical(
     x2$named_streams_id,
     x$named_streams_id[2]
@@ -274,12 +280,14 @@ test_that("collection offset works with higher numbers", {
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   sortby <- "named_streams_id"
-  x <- fwa_query_collection(collection_id,
+  x <- fwa_query_collection(
+    collection_id,
     offset = 997,
     limit = 2,
     sortby = sortby
   )
-  x2 <- fwa_query_collection(collection_id,
+  x2 <- fwa_query_collection(
+    collection_id,
     offset = 998,
     limit = 1,
     sortby = sortby
@@ -295,12 +303,14 @@ test_that("collection offset works with really big number", {
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   sortby <- "named_streams_id"
-  x <- fwa_query_collection(collection_id,
+  x <- fwa_query_collection(
+    collection_id,
     offset = 9999,
     limit = 2,
     sortby = sortby
   )
-  x2 <- fwa_query_collection(collection_id,
+  x2 <- fwa_query_collection(
+    collection_id,
     offset = 10000,
     limit = 1,
     sortby = sortby
@@ -320,12 +330,14 @@ test_that("collection offset works with offset more than limit", {
   collection_id <- "whse_basemapping.fwa_named_streams"
 
   sortby <- "named_streams_id"
-  x <- fwa_query_collection(collection_id,
+  x <- fwa_query_collection(
+    collection_id,
     offset = 10000,
     limit = 2,
     sortby = sortby
   )
-  x2 <- fwa_query_collection(collection_id,
+  x2 <- fwa_query_collection(
+    collection_id,
     offset = 10001,
     limit = 1,
     sortby = sortby
@@ -344,9 +356,7 @@ test_that("collection offset works at 99,999", {
 
   collection_id <- "whse_basemapping.fwa_named_streams"
 
-  expect_silent(fwa_query_collection(collection_id,
-    offset = 99999, limit = 1
-  ))
+  expect_silent(fwa_query_collection(collection_id, offset = 99999, limit = 1))
 })
 
 test_that("collection offset works at 100,000", {
@@ -354,7 +364,5 @@ test_that("collection offset works at 100,000", {
 
   collection_id <- "whse_basemapping.fwa_named_streams"
 
-  expect_silent(fwa_query_collection(collection_id,
-    offset = 100000, limit = 1
-  ))
+  expect_silent(fwa_query_collection(collection_id, offset = 100000, limit = 1))
 })
