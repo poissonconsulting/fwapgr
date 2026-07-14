@@ -11,15 +11,18 @@
 #' @export
 #' @examples
 #' fwa_index_point(x = -132.26, y = 53.36)
-fwa_index_point <- function(x, y,
-                            srid = 4326,
-                            tolerance = 5000,
-                            limit = 1,
-                            bbox = NULL,
-                            properties = NULL,
-                            transform = NULL,
-                            epsg = 4326,
-                            nocache = getOption("fwa.nocache", FALSE)) {
+fwa_index_point <- function(
+  x,
+  y,
+  srid = 4326,
+  tolerance = 5000,
+  limit = 1,
+  bbox = NULL,
+  properties = NULL,
+  transform = NULL,
+  epsg = 4326,
+  nocache = getOption("fwa.nocache", FALSE)
+) {
   chk_number(x)
   chk_number(y)
   chk_whole_number(srid)

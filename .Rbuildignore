@@ -18,3 +18,5 @@
 ^data-raw$
 ^doc$
 ^Meta$
+^[.]?air[.]toml$
+^\.vscode$

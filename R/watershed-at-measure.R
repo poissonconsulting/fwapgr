@@ -30,13 +30,15 @@
 #' @export
 #' @examples
 #' fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)
-fwa_watershed_at_measure <- function(blue_line_key,
-                                     downstream_route_measure = 0,
-                                     bbox = NULL,
-                                     properties = NULL,
-                                     transform = NULL,
-                                     epsg = 4326,
-                                     nocache = getOption("fwa.nocache", FALSE)) {
+fwa_watershed_at_measure <- function(
+  blue_line_key,
+  downstream_route_measure = 0,
+  bbox = NULL,
+  properties = NULL,
+  transform = NULL,
+  epsg = 4326,
+  nocache = getOption("fwa.nocache", FALSE)
+) {
   chk_whole_number(blue_line_key)
   chk_gt(blue_line_key)
   chk_number(downstream_route_measure)
