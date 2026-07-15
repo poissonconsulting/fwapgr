@@ -1,5 +1,9 @@
 # Changelog
 
+## fwapgr 0.1.0.9019
+
+- Same as previous version.
+
 ## fwapgr 0.1.0.9018
 
 - Same as previous version.
