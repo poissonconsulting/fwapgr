@@ -1,5 +1,13 @@
 # Changelog
 
+## fwapgr 0.1.0.9020
+
+- Merge pull request
+  [\#93](https://github.com/poissonconsulting/fwapgr/issues/93) from
+  poissonconsulting/f-ci.
+
+  Standardize CI (tier: important)
+
 ## fwapgr 0.1.0.9019
 
 - Same as previous version.
