@@ -1,4 +1,11 @@
-<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
+
+# fwapgr 0.1.0.9020
+
+- Merge pull request #93 from poissonconsulting/f-ci.
+
+  Standardize CI (tier: important)
+
 
 # fwapgr 0.1.0.9019
 
