@@ -34,7 +34,8 @@ fwa_query_collection <- function(
   path <- api_path()
   user <- gh_user()
 
-  x <- pgfeatureserv::pgf_collection_features(
+  x <- pgf_sf(
+    pgfeatureserv::pgf_collection_features,
     collection_id = collection_id,
     base_url = base_url,
     path = path,

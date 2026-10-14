@@ -37,7 +37,8 @@ fwa_watershed_stream <- function(
   path <- api_path()
   user <- gh_user()
 
-  x <- pgfeatureserv::pgf_function_result(
+  x <- pgf_sf(
+    pgfeatureserv::pgf_function_result,
     "fwa_watershedstream",
     base_url = base_url,
     path = path,

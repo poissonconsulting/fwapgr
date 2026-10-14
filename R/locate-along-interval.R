@@ -59,7 +59,8 @@ fwa_locate_along_interval <- function(
   path <- api_path()
   user <- gh_user()
 
-  x <- pgfeatureserv::pgf_function_result(
+  x <- pgf_sf(
+    pgfeatureserv::pgf_function_result,
     "fwa_locatealonginterval",
     base_url = base_url,
     path = path,

@@ -37,7 +37,8 @@ fwa_watershed_hex <- function(
   path <- api_path()
   user <- gh_user()
 
-  x <- pgfeatureserv::pgf_function_result(
+  x <- pgf_sf(
+    pgfeatureserv::pgf_function_result,
     "fwa_watershedhex",
     base_url = base_url,
     path = path,
