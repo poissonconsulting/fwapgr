@@ -55,6 +55,10 @@ is cut across the banks of the river before being included in the aggregation
 \item Otherwise something else happens (recorded as DEM in the refine_method
 property).
 }
+
+As the watersheds are predefined, zero rows can be returned for a point on
+a stream, for example in its headwaters, as well as beyond the upstream end
+of the stream.
 }
 \examples{
 fwa_watershed_at_measure(356308001, downstream_route_measure = 10000)

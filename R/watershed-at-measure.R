@@ -23,6 +23,10 @@
 #' 4. Otherwise something else happens (recorded as DEM in the refine_method
 #' property).
 #'
+#' As the watersheds are predefined, zero rows can be returned for a point on
+#' a stream, for example in its headwaters, as well as beyond the upstream end
+#' of the stream.
+#'
 #' @inherit internal
 #' @family functions
 #' @seealso [API documentation](https://features.hillcrestgeo.ca/fwa/functions/fwa_watershedatmeasure.html)
