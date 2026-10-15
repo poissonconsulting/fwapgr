@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# fwapgr 0.1.0.9021
+
+- Same as previous version.
+
+
 # fwapgr 0.1.0.9020
 
 - Merge pull request #93 from poissonconsulting/f-ci.
