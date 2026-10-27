@@ -1,5 +1,13 @@
 # Changelog
 
+## fwapgr 0.1.0.9022
+
+- Merge pull request
+  [\#97](https://github.com/poissonconsulting/fwapgr/issues/97) from
+  poissonconsulting/f-retry-invalid-response.
+
+  Retry API responses without a geometry column
+
 ## fwapgr 0.1.0.9021
 
 - Same as previous version.
