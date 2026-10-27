@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# fwapgr 0.1.0.9022
+
+- Merge pull request #97 from poissonconsulting/f-retry-invalid-response.
+
+  Retry API responses without a geometry column
+
+
 # fwapgr 0.1.0.9021
 
 - Same as previous version.
